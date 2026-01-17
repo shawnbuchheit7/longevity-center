@@ -54,10 +54,10 @@ export default function Projections() {
                   <thead>
                     <tr className="border-b border-border">
                       <th className="text-left p-5 font-body font-semibold text-muted-foreground">Metric</th>
-                      <th className="text-center p-5 font-body font-semibold text-muted-foreground">2025</th>
                       <th className="text-center p-5 font-body font-semibold text-muted-foreground">2026</th>
                       <th className="text-center p-5 font-body font-semibold text-muted-foreground">2027</th>
-                      <th className="text-center p-5 font-body font-semibold text-gradient">2028</th>
+                      <th className="text-center p-5 font-body font-semibold text-muted-foreground">2028</th>
+                      <th className="text-center p-5 font-body font-semibold text-gradient">2029</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -103,12 +103,13 @@ export default function Projections() {
               </h2>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-4 gap-6">
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-5 gap-6">
               {[
-                { year: "2025", milestones: ["Florida facility launch", "MUSE Cell production", "1,000 members"] },
-                { year: "2026", milestones: ["5 clinic network", "Bahrain hub opens", "Break-even achieved"] },
-                { year: "2027", milestones: ["10 clinics operational", "International licensing", "$60M revenue"] },
-                { year: "2028", milestones: ["15 clinics", "12,000 members", "$120M revenue", "Exit readiness"] }
+                { year: "2025", milestones: ["Series A close", "Florida facility buildout", "MUSE Cell production setup"] },
+                { year: "2026", milestones: ["Revenue launch", "2 clinics operational", "800 members", "$8M revenue"] },
+                { year: "2027", milestones: ["5 clinic network", "Bahrain hub opens", "Break-even achieved"] },
+                { year: "2028", milestones: ["10 clinics", "6,000 members", "$60M revenue"] },
+                { year: "2029", milestones: ["15 clinics", "12,000 members", "$120M revenue", "Exit readiness"] }
               ].map((item, i) => (
                 <div key={i} className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors">
                   <span className="font-display text-3xl font-bold text-gradient">{item.year}</span>
@@ -163,7 +164,7 @@ export default function Projections() {
                 {
                   icon: Shield,
                   value: "$36M+",
-                  label: "EBITDA by 2028",
+                  label: "EBITDA by 2029",
                   description: "Clear path to profitability and exit readiness"
                 }
               ].map((item, i) => (
