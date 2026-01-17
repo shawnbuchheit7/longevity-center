@@ -50,6 +50,7 @@ export default function Investors() {
                 role: "Film Director & Producer",
                 icon: Clapperboard,
                 image: "/images/joe-russo.jpg",
+                imagePosition: "object-top",
                 credits: "Avengers: Endgame, Infinity War",
                 description: "Co-directed the highest-grossing film of all time. Brings unparalleled entertainment industry connections and storytelling expertise."
               },
@@ -58,6 +59,7 @@ export default function Investors() {
                 role: "Actor & Wellness Advocate",
                 icon: Star,
                 image: "/images/chris-hemsworth.jpg",
+                imagePosition: "object-top",
                 credits: "Thor, Limitless",
                 description: "Global icon and founder of Centr fitness app. Personal commitment to longevity science and massive social reach."
               },
@@ -66,6 +68,7 @@ export default function Investors() {
                 role: "Actor & Producer",
                 icon: Film,
                 image: "/images/josh-brolin.png",
+                imagePosition: "object-center",
                 credits: "Avengers, Dune, No Country for Old Men",
                 description: "Academy Award-nominated actor with decades of Hollywood influence and personal interest in regenerative medicine."
               },
@@ -74,6 +77,7 @@ export default function Investors() {
                 role: "Chief Creative Officer",
                 icon: Gamepad2,
                 image: "/images/donald-mustard.jpg",
+                imagePosition: "object-center",
                 credits: "Fortnite, Infinity Blade",
                 description: "Creative visionary behind Fortnite's cultural phenomenon. Brings gaming industry connections and Gen Z/Millennial reach."
               }
@@ -90,7 +94,7 @@ export default function Investors() {
                     <img 
                       src={investor.image} 
                       alt={investor.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${investor.imagePosition}`}
                     />
                   </div>
                   {/* Investor Info */}
