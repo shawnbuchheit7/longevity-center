@@ -17,11 +17,11 @@ const navLinks = [
   { href: "/opportunity", label: "Opportunity" },
   { href: "/therapeutics", label: "Therapeutics" },
   { href: "/technology", label: "Technology" },
-  { href: "/performance", label: "Performance" },
+  { href: "/performance", label: "Unit Economics" },
   { href: "/investors", label: "Investors" },
   { href: "/team", label: "Team" },
   { href: "/use-of-funds", label: "Use of Funds" },
-  { href: "/projections", label: "Projections" },
+  { href: "/projections", label: "Growth Projections" },
 ];
 
 export default function Layout({ children }: LayoutProps) {

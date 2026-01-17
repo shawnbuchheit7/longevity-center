@@ -22,10 +22,10 @@ export default function Projections() {
             variants={staggerContainer}
           >
             <motion.span variants={fadeInUp} className="font-mono text-primary text-sm tracking-wider">
-              FINANCIAL OUTLOOK
+              MULTI-CENTER ROLLOUT
             </motion.span>
             <motion.h1 variants={fadeInUp} className="font-display text-5xl md:text-7xl font-medium mt-4 mb-6">
-              Path to Profitability
+              Growth Projections
             </motion.h1>
             <motion.p variants={fadeInUp} className="font-body text-xl text-muted-foreground">
               Conservative projections based on proven unit economics and disciplined center rollout.
