@@ -444,6 +444,100 @@ export default function Performance() {
               </div>
             </motion.div>
 
+            {/* Payback Period Visualization */}
+            <motion.div variants={fadeInUp} className="mt-12">
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-6 border-b border-border bg-muted/30">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <RefreshCw className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-xl font-medium">Payback Period by Channel</h3>
+                      <p className="text-sm text-muted-foreground">Months to recover customer acquisition cost</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  {/* Visual Payback Timeline */}
+                  <div className="space-y-6">
+                    {/* Referral Channel */}
+                    <div>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="font-body text-sm">Member Referrals</span>
+                        <span className="font-mono text-emerald-400 font-bold">0 months</span>
+                      </div>
+                      <div className="h-8 bg-muted/30 rounded-full overflow-hidden relative">
+                        <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full flex items-center justify-end pr-3" style={{ width: '5%' }}>
+                          <span className="text-xs font-bold text-emerald-950">$0</span>
+                        </div>
+                        <div className="absolute inset-y-0 right-4 flex items-center">
+                          <span className="text-xs text-muted-foreground">Instant ROI - No CAC</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Direct Acquisition */}
+                    <div>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="font-body text-sm">Direct Acquisition</span>
+                        <span className="font-mono text-amber-400 font-bold">3.3 months</span>
+                      </div>
+                      <div className="h-8 bg-muted/30 rounded-full overflow-hidden relative">
+                        <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-amber-500 to-amber-400 rounded-full flex items-center justify-end pr-3" style={{ width: '28%' }}>
+                          <span className="text-xs font-bold text-amber-950">$8K</span>
+                        </div>
+                        <div className="absolute inset-y-0 right-4 flex items-center">
+                          <span className="text-xs text-muted-foreground">$29.5K annual × 3.3mo = $8K CAC recovered</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Blended */}
+                    <div>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="font-body text-sm font-medium">Blended (All Channels)</span>
+                        <span className="font-mono text-primary font-bold">2.0 months</span>
+                      </div>
+                      <div className="h-8 bg-muted/30 rounded-full overflow-hidden relative">
+                        <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-end pr-3" style={{ width: '17%' }}>
+                          <span className="text-xs font-bold text-primary-foreground">$4.8K</span>
+                        </div>
+                        <div className="absolute inset-y-0 right-4 flex items-center">
+                          <span className="text-xs text-muted-foreground">40% referral + 60% direct blend</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Timeline Scale */}
+                  <div className="mt-6 pt-4 border-t border-border/50">
+                    <div className="flex justify-between text-xs text-muted-foreground">
+                      <span>0 mo</span>
+                      <span>3 mo</span>
+                      <span>6 mo</span>
+                      <span>9 mo</span>
+                      <span>12 mo</span>
+                    </div>
+                  </div>
+
+                  {/* Key Insight */}
+                  <div className="mt-6 bg-primary/5 border border-primary/20 rounded-xl p-4">
+                    <div className="flex items-start gap-3">
+                      <Target className="w-5 h-5 text-primary mt-0.5" />
+                      <div>
+                        <p className="font-body text-sm">
+                          <strong className="text-foreground">Key Insight:</strong> With 40% of members from referrals ($0 CAC) and ELITE membership at $29,500/year, 
+                          blended payback is just <span className="text-primary font-medium">2 months</span>. 
+                          Every member generates <span className="text-primary font-medium">$24,700 net contribution</span> in Year 1 alone.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
             {/* Sensitivity Analysis */}
             <motion.div variants={fadeInUp} className="mt-12">
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
