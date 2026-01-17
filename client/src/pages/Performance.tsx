@@ -203,28 +203,21 @@ export default function Performance() {
               </h2>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-6 mb-12">
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
               {[
                 {
-                  tier: "CORE",
+                  tier: "ESSENTIAL",
                   price: "$6,500",
-                  mix: "15%",
-                  renewal: "10%",
-                  description: "Entry-level comprehensive health assessment and baseline diagnostics"
+                  mix: "20%",
+                  renewal: "15%",
+                  description: "Comprehensive health assessment with advanced diagnostics, baseline biomarkers, and personalized wellness roadmap"
                 },
                 {
-                  tier: "SNAP",
-                  price: "$11,700",
-                  mix: "5%",
-                  renewal: "5%",
-                  description: "Enhanced diagnostics with advanced imaging and personalized protocols"
-                },
-                {
-                  tier: "APEX",
-                  price: "$21,500",
-                  mix: "70%",
+                  tier: "LONGEVITY ELITE",
+                  price: "$29,500",
+                  mix: "80%",
                   renewal: "50%",
-                  description: "Premium tier with full biologic treatments, concierge care, and ongoing optimization",
+                  description: "Premium tier with full biologic treatments, MUSE cell therapy, concierge care, and ongoing optimization protocols",
                   highlight: true
                 }
               ].map((tier, i) => (
@@ -277,28 +270,20 @@ export default function Performance() {
                   </thead>
                   <tbody className="font-body">
                     <tr className="border-b border-border/50">
-                      <td className="p-4 font-medium">CORE</td>
-                      <td className="p-4 text-right">135</td>
-                      <td className="p-4 text-right">164</td>
-                      <td className="p-4 text-right">166</td>
-                      <td className="p-4 text-right">167</td>
-                      <td className="p-4 text-right">167</td>
+                      <td className="p-4 font-medium">Essential</td>
+                      <td className="p-4 text-right">162</td>
+                      <td className="p-4 text-right">246</td>
+                      <td className="p-4 text-right">285</td>
+                      <td className="p-4 text-right">305</td>
+                      <td className="p-4 text-right">314</td>
                     </tr>
                     <tr className="border-b border-border/50">
-                      <td className="p-4 font-medium">SNAP</td>
-                      <td className="p-4 text-right">45</td>
-                      <td className="p-4 text-right">52</td>
-                      <td className="p-4 text-right">53</td>
-                      <td className="p-4 text-right">53</td>
-                      <td className="p-4 text-right">53</td>
-                    </tr>
-                    <tr className="border-b border-border/50">
-                      <td className="p-4 font-medium">APEX</td>
-                      <td className="p-4 text-right">630</td>
-                      <td className="p-4 text-right">1,015</td>
-                      <td className="p-4 text-right">1,208</td>
-                      <td className="p-4 text-right">1,304</td>
-                      <td className="p-4 text-right">1,352</td>
+                      <td className="p-4 font-medium">Longevity Elite</td>
+                      <td className="p-4 text-right">648</td>
+                      <td className="p-4 text-right">985</td>
+                      <td className="p-4 text-right">1,141</td>
+                      <td className="p-4 text-right">1,218</td>
+                      <td className="p-4 text-right">1,257</td>
                     </tr>
                     <tr className="bg-accent/5">
                       <td className="p-4 font-medium">Total Members</td>
@@ -350,28 +335,20 @@ export default function Performance() {
                   </thead>
                   <tbody className="font-body">
                     <tr className="border-b border-border/50">
-                      <td className="p-4 font-medium">CORE Memberships</td>
-                      <td className="p-4 text-right">$877K</td>
+                      <td className="p-4 font-medium">Essential Memberships</td>
                       <td className="p-4 text-right">$1.1M</td>
-                      <td className="p-4 text-right">$1.1M</td>
-                      <td className="p-4 text-right">$1.1M</td>
-                      <td className="p-4 text-right">$1.1M</td>
-                    </tr>
-                    <tr className="border-b border-border/50">
-                      <td className="p-4 font-medium">SNAP Memberships</td>
-                      <td className="p-4 text-right">$527K</td>
-                      <td className="p-4 text-right">$611K</td>
-                      <td className="p-4 text-right">$616K</td>
-                      <td className="p-4 text-right">$616K</td>
-                      <td className="p-4 text-right">$616K</td>
+                      <td className="p-4 text-right">$1.6M</td>
+                      <td className="p-4 text-right">$1.9M</td>
+                      <td className="p-4 text-right">$2.0M</td>
+                      <td className="p-4 text-right">$2.0M</td>
                     </tr>
                     <tr className="border-b border-border/50 bg-accent/5">
-                      <td className="p-4 font-medium">APEX Memberships</td>
-                      <td className="p-4 text-right">$13.5M</td>
-                      <td className="p-4 text-right">$21.8M</td>
-                      <td className="p-4 text-right">$26.0M</td>
-                      <td className="p-4 text-right">$28.0M</td>
-                      <td className="p-4 text-right text-primary font-medium">$29.1M</td>
+                      <td className="p-4 font-medium">Longevity Elite Memberships</td>
+                      <td className="p-4 text-right">$19.1M</td>
+                      <td className="p-4 text-right">$29.1M</td>
+                      <td className="p-4 text-right">$33.7M</td>
+                      <td className="p-4 text-right">$35.9M</td>
+                      <td className="p-4 text-right text-primary font-medium">$37.1M</td>
                     </tr>
                     <tr className="border-b border-border/50">
                       <td className="p-4 font-medium">Ancillary Services</td>
@@ -405,7 +382,7 @@ export default function Performance() {
             {/* Revenue Insight */}
             <motion.div variants={fadeInUp} className="mt-8 grid md:grid-cols-3 gap-6">
               {[
-                { label: "APEX Revenue Share", value: "85%", description: "of total membership revenue" },
+                { label: "Longevity Elite Share", value: "95%", description: "of total membership revenue" },
                 { label: "Ancillary Revenue", value: "13%", description: "additional services per member" },
                 { label: "Revenue CAGR", value: "20%", description: "compound annual growth" }
               ].map((item, i) => (
@@ -731,7 +708,7 @@ export default function Performance() {
                 },
                 {
                   title: "Predictable Growth",
-                  description: "Membership model with 50% APEX renewal rate creates recurring revenue and predictable cash flows."
+                  description: "Membership model with 50% Longevity Elite renewal rate creates recurring revenue and predictable cash flows."
                 },
                 {
                   title: "Scalable Model",
@@ -739,7 +716,7 @@ export default function Performance() {
                 },
                 {
                   title: "Premium Positioning",
-                  description: "APEX tier ($21,500) drives 85% of membership revenue, validating premium market positioning."
+                  description: "Longevity Elite tier ($29,500) drives 95% of membership revenue, validating premium market positioning."
                 }
               ].map((item, i) => (
                 <div key={i} className="bg-card/50 backdrop-blur border border-border rounded-2xl p-6 text-left">
