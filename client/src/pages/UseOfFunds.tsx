@@ -5,8 +5,9 @@
  */
 
 import { motion } from "framer-motion";
-import { FlaskConical, Users, Heart, Globe, Building2, Cpu, Microscope, Sparkles } from "lucide-react";
+import { FlaskConical, Users, Heart, Globe, Building2, Cpu, Microscope, Sparkles, ZoomIn } from "lucide-react";
 import Layout from "@/components/Layout";
+import ImageLightbox from "@/components/ImageLightbox";
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
 
 export default function UseOfFunds() {
@@ -236,12 +237,17 @@ export default function UseOfFunds() {
                   <h4 className="font-display font-medium">Area 1 - Medical & Treatment Wing</h4>
                   <p className="font-body text-sm text-muted-foreground">MRI, DEXA, treatment suites, VIP suite</p>
                 </div>
-                <div className="p-4 bg-white">
-                  <img 
-                    src="/images/miami-floorplan-area1-1.png" 
-                    alt="Center Floor Plan - Area 1" 
-                    className="w-full h-auto rounded-lg"
-                  />
+                <div className="p-4 bg-white relative group">
+                  <ImageLightbox src="/images/miami-floorplan-area1-1.png" alt="Center Floor Plan - Area 1">
+                    <img 
+                      src="/images/miami-floorplan-area1-1.png" 
+                      alt="Center Floor Plan - Area 1" 
+                      className="w-full h-auto rounded-lg"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded-lg flex items-center justify-center">
+                      <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  </ImageLightbox>
                 </div>
               </div>
 
@@ -250,12 +256,17 @@ export default function UseOfFunds() {
                   <h4 className="font-display font-medium">Area 2 - Administrative & CT Wing</h4>
                   <p className="font-body text-sm text-muted-foreground">CT imaging, lobby, offices, conference rooms</p>
                 </div>
-                <div className="p-4 bg-white">
-                  <img 
-                    src="/images/miami-floorplan-area2-1.png" 
-                    alt="Center Floor Plan - Area 2" 
-                    className="w-full h-auto rounded-lg"
-                  />
+                <div className="p-4 bg-white relative group">
+                  <ImageLightbox src="/images/miami-floorplan-area2-1.png" alt="Center Floor Plan - Area 2">
+                    <img 
+                      src="/images/miami-floorplan-area2-1.png" 
+                      alt="Center Floor Plan - Area 2" 
+                      className="w-full h-auto rounded-lg"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded-lg flex items-center justify-center">
+                      <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  </ImageLightbox>
                 </div>
               </div>
             </motion.div>
