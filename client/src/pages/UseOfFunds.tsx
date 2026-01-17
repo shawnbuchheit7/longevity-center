@@ -63,16 +63,16 @@ export default function UseOfFunds() {
               <div className="divide-y divide-border">
                 {[
                   { 
-                    category: "Flagship Center #1", 
+                    category: "Flagship Center #1 (Q1 2026)", 
                     amount: "$12.5M",
                     percentage: "25%",
                     description: "Full-service membership center with integrated imaging and biologics manufacturing"
                   },
                   { 
-                    category: "Flagship Center #2", 
+                    category: "Center #2 Development (Q3 2027)", 
                     amount: "$10M",
                     percentage: "20%",
-                    description: "Expanded membership center with MRI/CT imaging and manufacturing capabilities"
+                    description: "Second market entry with MRI/CT imaging and manufacturing capabilities"
                   },
                   { 
                     category: "National Marketing & Growth", 
@@ -87,10 +87,10 @@ export default function UseOfFunds() {
                     description: "Operational runway, staffing, and clinical operations support"
                   },
                   { 
-                    category: "International Expansion", 
+                    category: "International Expansion Reserve", 
                     amount: "$7.5M",
                     percentage: "15%",
-                    description: "Bahrain hub development and strategic international partnerships"
+                    description: "Opportunistic franchise, JV, and licensing deals in target markets"
                   }
                 ].map((item, i) => (
                   <div key={i} className="p-6 hover:bg-muted/30 transition-colors">
@@ -510,25 +510,25 @@ export default function UseOfFunds() {
               </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-8">
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-8 mb-8">
               {[
                 {
                   region: "United States",
-                  status: "Active",
-                  locations: "Flagship Centers (2026)",
-                  description: "Full-service membership centers with integrated manufacturing"
+                  status: "2026-2030",
+                  locations: "10 Domestic Centers",
+                  description: "Disciplined rollout: 1 center Q1 2026, scaling to 10 centers by Q3 2030"
                 },
                 {
                   region: "Middle East",
-                  status: "2026-2027",
-                  locations: "Bahrain Hub",
-                  description: "Gateway to GCC and MENA markets"
+                  status: "Opportunistic",
+                  locations: "Bahrain, UAE",
+                  description: "Franchise and JV partnerships in GCC markets"
                 },
                 {
-                  region: "Asia Pacific",
-                  status: "2027+",
+                  region: "Europe & Asia Pacific",
+                  status: "Opportunistic",
                   locations: "Strategic Partnerships",
-                  description: "Licensing and joint venture opportunities"
+                  description: "Licensing and JV opportunities in favorable regulatory environments"
                 }
               ].map((region, i) => (
                 <div key={i} className="bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition-colors">
@@ -541,6 +541,33 @@ export default function UseOfFunds() {
                   <p className="font-body text-sm text-muted-foreground">{region.description}</p>
                 </div>
               ))}
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl p-6">
+              <h4 className="font-display font-medium mb-3">International Expansion Models</h4>
+              <p className="font-body text-sm text-muted-foreground mb-4">
+                International expansion will be opportunistic, leveraging asset-light partnership models:
+              </p>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="bg-muted/30 rounded-xl p-4">
+                  <h5 className="font-display font-medium text-sm mb-2">Franchise Model</h5>
+                  <p className="font-body text-xs text-muted-foreground">
+                    Partners invest in buildout; Lumastem provides brand, protocols, training, and biologics supply
+                  </p>
+                </div>
+                <div className="bg-muted/30 rounded-xl p-4">
+                  <h5 className="font-display font-medium text-sm mb-2">Joint Ventures</h5>
+                  <p className="font-body text-xs text-muted-foreground">
+                    Shared ownership with regional healthcare groups or strategic investors
+                  </p>
+                </div>
+                <div className="bg-muted/30 rounded-xl p-4">
+                  <h5 className="font-display font-medium text-sm mb-2">Licensing</h5>
+                  <p className="font-body text-xs text-muted-foreground">
+                    License protocols and technology to established medical groups in complex markets
+                  </p>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
