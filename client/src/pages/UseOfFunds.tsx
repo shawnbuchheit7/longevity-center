@@ -325,20 +325,6 @@ export default function UseOfFunds() {
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
-                    src="/images/lumastem-reception-2.jpg" 
-                    alt="Reception Area - Lounge View" 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-4">
-                  <h4 className="font-display font-medium text-sm">Waiting Lounge</h4>
-                  <p className="font-body text-xs text-muted-foreground">Comfortable seating with premium finishes</p>
-                </div>
-              </div>
-
-              <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img 
                     src="/images/lumastem-reception-3.jpg" 
                     alt="Reception Area - Detail View" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
