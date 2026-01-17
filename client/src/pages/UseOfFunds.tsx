@@ -231,36 +231,17 @@ export default function UseOfFunds() {
               <p className="font-body text-muted-foreground">Design blueprint for flagship membership centers</p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6">
+            <motion.div variants={fadeInUp} className="max-w-4xl mx-auto">
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
                 <div className="p-4 border-b border-border bg-muted/30">
-                  <h4 className="font-display font-medium">Area 1 - Medical & Treatment Wing</h4>
-                  <p className="font-body text-sm text-muted-foreground">MRI, DEXA, treatment suites, VIP suite</p>
+                  <h4 className="font-display font-medium">Complete Facility Layout</h4>
+                  <p className="font-body text-sm text-muted-foreground">Full floor plan with furniture placement and room designations</p>
                 </div>
                 <div className="p-4 bg-white relative group">
-                  <ImageLightbox src="/images/miami-floorplan-area1-1.png" alt="Center Floor Plan - Area 1">
+                  <ImageLightbox src="/images/miami-floorplan-full-1.png" alt="Complete Center Floor Plan">
                     <img 
-                      src="/images/miami-floorplan-area1-1.png" 
-                      alt="Center Floor Plan - Area 1" 
-                      className="w-full h-auto rounded-lg"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded-lg flex items-center justify-center">
-                      <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </div>
-                  </ImageLightbox>
-                </div>
-              </div>
-
-              <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                <div className="p-4 border-b border-border bg-muted/30">
-                  <h4 className="font-display font-medium">Area 2 - Administrative & CT Wing</h4>
-                  <p className="font-body text-sm text-muted-foreground">CT imaging, lobby, offices, conference rooms</p>
-                </div>
-                <div className="p-4 bg-white relative group">
-                  <ImageLightbox src="/images/miami-floorplan-area2-1.png" alt="Center Floor Plan - Area 2">
-                    <img 
-                      src="/images/miami-floorplan-area2-1.png" 
-                      alt="Center Floor Plan - Area 2" 
+                      src="/images/miami-floorplan-full-1.png" 
+                      alt="Complete Center Floor Plan" 
                       className="w-full h-auto rounded-lg"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded-lg flex items-center justify-center">
@@ -307,7 +288,7 @@ export default function UseOfFunds() {
               <p className="font-body text-muted-foreground">3D renderings of the luxury reception and check-in areas</p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-6">
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
@@ -333,20 +314,6 @@ export default function UseOfFunds() {
                 <div className="p-4">
                   <h4 className="font-display font-medium text-sm">Concierge Area</h4>
                   <p className="font-body text-xs text-muted-foreground">Private consultation and member services</p>
-                </div>
-              </div>
-
-              <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img 
-                    src="/images/lumastem-reception-3.jpg" 
-                    alt="Reception Area - Detail View" 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-4">
-                  <h4 className="font-display font-medium text-sm">Reception Detail</h4>
-                  <p className="font-body text-xs text-muted-foreground">Glass partitions and natural light</p>
                 </div>
               </div>
             </motion.div>
@@ -458,28 +425,7 @@ export default function UseOfFunds() {
             </motion.div>
           </motion.div>
 
-          {/* Complete Floor Plan */}
-          <motion.div 
-            className="mt-8 max-w-6xl mx-auto"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUp}
-          >
-            <div className="bg-card border border-border rounded-2xl overflow-hidden">
-              <div className="p-4 border-b border-border bg-muted/30">
-                <h4 className="font-display font-medium">Complete 1st Level Floor Plan</h4>
-                <p className="font-body text-sm text-muted-foreground">Full facility layout with furniture placement</p>
-              </div>
-              <div className="p-4 bg-white">
-                <img 
-                  src="/images/miami-floorplan-full-1.png" 
-                  alt="Complete Center Floor Plan" 
-                  className="w-full h-auto rounded-lg"
-                />
-              </div>
-            </div>
-          </motion.div>
+          
         </div>
       </section>
 
