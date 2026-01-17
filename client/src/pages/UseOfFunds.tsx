@@ -307,7 +307,7 @@ export default function UseOfFunds() {
               <p className="font-body text-muted-foreground">3D renderings of the luxury reception and check-in areas</p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-6">
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
