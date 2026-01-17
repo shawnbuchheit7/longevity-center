@@ -245,6 +245,153 @@ export default function Projections() {
         </div>
       </section>
 
+      {/* HoldCo P&L - Management Company Economics */}
+      <section className="py-20 bg-card/30">
+        <div className="container">
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                MANAGEMENT COMPANY
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
+                HoldCo Economics
+              </h2>
+              <p className="font-body text-muted-foreground max-w-2xl mx-auto">
+                Consolidated view of management fee income versus corporate overhead costs.
+              </p>
+            </motion.div>
+
+            {/* HoldCo P&L Table */}
+            <motion.div variants={fadeInUp} className="mb-12">
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b border-border bg-muted/30">
+                        <th className="text-left p-4 font-display font-medium">Metric</th>
+                        <th className="text-right p-4 font-display font-medium">2026</th>
+                        <th className="text-right p-4 font-display font-medium">2027</th>
+                        <th className="text-right p-4 font-display font-medium">2028</th>
+                        <th className="text-right p-4 font-display font-medium">2029</th>
+                        <th className="text-right p-4 font-display font-medium">2030</th>
+                      </tr>
+                    </thead>
+                    <tbody className="font-body">
+                      <tr className="border-b border-border/50">
+                        <td className="p-4 font-medium">Operating Centers</td>
+                        <td className="p-4 text-right font-mono">1</td>
+                        <td className="p-4 text-right font-mono">2</td>
+                        <td className="p-4 text-right font-mono">4</td>
+                        <td className="p-4 text-right font-mono">7</td>
+                        <td className="p-4 text-right font-mono text-primary font-medium">10</td>
+                      </tr>
+                      <tr className="border-b border-border/50 bg-accent/5">
+                        <td className="p-4 font-medium">Network Revenue</td>
+                        <td className="p-4 text-right">$11.1M</td>
+                        <td className="p-4 text-right">$27.1M</td>
+                        <td className="p-4 text-right">$54.2M</td>
+                        <td className="p-4 text-right">$107.7M</td>
+                        <td className="p-4 text-right text-primary font-medium">$183.2M</td>
+                      </tr>
+                      <tr className="border-b border-border/50">
+                        <td className="p-4 font-medium">Management Fee Income (8%)</td>
+                        <td className="p-4 text-right">$0.9M</td>
+                        <td className="p-4 text-right">$2.2M</td>
+                        <td className="p-4 text-right">$4.3M</td>
+                        <td className="p-4 text-right">$8.6M</td>
+                        <td className="p-4 text-right text-primary font-medium">$14.7M</td>
+                      </tr>
+                      <tr className="border-b border-border/50 text-muted-foreground">
+                        <td className="p-4 font-medium">Corporate Overhead</td>
+                        <td className="p-4 text-right">($2.2M)</td>
+                        <td className="p-4 text-right">($2.4M)</td>
+                        <td className="p-4 text-right">($2.8M)</td>
+                        <td className="p-4 text-right">($3.4M)</td>
+                        <td className="p-4 text-right">($4.0M)</td>
+                      </tr>
+                      <tr className="bg-emerald-500/10">
+                        <td className="p-4 font-medium text-emerald-400">HoldCo EBITDA</td>
+                        <td className="p-4 text-right font-mono text-amber-400">($1.3M)</td>
+                        <td className="p-4 text-right font-mono text-amber-400">($0.2M)</td>
+                        <td className="p-4 text-right font-mono text-emerald-400">$1.5M</td>
+                        <td className="p-4 text-right font-mono text-emerald-400">$5.2M</td>
+                        <td className="p-4 text-right font-mono text-emerald-400 font-bold">$10.7M</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Management Fee Waterfall */}
+            <motion.div variants={fadeInUp} className="mb-12">
+              <h3 className="font-display text-2xl font-medium mb-6">Management Fee Allocation</h3>
+              <p className="font-body text-muted-foreground mb-6">
+                The 8% management fee covers centralized corporate functions that support all centers.
+              </p>
+              <div className="grid md:grid-cols-4 gap-4">
+                {[
+                  { label: "Executive & Leadership", pct: "30%", amount: "$4.4M", desc: "CEO, CFO, CMO, legal" },
+                  { label: "Marketing & Brand", pct: "25%", amount: "$3.7M", desc: "National campaigns, PR, digital" },
+                  { label: "Technology & Systems", pct: "25%", amount: "$3.7M", desc: "Platform, IT, data analytics" },
+                  { label: "Training & Compliance", pct: "20%", amount: "$2.9M", desc: "Clinical protocols, regulatory" }
+                ].map((item, i) => (
+                  <div key={i} className="bg-card border border-border rounded-xl p-4">
+                    <div className="text-2xl font-mono font-bold text-primary mb-1">{item.pct}</div>
+                    <div className="font-display font-medium text-sm mb-1">{item.label}</div>
+                    <div className="font-mono text-xs text-muted-foreground mb-2">{item.amount} (2030)</div>
+                    <div className="text-xs text-muted-foreground">{item.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Breakeven Analysis */}
+            <motion.div variants={fadeInUp}>
+              <h3 className="font-display text-2xl font-medium mb-6">HoldCo Breakeven Analysis</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-card border border-border rounded-2xl p-6 text-center">
+                  <div className="text-4xl font-mono font-bold text-primary mb-2">$3.15M</div>
+                  <div className="font-display font-medium">Mgmt Fee / Mature Center</div>
+                  <div className="text-sm text-muted-foreground">8% of $39.4M revenue</div>
+                </div>
+                <div className="bg-card border border-border rounded-2xl p-6 text-center">
+                  <div className="text-4xl font-mono font-bold text-primary mb-2">$2.0M</div>
+                  <div className="font-display font-medium">Base Corporate Overhead</div>
+                  <div className="text-sm text-muted-foreground">Fixed costs (executive, legal)</div>
+                </div>
+                <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-6 text-center">
+                  <div className="text-4xl font-mono font-bold text-emerald-400 mb-2">2028</div>
+                  <div className="font-display font-medium text-emerald-400">HoldCo Breakeven Year</div>
+                  <div className="text-sm text-muted-foreground">4 centers generating positive cash flow</div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* CPOM Disclaimer */}
+            <motion.div variants={fadeInUp} className="mt-8">
+              <div className="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-6">
+                <div className="flex items-start gap-3">
+                  <AlertTriangle className="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-body text-sm text-muted-foreground">
+                      <strong className="text-foreground">Regulatory Note:</strong> Management fee structure and extraction methods are subject to state Corporate Practice of Medicine (CPOM) laws and may vary by jurisdiction. 
+                      Actual fee arrangements will be structured in compliance with applicable state regulations governing the corporate practice of medicine and fee-splitting prohibitions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Sensitivity Analysis */}
       <section className="py-20">
         <div className="container">
@@ -521,6 +668,28 @@ export default function Projections() {
               ))}
             </motion.div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Financial Disclaimers */}
+      <section className="py-12 bg-muted/20">
+        <div className="container">
+          <div className="max-w-4xl mx-auto space-y-4">
+            <div className="bg-card border border-border rounded-xl p-5">
+              <p className="font-body text-xs text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">Accounting Basis:</strong> Financial projections presented herein are based on cash accounting principles and are intended for illustrative purposes only. 
+                Actual financial statements may differ materially due to GAAP revenue recognition policies, accrual accounting treatments, and other accounting standard requirements. 
+                Membership revenue recognition timing, deferred revenue treatment, and expense matching may impact reported results.
+              </p>
+            </div>
+            <div className="bg-card border border-border rounded-xl p-5">
+              <p className="font-body text-xs text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">Forward-Looking Statements:</strong> These projections contain forward-looking statements based on current expectations and assumptions. 
+                Actual results may differ materially due to market conditions, competitive dynamics, regulatory changes, and execution risks. 
+                Past performance is not indicative of future results.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </Layout>

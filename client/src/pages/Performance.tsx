@@ -1244,6 +1244,28 @@ export default function Performance() {
           </motion.div>
         </div>
       </section>
+
+      {/* Financial Disclaimers */}
+      <section className="py-12 bg-muted/20">
+        <div className="container">
+          <div className="max-w-4xl mx-auto space-y-4">
+            <div className="bg-card border border-border rounded-xl p-5">
+              <p className="font-body text-xs text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">Accounting Basis:</strong> Financial projections presented herein are based on cash accounting principles and are intended for illustrative purposes only. 
+                Actual financial statements may differ materially due to GAAP revenue recognition policies, accrual accounting treatments, and other accounting standard requirements. 
+                Membership revenue recognition timing, deferred revenue treatment, and expense matching may impact reported results.
+              </p>
+            </div>
+            <div className="bg-card border border-border rounded-xl p-5">
+              <p className="font-body text-xs text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">Regulatory Compliance:</strong> Management fee structure and extraction methods are subject to state Corporate Practice of Medicine (CPOM) laws and fee-splitting regulations. 
+                Actual arrangements will be structured in compliance with applicable state laws, which may require modifications to the management fee model, use of management services organizations (MSOs), 
+                or alternative corporate structures depending on jurisdiction.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }
