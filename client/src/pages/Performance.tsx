@@ -398,6 +398,50 @@ export default function Performance() {
                   ))}
                 </div>
               </div>
+
+              {/* Referral Economics */}
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-6 border-b border-border bg-muted/30">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center">
+                      <Users className="w-5 h-5 text-emerald-400" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-xl font-medium">Referral Economics</h3>
+                      <p className="text-sm text-muted-foreground">CAC comparison by acquisition channel</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4 text-center">
+                      <span className="text-emerald-400 font-mono text-2xl font-bold">$0</span>
+                      <p className="text-sm text-muted-foreground mt-1">Referral CAC</p>
+                      <p className="text-xs text-emerald-400/70">40% of new members</p>
+                    </div>
+                    <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 text-center">
+                      <span className="text-amber-400 font-mono text-2xl font-bold">$8,000</span>
+                      <p className="text-sm text-muted-foreground mt-1">Direct CAC</p>
+                      <p className="text-xs text-amber-400/70">60% of new members</p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    {[
+                      { label: "Blended CAC", value: "$4,800", highlight: true },
+                      { label: "Referral Members/Year", value: "200" },
+                      { label: "Direct Members/Year", value: "300" },
+                      { label: "Annual Referral Savings", value: "$1.6M" },
+                      { label: "Referral LTV/CAC", value: "∞ (no cost)" },
+                      { label: "Direct LTV/CAC", value: "12:1" }
+                    ].map((item, i) => (
+                      <div key={i} className={`flex justify-between items-center py-2 border-b border-border/50 last:border-0 ${item.highlight ? 'bg-primary/5 -mx-2 px-2 rounded' : ''}`}>
+                        <span className="font-body text-muted-foreground">{item.label}</span>
+                        <span className={`font-mono font-medium ${item.highlight ? 'text-primary' : 'text-foreground'}`}>{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </motion.div>
 
             {/* Sensitivity Analysis */}
@@ -580,6 +624,94 @@ export default function Performance() {
                     </tr>
                   </tbody>
                 </table>
+              </div>
+            </motion.div>
+
+            {/* Member Cohort Analysis */}
+            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden mt-8">
+              <div className="p-6 border-b border-border">
+                <h3 className="font-display text-xl font-medium">Member Cohort Analysis</h3>
+                <p className="text-sm text-muted-foreground mt-1">How Year 1 members compound through renewals alongside new acquisitions</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-border bg-card/50">
+                      <th className="text-left font-display font-medium p-4">Cohort</th>
+                      <th className="text-right font-display font-medium p-4">Year 1</th>
+                      <th className="text-right font-display font-medium p-4">Year 2</th>
+                      <th className="text-right font-display font-medium p-4">Year 3</th>
+                      <th className="text-right font-display font-medium p-4">Year 4</th>
+                      <th className="text-right font-display font-medium p-4">Year 5</th>
+                    </tr>
+                  </thead>
+                  <tbody className="font-body text-sm">
+                    <tr className="border-b border-border/50 bg-primary/5">
+                      <td className="p-4 font-medium">Y1 Cohort (New)</td>
+                      <td className="p-4 text-right text-primary font-medium">425</td>
+                      <td className="p-4 text-right">297</td>
+                      <td className="p-4 text-right">208</td>
+                      <td className="p-4 text-right">146</td>
+                      <td className="p-4 text-right">102</td>
+                    </tr>
+                    <tr className="border-b border-border/50">
+                      <td className="p-4 font-medium">Y2 Cohort (New)</td>
+                      <td className="p-4 text-right text-muted-foreground">—</td>
+                      <td className="p-4 text-right text-primary font-medium">425</td>
+                      <td className="p-4 text-right">297</td>
+                      <td className="p-4 text-right">208</td>
+                      <td className="p-4 text-right">146</td>
+                    </tr>
+                    <tr className="border-b border-border/50">
+                      <td className="p-4 font-medium">Y3 Cohort (New)</td>
+                      <td className="p-4 text-right text-muted-foreground">—</td>
+                      <td className="p-4 text-right text-muted-foreground">—</td>
+                      <td className="p-4 text-right text-primary font-medium">425</td>
+                      <td className="p-4 text-right">297</td>
+                      <td className="p-4 text-right">208</td>
+                    </tr>
+                    <tr className="border-b border-border/50">
+                      <td className="p-4 font-medium">Y4 Cohort (New)</td>
+                      <td className="p-4 text-right text-muted-foreground">—</td>
+                      <td className="p-4 text-right text-muted-foreground">—</td>
+                      <td className="p-4 text-right text-muted-foreground">—</td>
+                      <td className="p-4 text-right text-primary font-medium">425</td>
+                      <td className="p-4 text-right">297</td>
+                    </tr>
+                    <tr className="border-b border-border/50">
+                      <td className="p-4 font-medium">Y5 Cohort (New)</td>
+                      <td className="p-4 text-right text-muted-foreground">—</td>
+                      <td className="p-4 text-right text-muted-foreground">—</td>
+                      <td className="p-4 text-right text-muted-foreground">—</td>
+                      <td className="p-4 text-right text-muted-foreground">—</td>
+                      <td className="p-4 text-right text-primary font-medium">425</td>
+                    </tr>
+                    <tr className="bg-accent/10">
+                      <td className="p-4 font-medium">Total ELITE</td>
+                      <td className="p-4 text-right font-bold">425</td>
+                      <td className="p-4 text-right font-bold">722</td>
+                      <td className="p-4 text-right font-bold">930</td>
+                      <td className="p-4 text-right font-bold">1,076</td>
+                      <td className="p-4 text-right font-bold text-primary">1,178</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="p-4 bg-muted/20 border-t border-border">
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div>
+                    <span className="font-mono text-lg font-bold text-primary">70%</span>
+                    <p className="text-xs text-muted-foreground">Annual Retention</p>
+                  </div>
+                  <div>
+                    <span className="font-mono text-lg font-bold text-emerald-400">425</span>
+                    <p className="text-xs text-muted-foreground">New ELITE/Year</p>
+                  </div>
+                  <div>
+                    <span className="font-mono text-lg font-bold text-amber-400">753</span>
+                    <p className="text-xs text-muted-foreground">Y5 Retained Members</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </motion.div>

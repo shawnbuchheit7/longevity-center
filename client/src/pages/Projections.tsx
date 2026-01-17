@@ -46,10 +46,10 @@ export default function Projections() {
           >
             <motion.div variants={fadeInUp} className="grid md:grid-cols-4 gap-6">
               {[
-                { value: "$220M", label: "2030 Revenue", subtext: "10 domestic centers" },
-                { value: "$69M", label: "2030 EBITDA", subtext: "31% margin" },
-                { value: "7,200+", label: "Total Members", subtext: "Across all centers" },
-                { value: "15x", label: "Revenue Growth", subtext: "5-year trajectory" }
+                { value: "$249M", label: "2030 Revenue", subtext: "10 domestic centers" },
+                { value: "$80M", label: "2030 EBITDA", subtext: "32% margin" },
+                { value: "12,600+", label: "Total Members", subtext: "Across all centers" },
+                { value: "17x", label: "Revenue Growth", subtext: "5-year trajectory" }
               ].map((stat, i) => (
                 <div key={i} className="bg-card border border-border rounded-2xl p-6 text-center hover:border-primary/50 transition-colors">
                   <span className="font-display text-3xl font-bold text-gradient">{stat.value}</span>
@@ -92,10 +92,10 @@ export default function Projections() {
                   </thead>
                   <tbody>
                     {[
-                      { metric: "Revenue", y1: "$15M", y2: "$30M", y3: "$69M", y4: "$136M", y5: "$220M" },
-                      { metric: "EBITDA", y1: "$3M", y2: "$8M", y3: "$20M", y4: "$40M", y5: "$69M" },
-                      { metric: "EBITDA Margin", y1: "21%", y2: "29%", y3: "28%", y4: "29%", y5: "31%" },
-                      { metric: "Members", y1: "500", y2: "979", y3: "2,285", y4: "4,488", y5: "7,227" },
+                      { metric: "Revenue", y1: "$15M", y2: "$32M", y3: "$78M", y4: "$154M", y5: "$249M" },
+                      { metric: "EBITDA", y1: "$3M", y2: "$10M", y3: "$25M", y4: "$49M", y5: "$80M" },
+                      { metric: "EBITDA Margin", y1: "21%", y2: "32%", y3: "32%", y4: "32%", y5: "32%" },
+                      { metric: "Members", y1: "500", y2: "1,304", y3: "3,026", y4: "5,946", y5: "12,610" },
                       { metric: "Centers", y1: "1", y2: "2", y3: "4", y4: "7", y5: "10" },
                       { metric: "Gross Margin", y1: "69%", y2: "69%", y3: "69%", y4: "69%", y5: "69%" }
                     ].map((row, i) => (
@@ -114,8 +114,8 @@ export default function Projections() {
 
               <div className="p-6 bg-muted/20 border-t border-border">
                 <p className="font-body text-sm text-muted-foreground">
-                  <strong className="text-foreground">Assumptions:</strong> Based on single-center economics of $36.6M revenue and $13.4M EBITDA at Year 5 maturity. 
-                  85% ELITE ($29,500) / 15% CHECK ($12,500) membership mix with 70% ELITE renewal rate. Domestic centers only; international expansion upside not included.
+                  <strong className="text-foreground">Assumptions:</strong> Based on single-center economics of $39.4M revenue and $14.4M EBITDA at Year 5 maturity. 
+                  500 new members/year (40% referrals), 85% ELITE ($29,500) / 15% CHECK ($12,500) mix, 70% ELITE renewal rate. Domestic centers only; international expansion upside not included.
                 </p>
               </div>
             </motion.div>
