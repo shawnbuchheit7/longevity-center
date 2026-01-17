@@ -1,6 +1,6 @@
 /*
  * DESIGN: "Cellular Renaissance" - Organic Futurism
- * Investors page - Celebrity and strategic investors
+ * Investors page - Celebrity and strategic investors with photos
  */
 
 import { motion } from "framer-motion";
@@ -49,6 +49,7 @@ export default function Investors() {
                 name: "Joe Russo",
                 role: "Film Director & Producer",
                 icon: Clapperboard,
+                image: "/images/joe-russo.jpg",
                 credits: "Avengers: Endgame, Infinity War",
                 description: "Co-directed the highest-grossing film of all time. Brings unparalleled entertainment industry connections and storytelling expertise."
               },
@@ -56,6 +57,7 @@ export default function Investors() {
                 name: "Chris Hemsworth",
                 role: "Actor & Wellness Advocate",
                 icon: Star,
+                image: "/images/chris-hemsworth.jpg",
                 credits: "Thor, Limitless",
                 description: "Global icon and founder of Centr fitness app. Personal commitment to longevity science and massive social reach."
               },
@@ -63,6 +65,7 @@ export default function Investors() {
                 name: "Josh Brolin",
                 role: "Actor & Producer",
                 icon: Film,
+                image: "/images/josh-brolin.png",
                 credits: "Avengers, Dune, No Country for Old Men",
                 description: "Academy Award-nominated actor with decades of Hollywood influence and personal interest in regenerative medicine."
               },
@@ -70,6 +73,7 @@ export default function Investors() {
                 name: "Donald Mustard",
                 role: "Chief Creative Officer",
                 icon: Gamepad2,
+                image: "/images/donald-mustard.jpg",
                 credits: "Fortnite, Infinity Blade",
                 description: "Creative visionary behind Fortnite's cultural phenomenon. Brings gaming industry connections and Gen Z/Millennial reach."
               }
@@ -80,14 +84,29 @@ export default function Investors() {
                 className="relative group"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative bg-card border border-border rounded-2xl p-8 h-full hover:border-accent/50 transition-colors">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent to-primary flex items-center justify-center mb-6">
-                    <investor.icon className="w-8 h-8 text-background" />
+                <div className="relative bg-card border border-border rounded-2xl overflow-hidden h-full hover:border-accent/50 transition-colors">
+                  {/* Investor Photo */}
+                  <div className="aspect-square overflow-hidden">
+                    <img 
+                      src={investor.image} 
+                      alt={investor.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
-                  <h3 className="font-display text-2xl font-medium mb-1">{investor.name}</h3>
-                  <p className="font-body text-sm text-primary mb-1">{investor.role}</p>
-                  <p className="font-mono text-xs text-muted-foreground mb-4">{investor.credits}</p>
-                  <p className="font-body text-muted-foreground">{investor.description}</p>
+                  {/* Investor Info */}
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent to-primary flex items-center justify-center flex-shrink-0">
+                        <investor.icon className="w-5 h-5 text-background" />
+                      </div>
+                      <div>
+                        <h3 className="font-display text-xl font-medium">{investor.name}</h3>
+                        <p className="font-body text-xs text-primary">{investor.role}</p>
+                      </div>
+                    </div>
+                    <p className="font-mono text-xs text-muted-foreground mb-3">{investor.credits}</p>
+                    <p className="font-body text-sm text-muted-foreground">{investor.description}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
