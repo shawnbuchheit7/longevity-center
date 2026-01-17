@@ -227,7 +227,7 @@ export default function UseOfFunds() {
           >
             <motion.div variants={fadeInUp} className="text-center mb-8">
               <h3 className="font-display text-2xl font-medium mb-2">Center Floor Plan Template</h3>
-              <p className="font-body text-muted-foreground">Architectural blueprint for flagship membership centers</p>
+              <p className="font-body text-muted-foreground">Design blueprint for flagship membership centers</p>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6">
