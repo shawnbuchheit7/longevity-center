@@ -298,6 +298,106 @@ export default function UseOfFunds() {
               </div>
             </motion.div>
           </motion.div>
+
+          {/* Fit & Finish - RH Contract */}
+          <motion.div 
+            className="mt-16 max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-8">
+              <h3 className="font-display text-2xl font-medium mb-2">Premium Fit & Finish</h3>
+              <p className="font-body text-muted-foreground">RH Contract luxury furniture and finishes throughout</p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden mb-6">
+              <div className="p-6 border-b border-border bg-gradient-to-r from-primary/5 to-accent/5">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h4 className="font-display text-xl font-medium">RH Contract Partnership</h4>
+                    <p className="font-body text-sm text-muted-foreground">Restoration Hardware's commercial division</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="font-mono text-sm text-muted-foreground">Design Partner</span>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="font-body text-muted-foreground mb-6">
+                  Each Lumastem membership center features premium furniture and finishes from RH Contract, 
+                  creating a luxury hospitality experience that differentiates our clinical environment from 
+                  traditional healthcare settings. The design palette emphasizes warm cognac leathers, 
+                  brushed brass metals, and natural stone surfaces.
+                </p>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="bg-muted/30 rounded-xl p-4">
+                    <h5 className="font-display font-medium mb-2">Reception</h5>
+                    <p className="font-body text-sm text-muted-foreground">
+                      Ellison Track Armchairs, Orion Desk, Slimline Floor Lamps, Onyx Base Tables
+                    </p>
+                  </div>
+                  <div className="bg-muted/30 rounded-xl p-4">
+                    <h5 className="font-display font-medium mb-2">Treatment Suites</h5>
+                    <p className="font-body text-sm text-muted-foreground">
+                      Sculptural Sofas, Sprocket Dining Chairs, Thaddeus Coffee Tables, Italian Toscana Pillows
+                    </p>
+                  </div>
+                  <div className="bg-muted/30 rounded-xl p-4">
+                    <h5 className="font-display font-medium mb-2">VIP Suite</h5>
+                    <p className="font-body text-sm text-muted-foreground">
+                      Full suite furnishings plus Cyma Crystal Sconces, Alphalux Throws, Thaddeus Mirrors
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6">
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-4 border-b border-border bg-muted/30">
+                  <h4 className="font-display font-medium">Reception Furniture Selections</h4>
+                  <p className="font-body text-sm text-muted-foreground">Premium seating and accent pieces</p>
+                </div>
+                <div className="p-4 bg-white">
+                  <img 
+                    src="/images/rh-reception-3.png" 
+                    alt="RH Contract Reception Furniture" 
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+              </div>
+
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-4 border-b border-border bg-muted/30">
+                  <h4 className="font-display font-medium">Treatment Suite Furnishings</h4>
+                  <p className="font-body text-sm text-muted-foreground">Comfort-focused luxury pieces</p>
+                </div>
+                <div className="p-4 bg-white">
+                  <img 
+                    src="/images/rh-suites-4.png" 
+                    alt="RH Contract Suite Furniture" 
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="mt-6 bg-card border border-border rounded-2xl overflow-hidden">
+              <div className="p-4 border-b border-border bg-muted/30">
+                <h4 className="font-display font-medium">Complete 1st Level Floor Plan</h4>
+                <p className="font-body text-sm text-muted-foreground">Full facility layout with furniture placement</p>
+              </div>
+              <div className="p-4 bg-white">
+                <img 
+                  src="/images/miami-floorplan-full-1.png" 
+                  alt="Miami Center Complete Floor Plan" 
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
