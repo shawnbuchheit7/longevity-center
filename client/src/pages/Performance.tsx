@@ -184,8 +184,143 @@ export default function Performance() {
         </div>
       </section>
 
-      {/* Membership Model */}
+      {/* Key Assumptions */}
       <section className="py-20 bg-card/30">
+        <div className="container">
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                MODEL INPUTS
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
+                Key Assumptions
+              </h2>
+              <p className="font-body text-muted-foreground max-w-2xl mx-auto">
+                Revenue-driving assumptions underlying the single-center proforma.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-8">
+              {/* Membership Assumptions */}
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-6 border-b border-border bg-muted/30">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <Users className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-display text-xl font-medium">Membership Assumptions</h3>
+                  </div>
+                </div>
+                <div className="p-6 space-y-4">
+                  {[
+                    { label: "ELITE Membership Price", value: "$29,500/year" },
+                    { label: "CHECK Membership Price", value: "$12,500/year" },
+                    { label: "Member Mix (ELITE/CHECK)", value: "85% / 15%" },
+                    { label: "ELITE Renewal Rate", value: "70%" },
+                    { label: "CHECK Renewal Rate", value: "10%" },
+                    { label: "Year 5 Target Members", value: "1,164" }
+                  ].map((item, i) => (
+                    <div key={i} className="flex justify-between items-center py-2 border-b border-border/50 last:border-0">
+                      <span className="font-body text-muted-foreground">{item.label}</span>
+                      <span className="font-mono text-primary font-medium">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Growth Assumptions */}
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-6 border-b border-border bg-muted/30">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <TrendingUp className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-display text-xl font-medium">Growth Assumptions</h3>
+                  </div>
+                </div>
+                <div className="p-6 space-y-4">
+                  {[
+                    { label: "Year 1 Starting Members", value: "500" },
+                    { label: "Year 2 Members", value: "813" },
+                    { label: "Year 3 Members", value: "993" },
+                    { label: "Year 4 Members", value: "1,100" },
+                    { label: "Year 5 Members", value: "1,164" },
+                    { label: "5-Year Member CAGR", value: "23%" }
+                  ].map((item, i) => (
+                    <div key={i} className="flex justify-between items-center py-2 border-b border-border/50 last:border-0">
+                      <span className="font-body text-muted-foreground">{item.label}</span>
+                      <span className="font-mono text-primary font-medium">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Revenue Per Member */}
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-6 border-b border-border bg-muted/30">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <DollarSign className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-display text-xl font-medium">Revenue Per Member</h3>
+                  </div>
+                </div>
+                <div className="p-6 space-y-4">
+                  {[
+                    { label: "ELITE Revenue/Member", value: "$29,500" },
+                    { label: "CHECK Revenue/Member", value: "$12,500" },
+                    { label: "Blended Avg Revenue/Member", value: "~$27,000" },
+                    { label: "ELITE % of Total Revenue", value: "93%" },
+                    { label: "CHECK % of Total Revenue", value: "7%" },
+                    { label: "Year 5 Total Revenue", value: "$36.6M" }
+                  ].map((item, i) => (
+                    <div key={i} className="flex justify-between items-center py-2 border-b border-border/50 last:border-0">
+                      <span className="font-body text-muted-foreground">{item.label}</span>
+                      <span className="font-mono text-primary font-medium">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Capacity Assumptions */}
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-6 border-b border-border bg-muted/30">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <Building2 className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-display text-xl font-medium">Capacity Assumptions</h3>
+                  </div>
+                </div>
+                <div className="p-6 space-y-4">
+                  {[
+                    { label: "Max Members at Maturity", value: "~1,200" },
+                    { label: "Physician FTEs (Year 5)", value: "4" },
+                    { label: "Members per Physician", value: "~290" },
+                    { label: "Annual In-Clinic Visits", value: "1 per member" },
+                    { label: "At-Home Care Delivery", value: "90%" },
+                    { label: "Center Square Footage", value: "12,000-15,000 SF" }
+                  ].map((item, i) => (
+                    <div key={i} className="flex justify-between items-center py-2 border-b border-border/50 last:border-0">
+                      <span className="font-body text-muted-foreground">{item.label}</span>
+                      <span className="font-mono text-primary font-medium">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Membership Model */}
+      <section className="py-20">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -216,7 +351,7 @@ export default function Performance() {
                   tier: "ELITE",
                   price: "$29,500",
                   mix: "85%",
-                  renewal: "60%",
+                  renewal: "70%",
                   description: "Premium tier with full biologic treatments, MUSE cell therapy, concierge care, and ongoing optimization protocols",
                   highlight: true
                 }
@@ -709,7 +844,7 @@ export default function Performance() {
                 },
                 {
                   title: "Predictable Growth",
-                  description: "Membership model with 60% ELITE renewal rate creates recurring revenue and predictable cash flows."
+                  description: "Membership model with 70% ELITE renewal rate creates recurring revenue and predictable cash flows."
                 },
                 {
                   title: "Scalable Model",

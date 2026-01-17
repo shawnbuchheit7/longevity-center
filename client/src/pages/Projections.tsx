@@ -115,7 +115,7 @@ export default function Projections() {
               <div className="p-6 bg-muted/20 border-t border-border">
                 <p className="font-body text-sm text-muted-foreground">
                   <strong className="text-foreground">Assumptions:</strong> Based on single-center economics of $36.6M revenue and $13.4M EBITDA at Year 5 maturity. 
-                  85% ELITE ($29,500) / 15% CHECK ($12,500) membership mix with 60% ELITE renewal rate. Domestic centers only; international expansion upside not included.
+                  85% ELITE ($29,500) / 15% CHECK ($12,500) membership mix with 70% ELITE renewal rate. Domestic centers only; international expansion upside not included.
                 </p>
               </div>
             </motion.div>
