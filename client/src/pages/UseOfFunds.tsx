@@ -307,7 +307,7 @@ export default function UseOfFunds() {
               <p className="font-body text-muted-foreground">3D renderings of the luxury reception and check-in areas</p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-6">
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
@@ -319,6 +319,20 @@ export default function UseOfFunds() {
                 <div className="p-4">
                   <h4 className="font-display font-medium text-sm">Entry & Check-In</h4>
                   <p className="font-body text-xs text-muted-foreground">Welcoming reception with concierge desk</p>
+                </div>
+              </div>
+
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img 
+                    src="/images/lumastem-reception-4.jpg" 
+                    alt="Reception Area - Concierge" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-display font-medium text-sm">Concierge Area</h4>
+                  <p className="font-body text-xs text-muted-foreground">Private consultation and member services</p>
                 </div>
               </div>
 
