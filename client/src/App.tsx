@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Opportunity from "./pages/Opportunity";
 import Technology from "./pages/Technology";
+import Therapeutics from "./pages/Therapeutics";
 import Investors from "./pages/Investors";
 import Team from "./pages/Team";
 import UseOfFunds from "./pages/UseOfFunds";
@@ -19,6 +20,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/opportunity" component={Opportunity} />
+      <Route path="/therapeutics" component={Therapeutics} />
       <Route path="/technology" component={Technology} />
       <Route path="/performance" component={Performance} />
       <Route path="/investors" component={Investors} />
