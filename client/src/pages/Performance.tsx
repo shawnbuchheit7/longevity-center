@@ -387,8 +387,8 @@ export default function Performance() {
                     { label: "ELITE LTV", value: "$97,350" },
                     { label: "CHECK LTV", value: "$13,750" },
                     { label: "Blended LTV", value: "$84,810" },
-                    { label: "ELITE LTV/CAC Ratio", value: "12:1" },
-                    { label: "Payback Period (ELITE)", value: "<1 year" },
+                    { label: "Blended LTV/CAC Ratio", value: "51:1" },
+                    { label: "Payback Period (Blended)", value: "23 days" },
                     { label: "5-Year Revenue/Member", value: "$31,400" }
                   ].map((item, i) => (
                     <div key={i} className="flex justify-between items-center py-2 border-b border-border/50 last:border-0">
@@ -415,24 +415,24 @@ export default function Performance() {
                 <div className="p-6">
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4 text-center">
-                      <span className="text-emerald-400 font-mono text-2xl font-bold">$0</span>
+                      <span className="text-emerald-400 font-mono text-2xl font-bold">$1,000</span>
                       <p className="text-sm text-muted-foreground mt-1">Referral CAC</p>
-                      <p className="text-xs text-emerald-400/70">40% of new members</p>
+                      <p className="text-xs text-emerald-400/70">$500 referrer + $500 new member</p>
                     </div>
                     <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 text-center">
-                      <span className="text-amber-400 font-mono text-2xl font-bold">$8,000</span>
+                      <span className="text-amber-400 font-mono text-2xl font-bold">$2,500</span>
                       <p className="text-sm text-muted-foreground mt-1">Direct CAC</p>
                       <p className="text-xs text-amber-400/70">60% of new members</p>
                     </div>
                   </div>
                   <div className="space-y-3">
                     {[
-                      { label: "Blended CAC", value: "$4,800", highlight: true },
+                      { label: "Blended CAC", value: "$1,900", highlight: true },
                       { label: "Referral Members/Year", value: "200" },
                       { label: "Direct Members/Year", value: "300" },
-                      { label: "Annual Referral Savings", value: "$1.6M" },
-                      { label: "Referral LTV/CAC", value: "∞ (no cost)" },
-                      { label: "Direct LTV/CAC", value: "12:1" }
+                      { label: "Annual Referral Savings", value: "$300K" },
+                      { label: "Referral LTV/CAC", value: "97:1" },
+                      { label: "Direct LTV/CAC", value: "39:1" }
                     ].map((item, i) => (
                       <div key={i} className={`flex justify-between items-center py-2 border-b border-border/50 last:border-0 ${item.highlight ? 'bg-primary/5 -mx-2 px-2 rounded' : ''}`}>
                         <span className="font-body text-muted-foreground">{item.label}</span>
@@ -465,14 +465,14 @@ export default function Performance() {
                     <div>
                       <div className="flex justify-between items-center mb-2">
                         <span className="font-body text-sm">Member Referrals</span>
-                        <span className="font-mono text-emerald-400 font-bold">0 months</span>
+                        <span className="font-mono text-emerald-400 font-bold">0.4 months</span>
                       </div>
                       <div className="h-8 bg-muted/30 rounded-full overflow-hidden relative">
-                        <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full flex items-center justify-end pr-3" style={{ width: '5%' }}>
-                          <span className="text-xs font-bold text-emerald-950">$0</span>
+                        <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full flex items-center justify-end pr-3" style={{ width: '8%' }}>
+                          <span className="text-xs font-bold text-emerald-950">$1K</span>
                         </div>
                         <div className="absolute inset-y-0 right-4 flex items-center">
-                          <span className="text-xs text-muted-foreground">Instant ROI - No CAC</span>
+                          <span className="text-xs text-muted-foreground">~12 days payback ($500 + $500 credits)</span>
                         </div>
                       </div>
                     </div>
@@ -481,14 +481,14 @@ export default function Performance() {
                     <div>
                       <div className="flex justify-between items-center mb-2">
                         <span className="font-body text-sm">Direct Acquisition</span>
-                        <span className="font-mono text-amber-400 font-bold">3.3 months</span>
+                        <span className="font-mono text-amber-400 font-bold">1.0 month</span>
                       </div>
                       <div className="h-8 bg-muted/30 rounded-full overflow-hidden relative">
-                        <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-amber-500 to-amber-400 rounded-full flex items-center justify-end pr-3" style={{ width: '28%' }}>
-                          <span className="text-xs font-bold text-amber-950">$8K</span>
+                        <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-amber-500 to-amber-400 rounded-full flex items-center justify-end pr-3" style={{ width: '17%' }}>
+                          <span className="text-xs font-bold text-amber-950">$2.5K</span>
                         </div>
                         <div className="absolute inset-y-0 right-4 flex items-center">
-                          <span className="text-xs text-muted-foreground">$29.5K annual × 3.3mo = $8K CAC recovered</span>
+                          <span className="text-xs text-muted-foreground">$29.5K annual × 1mo = $2.5K CAC recovered</span>
                         </div>
                       </div>
                     </div>
@@ -497,14 +497,14 @@ export default function Performance() {
                     <div>
                       <div className="flex justify-between items-center mb-2">
                         <span className="font-body text-sm font-medium">Blended (All Channels)</span>
-                        <span className="font-mono text-primary font-bold">2.0 months</span>
+                        <span className="font-mono text-primary font-bold">0.8 months</span>
                       </div>
                       <div className="h-8 bg-muted/30 rounded-full overflow-hidden relative">
-                        <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-end pr-3" style={{ width: '17%' }}>
-                          <span className="text-xs font-bold text-primary-foreground">$4.8K</span>
+                        <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-end pr-3" style={{ width: '13%' }}>
+                          <span className="text-xs font-bold text-primary-foreground">$1.9K</span>
                         </div>
                         <div className="absolute inset-y-0 right-4 flex items-center">
-                          <span className="text-xs text-muted-foreground">40% referral + 60% direct blend</span>
+                          <span className="text-xs text-muted-foreground">~23 days payback (40% referral + 60% direct)</span>
                         </div>
                       </div>
                     </div>
@@ -514,10 +514,10 @@ export default function Performance() {
                   <div className="mt-6 pt-4 border-t border-border/50">
                     <div className="flex justify-between text-xs text-muted-foreground">
                       <span>0 mo</span>
+                      <span>1.5 mo</span>
                       <span>3 mo</span>
+                      <span>4.5 mo</span>
                       <span>6 mo</span>
-                      <span>9 mo</span>
-                      <span>12 mo</span>
                     </div>
                   </div>
 
@@ -527,9 +527,9 @@ export default function Performance() {
                       <Target className="w-5 h-5 text-primary mt-0.5" />
                       <div>
                         <p className="font-body text-sm">
-                          <strong className="text-foreground">Key Insight:</strong> With 40% of members from referrals ($0 CAC) and ELITE membership at $29,500/year, 
-                          blended payback is just <span className="text-primary font-medium">2 months</span>. 
-                          Every member generates <span className="text-primary font-medium">$24,700 net contribution</span> in Year 1 alone.
+                          <strong className="text-foreground">Key Insight:</strong> With $1,000 referral CAC ($500 credits each) and $2,500 direct CAC, 
+                          blended payback is just <span className="text-primary font-medium">23 days</span>. 
+                          Every ELITE member generates <span className="text-primary font-medium">$27,600 net contribution</span> in Year 1 alone.
                         </p>
                       </div>
                     </div>
@@ -571,7 +571,7 @@ export default function Performance() {
                           { metric: "Year 5 Revenue", low: "$37.8M", base: "$39.4M", high: "$41.2M" },
                           { metric: "Year 5 EBITDA", low: "$13.8M", base: "$14.4M", high: "$15.0M" },
                           { metric: "5-Year Cumulative Revenue", low: "$140M", base: "$146M", high: "$153M" },
-                          { metric: "LTV/CAC Ratio", low: "10:1", base: "12:1", high: "15:1" }
+                          { metric: "LTV/CAC Ratio", low: "43:1", base: "51:1", high: "62:1" }
                         ].map((row, i) => (
                           <tr key={i} className="border-b border-border/50 last:border-0">
                             <td className="py-3 px-4 font-body text-foreground">{row.metric}</td>
