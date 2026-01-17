@@ -73,7 +73,7 @@ export default function Performance() {
               {[
                 { icon: DollarSign, value: "$39.4M", label: "Year 5 Revenue", subtext: "Per center" },
                 { icon: TrendingUp, value: "69%", label: "Gross Margin", subtext: "Consistent across years" },
-                { icon: Target, value: "37%", label: "EBITDA Margin", subtext: "Year 5 target" },
+                { icon: Target, value: "37%", label: "Center EBITDA Margin", subtext: "True center profitability" },
                 { icon: Users, value: "1,261", label: "Members", subtext: "Year 5 capacity" }
               ].map((stat, i) => (
                 <div key={i} className="bg-card border border-border rounded-2xl p-6 text-center hover:border-primary/50 transition-colors">
@@ -147,37 +147,41 @@ export default function Performance() {
                       <td className="p-4 text-right">68.9%</td>
                       <td className="p-4 text-right text-primary font-medium">68.9%</td>
                     </tr>
-                    <tr className="border-b border-border/50">
-                      <td className="p-4 font-medium">EBITDA</td>
-                      <td className="p-4 text-right">$3.1M</td>
-                      <td className="p-4 text-right">$9.2M</td>
-                      <td className="p-4 text-right">$11.7M</td>
-                      <td className="p-4 text-right">$13.4M</td>
-                      <td className="p-4 text-right text-primary font-medium">$14.4M</td>
+                    <tr className="border-b border-border/50 bg-primary/10">
+                      <td className="p-4 font-medium text-primary">Center EBITDA</td>
+                      <td className="p-4 text-right font-medium">$3.1M</td>
+                      <td className="p-4 text-right font-medium">$9.2M</td>
+                      <td className="p-4 text-right font-medium">$11.7M</td>
+                      <td className="p-4 text-right font-medium">$13.5M</td>
+                      <td className="p-4 text-right text-primary font-bold">$14.7M</td>
                     </tr>
                     <tr className="border-b border-border/50 bg-accent/5">
-                      <td className="p-4 font-medium">EBITDA Margin</td>
-                      <td className="p-4 text-right">21.3%</td>
-                      <td className="p-4 text-right">37.5%</td>
-                      <td className="p-4 text-right">37.5%</td>
-                      <td className="p-4 text-right">37.0%</td>
-                      <td className="p-4 text-right text-primary font-medium">36.5%</td>
+                      <td className="p-4 font-medium">Center EBITDA Margin</td>
+                      <td className="p-4 text-right">21.0%</td>
+                      <td className="p-4 text-right">37.4%</td>
+                      <td className="p-4 text-right">37.4%</td>
+                      <td className="p-4 text-right">37.4%</td>
+                      <td className="p-4 text-right text-primary font-medium">37.3%</td>
+                    </tr>
+                    {/* Below the Line - Management Fee */}
+                    <tr className="border-b border-border bg-muted/50">
+                      <td colSpan={6} className="p-3 text-center font-mono text-xs text-muted-foreground uppercase tracking-wider">Below the Line — Corporate Allocation</td>
                     </tr>
                     <tr className="border-b border-border/50">
-                      <td className="p-4 font-medium">Net Profit</td>
-                      <td className="p-4 text-right">$1.7M</td>
-                      <td className="p-4 text-right">$5.2M</td>
-                      <td className="p-4 text-right">$6.6M</td>
-                      <td className="p-4 text-right">$7.5M</td>
-                      <td className="p-4 text-right text-primary font-medium">$8.1M</td>
+                      <td className="p-4 font-medium text-muted-foreground">Management Fee (8%)</td>
+                      <td className="p-4 text-right text-muted-foreground">($1.2M)</td>
+                      <td className="p-4 text-right text-muted-foreground">($2.0M)</td>
+                      <td className="p-4 text-right text-muted-foreground">($2.5M)</td>
+                      <td className="p-4 text-right text-muted-foreground">($2.9M)</td>
+                      <td className="p-4 text-right text-muted-foreground">($3.2M)</td>
                     </tr>
-                    <tr className="bg-accent/5">
-                      <td className="p-4 font-medium">Net Margin</td>
-                      <td className="p-4 text-right">11.5%</td>
-                      <td className="p-4 text-right">21.1%</td>
-                      <td className="p-4 text-right">21.1%</td>
-                      <td className="p-4 text-right">20.8%</td>
-                      <td className="p-4 text-right text-primary font-medium">20.6%</td>
+                    <tr className="bg-emerald-500/10">
+                      <td className="p-4 font-medium text-emerald-400">Net Contribution to HoldCo</td>
+                      <td className="p-4 text-right text-emerald-400 font-medium">$1.9M</td>
+                      <td className="p-4 text-right text-emerald-400 font-medium">$7.2M</td>
+                      <td className="p-4 text-right text-emerald-400 font-medium">$9.2M</td>
+                      <td className="p-4 text-right text-emerald-400 font-medium">$10.6M</td>
+                      <td className="p-4 text-right text-emerald-400 font-bold">$11.5M</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1224,7 +1228,7 @@ export default function Performance() {
                 },
                 {
                   title: "Scalable Model",
-                  description: "$8.5M total investment per center with clear path to $14.4M annual EBITDA within 5 years."
+                  description: "$8.5M total investment per center with clear path to $14.7M Center EBITDA ($11.5M net after 8% management fee) within 5 years."
                 },
                 {
                   title: "Premium Positioning",
