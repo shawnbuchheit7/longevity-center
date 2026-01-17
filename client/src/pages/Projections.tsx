@@ -1,10 +1,10 @@
 /*
  * DESIGN: "Cellular Renaissance" - Organic Futurism
- * Projections page - Financial projections and milestones
+ * Projections page - Financial projections, milestones, and sensitivity analysis
  */
 
 import { motion } from "framer-motion";
-import { TrendingUp, Target, Shield } from "lucide-react";
+import { TrendingUp, Target, Shield, BarChart3, AlertTriangle, Rocket, ArrowUpRight, ArrowDownRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
 
@@ -27,8 +27,36 @@ export default function Projections() {
               Path to Profitability
             </motion.h1>
             <motion.p variants={fadeInUp} className="font-body text-xl text-muted-foreground">
-              Conservative projections based on proven unit economics and scalable infrastructure.
+              Conservative projections based on proven unit economics and scalable multi-center rollout.
             </motion.p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Key Metrics Overview */}
+      <section className="py-12">
+        <div className="container">
+          <motion.div 
+            className="max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-4 gap-6">
+              {[
+                { value: "$478M", label: "2029 Revenue", subtext: "15 centers at scale" },
+                { value: "$226M", label: "2029 EBITDA", subtext: "47% margin" },
+                { value: "17,500+", label: "Total Members", subtext: "Across all centers" },
+                { value: "10.8x", label: "Revenue Growth", subtext: "4-year trajectory" }
+              ].map((stat, i) => (
+                <div key={i} className="bg-card border border-border rounded-2xl p-6 text-center hover:border-primary/50 transition-colors">
+                  <span className="font-display text-3xl font-bold text-gradient">{stat.value}</span>
+                  <p className="font-display font-medium mt-2">{stat.label}</p>
+                  <p className="font-body text-sm text-muted-foreground">{stat.subtext}</p>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -45,8 +73,8 @@ export default function Projections() {
           >
             <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden">
               <div className="p-8 border-b border-border bg-muted/30">
-                <h3 className="font-display text-2xl font-medium">Revenue Projections</h3>
-                <p className="font-body text-muted-foreground">4-Year Financial Roadmap</p>
+                <h3 className="font-display text-2xl font-medium">Company-Wide Revenue Projections</h3>
+                <p className="font-body text-muted-foreground">4-Year Financial Roadmap Based on Multi-Center Rollout</p>
               </div>
               
               <div className="overflow-x-auto">
@@ -62,11 +90,12 @@ export default function Projections() {
                   </thead>
                   <tbody>
                     {[
-                      { metric: "Revenue", y1: "$8M", y2: "$25M", y3: "$60M", y4: "$120M" },
-                      { metric: "EBITDA", y1: "($2M)", y2: "$5M", y3: "$18M", y4: "$36M" },
-                      { metric: "Members", y1: "800", y2: "2,500", y3: "6,000", y4: "12,000" },
-                      { metric: "Clinics", y1: "2", y2: "5", y3: "10", y4: "15" },
-                      { metric: "Gross Margin", y1: "55%", y2: "65%", y3: "72%", y4: "75%" }
+                      { metric: "Revenue", y1: "$44M", y2: "$134M", y3: "$289M", y4: "$478M" },
+                      { metric: "EBITDA", y1: "$18M", y2: "$60M", y3: "$133M", y4: "$226M" },
+                      { metric: "EBITDA Margin", y1: "42%", y2: "45%", y3: "46%", y4: "47%" },
+                      { metric: "Members", y1: "1,620", y2: "4,892", y3: "10,595", y4: "17,529" },
+                      { metric: "Centers", y1: "2", y2: "5", y3: "10", y4: "15" },
+                      { metric: "Gross Margin", y1: "65%", y2: "65%", y3: "65%", y4: "65%" }
                     ].map((row, i) => (
                       <tr key={i} className="border-b border-border/50 hover:bg-muted/20 transition-colors">
                         <td className="p-5 font-body font-medium">{row.metric}</td>
@@ -79,13 +108,201 @@ export default function Projections() {
                   </tbody>
                 </table>
               </div>
+
+              <div className="p-6 bg-muted/20 border-t border-border">
+                <p className="font-body text-sm text-muted-foreground">
+                  <strong className="text-foreground">Assumptions:</strong> Based on single-center economics of $42.8M revenue and $21.4M EBITDA at Year 5 maturity. 
+                  Centers ramp over 5 years following proven trajectory. 80% Longevity Elite / 20% Essential membership mix.
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Sensitivity Analysis */}
+      <section className="py-20 bg-card/30">
+        <div className="container">
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                SCENARIO PLANNING
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
+                Sensitivity Analysis
+              </h2>
+              <p className="font-body text-muted-foreground max-w-2xl mx-auto">
+                Understanding the range of outcomes based on key variable assumptions.
+              </p>
+            </motion.div>
+
+            {/* Single Center Sensitivity */}
+            <motion.div variants={fadeInUp} className="mb-12">
+              <h3 className="font-display text-2xl font-medium mb-6 flex items-center gap-2">
+                <BarChart3 className="w-6 h-6 text-primary" />
+                Single Center Year 5 Performance
+              </h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                {[
+                  {
+                    scenario: "Bear Case",
+                    icon: ArrowDownRight,
+                    color: "text-orange-400",
+                    borderColor: "border-orange-400/30",
+                    assumptions: ["$25,075 Elite price (-15%)", "1,257 members (-20%)", "70% Elite mix"],
+                    revenue: "$27M",
+                    ebitda: "$11M",
+                    margin: "41%"
+                  },
+                  {
+                    scenario: "Base Case",
+                    icon: Target,
+                    color: "text-primary",
+                    borderColor: "border-primary/50",
+                    assumptions: ["$29,500 Elite price", "1,571 members", "80% Elite mix"],
+                    revenue: "$43M",
+                    ebitda: "$21M",
+                    margin: "50%",
+                    highlight: true
+                  },
+                  {
+                    scenario: "Bull Case",
+                    icon: ArrowUpRight,
+                    color: "text-green-400",
+                    borderColor: "border-green-400/30",
+                    assumptions: ["$32,450 Elite price (+10%)", "1,885 members (+20%)", "85% Elite mix"],
+                    revenue: "$59M",
+                    ebitda: "$32M",
+                    margin: "54%"
+                  }
+                ].map((item, i) => (
+                  <div 
+                    key={i} 
+                    className={`bg-card border rounded-2xl p-6 ${item.highlight ? item.borderColor + ' ring-1 ring-primary/20' : 'border-border'}`}
+                  >
+                    <div className="flex items-center gap-2 mb-4">
+                      <item.icon className={`w-5 h-5 ${item.color}`} />
+                      <span className={`font-display font-medium ${item.color}`}>{item.scenario}</span>
+                    </div>
+                    
+                    <div className="space-y-2 mb-6">
+                      {item.assumptions.map((assumption, j) => (
+                        <p key={j} className="font-body text-sm text-muted-foreground">• {assumption}</p>
+                      ))}
+                    </div>
+                    
+                    <div className="grid grid-cols-3 gap-4 pt-4 border-t border-border">
+                      <div className="text-center">
+                        <span className="font-mono text-lg font-bold text-foreground">{item.revenue}</span>
+                        <p className="font-body text-xs text-muted-foreground">Revenue</p>
+                      </div>
+                      <div className="text-center">
+                        <span className="font-mono text-lg font-bold text-foreground">{item.ebitda}</span>
+                        <p className="font-body text-xs text-muted-foreground">EBITDA</p>
+                      </div>
+                      <div className="text-center">
+                        <span className="font-mono text-lg font-bold text-foreground">{item.margin}</span>
+                        <p className="font-body text-xs text-muted-foreground">Margin</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Company-Wide Sensitivity */}
+            <motion.div variants={fadeInUp}>
+              <h3 className="font-display text-2xl font-medium mb-6 flex items-center gap-2">
+                <Rocket className="w-6 h-6 text-primary" />
+                Company-Wide at Scale (15 Centers)
+              </h3>
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b border-border bg-muted/30">
+                        <th className="text-left p-5 font-body font-semibold text-muted-foreground">Scenario</th>
+                        <th className="text-center p-5 font-body font-semibold text-muted-foreground">Revenue</th>
+                        <th className="text-center p-5 font-body font-semibold text-muted-foreground">EBITDA</th>
+                        <th className="text-center p-5 font-body font-semibold text-muted-foreground">Members</th>
+                        <th className="text-center p-5 font-body font-semibold text-muted-foreground">Key Drivers</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-border/50 hover:bg-muted/20 transition-colors">
+                        <td className="p-5">
+                          <div className="flex items-center gap-2">
+                            <ArrowDownRight className="w-4 h-4 text-orange-400" />
+                            <span className="font-body font-medium">Bear Case</span>
+                          </div>
+                        </td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">$403M</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">$166M</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">18,852</td>
+                        <td className="p-5 text-center font-body text-sm text-muted-foreground">Lower pricing, slower adoption</td>
+                      </tr>
+                      <tr className="border-b border-border/50 bg-primary/5 hover:bg-primary/10 transition-colors">
+                        <td className="p-5">
+                          <div className="flex items-center gap-2">
+                            <Target className="w-4 h-4 text-primary" />
+                            <span className="font-body font-medium text-primary">Base Case</span>
+                          </div>
+                        </td>
+                        <td className="p-5 text-center font-mono font-semibold text-primary">$643M</td>
+                        <td className="p-5 text-center font-mono font-semibold text-primary">$322M</td>
+                        <td className="p-5 text-center font-mono font-semibold text-primary">23,565</td>
+                        <td className="p-5 text-center font-body text-sm text-primary">Current assumptions</td>
+                      </tr>
+                      <tr className="hover:bg-muted/20 transition-colors">
+                        <td className="p-5">
+                          <div className="flex items-center gap-2">
+                            <ArrowUpRight className="w-4 h-4 text-green-400" />
+                            <span className="font-body font-medium">Bull Case</span>
+                          </div>
+                        </td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">$885M</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">$479M</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">28,278</td>
+                        <td className="p-5 text-center font-body text-sm text-muted-foreground">Premium pricing, faster growth</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Risk Factors */}
+            <motion.div variants={fadeInUp} className="mt-8 bg-card border border-border rounded-2xl p-6">
+              <div className="flex items-start gap-3">
+                <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-1" />
+                <div>
+                  <h4 className="font-display font-medium mb-2">Key Sensitivity Drivers</h4>
+                  <div className="grid md:grid-cols-3 gap-4 font-body text-sm text-muted-foreground">
+                    <div>
+                      <strong className="text-foreground">Pricing Power:</strong> Longevity Elite tier pricing has the largest impact on revenue. A 10% change in Elite pricing affects revenue by ~$60M at scale.
+                    </div>
+                    <div>
+                      <strong className="text-foreground">Member Mix:</strong> Higher Elite mix (85% vs 80%) adds ~$40M in annual revenue due to premium tier economics.
+                    </div>
+                    <div>
+                      <strong className="text-foreground">Capacity Utilization:</strong> Each 10% change in member capacity affects revenue by ~$65M across 15 centers.
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Key Milestones */}
-      <section className="py-20 bg-card/30">
+      <section className="py-20">
         <div className="container">
           <motion.div 
             className="max-w-5xl mx-auto"
@@ -105,11 +322,11 @@ export default function Projections() {
 
             <motion.div variants={fadeInUp} className="grid md:grid-cols-5 gap-6">
               {[
-                { year: "2025", milestones: ["Series A close", "Florida facility buildout", "MUSE Cell production setup"] },
-                { year: "2026", milestones: ["Revenue launch", "2 clinics operational", "800 members", "$8M revenue"] },
-                { year: "2027", milestones: ["5 clinic network", "Bahrain hub opens", "Break-even achieved"] },
-                { year: "2028", milestones: ["10 clinics", "6,000 members", "$60M revenue"] },
-                { year: "2029", milestones: ["15 clinics", "12,000 members", "$120M revenue", "Exit readiness"] }
+                { year: "2025", milestones: ["Series A close", "Miami & Utah buildout", "MUSE Cell production setup"] },
+                { year: "2026", milestones: ["Revenue launch", "2 centers operational", "1,620 members", "$44M revenue"] },
+                { year: "2027", milestones: ["5 center network", "Bahrain hub opens", "$60M EBITDA"] },
+                { year: "2028", milestones: ["10 centers", "10,595 members", "$289M revenue"] },
+                { year: "2029", milestones: ["15 centers", "17,529 members", "$478M revenue", "Exit readiness"] }
               ].map((item, i) => (
                 <div key={i} className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors">
                   <span className="font-display text-3xl font-bold text-gradient">{item.year}</span>
@@ -129,7 +346,7 @@ export default function Projections() {
       </section>
 
       {/* Investment Highlights */}
-      <section className="py-20">
+      <section className="py-20 bg-card/30">
         <div className="container">
           <motion.div 
             className="max-w-5xl mx-auto"
@@ -151,21 +368,21 @@ export default function Projections() {
               {[
                 {
                   icon: TrendingUp,
-                  value: "15x",
+                  value: "10.8x",
                   label: "Revenue Growth",
-                  description: "From $8M to $120M in 4 years through proven playbook"
+                  description: "From $44M to $478M in 4 years through proven multi-center playbook"
                 },
                 {
                   icon: Target,
-                  value: "75%",
-                  label: "Target Gross Margin",
-                  description: "Vertical integration drives industry-leading margins"
+                  value: "65%",
+                  label: "Gross Margin",
+                  description: "Vertical integration drives industry-leading margins across all centers"
                 },
                 {
                   icon: Shield,
-                  value: "$36M+",
+                  value: "$226M+",
                   label: "EBITDA by 2029",
-                  description: "Clear path to profitability and exit readiness"
+                  description: "Clear path to profitability with 47% EBITDA margin at scale"
                 }
               ].map((item, i) => (
                 <motion.div key={i} variants={scaleIn}>
@@ -185,7 +402,7 @@ export default function Projections() {
       </section>
 
       {/* Compliance Section */}
-      <section className="py-20 bg-card/30">
+      <section className="py-20">
         <div className="container">
           <motion.div 
             className="max-w-4xl mx-auto text-center"

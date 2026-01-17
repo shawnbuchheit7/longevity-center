@@ -232,6 +232,72 @@ export default function UseOfFunds() {
               </div>
             </motion.div>
           </motion.div>
+
+          {/* Miami Floor Plans */}
+          <motion.div 
+            className="mt-16 max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-8">
+              <h3 className="font-display text-2xl font-medium mb-2">Miami Center Floor Plans</h3>
+              <p className="font-body text-muted-foreground">Architectural schematics by Hunton Brady Architects</p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6">
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-4 border-b border-border bg-muted/30">
+                  <h4 className="font-display font-medium">Area 1 - Medical & Treatment Wing</h4>
+                  <p className="font-body text-sm text-muted-foreground">MRI, DEXA, treatment suites, VIP suite</p>
+                </div>
+                <div className="p-4 bg-white">
+                  <img 
+                    src="/images/miami-floorplan-area1-1.png" 
+                    alt="Miami Center Floor Plan - Area 1" 
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+              </div>
+
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-4 border-b border-border bg-muted/30">
+                  <h4 className="font-display font-medium">Area 2 - Administrative & CT Wing</h4>
+                  <p className="font-body text-sm text-muted-foreground">CT imaging, lobby, offices, conference rooms</p>
+                </div>
+                <div className="p-4 bg-white">
+                  <img 
+                    src="/images/miami-floorplan-area2-1.png" 
+                    alt="Miami Center Floor Plan - Area 2" 
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="mt-6 bg-card border border-border rounded-2xl p-6">
+              <h4 className="font-display font-medium mb-3">Key Facility Features</h4>
+              <div className="grid md:grid-cols-4 gap-4 font-body text-sm text-muted-foreground">
+                <div>
+                  <strong className="text-foreground">Imaging Suite</strong>
+                  <p>Dedicated MRI and CT rooms with control stations</p>
+                </div>
+                <div>
+                  <strong className="text-foreground">Treatment Rooms</strong>
+                  <p>Multiple suites including VIP accommodations</p>
+                </div>
+                <div>
+                  <strong className="text-foreground">Diagnostics</strong>
+                  <p>DEXA scan, X-ray, and testing facilities</p>
+                </div>
+                <div>
+                  <strong className="text-foreground">Support Areas</strong>
+                  <p>Staff lounge, conference rooms, and admin offices</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
