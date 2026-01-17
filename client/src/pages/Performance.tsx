@@ -68,7 +68,7 @@ export default function Performance() {
 
             <motion.div variants={fadeInUp} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {[
-                { icon: DollarSign, value: "$42.8M", label: "Year 5 Revenue", subtext: "Per center" },
+                { icon: DollarSign, value: "$44.7M", label: "Year 5 Revenue", subtext: "Per center" },
                 { icon: TrendingUp, value: "65%", label: "Gross Margin", subtext: "Consistent across years" },
                 { icon: Target, value: "50%", label: "EBITDA Margin", subtext: "Year 5 target" },
                 { icon: Users, value: "1,571", label: "Members", subtext: "Year 5 capacity" }
@@ -122,19 +122,19 @@ export default function Performance() {
                   <tbody className="font-body">
                     <tr className="border-b border-border/50">
                       <td className="p-4 font-medium">Revenue</td>
-                      <td className="p-4 text-right">$22.1M</td>
-                      <td className="p-4 text-right">$33.6M</td>
-                      <td className="p-4 text-right">$38.9M</td>
-                      <td className="p-4 text-right">$41.5M</td>
-                      <td className="p-4 text-right text-primary font-medium">$42.8M</td>
+                      <td className="p-4 text-right">$23.0M</td>
+                      <td className="p-4 text-right">$35.1M</td>
+                      <td className="p-4 text-right">$40.6M</td>
+                      <td className="p-4 text-right">$43.3M</td>
+                      <td className="p-4 text-right text-primary font-medium">$44.7M</td>
                     </tr>
                     <tr className="border-b border-border/50">
                       <td className="p-4 font-medium">Gross Profit</td>
-                      <td className="p-4 text-right">$14.4M</td>
-                      <td className="p-4 text-right">$21.8M</td>
-                      <td className="p-4 text-right">$25.3M</td>
-                      <td className="p-4 text-right">$27.0M</td>
-                      <td className="p-4 text-right text-primary font-medium">$27.9M</td>
+                      <td className="p-4 text-right">$15.0M</td>
+                      <td className="p-4 text-right">$22.8M</td>
+                      <td className="p-4 text-right">$26.4M</td>
+                      <td className="p-4 text-right">$28.1M</td>
+                      <td className="p-4 text-right text-primary font-medium">$29.1M</td>
                     </tr>
                     <tr className="border-b border-border/50 bg-accent/5">
                       <td className="p-4 font-medium">Gross Margin</td>
@@ -146,11 +146,11 @@ export default function Performance() {
                     </tr>
                     <tr className="border-b border-border/50">
                       <td className="p-4 font-medium">EBITDA</td>
-                      <td className="p-4 text-right">$9.2M</td>
-                      <td className="p-4 text-right">$16.4M</td>
-                      <td className="p-4 text-right">$19.0M</td>
-                      <td className="p-4 text-right">$20.6M</td>
-                      <td className="p-4 text-right text-primary font-medium">$21.4M</td>
+                      <td className="p-4 text-right">$9.6M</td>
+                      <td className="p-4 text-right">$17.1M</td>
+                      <td className="p-4 text-right">$19.8M</td>
+                      <td className="p-4 text-right">$21.5M</td>
+                      <td className="p-4 text-right text-primary font-medium">$22.3M</td>
                     </tr>
                     <tr className="border-b border-border/50 bg-accent/5">
                       <td className="p-4 font-medium">EBITDA Margin</td>
@@ -162,11 +162,11 @@ export default function Performance() {
                     </tr>
                     <tr className="border-b border-border/50">
                       <td className="p-4 font-medium">Net Profit</td>
-                      <td className="p-4 text-right">$7.2M</td>
-                      <td className="p-4 text-right">$12.9M</td>
-                      <td className="p-4 text-right">$14.9M</td>
-                      <td className="p-4 text-right">$16.2M</td>
-                      <td className="p-4 text-right text-primary font-medium">$16.9M</td>
+                      <td className="p-4 text-right">$7.5M</td>
+                      <td className="p-4 text-right">$13.5M</td>
+                      <td className="p-4 text-right">$15.6M</td>
+                      <td className="p-4 text-right">$16.9M</td>
+                      <td className="p-4 text-right text-primary font-medium">$17.6M</td>
                     </tr>
                     <tr className="bg-accent/5">
                       <td className="p-4 font-medium">Net Margin</td>
@@ -206,15 +206,15 @@ export default function Performance() {
             <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
               {[
                 {
-                  tier: "ESSENTIAL",
-                  price: "$6,500",
+tier: "CHECK",
+                   price: "$12,500",
                   mix: "20%",
                   renewal: "15%",
                   description: "Comprehensive health assessment with advanced diagnostics, baseline biomarkers, and personalized wellness roadmap"
                 },
                 {
-                  tier: "LONGEVITY ELITE",
-                  price: "$29,500",
+tier: "ELITE",
+                   price: "$29,500",
                   mix: "80%",
                   renewal: "50%",
                   description: "Premium tier with full biologic treatments, MUSE cell therapy, concierge care, and ongoing optimization protocols",
@@ -270,7 +270,7 @@ export default function Performance() {
                   </thead>
                   <tbody className="font-body">
                     <tr className="border-b border-border/50">
-                      <td className="p-4 font-medium">Essential</td>
+                      <td className="p-4 font-medium">CHECK</td>
                       <td className="p-4 text-right">162</td>
                       <td className="p-4 text-right">246</td>
                       <td className="p-4 text-right">285</td>
@@ -278,7 +278,7 @@ export default function Performance() {
                       <td className="p-4 text-right">314</td>
                     </tr>
                     <tr className="border-b border-border/50">
-                      <td className="p-4 font-medium">Longevity Elite</td>
+                      <td className="p-4 font-medium">ELITE</td>
                       <td className="p-4 text-right">648</td>
                       <td className="p-4 text-right">984</td>
                       <td className="p-4 text-right">1,140</td>
@@ -335,15 +335,15 @@ export default function Performance() {
                   </thead>
                   <tbody className="font-body">
                     <tr className="border-b border-border/50">
-                      <td className="p-4 font-medium">Essential Memberships</td>
-                      <td className="p-4 text-right">$1.1M</td>
-                      <td className="p-4 text-right">$1.6M</td>
-                      <td className="p-4 text-right">$1.9M</td>
+                      <td className="p-4 font-medium">CHECK Memberships</td>
                       <td className="p-4 text-right">$2.0M</td>
-                      <td className="p-4 text-right">$2.0M</td>
+                      <td className="p-4 text-right">$3.1M</td>
+                      <td className="p-4 text-right">$3.6M</td>
+                      <td className="p-4 text-right">$3.8M</td>
+                      <td className="p-4 text-right">$3.9M</td>
                     </tr>
                     <tr className="border-b border-border/50 bg-accent/5">
-                      <td className="p-4 font-medium">Longevity Elite Memberships</td>
+                      <td className="p-4 font-medium">ELITE Memberships</td>
                       <td className="p-4 text-right">$19.1M</td>
                       <td className="p-4 text-right">$29.0M</td>
                       <td className="p-4 text-right">$33.6M</td>
@@ -368,11 +368,11 @@ export default function Performance() {
                     </tr>
                     <tr className="bg-accent/10">
                       <td className="p-4 font-medium">Total Revenue</td>
-                      <td className="p-4 text-right font-medium">$22.1M</td>
-                      <td className="p-4 text-right font-medium">$33.6M</td>
-                      <td className="p-4 text-right font-medium">$38.9M</td>
-                      <td className="p-4 text-right font-medium">$41.5M</td>
-                      <td className="p-4 text-right font-bold text-primary">$42.8M</td>
+                      <td className="p-4 text-right font-medium">$23.0M</td>
+                      <td className="p-4 text-right font-medium">$35.1M</td>
+                      <td className="p-4 text-right font-medium">$40.6M</td>
+                      <td className="p-4 text-right font-medium">$43.3M</td>
+                      <td className="p-4 text-right font-bold text-primary">$44.7M</td>
                     </tr>
                   </tbody>
                 </table>
@@ -382,7 +382,7 @@ export default function Performance() {
             {/* Revenue Insight */}
             <motion.div variants={fadeInUp} className="mt-8 grid md:grid-cols-3 gap-6">
               {[
-                { label: "Longevity Elite Share", value: "95%", description: "of total membership revenue" },
+                { label: "ELITE Share", value: "95%", description: "of total membership revenue" },
                 { label: "Ancillary Revenue", value: "13%", description: "additional services per member" },
                 { label: "Revenue CAGR", value: "20%", description: "compound annual growth" }
               ].map((item, i) => (
@@ -708,15 +708,15 @@ export default function Performance() {
                 },
                 {
                   title: "Predictable Growth",
-                  description: "Membership model with 50% Longevity Elite renewal rate creates recurring revenue and predictable cash flows."
+                  description: "Membership model with 50% ELITE renewal rate creates recurring revenue and predictable cash flows."
                 },
                 {
                   title: "Scalable Model",
-                  description: "$6.6M total investment per center with clear path to $21.4M annual EBITDA within 5 years."
+                  description: "$6.6M total investment per center with clear path to $22.3M annual EBITDA within 5 years."
                 },
                 {
                   title: "Premium Positioning",
-                  description: "Longevity Elite tier ($29,500) drives 95% of membership revenue, validating premium market positioning."
+                  description: "ELITE tier ($29,500) drives 95% of membership revenue, validating premium market positioning."
                 }
               ].map((item, i) => (
                 <div key={i} className="bg-card/50 backdrop-blur border border-border rounded-2xl p-6 text-left">
