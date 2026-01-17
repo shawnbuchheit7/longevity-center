@@ -46,10 +46,10 @@ export default function Projections() {
           >
             <motion.div variants={fadeInUp} className="grid md:grid-cols-4 gap-6">
               {[
-                { value: "$249M", label: "2030 Revenue", subtext: "10 domestic centers" },
-                { value: "$80M", label: "2030 EBITDA", subtext: "32% margin" },
-                { value: "12,600+", label: "Total Members", subtext: "Across all centers" },
-                { value: "17x", label: "Revenue Growth", subtext: "5-year trajectory" }
+                { value: "$327M", label: "2030 Revenue", subtext: "10 domestic centers" },
+                { value: "$113M", label: "2030 EBITDA", subtext: "34% margin" },
+                { value: "7,860+", label: "Total Members", subtext: "Across all centers" },
+                { value: "16x", label: "Revenue Growth", subtext: "5-year trajectory" }
               ].map((stat, i) => (
                 <div key={i} className="bg-card border border-border rounded-2xl p-6 text-center hover:border-primary/50 transition-colors">
                   <span className="font-display text-3xl font-bold text-gradient">{stat.value}</span>
@@ -92,12 +92,12 @@ export default function Projections() {
                   </thead>
                   <tbody>
                     {[
-                      { metric: "Revenue", y1: "$15M", y2: "$32M", y3: "$78M", y4: "$154M", y5: "$249M" },
-                      { metric: "EBITDA", y1: "$3M", y2: "$10M", y3: "$25M", y4: "$49M", y5: "$80M" },
-                      { metric: "EBITDA Margin", y1: "21%", y2: "32%", y3: "32%", y4: "32%", y5: "32%" },
-                      { metric: "Members", y1: "500", y2: "1,304", y3: "3,026", y4: "5,946", y5: "12,610" },
+                      { metric: "Revenue", y1: "$20M", y2: "$40M", y3: "$100M", y4: "$200M", y5: "$327M" },
+                      { metric: "EBITDA", y1: "$7M", y2: "$14M", y3: "$35M", y4: "$69M", y5: "$113M" },
+                      { metric: "EBITDA Margin", y1: "34%", y2: "34%", y3: "34%", y4: "34%", y5: "34%" },
+                      { metric: "Members", y1: "500", y2: "977", y3: "2,428", y4: "4,820", y5: "7,863" },
                       { metric: "Centers", y1: "1", y2: "2", y3: "4", y4: "7", y5: "10" },
-                      { metric: "Gross Margin", y1: "69%", y2: "69%", y3: "69%", y4: "69%", y5: "69%" }
+                      { metric: "Gross Margin", y1: "66%", y2: "66%", y3: "66%", y4: "66%", y5: "66%" }
                     ].map((row, i) => (
                       <tr key={i} className="border-b border-border/50 hover:bg-muted/20 transition-colors">
                         <td className="p-5 font-body font-medium">{row.metric}</td>
@@ -114,8 +114,8 @@ export default function Projections() {
 
               <div className="p-6 bg-muted/20 border-t border-border">
                 <p className="font-body text-sm text-muted-foreground">
-                  <strong className="text-foreground">Assumptions:</strong> Based on single-center economics of $39.4M revenue and $14.4M EBITDA at Year 5 maturity. 
-                  500 new members/year (40% referrals), 85% ELITE ($29,500) / 15% CHECK ($12,500) mix, 70% ELITE renewal rate. Domestic centers only; international expansion upside not included.
+                  <strong className="text-foreground">Assumptions:</strong> Based on single-center economics of $57.5M revenue and $19.8M EBITDA at Year 5 maturity (including 50% ancillary revenue at 60% margin). 
+                  500 new members/year accelerating via 40% referral rate, 85% ELITE ($29,500) / 15% CHECK ($12,500) mix, 70% ELITE renewal rate. Domestic centers only; international expansion upside not included.
                 </p>
               </div>
             </motion.div>
@@ -293,35 +293,35 @@ export default function Projections() {
                       </tr>
                       <tr className="border-b border-border/50 bg-accent/5">
                         <td className="p-4 font-medium">Network Revenue</td>
-                        <td className="p-4 text-right">$11.1M</td>
-                        <td className="p-4 text-right">$27.1M</td>
-                        <td className="p-4 text-right">$54.2M</td>
-                        <td className="p-4 text-right">$107.7M</td>
-                        <td className="p-4 text-right text-primary font-medium">$183.2M</td>
+                        <td className="p-4 text-right">$20.2M</td>
+                        <td className="p-4 text-right">$40.3M</td>
+                        <td className="p-4 text-right">$100.4M</td>
+                        <td className="p-4 text-right">$199.8M</td>
+                        <td className="p-4 text-right text-primary font-medium">$327.4M</td>
                       </tr>
                       <tr className="border-b border-border/50">
                         <td className="p-4 font-medium">Management Fee Income (8%)</td>
-                        <td className="p-4 text-right">$0.9M</td>
-                        <td className="p-4 text-right">$2.2M</td>
-                        <td className="p-4 text-right">$4.3M</td>
-                        <td className="p-4 text-right">$8.6M</td>
-                        <td className="p-4 text-right text-primary font-medium">$14.7M</td>
+                        <td className="p-4 text-right">$1.6M</td>
+                        <td className="p-4 text-right">$3.2M</td>
+                        <td className="p-4 text-right">$8.0M</td>
+                        <td className="p-4 text-right">$16.0M</td>
+                        <td className="p-4 text-right text-primary font-medium">$26.2M</td>
                       </tr>
                       <tr className="border-b border-border/50 text-muted-foreground">
                         <td className="p-4 font-medium">Corporate Overhead</td>
-                        <td className="p-4 text-right">($2.2M)</td>
-                        <td className="p-4 text-right">($2.4M)</td>
-                        <td className="p-4 text-right">($2.8M)</td>
-                        <td className="p-4 text-right">($3.4M)</td>
+                        <td className="p-4 text-right">($2.5M)</td>
+                        <td className="p-4 text-right">($3.0M)</td>
                         <td className="p-4 text-right">($4.0M)</td>
+                        <td className="p-4 text-right">($5.5M)</td>
+                        <td className="p-4 text-right">($7.0M)</td>
                       </tr>
                       <tr className="bg-emerald-500/10">
                         <td className="p-4 font-medium text-emerald-400">HoldCo EBITDA</td>
-                        <td className="p-4 text-right font-mono text-amber-400">($1.3M)</td>
-                        <td className="p-4 text-right font-mono text-amber-400">($0.2M)</td>
-                        <td className="p-4 text-right font-mono text-emerald-400">$1.5M</td>
-                        <td className="p-4 text-right font-mono text-emerald-400">$5.2M</td>
-                        <td className="p-4 text-right font-mono text-emerald-400 font-bold">$10.7M</td>
+                        <td className="p-4 text-right font-mono text-amber-400">($0.9M)</td>
+                        <td className="p-4 text-right font-mono text-emerald-400">$0.2M</td>
+                        <td className="p-4 text-right font-mono text-emerald-400">$4.0M</td>
+                        <td className="p-4 text-right font-mono text-emerald-400">$10.5M</td>
+                        <td className="p-4 text-right font-mono text-emerald-400 font-bold">$19.2M</td>
                       </tr>
                     </tbody>
                   </table>
@@ -337,10 +337,10 @@ export default function Projections() {
               </p>
               <div className="grid md:grid-cols-4 gap-4">
                 {[
-                  { label: "Executive & Leadership", pct: "30%", amount: "$4.4M", desc: "CEO, CFO, CMO, legal" },
-                  { label: "Marketing & Brand", pct: "25%", amount: "$3.7M", desc: "National campaigns, PR, digital" },
-                  { label: "Technology & Systems", pct: "25%", amount: "$3.7M", desc: "Platform, IT, data analytics" },
-                  { label: "Training & Compliance", pct: "20%", amount: "$2.9M", desc: "Clinical protocols, regulatory" }
+                  { label: "Executive & Leadership", pct: "30%", amount: "$7.9M", desc: "CEO, CFO, CMO, legal" },
+                  { label: "Marketing & Brand", pct: "25%", amount: "$6.6M", desc: "National campaigns, PR, digital" },
+                  { label: "Technology & Systems", pct: "25%", amount: "$6.6M", desc: "Platform, IT, data analytics" },
+                  { label: "Training & Compliance", pct: "20%", amount: "$5.2M", desc: "Clinical protocols, regulatory" }
                 ].map((item, i) => (
                   <div key={i} className="bg-card border border-border rounded-xl p-4">
                     <div className="text-2xl font-mono font-bold text-primary mb-1">{item.pct}</div>
@@ -357,19 +357,19 @@ export default function Projections() {
               <h3 className="font-display text-2xl font-medium mb-6">HoldCo Breakeven Analysis</h3>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-card border border-border rounded-2xl p-6 text-center">
-                  <div className="text-4xl font-mono font-bold text-primary mb-2">$3.15M</div>
+                  <div className="text-4xl font-mono font-bold text-primary mb-2">$4.6M</div>
                   <div className="font-display font-medium">Mgmt Fee / Mature Center</div>
-                  <div className="text-sm text-muted-foreground">8% of $39.4M revenue</div>
+                  <div className="text-sm text-muted-foreground">8% of $57.5M revenue</div>
                 </div>
                 <div className="bg-card border border-border rounded-2xl p-6 text-center">
-                  <div className="text-4xl font-mono font-bold text-primary mb-2">$2.0M</div>
+                  <div className="text-4xl font-mono font-bold text-primary mb-2">$2.5M</div>
                   <div className="font-display font-medium">Base Corporate Overhead</div>
                   <div className="text-sm text-muted-foreground">Fixed costs (executive, legal)</div>
                 </div>
                 <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-6 text-center">
-                  <div className="text-4xl font-mono font-bold text-emerald-400 mb-2">2028</div>
+                  <div className="text-4xl font-mono font-bold text-emerald-400 mb-2">2027</div>
                   <div className="font-display font-medium text-emerald-400">HoldCo Breakeven Year</div>
-                  <div className="text-sm text-muted-foreground">4 centers generating positive cash flow</div>
+                  <div className="text-sm text-muted-foreground">2 centers generating positive cash flow</div>
                 </div>
               </div>
             </motion.div>
@@ -427,9 +427,9 @@ export default function Projections() {
                     icon: ArrowDownRight,
                     color: "text-orange-400",
                     borderColor: "border-orange-400/30",
-                    assumptions: ["$25,075 ELITE price (-15%)", "990 members (-15%)", "80% ELITE mix"],
-                    revenue: "$28M",
-                    ebitda: "$9M",
+                    assumptions: ["$25,075 ELITE price (-15%)", "1,160 members (-15%)", "80% ELITE mix"],
+                    revenue: "$43M",
+                    ebitda: "$14M",
                     margin: "32%"
                   },
                   {
@@ -437,10 +437,10 @@ export default function Projections() {
                     icon: Target,
                     color: "text-primary",
                     borderColor: "border-primary/50",
-                    assumptions: ["$29,500 ELITE / $12,500 CHECK", "1,164 members", "85% ELITE mix"],
-                    revenue: "$37M",
-                    ebitda: "$13M",
-                    margin: "37%",
+                    assumptions: ["$29,500 ELITE / $12,500 CHECK", "1,365 members", "85% ELITE mix + 50% ancillary"],
+                    revenue: "$57.5M",
+                    ebitda: "$19.8M",
+                    margin: "34%",
                     highlight: true
                   },
                   {
@@ -448,10 +448,10 @@ export default function Projections() {
                     icon: ArrowUpRight,
                     color: "text-green-400",
                     borderColor: "border-green-400/30",
-                    assumptions: ["$32,450 ELITE price (+10%)", "1,339 members (+15%)", "90% ELITE mix"],
-                    revenue: "$46M",
-                    ebitda: "$19M",
-                    margin: "41%"
+                    assumptions: ["$32,450 ELITE price (+10%)", "1,570 members (+15%)", "90% ELITE mix"],
+                    revenue: "$72M",
+                    ebitda: "$26M",
+                    margin: "36%"
                   }
                 ].map((item, i) => (
                   <div 
@@ -514,9 +514,9 @@ export default function Projections() {
                             <span className="font-body font-medium">Bear Case</span>
                           </div>
                         </td>
-                        <td className="p-5 text-center font-mono text-muted-foreground">$175M</td>
-                        <td className="p-5 text-center font-mono text-muted-foreground">$50M</td>
-                        <td className="p-5 text-center font-mono text-muted-foreground">6,100</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">$260M</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">$85M</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">6,680</td>
                         <td className="p-5 text-center font-body text-sm text-muted-foreground">Lower pricing, slower adoption</td>
                       </tr>
                       <tr className="border-b border-border/50 bg-primary/5 hover:bg-primary/10 transition-colors">
@@ -526,9 +526,9 @@ export default function Projections() {
                             <span className="font-body font-medium text-primary">Base Case</span>
                           </div>
                         </td>
-                        <td className="p-5 text-center font-mono font-semibold text-primary">$220M</td>
-                        <td className="p-5 text-center font-mono font-semibold text-primary">$69M</td>
-                        <td className="p-5 text-center font-mono font-semibold text-primary">7,227</td>
+                        <td className="p-5 text-center font-mono font-semibold text-primary">$327M</td>
+                        <td className="p-5 text-center font-mono font-semibold text-primary">$113M</td>
+                        <td className="p-5 text-center font-mono font-semibold text-primary">7,863</td>
                         <td className="p-5 text-center font-body text-sm text-primary">Current assumptions</td>
                       </tr>
                       <tr className="hover:bg-muted/20 transition-colors">
@@ -538,9 +538,9 @@ export default function Projections() {
                             <span className="font-body font-medium">Bull Case</span>
                           </div>
                         </td>
-                        <td className="p-5 text-center font-mono text-muted-foreground">$280M</td>
-                        <td className="p-5 text-center font-mono text-muted-foreground">$98M</td>
-                        <td className="p-5 text-center font-mono text-muted-foreground">8,500</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">$410M</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">$148M</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">9,040</td>
                         <td className="p-5 text-center font-body text-sm text-muted-foreground">Premium pricing, faster growth</td>
                       </tr>
                     </tbody>
@@ -557,13 +557,13 @@ export default function Projections() {
                   <h4 className="font-display font-medium mb-2">Key Sensitivity Drivers</h4>
                   <div className="grid md:grid-cols-3 gap-4 font-body text-sm text-muted-foreground">
                     <div>
-                      <strong className="text-foreground">Pricing Power:</strong> ELITE tier pricing has the largest impact on revenue. A 10% change in ELITE pricing affects revenue by ~$22M at scale.
+                      <strong className="text-foreground">Pricing Power:</strong> ELITE tier pricing has the largest impact on revenue. A 10% change in ELITE pricing affects revenue by ~$33M at scale.
                     </div>
                     <div>
-                      <strong className="text-foreground">Member Mix:</strong> Higher ELITE mix (90% vs 85%) adds ~$15M in annual revenue due to premium tier economics.
+                      <strong className="text-foreground">Ancillary Revenue:</strong> 50% ancillary revenue at 60% margin adds ~$19M per center, or ~$150M network-wide at maturity.
                     </div>
                     <div>
-                      <strong className="text-foreground">Renewal Rate:</strong> Each 5% improvement in ELITE renewal rate adds ~$10M in recurring revenue across 10 centers.
+                      <strong className="text-foreground">Renewal Rate:</strong> Each 5% improvement in ELITE renewal rate adds ~$15M in recurring revenue across 10 centers.
                     </div>
                   </div>
                 </div>

@@ -71,10 +71,10 @@ export default function Performance() {
 
             <motion.div variants={fadeInUp} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {[
-                { icon: DollarSign, value: "$39.4M", label: "Year 5 Revenue", subtext: "Per center" },
-                { icon: TrendingUp, value: "69%", label: "Gross Margin", subtext: "Consistent across years" },
-                { icon: Target, value: "37%", label: "Center EBITDA Margin", subtext: "True center profitability" },
-                { icon: Users, value: "1,261", label: "Members", subtext: "Year 5 capacity" }
+                { icon: DollarSign, value: "$57.5M", label: "Year 5 Revenue", subtext: "Per center" },
+                { icon: TrendingUp, value: "66%", label: "Gross Margin", subtext: "Blended membership + ancillary" },
+                { icon: Target, value: "34%", label: "Center EBITDA Margin", subtext: "True center profitability" },
+                { icon: Users, value: "1,365", label: "Members", subtext: "Year 5 capacity" }
               ].map((stat, i) => (
                 <div key={i} className="bg-card border border-border rounded-2xl p-6 text-center hover:border-primary/50 transition-colors">
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-primary flex items-center justify-center mx-auto mb-4">
@@ -124,44 +124,68 @@ export default function Performance() {
                   </thead>
                   <tbody className="font-body">
                     <tr className="border-b border-border/50">
-                      <td className="p-4 font-medium">Revenue</td>
-                      <td className="p-4 text-right">$14.8M</td>
-                      <td className="p-4 text-right">$24.6M</td>
-                      <td className="p-4 text-right">$31.3M</td>
-                      <td className="p-4 text-right">$36.1M</td>
-                      <td className="p-4 text-right text-primary font-medium">$39.4M</td>
+                      <td className="p-4 font-medium">Membership Revenue</td>
+                      <td className="p-4 text-right">$13.5M</td>
+                      <td className="p-4 text-right">$20.2M</td>
+                      <td className="p-4 text-right">$26.7M</td>
+                      <td className="p-4 text-right">$32.8M</td>
+                      <td className="p-4 text-right text-primary font-medium">$38.6M</td>
+                    </tr>
+                    <tr className="border-b border-border/50">
+                      <td className="p-4 font-medium">Ancillary Revenue (50%)</td>
+                      <td className="p-4 text-right">$6.7M</td>
+                      <td className="p-4 text-right">$10.1M</td>
+                      <td className="p-4 text-right">$13.4M</td>
+                      <td className="p-4 text-right">$16.4M</td>
+                      <td className="p-4 text-right text-primary font-medium">$19.3M</td>
+                    </tr>
+                    <tr className="border-b border-border/50 text-muted-foreground">
+                      <td className="p-4 font-medium">Promotional Expense</td>
+                      <td className="p-4 text-right">—</td>
+                      <td className="p-4 text-right">($0.1M)</td>
+                      <td className="p-4 text-right">($0.2M)</td>
+                      <td className="p-4 text-right">($0.2M)</td>
+                      <td className="p-4 text-right">($0.3M)</td>
+                    </tr>
+                    <tr className="border-b border-border/50 bg-accent/5">
+                      <td className="p-4 font-medium">Total Revenue</td>
+                      <td className="p-4 text-right font-medium">$20.2M</td>
+                      <td className="p-4 text-right font-medium">$30.2M</td>
+                      <td className="p-4 text-right font-medium">$39.9M</td>
+                      <td className="p-4 text-right font-medium">$49.0M</td>
+                      <td className="p-4 text-right text-primary font-bold">$57.5M</td>
                     </tr>
                     <tr className="border-b border-border/50">
                       <td className="p-4 font-medium">Gross Profit</td>
-                      <td className="p-4 text-right">$10.2M</td>
-                      <td className="p-4 text-right">$17.0M</td>
-                      <td className="p-4 text-right">$21.6M</td>
-                      <td className="p-4 text-right">$24.9M</td>
-                      <td className="p-4 text-right text-primary font-medium">$27.2M</td>
+                      <td className="p-4 text-right">$13.3M</td>
+                      <td className="p-4 text-right">$20.0M</td>
+                      <td className="p-4 text-right">$26.5M</td>
+                      <td className="p-4 text-right">$32.5M</td>
+                      <td className="p-4 text-right text-primary font-medium">$38.2M</td>
                     </tr>
                     <tr className="border-b border-border/50 bg-accent/5">
                       <td className="p-4 font-medium">Gross Margin</td>
-                      <td className="p-4 text-right">68.9%</td>
-                      <td className="p-4 text-right">68.9%</td>
-                      <td className="p-4 text-right">68.9%</td>
-                      <td className="p-4 text-right">68.9%</td>
-                      <td className="p-4 text-right text-primary font-medium">68.9%</td>
+                      <td className="p-4 text-right">66.0%</td>
+                      <td className="p-4 text-right">66.3%</td>
+                      <td className="p-4 text-right">66.3%</td>
+                      <td className="p-4 text-right">66.3%</td>
+                      <td className="p-4 text-right text-primary font-medium">66.3%</td>
                     </tr>
                     <tr className="border-b border-border/50 bg-primary/10">
                       <td className="p-4 font-medium text-primary">Center EBITDA</td>
-                      <td className="p-4 text-right font-medium">$3.1M</td>
-                      <td className="p-4 text-right font-medium">$9.2M</td>
-                      <td className="p-4 text-right font-medium">$11.7M</td>
-                      <td className="p-4 text-right font-medium">$13.5M</td>
-                      <td className="p-4 text-right text-primary font-bold">$14.7M</td>
+                      <td className="p-4 text-right font-medium">$6.9M</td>
+                      <td className="p-4 text-right font-medium">$10.4M</td>
+                      <td className="p-4 text-right font-medium">$13.7M</td>
+                      <td className="p-4 text-right font-medium">$16.8M</td>
+                      <td className="p-4 text-right text-primary font-bold">$19.8M</td>
                     </tr>
                     <tr className="border-b border-border/50 bg-accent/5">
                       <td className="p-4 font-medium">Center EBITDA Margin</td>
-                      <td className="p-4 text-right">21.0%</td>
-                      <td className="p-4 text-right">37.4%</td>
-                      <td className="p-4 text-right">37.4%</td>
-                      <td className="p-4 text-right">37.4%</td>
-                      <td className="p-4 text-right text-primary font-medium">37.3%</td>
+                      <td className="p-4 text-right">34.0%</td>
+                      <td className="p-4 text-right">34.3%</td>
+                      <td className="p-4 text-right">34.3%</td>
+                      <td className="p-4 text-right">34.3%</td>
+                      <td className="p-4 text-right text-primary font-medium">34.3%</td>
                     </tr>
                     {/* Below the Line - Management Fee */}
                     <tr className="border-b border-border bg-muted/50">
@@ -169,19 +193,19 @@ export default function Performance() {
                     </tr>
                     <tr className="border-b border-border/50">
                       <td className="p-4 font-medium text-muted-foreground">Management Fee (8%)</td>
-                      <td className="p-4 text-right text-muted-foreground">($1.2M)</td>
-                      <td className="p-4 text-right text-muted-foreground">($2.0M)</td>
-                      <td className="p-4 text-right text-muted-foreground">($2.5M)</td>
-                      <td className="p-4 text-right text-muted-foreground">($2.9M)</td>
+                      <td className="p-4 text-right text-muted-foreground">($1.6M)</td>
+                      <td className="p-4 text-right text-muted-foreground">($2.4M)</td>
                       <td className="p-4 text-right text-muted-foreground">($3.2M)</td>
+                      <td className="p-4 text-right text-muted-foreground">($3.9M)</td>
+                      <td className="p-4 text-right text-muted-foreground">($4.6M)</td>
                     </tr>
                     <tr className="bg-emerald-500/10">
                       <td className="p-4 font-medium text-emerald-400">Net Contribution to HoldCo</td>
-                      <td className="p-4 text-right text-emerald-400 font-medium">$1.9M</td>
-                      <td className="p-4 text-right text-emerald-400 font-medium">$7.2M</td>
-                      <td className="p-4 text-right text-emerald-400 font-medium">$9.2M</td>
-                      <td className="p-4 text-right text-emerald-400 font-medium">$10.6M</td>
-                      <td className="p-4 text-right text-emerald-400 font-bold">$11.5M</td>
+                      <td className="p-4 text-right text-emerald-400 font-medium">$5.3M</td>
+                      <td className="p-4 text-right text-emerald-400 font-medium">$8.0M</td>
+                      <td className="p-4 text-right text-emerald-400 font-medium">$10.5M</td>
+                      <td className="p-4 text-right text-emerald-400 font-medium">$12.9M</td>
+                      <td className="p-4 text-right text-emerald-400 font-bold">$15.2M</td>
                     </tr>
                   </tbody>
                 </table>
@@ -231,7 +255,7 @@ export default function Performance() {
                     { label: "Member Mix (ELITE/CHECK)", value: "85% / 15%" },
                     { label: "ELITE Renewal Rate", value: "70%" },
                     { label: "CHECK Renewal Rate", value: "10%" },
-                    { label: "Year 5 Target Members", value: "1,261" }
+                    { label: "Year 5 Target Members", value: "1,365" }
                   ].map((item, i) => (
                     <div key={i} className="flex justify-between items-center py-2 border-b border-border/50 last:border-0">
                       <span className="font-body text-muted-foreground">{item.label}</span>
@@ -254,11 +278,11 @@ export default function Performance() {
                 <div className="p-6 space-y-4">
                   {[
                     { label: "Year 1 Members", value: "500" },
-                    { label: "Year 2 Members", value: "804" },
-                    { label: "Year 3 Members", value: "1,013" },
-                    { label: "Year 4 Members", value: "1,159" },
-                    { label: "Year 5 Members", value: "1,261" },
-                    { label: "5-Year Member CAGR", value: "26%" }
+                    { label: "Year 2 Members", value: "727" },
+                    { label: "Year 3 Members", value: "951" },
+                    { label: "Year 4 Members", value: "1,165" },
+                    { label: "Year 5 Members", value: "1,365" },
+                    { label: "5-Year Member CAGR", value: "29%" }
                   ].map((item, i) => (
                     <div key={i} className="flex justify-between items-center py-2 border-b border-border/50 last:border-0">
                       <span className="font-body text-muted-foreground">{item.label}</span>
@@ -280,12 +304,12 @@ export default function Performance() {
                 </div>
                 <div className="p-6 space-y-4">
                   {[
-                    { label: "ELITE Revenue/Member", value: "$29,500" },
-                    { label: "CHECK Revenue/Member", value: "$12,500" },
-                    { label: "Blended Avg Revenue/Member", value: "~$27,000" },
-                    { label: "ELITE % of Total Revenue", value: "93%" },
-                    { label: "CHECK % of Total Revenue", value: "7%" },
-                    { label: "Year 5 Total Revenue", value: "$39.4M" }
+                    { label: "ELITE Membership/Member", value: "$29,500" },
+                    { label: "CHECK Membership/Member", value: "$12,500" },
+                    { label: "Ancillary Revenue", value: "50% of membership" },
+                    { label: "Ancillary Margin", value: "60%" },
+                    { label: "Blended Gross Margin", value: "66%" },
+                    { label: "Year 5 Total Revenue", value: "$57.5M" }
                   ].map((item, i) => (
                     <div key={i} className="flex justify-between items-center py-2 border-b border-border/50 last:border-0">
                       <span className="font-body text-muted-foreground">{item.label}</span>
@@ -334,12 +358,12 @@ export default function Performance() {
                 </div>
                 <div className="p-6 space-y-4">
                   {[
-                    { label: "New Members/Year", value: "500 (straight-line)" },
-                    { label: "Monthly Acquisition Target", value: "42/month" },
-                    { label: "Member Referrals", value: "40% of new" },
-                    { label: "Direct Acquisition", value: "60% of new" },
-                    { label: "Referrals/Year", value: "200" },
-                    { label: "Direct/Year", value: "300" }
+                    { label: "Year 1 New Members", value: "500 (all direct)" },
+                    { label: "Direct Acquisition/Year", value: "300 (Y2+)" },
+                    { label: "Referral Rate/Member", value: "40%" },
+                    { label: "Year 5 New Members", value: "604 (accelerating)" },
+                    { label: "Year 5 Referral %", value: "50%" },
+                    { label: "Year 5 Referrals", value: "304" }
                   ].map((item, i) => (
                     <div key={i} className="flex justify-between items-center py-2 border-b border-border/50 last:border-0">
                       <span className="font-body text-muted-foreground">{item.label}</span>
@@ -571,10 +595,10 @@ export default function Performance() {
                         {[
                           { metric: "ELITE LTV", low: "$82,250", base: "$97,350", high: "$117,700" },
                           { metric: "Avg ELITE Tenure", low: "2.9 years", base: "3.3 years", high: "4.0 years" },
-                          { metric: "Year 5 ELITE Members", low: "1,118", base: "1,178", high: "1,238" },
-                          { metric: "Year 5 Revenue", low: "$37.8M", base: "$39.4M", high: "$41.2M" },
-                          { metric: "Year 5 EBITDA", low: "$13.8M", base: "$14.4M", high: "$15.0M" },
-                          { metric: "5-Year Cumulative Revenue", low: "$140M", base: "$146M", high: "$153M" },
+                          { metric: "Year 5 ELITE Members", low: "1,198", base: "1,265", high: "1,332" },
+                          { metric: "Year 5 Revenue", low: "$54.5M", base: "$57.5M", high: "$60.5M" },
+                          { metric: "Year 5 EBITDA", low: "$18.7M", base: "$19.8M", high: "$20.9M" },
+                          { metric: "5-Year Cumulative Revenue", low: "$187M", base: "$197M", high: "$207M" },
                           { metric: "LTV/CAC Ratio", low: "43:1", base: "51:1", high: "62:1" }
                         ].map((row, i) => (
                           <tr key={i} className="border-b border-border/50 last:border-0">
@@ -589,17 +613,17 @@ export default function Performance() {
                   </div>
                   <div className="mt-6 grid md:grid-cols-3 gap-4">
                     <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 text-center">
-                      <span className="text-amber-400 font-mono text-2xl font-bold">-$6M</span>
+                      <span className="text-amber-400 font-mono text-2xl font-bold">-$10M</span>
                       <p className="text-sm text-muted-foreground mt-1">5-Year Revenue Impact</p>
                       <p className="text-xs text-amber-400/70">at 65% renewal</p>
                     </div>
                     <div className="bg-primary/10 border border-primary/20 rounded-xl p-4 text-center">
-                      <span className="text-primary font-mono text-2xl font-bold">$146M</span>
+                      <span className="text-primary font-mono text-2xl font-bold">$197M</span>
                       <p className="text-sm text-muted-foreground mt-1">Base Case Revenue</p>
                       <p className="text-xs text-primary/70">at 70% renewal</p>
                     </div>
                     <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4 text-center">
-                      <span className="text-emerald-400 font-mono text-2xl font-bold">+$7M</span>
+                      <span className="text-emerald-400 font-mono text-2xl font-bold">+$10M</span>
                       <p className="text-sm text-muted-foreground mt-1">5-Year Revenue Upside</p>
                       <p className="text-xs text-emerald-400/70">at 75% renewal</p>
                     </div>
@@ -699,26 +723,42 @@ export default function Performance() {
                     <tr className="border-b border-border/50">
                       <td className="p-4 font-medium">ELITE</td>
                       <td className="p-4 text-right">425</td>
-                      <td className="p-4 text-right">722</td>
-                      <td className="p-4 text-right">930</td>
-                      <td className="p-4 text-right">1,076</td>
-                      <td className="p-4 text-right">1,178</td>
+                      <td className="p-4 text-right">655</td>
+                      <td className="p-4 text-right">871</td>
+                      <td className="p-4 text-right">1,074</td>
+                      <td className="p-4 text-right">1,265</td>
                     </tr>
                     <tr className="border-b border-border/50">
                       <td className="p-4 font-medium">CHECK</td>
                       <td className="p-4 text-right">75</td>
-                      <td className="p-4 text-right">82</td>
-                      <td className="p-4 text-right">83</td>
-                      <td className="p-4 text-right">83</td>
-                      <td className="p-4 text-right">83</td>
+                      <td className="p-4 text-right">71</td>
+                      <td className="p-4 text-right">80</td>
+                      <td className="p-4 text-right">91</td>
+                      <td className="p-4 text-right">100</td>
                     </tr>
-                    <tr className="bg-accent/5">
-                      <td className="p-4 font-medium">Total Members</td>
+                    <tr className="border-b border-border/50 bg-accent/10">
+                      <td className="p-4 font-medium">New Members</td>
+                      <td className="p-4 text-right">500</td>
+                      <td className="p-4 text-right">422</td>
+                      <td className="p-4 text-right">486</td>
+                      <td className="p-4 text-right">547</td>
+                      <td className="p-4 text-right">604</td>
+                    </tr>
+                    <tr className="border-b border-border/50 text-muted-foreground">
+                      <td className="p-4 font-medium">— From Referrals</td>
+                      <td className="p-4 text-right">0</td>
+                      <td className="p-4 text-right">122 (29%)</td>
+                      <td className="p-4 text-right">186 (38%)</td>
+                      <td className="p-4 text-right">247 (45%)</td>
+                      <td className="p-4 text-right">304 (50%)</td>
+                    </tr>
+                    <tr className="bg-primary/10">
+                      <td className="p-4 font-medium text-primary">Total Members</td>
                       <td className="p-4 text-right font-medium">500</td>
-                      <td className="p-4 text-right font-medium">804</td>
-                      <td className="p-4 text-right font-medium">1,013</td>
-                      <td className="p-4 text-right font-medium">1,159</td>
-                      <td className="p-4 text-right font-medium text-primary">1,261</td>
+                      <td className="p-4 text-right font-medium">727</td>
+                      <td className="p-4 text-right font-medium">951</td>
+                      <td className="p-4 text-right font-medium">1,165</td>
+                      <td className="p-4 text-right font-medium text-primary">1,365</td>
                     </tr>
                   </tbody>
                 </table>
@@ -852,42 +892,42 @@ export default function Performance() {
                     <tr className="border-b border-border/50 bg-accent/5">
                       <td className="p-4 font-medium">ELITE Memberships</td>
                       <td className="p-4 text-right">$12.5M</td>
-                      <td className="p-4 text-right">$21.3M</td>
-                      <td className="p-4 text-right">$27.4M</td>
+                      <td className="p-4 text-right">$19.3M</td>
+                      <td className="p-4 text-right">$25.7M</td>
                       <td className="p-4 text-right">$31.7M</td>
-                      <td className="p-4 text-right text-primary font-medium">$34.8M</td>
+                      <td className="p-4 text-right text-primary font-medium">$37.3M</td>
                     </tr>
                     <tr className="border-b border-border/50">
                       <td className="p-4 font-medium">CHECK Memberships</td>
                       <td className="p-4 text-right">$0.9M</td>
+                      <td className="p-4 text-right">$0.9M</td>
                       <td className="p-4 text-right">$1.0M</td>
-                      <td className="p-4 text-right">$1.0M</td>
-                      <td className="p-4 text-right">$1.0M</td>
-                      <td className="p-4 text-right">$1.0M</td>
+                      <td className="p-4 text-right">$1.1M</td>
+                      <td className="p-4 text-right">$1.3M</td>
                     </tr>
                     <tr className="border-b border-border/50">
-                      <td className="p-4 font-medium">Ancillary Services</td>
-                      <td className="p-4 text-right">$1.7M</td>
-                      <td className="p-4 text-right">$2.9M</td>
-                      <td className="p-4 text-right">$3.7M</td>
-                      <td className="p-4 text-right">$4.3M</td>
-                      <td className="p-4 text-right">$4.7M</td>
+                      <td className="p-4 font-medium">Ancillary Services (50%)</td>
+                      <td className="p-4 text-right">$6.7M</td>
+                      <td className="p-4 text-right">$10.1M</td>
+                      <td className="p-4 text-right">$13.4M</td>
+                      <td className="p-4 text-right">$16.4M</td>
+                      <td className="p-4 text-right">$19.3M</td>
                     </tr>
                     <tr className="border-b border-border/50 text-muted-foreground">
                       <td className="p-4 font-medium">Promotional Expense</td>
-                      <td className="p-4 text-right">($0.4M)</td>
-                      <td className="p-4 text-right">($0.7M)</td>
-                      <td className="p-4 text-right">($0.9M)</td>
-                      <td className="p-4 text-right">($1.0M)</td>
-                      <td className="p-4 text-right">($1.1M)</td>
+                      <td className="p-4 text-right">—</td>
+                      <td className="p-4 text-right">($0.1M)</td>
+                      <td className="p-4 text-right">($0.2M)</td>
+                      <td className="p-4 text-right">($0.2M)</td>
+                      <td className="p-4 text-right">($0.3M)</td>
                     </tr>
                     <tr className="bg-accent/10">
                       <td className="p-4 font-medium">Total Revenue</td>
-                      <td className="p-4 text-right font-medium">$14.8M</td>
-                      <td className="p-4 text-right font-medium">$24.6M</td>
-                      <td className="p-4 text-right font-medium">$31.3M</td>
-                      <td className="p-4 text-right font-medium">$36.1M</td>
-                      <td className="p-4 text-right font-bold text-primary">$39.4M</td>
+                      <td className="p-4 text-right font-medium">$20.2M</td>
+                      <td className="p-4 text-right font-medium">$30.2M</td>
+                      <td className="p-4 text-right font-medium">$39.9M</td>
+                      <td className="p-4 text-right font-medium">$49.0M</td>
+                      <td className="p-4 text-right font-bold text-primary">$57.5M</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1228,7 +1268,7 @@ export default function Performance() {
                 },
                 {
                   title: "Scalable Model",
-                  description: "$8.5M total investment per center with clear path to $14.7M Center EBITDA ($11.5M net after 8% management fee) within 5 years."
+                  description: "$8.5M total investment per center with clear path to $19.8M Center EBITDA ($15.2M net after 8% management fee) within 5 years."
                 },
                 {
                   title: "Premium Positioning",
