@@ -1,11 +1,11 @@
-/*
+/**
  * DESIGN: "Cellular Renaissance" - Organic Futurism
  * Use of Funds page - $50M Series A allocation
- * Updated with detailed construction costs from spreadsheet analysis
+ * Updated with generic center design example and 3D renderings
  */
 
 import { motion } from "framer-motion";
-import { FlaskConical, Users, Heart, Globe, Building2, Cpu, Microscope } from "lucide-react";
+import { FlaskConical, Users, Heart, Globe, Building2, Cpu, Microscope, Sparkles } from "lucide-react";
 import Layout from "@/components/Layout";
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
 
@@ -62,13 +62,13 @@ export default function UseOfFunds() {
               <div className="divide-y divide-border">
                 {[
                   { 
-                    category: "Miami Membership Center", 
+                    category: "Flagship Center #1", 
                     amount: "$12.5M",
                     percentage: "25%",
                     description: "Full-service membership center with integrated imaging and biologics manufacturing"
                   },
                   { 
-                    category: "Utah Flagship Center", 
+                    category: "Flagship Center #2", 
                     amount: "$10M",
                     percentage: "20%",
                     description: "Expanded membership center with MRI/CT imaging and manufacturing capabilities"
@@ -101,12 +101,6 @@ export default function UseOfFunds() {
                       </div>
                     </div>
                     <p className="font-body text-sm text-muted-foreground">{item.description}</p>
-                    <div className="mt-3 h-2 bg-muted rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-gradient-to-r from-primary to-accent rounded-full"
-                        style={{ width: item.percentage }}
-                      />
-                    </div>
                   </div>
                 ))}
               </div>
@@ -115,7 +109,7 @@ export default function UseOfFunds() {
         </div>
       </section>
 
-      {/* Center Buildout Details */}
+      {/* Center Design & Build */}
       <section className="py-20 bg-card/30">
         <div className="container">
           <motion.div 
@@ -126,114 +120,104 @@ export default function UseOfFunds() {
             variants={staggerContainer}
           >
             <motion.span variants={fadeInUp} className="font-mono text-primary text-sm tracking-wider">
-              MEMBERSHIP CENTER BUILDOUT
+              CENTER DEVELOPMENT
             </motion.span>
             <motion.h2 variants={fadeInUp} className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
-              Integrated Facility Model
+              Flagship Center Model
             </motion.h2>
             <motion.p variants={fadeInUp} className="font-body text-xl text-muted-foreground max-w-3xl mx-auto">
-              Each membership center combines clinical operations, advanced imaging, and biologics manufacturing 
-              under one roof for maximum efficiency and quality control.
+              Each Lumastem membership center follows a proven design template combining 
+              clinical excellence with luxury hospitality.
             </motion.p>
           </motion.div>
 
           <motion.div 
-            className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto"
+            className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
-            {/* Miami Center */}
+            {/* Center Investment */}
             <motion.div variants={scaleIn}>
-              <div className="bg-card border border-border rounded-2xl overflow-hidden h-full">
-                <div className="p-6 border-b border-border bg-gradient-to-r from-primary/10 to-accent/10">
-                  <div className="flex items-center gap-3 mb-2">
+              <div className="bg-card border border-border rounded-2xl p-8 h-full">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                     <Building2 className="w-6 h-6 text-primary" />
-                    <h3 className="font-display text-xl font-medium">Miami Membership Center</h3>
                   </div>
-                  <p className="font-mono text-sm text-muted-foreground">Florida • Opening 2026</p>
+                  <h3 className="font-display text-xl font-medium">Center Investment Breakdown</h3>
                 </div>
-                <div className="p-6 space-y-4">
-                  <div className="flex justify-between items-center py-3 border-b border-border/50">
-                    <span className="font-body text-muted-foreground">Construction & Buildout</span>
-                    <span className="font-mono text-accent">$7.1M</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-border/50">
-                    <div className="flex items-center gap-2">
-                      <Cpu className="w-4 h-4 text-primary" />
-                      <span className="font-body text-muted-foreground">MRI/CT Imaging Equipment</span>
+                <p className="font-body text-sm text-muted-foreground mb-6">
+                  Typical flagship center buildout cost structure
+                </p>
+                
+                <div className="space-y-3">
+                  {[
+                    { item: "Construction & Buildout", cost: "$4.6M - $7.1M" },
+                    { item: "MRI/CT Imaging Equipment", cost: "$3.3M" },
+                    { item: "Biologics Manufacturing", cost: "$2.0M" },
+                    { item: "DEXA, X-ray, Ultrasound", cost: "$0.3M" },
+                    { item: "AV & Technology Systems", cost: "$0.2M" },
+                    { item: "Furniture & Finishes", cost: "$0.4M" },
+                    { item: "Working Capital", cost: "$0.5M" }
+                  ].map((line, i) => (
+                    <div key={i} className="flex justify-between items-center py-2 border-b border-border/50">
+                      <span className="font-body text-sm">{line.item}</span>
+                      <span className="font-mono text-sm text-accent">{line.cost}</span>
                     </div>
-                    <span className="font-mono text-accent">$3.3M</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-border/50">
-                    <div className="flex items-center gap-2">
-                      <Microscope className="w-4 h-4 text-primary" />
-                      <span className="font-body text-muted-foreground">Biologics Manufacturing</span>
-                    </div>
-                    <span className="font-mono text-accent">$2.0M</span>
-                  </div>
+                  ))}
                   <div className="flex justify-between items-center pt-3">
-                    <span className="font-body font-semibold">Total Investment</span>
-                    <span className="font-mono text-lg font-semibold text-gradient">$12.4M</span>
+                    <span className="font-display font-semibold">Total Per Center</span>
+                    <span className="font-mono text-lg text-primary">$10M - $12.5M</span>
                   </div>
-                </div>
-                <div className="p-6 bg-muted/30 border-t border-border">
-                  <p className="font-body text-sm text-muted-foreground">
-                    <strong>Includes:</strong> Clinical suites, treatment rooms, DEXA ($55K), X-ray ($120K), 
-                    ultrasound ($49K), audio visual ($121K), furniture ($275K), IT/network ($110K), 
-                    architecture & engineering ($160K), and working capital.
-                  </p>
                 </div>
               </div>
             </motion.div>
 
-            {/* Utah Center */}
+            {/* Integrated Facility Model */}
             <motion.div variants={scaleIn}>
-              <div className="bg-card border border-border rounded-2xl overflow-hidden h-full">
-                <div className="p-6 border-b border-border bg-gradient-to-r from-primary/10 to-accent/10">
-                  <div className="flex items-center gap-3 mb-2">
-                    <Building2 className="w-6 h-6 text-primary" />
-                    <h3 className="font-display text-xl font-medium">Utah Flagship Center</h3>
+              <div className="bg-card border border-border rounded-2xl p-8 h-full">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Microscope className="w-6 h-6 text-primary" />
                   </div>
-                  <p className="font-mono text-sm text-muted-foreground">Utah (HQ) • Expansion 2026</p>
+                  <h3 className="font-display text-xl font-medium">Integrated Facility Model</h3>
                 </div>
-                <div className="p-6 space-y-4">
-                  <div className="flex justify-between items-center py-3 border-b border-border/50">
-                    <span className="font-body text-muted-foreground">Construction & Buildout</span>
-                    <span className="font-mono text-accent">$4.6M</span>
+                <p className="font-body text-sm text-muted-foreground mb-6">
+                  Each center combines diagnostics, treatment, and manufacturing
+                </p>
+                
+                <div className="space-y-4">
+                  <div className="bg-muted/30 rounded-xl p-4">
+                    <h5 className="font-display font-medium text-sm mb-2">Diagnostic Wing</h5>
+                    <p className="font-body text-xs text-muted-foreground">
+                      MRI, CT, DEXA, X-ray, ultrasound, and blood draw stations
+                    </p>
                   </div>
-                  <div className="flex justify-between items-center py-3 border-b border-border/50">
-                    <div className="flex items-center gap-2">
-                      <Cpu className="w-4 h-4 text-primary" />
-                      <span className="font-body text-muted-foreground">MRI/CT Imaging Equipment</span>
-                    </div>
-                    <span className="font-mono text-accent">$3.3M</span>
+                  <div className="bg-muted/30 rounded-xl p-4">
+                    <h5 className="font-display font-medium text-sm mb-2">Treatment Suites</h5>
+                    <p className="font-body text-xs text-muted-foreground">
+                      Multiple private suites for IV therapy, injections, and procedures
+                    </p>
                   </div>
-                  <div className="flex justify-between items-center py-3 border-b border-border/50">
-                    <div className="flex items-center gap-2">
-                      <Microscope className="w-4 h-4 text-primary" />
-                      <span className="font-body text-muted-foreground">Biologics Manufacturing</span>
-                    </div>
-                    <span className="font-mono text-accent">$2.0M</span>
+                  <div className="bg-muted/30 rounded-xl p-4">
+                    <h5 className="font-display font-medium text-sm mb-2">Manufacturing Lab</h5>
+                    <p className="font-body text-xs text-muted-foreground">
+                      GMP-certified production of exosomes and stem cell preparations
+                    </p>
                   </div>
-                  <div className="flex justify-between items-center pt-3">
-                    <span className="font-body font-semibold">Total Investment</span>
-                    <span className="font-mono text-lg font-semibold text-gradient">$9.9M</span>
+                  <div className="bg-muted/30 rounded-xl p-4">
+                    <h5 className="font-display font-medium text-sm mb-2">VIP Experience</h5>
+                    <p className="font-body text-xs text-muted-foreground">
+                      Luxury reception, private consultation rooms, and concierge services
+                    </p>
                   </div>
-                </div>
-                <div className="p-6 bg-muted/30 border-t border-border">
-                  <p className="font-body text-sm text-muted-foreground">
-                    <strong>Includes:</strong> 5,124 sqft facility, construction ($2.5M), professional fees ($246K), 
-                    DEXA ($55K), X-ray ($120K), ultrasound ($49K), audio visual ($121K), furniture ($275K), 
-                    IT/network ($110K), security, signage, and working capital ($880K).
-                  </p>
                 </div>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Miami Floor Plans */}
+          {/* Floor Plans */}
           <motion.div 
             className="mt-16 max-w-6xl mx-auto"
             initial="hidden"
@@ -242,8 +226,8 @@ export default function UseOfFunds() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-8">
-              <h3 className="font-display text-2xl font-medium mb-2">Miami Center Floor Plans</h3>
-              <p className="font-body text-muted-foreground">Architectural schematics by Hunton Brady Architects</p>
+              <h3 className="font-display text-2xl font-medium mb-2">Center Floor Plan Template</h3>
+              <p className="font-body text-muted-foreground">Architectural blueprint for flagship membership centers</p>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6">
@@ -255,7 +239,7 @@ export default function UseOfFunds() {
                 <div className="p-4 bg-white">
                   <img 
                     src="/images/miami-floorplan-area1-1.png" 
-                    alt="Miami Center Floor Plan - Area 1" 
+                    alt="Center Floor Plan - Area 1" 
                     className="w-full h-auto rounded-lg"
                   />
                 </div>
@@ -269,7 +253,7 @@ export default function UseOfFunds() {
                 <div className="p-4 bg-white">
                   <img 
                     src="/images/miami-floorplan-area2-1.png" 
-                    alt="Miami Center Floor Plan - Area 2" 
+                    alt="Center Floor Plan - Area 2" 
                     className="w-full h-auto rounded-lg"
                   />
                 </div>
@@ -299,7 +283,147 @@ export default function UseOfFunds() {
             </motion.div>
           </motion.div>
 
-          {/* Fit & Finish - RH Contract */}
+          {/* 3D Renderings - Reception */}
+          <motion.div 
+            className="mt-16 max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-8">
+              <h3 className="font-display text-2xl font-medium mb-2">Reception & Welcome Experience</h3>
+              <p className="font-body text-muted-foreground">3D renderings of the luxury reception and check-in areas</p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-6">
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img 
+                    src="/images/reception-render-2.png" 
+                    alt="Reception Area - Entry View" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-display font-medium text-sm">Entry & Check-In</h4>
+                  <p className="font-body text-xs text-muted-foreground">Welcoming reception with concierge desk</p>
+                </div>
+              </div>
+
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img 
+                    src="/images/reception-render-3.png" 
+                    alt="Reception Area - Lounge View" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-display font-medium text-sm">Waiting Lounge</h4>
+                  <p className="font-body text-xs text-muted-foreground">Comfortable seating with premium finishes</p>
+                </div>
+              </div>
+
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img 
+                    src="/images/reception-render-4.png" 
+                    alt="Reception Area - Detail View" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-display font-medium text-sm">Reception Detail</h4>
+                  <p className="font-body text-xs text-muted-foreground">Glass partitions and natural light</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* 3D Renderings - Treatment Suites */}
+          <motion.div 
+            className="mt-16 max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-8">
+              <h3 className="font-display text-2xl font-medium mb-2">Treatment Suite Design</h3>
+              <p className="font-body text-muted-foreground">3D renderings of the luxury treatment and VIP suites</p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6">
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="aspect-[16/10] overflow-hidden">
+                  <img 
+                    src="/images/suite-render-2.png" 
+                    alt="Treatment Suite - Main View" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-display font-medium">VIP Treatment Suite</h4>
+                  <p className="font-body text-sm text-muted-foreground">
+                    Full-service suite with treatment bed, seating area, and entertainment system
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="aspect-[16/10] overflow-hidden">
+                  <img 
+                    src="/images/suite-render-3.png" 
+                    alt="Treatment Suite - Seating Area" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-display font-medium">Private Consultation Area</h4>
+                  <p className="font-body text-sm text-muted-foreground">
+                    Comfortable seating for consultations and recovery
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6 mt-6">
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="aspect-[16/10] overflow-hidden">
+                  <img 
+                    src="/images/suite-render-4.png" 
+                    alt="Treatment Suite - Medical Station" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-display font-medium">Medical Station</h4>
+                  <p className="font-body text-sm text-muted-foreground">
+                    Integrated sink, storage, and medical equipment station
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="aspect-[16/10] overflow-hidden">
+                  <img 
+                    src="/images/suite-render-5.png" 
+                    alt="Treatment Suite - Lounge View" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-display font-medium">Suite Lounge</h4>
+                  <p className="font-body text-sm text-muted-foreground">
+                    Relaxation area with sofa and ambient lighting
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Premium Fit & Finish */}
           <motion.div 
             className="mt-16 max-w-6xl mx-auto"
             initial="hidden"
@@ -312,15 +436,15 @@ export default function UseOfFunds() {
               <p className="font-body text-muted-foreground">RH Contract luxury furniture and finishes throughout</p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden mb-6">
+            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden">
               <div className="p-6 border-b border-border bg-gradient-to-r from-primary/5 to-accent/5">
                 <div className="flex items-center justify-between">
                   <div>
                     <h4 className="font-display text-xl font-medium">RH Contract Partnership</h4>
                     <p className="font-body text-sm text-muted-foreground">Restoration Hardware's commercial division</p>
                   </div>
-                  <div className="text-right">
-                    <span className="font-mono text-sm text-muted-foreground">Design Partner</span>
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Sparkles className="w-5 h-5 text-primary" />
                   </div>
                 </div>
               </div>
@@ -353,38 +477,17 @@ export default function UseOfFunds() {
                 </div>
               </div>
             </motion.div>
+          </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6">
-              <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                <div className="p-4 border-b border-border bg-muted/30">
-                  <h4 className="font-display font-medium">Reception Furniture Selections</h4>
-                  <p className="font-body text-sm text-muted-foreground">Premium seating and accent pieces</p>
-                </div>
-                <div className="p-4 bg-white">
-                  <img 
-                    src="/images/rh-reception-3.png" 
-                    alt="RH Contract Reception Furniture" 
-                    className="w-full h-auto rounded-lg"
-                  />
-                </div>
-              </div>
-
-              <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                <div className="p-4 border-b border-border bg-muted/30">
-                  <h4 className="font-display font-medium">Treatment Suite Furnishings</h4>
-                  <p className="font-body text-sm text-muted-foreground">Comfort-focused luxury pieces</p>
-                </div>
-                <div className="p-4 bg-white">
-                  <img 
-                    src="/images/rh-suites-4.png" 
-                    alt="RH Contract Suite Furniture" 
-                    className="w-full h-auto rounded-lg"
-                  />
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="mt-6 bg-card border border-border rounded-2xl overflow-hidden">
+          {/* Complete Floor Plan */}
+          <motion.div 
+            className="mt-8 max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+          >
+            <div className="bg-card border border-border rounded-2xl overflow-hidden">
               <div className="p-4 border-b border-border bg-muted/30">
                 <h4 className="font-display font-medium">Complete 1st Level Floor Plan</h4>
                 <p className="font-body text-sm text-muted-foreground">Full facility layout with furniture placement</p>
@@ -392,11 +495,11 @@ export default function UseOfFunds() {
               <div className="p-4 bg-white">
                 <img 
                   src="/images/miami-floorplan-full-1.png" 
-                  alt="Miami Center Complete Floor Plan" 
+                  alt="Complete Center Floor Plan" 
                   className="w-full h-auto rounded-lg"
                 />
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -495,8 +598,8 @@ export default function UseOfFunds() {
                 {
                   region: "United States",
                   status: "Active",
-                  locations: "Utah (HQ), Miami (2026)",
-                  description: "Flagship membership centers with integrated manufacturing"
+                  locations: "Flagship Centers (2026)",
+                  description: "Full-service membership centers with integrated manufacturing"
                 },
                 {
                   region: "Middle East",
