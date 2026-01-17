@@ -300,7 +300,7 @@ export default function UseOfFunds() {
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
-                    src="/images/reception-render-2.png" 
+                    src="/images/lumastem-reception-1.jpg" 
                     alt="Reception Area - Entry View" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
@@ -314,7 +314,7 @@ export default function UseOfFunds() {
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
-                    src="/images/reception-render-3.png" 
+                    src="/images/lumastem-reception-2.jpg" 
                     alt="Reception Area - Lounge View" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
@@ -328,7 +328,7 @@ export default function UseOfFunds() {
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
-                    src="/images/reception-render-4.png" 
+                    src="/images/lumastem-reception-3.jpg" 
                     alt="Reception Area - Detail View" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
@@ -358,7 +358,7 @@ export default function UseOfFunds() {
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
                 <div className="aspect-[16/10] overflow-hidden">
                   <img 
-                    src="/images/suite-render-2.png" 
+                    src="/images/lumastem-suite-1.jpg" 
                     alt="Treatment Suite - Main View" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
@@ -374,7 +374,7 @@ export default function UseOfFunds() {
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
                 <div className="aspect-[16/10] overflow-hidden">
                   <img 
-                    src="/images/suite-render-3.png" 
+                    src="/images/lumastem-suite-2.jpg" 
                     alt="Treatment Suite - Seating Area" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
@@ -388,39 +388,7 @@ export default function UseOfFunds() {
               </div>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6 mt-6">
-              <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                <div className="aspect-[16/10] overflow-hidden">
-                  <img 
-                    src="/images/suite-render-4.png" 
-                    alt="Treatment Suite - Medical Station" 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-4">
-                  <h4 className="font-display font-medium">Medical Station</h4>
-                  <p className="font-body text-sm text-muted-foreground">
-                    Integrated sink, storage, and medical equipment station
-                  </p>
-                </div>
-              </div>
 
-              <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                <div className="aspect-[16/10] overflow-hidden">
-                  <img 
-                    src="/images/suite-render-5.png" 
-                    alt="Treatment Suite - Lounge View" 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-4">
-                  <h4 className="font-display font-medium">Suite Lounge</h4>
-                  <p className="font-body text-sm text-muted-foreground">
-                    Relaxation area with sofa and ambient lighting
-                  </p>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Premium Fit & Finish */}
