@@ -68,9 +68,9 @@ export default function Performance() {
 
             <motion.div variants={fadeInUp} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {[
-                { icon: DollarSign, value: "$34.3M", label: "Year 5 Revenue", subtext: "Per center" },
+                { icon: DollarSign, value: "$42.8M", label: "Year 5 Revenue", subtext: "Per center" },
                 { icon: TrendingUp, value: "65%", label: "Gross Margin", subtext: "Consistent across years" },
-                { icon: Target, value: "46%", label: "EBITDA Margin", subtext: "Year 5 target" },
+                { icon: Target, value: "50%", label: "EBITDA Margin", subtext: "Year 5 target" },
                 { icon: Users, value: "1,571", label: "Members", subtext: "Year 5 capacity" }
               ].map((stat, i) => (
                 <div key={i} className="bg-card border border-border rounded-2xl p-6 text-center hover:border-primary/50 transition-colors">
@@ -122,59 +122,59 @@ export default function Performance() {
                   <tbody className="font-body">
                     <tr className="border-b border-border/50">
                       <td className="p-4 font-medium">Revenue</td>
-                      <td className="p-4 text-right">$16.7M</td>
-                      <td className="p-4 text-right">$26.2M</td>
-                      <td className="p-4 text-right">$30.9M</td>
-                      <td className="p-4 text-right">$33.2M</td>
-                      <td className="p-4 text-right text-primary font-medium">$34.3M</td>
+                      <td className="p-4 text-right">$22.1M</td>
+                      <td className="p-4 text-right">$33.6M</td>
+                      <td className="p-4 text-right">$38.9M</td>
+                      <td className="p-4 text-right">$41.5M</td>
+                      <td className="p-4 text-right text-primary font-medium">$42.8M</td>
                     </tr>
                     <tr className="border-b border-border/50">
                       <td className="p-4 font-medium">Gross Profit</td>
-                      <td className="p-4 text-right">$10.8M</td>
-                      <td className="p-4 text-right">$17.0M</td>
-                      <td className="p-4 text-right">$20.1M</td>
-                      <td className="p-4 text-right">$21.6M</td>
-                      <td className="p-4 text-right text-primary font-medium">$22.3M</td>
+                      <td className="p-4 text-right">$14.4M</td>
+                      <td className="p-4 text-right">$21.8M</td>
+                      <td className="p-4 text-right">$25.3M</td>
+                      <td className="p-4 text-right">$27.0M</td>
+                      <td className="p-4 text-right text-primary font-medium">$27.9M</td>
                     </tr>
                     <tr className="border-b border-border/50 bg-accent/5">
                       <td className="p-4 font-medium">Gross Margin</td>
-                      <td className="p-4 text-right">64.8%</td>
                       <td className="p-4 text-right">65.0%</td>
-                      <td className="p-4 text-right">65.1%</td>
-                      <td className="p-4 text-right">65.1%</td>
-                      <td className="p-4 text-right text-primary font-medium">65.1%</td>
+                      <td className="p-4 text-right">65.0%</td>
+                      <td className="p-4 text-right">65.0%</td>
+                      <td className="p-4 text-right">65.0%</td>
+                      <td className="p-4 text-right text-primary font-medium">65.0%</td>
                     </tr>
                     <tr className="border-b border-border/50">
                       <td className="p-4 font-medium">EBITDA</td>
-                      <td className="p-4 text-right">$5.7M</td>
-                      <td className="p-4 text-right">$11.6M</td>
-                      <td className="p-4 text-right">$13.8M</td>
-                      <td className="p-4 text-right">$15.2M</td>
-                      <td className="p-4 text-right text-primary font-medium">$15.9M</td>
+                      <td className="p-4 text-right">$9.2M</td>
+                      <td className="p-4 text-right">$16.4M</td>
+                      <td className="p-4 text-right">$19.0M</td>
+                      <td className="p-4 text-right">$20.6M</td>
+                      <td className="p-4 text-right text-primary font-medium">$21.4M</td>
                     </tr>
                     <tr className="border-b border-border/50 bg-accent/5">
                       <td className="p-4 font-medium">EBITDA Margin</td>
-                      <td className="p-4 text-right">34.0%</td>
-                      <td className="p-4 text-right">44.4%</td>
-                      <td className="p-4 text-right">44.6%</td>
-                      <td className="p-4 text-right">45.7%</td>
-                      <td className="p-4 text-right text-primary font-medium">46.4%</td>
+                      <td className="p-4 text-right">41.7%</td>
+                      <td className="p-4 text-right">48.9%</td>
+                      <td className="p-4 text-right">48.8%</td>
+                      <td className="p-4 text-right">49.5%</td>
+                      <td className="p-4 text-right text-primary font-medium">50.0%</td>
                     </tr>
                     <tr className="border-b border-border/50">
                       <td className="p-4 font-medium">Net Profit</td>
-                      <td className="p-4 text-right">$3.3M</td>
                       <td className="p-4 text-right">$7.2M</td>
-                      <td className="p-4 text-right">$8.5M</td>
-                      <td className="p-4 text-right">$9.4M</td>
-                      <td className="p-4 text-right text-primary font-medium">$9.9M</td>
+                      <td className="p-4 text-right">$12.9M</td>
+                      <td className="p-4 text-right">$14.9M</td>
+                      <td className="p-4 text-right">$16.2M</td>
+                      <td className="p-4 text-right text-primary font-medium">$16.9M</td>
                     </tr>
                     <tr className="bg-accent/5">
                       <td className="p-4 font-medium">Net Margin</td>
-                      <td className="p-4 text-right">19.9%</td>
-                      <td className="p-4 text-right">27.3%</td>
-                      <td className="p-4 text-right">27.6%</td>
-                      <td className="p-4 text-right">28.4%</td>
-                      <td className="p-4 text-right text-primary font-medium">29.0%</td>
+                      <td className="p-4 text-right">32.7%</td>
+                      <td className="p-4 text-right">38.5%</td>
+                      <td className="p-4 text-right">38.4%</td>
+                      <td className="p-4 text-right">39.0%</td>
+                      <td className="p-4 text-right text-primary font-medium">39.4%</td>
                     </tr>
                   </tbody>
                 </table>
@@ -274,16 +274,16 @@ export default function Performance() {
                       <td className="p-4 text-right">162</td>
                       <td className="p-4 text-right">246</td>
                       <td className="p-4 text-right">285</td>
-                      <td className="p-4 text-right">305</td>
+                      <td className="p-4 text-right">304</td>
                       <td className="p-4 text-right">314</td>
                     </tr>
                     <tr className="border-b border-border/50">
                       <td className="p-4 font-medium">Longevity Elite</td>
                       <td className="p-4 text-right">648</td>
-                      <td className="p-4 text-right">985</td>
-                      <td className="p-4 text-right">1,141</td>
+                      <td className="p-4 text-right">984</td>
+                      <td className="p-4 text-right">1,140</td>
                       <td className="p-4 text-right">1,218</td>
-                      <td className="p-4 text-right">1,257</td>
+                      <td className="p-4 text-right">1,256</td>
                     </tr>
                     <tr className="bg-accent/5">
                       <td className="p-4 font-medium">Total Members</td>
@@ -345,34 +345,34 @@ export default function Performance() {
                     <tr className="border-b border-border/50 bg-accent/5">
                       <td className="p-4 font-medium">Longevity Elite Memberships</td>
                       <td className="p-4 text-right">$19.1M</td>
-                      <td className="p-4 text-right">$29.1M</td>
-                      <td className="p-4 text-right">$33.7M</td>
+                      <td className="p-4 text-right">$29.0M</td>
+                      <td className="p-4 text-right">$33.6M</td>
                       <td className="p-4 text-right">$35.9M</td>
                       <td className="p-4 text-right text-primary font-medium">$37.1M</td>
                     </tr>
                     <tr className="border-b border-border/50">
                       <td className="p-4 font-medium">Ancillary Services</td>
-                      <td className="p-4 text-right">$2.2M</td>
-                      <td className="p-4 text-right">$3.5M</td>
-                      <td className="p-4 text-right">$4.1M</td>
-                      <td className="p-4 text-right">$4.5M</td>
+                      <td className="p-4 text-right">$2.6M</td>
+                      <td className="p-4 text-right">$4.0M</td>
                       <td className="p-4 text-right">$4.6M</td>
+                      <td className="p-4 text-right">$4.9M</td>
+                      <td className="p-4 text-right">$5.1M</td>
                     </tr>
                     <tr className="border-b border-border/50 text-muted-foreground">
                       <td className="p-4 font-medium">Promotional Expense</td>
-                      <td className="p-4 text-right">($516K)</td>
-                      <td className="p-4 text-right">($811K)</td>
-                      <td className="p-4 text-right">($954K)</td>
+                      <td className="p-4 text-right">($0.7M)</td>
                       <td className="p-4 text-right">($1.0M)</td>
-                      <td className="p-4 text-right">($1.1M)</td>
+                      <td className="p-4 text-right">($1.2M)</td>
+                      <td className="p-4 text-right">($1.3M)</td>
+                      <td className="p-4 text-right">($1.3M)</td>
                     </tr>
                     <tr className="bg-accent/10">
                       <td className="p-4 font-medium">Total Revenue</td>
-                      <td className="p-4 text-right font-medium">$16.7M</td>
-                      <td className="p-4 text-right font-medium">$26.2M</td>
-                      <td className="p-4 text-right font-medium">$30.9M</td>
-                      <td className="p-4 text-right font-medium">$33.2M</td>
-                      <td className="p-4 text-right font-bold text-primary">$34.3M</td>
+                      <td className="p-4 text-right font-medium">$22.1M</td>
+                      <td className="p-4 text-right font-medium">$33.6M</td>
+                      <td className="p-4 text-right font-medium">$38.9M</td>
+                      <td className="p-4 text-right font-medium">$41.5M</td>
+                      <td className="p-4 text-right font-bold text-primary">$42.8M</td>
                     </tr>
                   </tbody>
                 </table>
@@ -704,7 +704,7 @@ export default function Performance() {
               {[
                 {
                   title: "Proven Unit Economics",
-                  description: "65% gross margin and 46% EBITDA margin by Year 5 demonstrates strong profitability at the center level."
+                  description: "65% gross margin and 50% EBITDA margin by Year 5 demonstrates strong profitability at the center level."
                 },
                 {
                   title: "Predictable Growth",
@@ -712,7 +712,7 @@ export default function Performance() {
                 },
                 {
                   title: "Scalable Model",
-                  description: "$6.6M total investment per center with clear path to $15.9M annual EBITDA within 5 years."
+                  description: "$6.6M total investment per center with clear path to $21.4M annual EBITDA within 5 years."
                 },
                 {
                   title: "Premium Positioning",
