@@ -399,6 +399,72 @@ export default function Performance() {
                 </div>
               </div>
             </motion.div>
+
+            {/* Sensitivity Analysis */}
+            <motion.div variants={fadeInUp} className="mt-12">
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-6 border-b border-border bg-muted/30">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <BarChart3 className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-xl font-medium">Sensitivity Analysis</h3>
+                      <p className="text-sm text-muted-foreground">Impact of ELITE renewal rate on key metrics</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="border-b border-border">
+                          <th className="text-left py-3 px-4 font-mono text-sm text-muted-foreground">Metric</th>
+                          <th className="text-center py-3 px-4 font-mono text-sm text-muted-foreground">65% Renewal</th>
+                          <th className="text-center py-3 px-4 font-mono text-sm text-primary font-medium bg-primary/5">70% Renewal (Base)</th>
+                          <th className="text-center py-3 px-4 font-mono text-sm text-muted-foreground">75% Renewal</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          { metric: "ELITE LTV", low: "$82,250", base: "$97,350", high: "$117,700" },
+                          { metric: "Avg ELITE Tenure", low: "2.9 years", base: "3.3 years", high: "4.0 years" },
+                          { metric: "Year 5 ELITE Members", low: "1,024", base: "1,072", high: "1,118" },
+                          { metric: "Year 5 Revenue", low: "$35.2M", base: "$36.6M", high: "$38.0M" },
+                          { metric: "Year 5 EBITDA", low: "$12.6M", base: "$13.4M", high: "$14.2M" },
+                          { metric: "5-Year Cumulative Revenue", low: "$136M", base: "$142M", high: "$148M" },
+                          { metric: "LTV/CAC Ratio", low: "10:1", base: "12:1", high: "15:1" }
+                        ].map((row, i) => (
+                          <tr key={i} className="border-b border-border/50 last:border-0">
+                            <td className="py-3 px-4 font-body text-foreground">{row.metric}</td>
+                            <td className="py-3 px-4 text-center font-mono text-amber-400">{row.low}</td>
+                            <td className="py-3 px-4 text-center font-mono text-primary font-medium bg-primary/5">{row.base}</td>
+                            <td className="py-3 px-4 text-center font-mono text-emerald-400">{row.high}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="mt-6 grid md:grid-cols-3 gap-4">
+                    <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 text-center">
+                      <span className="text-amber-400 font-mono text-2xl font-bold">-$4M</span>
+                      <p className="text-sm text-muted-foreground mt-1">5-Year Revenue Impact</p>
+                      <p className="text-xs text-amber-400/70">at 65% renewal</p>
+                    </div>
+                    <div className="bg-primary/10 border border-primary/20 rounded-xl p-4 text-center">
+                      <span className="text-primary font-mono text-2xl font-bold">$142M</span>
+                      <p className="text-sm text-muted-foreground mt-1">Base Case Revenue</p>
+                      <p className="text-xs text-primary/70">at 70% renewal</p>
+                    </div>
+                    <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4 text-center">
+                      <span className="text-emerald-400 font-mono text-2xl font-bold">+$6M</span>
+                      <p className="text-sm text-muted-foreground mt-1">5-Year Revenue Upside</p>
+                      <p className="text-xs text-emerald-400/70">at 75% renewal</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
