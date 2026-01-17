@@ -14,6 +14,7 @@ interface LayoutProps {
 const navLinks = [
   { href: "/opportunity", label: "Opportunity" },
   { href: "/technology", label: "Technology" },
+  { href: "/performance", label: "Performance" },
   { href: "/investors", label: "Investors" },
   { href: "/team", label: "Team" },
   { href: "/use-of-funds", label: "Use of Funds" },

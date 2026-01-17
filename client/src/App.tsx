@@ -11,6 +11,7 @@ import Investors from "./pages/Investors";
 import Team from "./pages/Team";
 import UseOfFunds from "./pages/UseOfFunds";
 import Projections from "./pages/Projections";
+import Performance from "./pages/Performance";
 import Contact from "./pages/Contact";
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/opportunity" component={Opportunity} />
       <Route path="/technology" component={Technology} />
+      <Route path="/performance" component={Performance} />
       <Route path="/investors" component={Investors} />
       <Route path="/team" component={Team} />
       <Route path="/use-of-funds" component={UseOfFunds} />
