@@ -1,10 +1,11 @@
 /*
  * DESIGN: "Cellular Renaissance" - Organic Futurism
  * Use of Funds page - $50M Series A allocation
+ * Updated with detailed construction costs from spreadsheet analysis
  */
 
 import { motion } from "framer-motion";
-import { FlaskConical, Users, Heart, Globe } from "lucide-react";
+import { FlaskConical, Users, Heart, Globe, Building2, Cpu, Microscope } from "lucide-react";
 import Layout from "@/components/Layout";
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
 
@@ -61,33 +62,33 @@ export default function UseOfFunds() {
               <div className="divide-y divide-border">
                 {[
                   { 
-                    category: "Florida Integrated Stem Cell Center", 
-                    amount: "$20M",
-                    percentage: "40%",
-                    description: "All-in-one Florida hub combining clinical operations with MUSE Cell manufacturing"
+                    category: "Miami Membership Center", 
+                    amount: "$12.5M",
+                    percentage: "25%",
+                    description: "Full-service membership center with integrated imaging and biologics manufacturing"
                   },
                   { 
-                    category: "Utah Flagship Expansion", 
+                    category: "Utah Flagship Center", 
                     amount: "$10M",
                     percentage: "20%",
-                    description: "Clinic build-out, sales staffing, and medical equipment to scale patient throughput"
-                  },
-                  { 
-                    category: "Biologic Manufacturing & R&D", 
-                    amount: "$10M",
-                    percentage: "20%",
-                    description: "MUSE Cell manufacturing capacity, process optimization, and next-gen applications"
+                    description: "Expanded membership center with MRI/CT imaging and manufacturing capabilities"
                   },
                   { 
                     category: "National Marketing & Growth", 
-                    amount: "$5M",
-                    percentage: "10%",
+                    amount: "$10M",
+                    percentage: "20%",
                     description: "Brand launch, physician-referral activation, and membership acquisition"
                   },
                   { 
+                    category: "Working Capital & Operations", 
+                    amount: "$10M",
+                    percentage: "20%",
+                    description: "Operational runway, staffing, and clinical operations support"
+                  },
+                  { 
                     category: "International Expansion", 
-                    amount: "$5M",
-                    percentage: "10%",
+                    amount: "$7.5M",
+                    percentage: "15%",
                     description: "Bahrain hub development and strategic international partnerships"
                   }
                 ].map((item, i) => (
@@ -114,8 +115,128 @@ export default function UseOfFunds() {
         </div>
       </section>
 
-      {/* Revenue Pillars */}
+      {/* Center Buildout Details */}
       <section className="py-20 bg-card/30">
+        <div className="container">
+          <motion.div 
+            className="text-center mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.span variants={fadeInUp} className="font-mono text-primary text-sm tracking-wider">
+              MEMBERSHIP CENTER BUILDOUT
+            </motion.span>
+            <motion.h2 variants={fadeInUp} className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
+              Integrated Facility Model
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="font-body text-xl text-muted-foreground max-w-3xl mx-auto">
+              Each membership center combines clinical operations, advanced imaging, and biologics manufacturing 
+              under one roof for maximum efficiency and quality control.
+            </motion.p>
+          </motion.div>
+
+          <motion.div 
+            className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            {/* Miami Center */}
+            <motion.div variants={scaleIn}>
+              <div className="bg-card border border-border rounded-2xl overflow-hidden h-full">
+                <div className="p-6 border-b border-border bg-gradient-to-r from-primary/10 to-accent/10">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Building2 className="w-6 h-6 text-primary" />
+                    <h3 className="font-display text-xl font-medium">Miami Membership Center</h3>
+                  </div>
+                  <p className="font-mono text-sm text-muted-foreground">Florida • Opening 2026</p>
+                </div>
+                <div className="p-6 space-y-4">
+                  <div className="flex justify-between items-center py-3 border-b border-border/50">
+                    <span className="font-body text-muted-foreground">Construction & Buildout</span>
+                    <span className="font-mono text-accent">$7.1M</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-border/50">
+                    <div className="flex items-center gap-2">
+                      <Cpu className="w-4 h-4 text-primary" />
+                      <span className="font-body text-muted-foreground">MRI/CT Imaging Equipment</span>
+                    </div>
+                    <span className="font-mono text-accent">$3.3M</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-border/50">
+                    <div className="flex items-center gap-2">
+                      <Microscope className="w-4 h-4 text-primary" />
+                      <span className="font-body text-muted-foreground">Biologics Manufacturing</span>
+                    </div>
+                    <span className="font-mono text-accent">$2.0M</span>
+                  </div>
+                  <div className="flex justify-between items-center pt-3">
+                    <span className="font-body font-semibold">Total Investment</span>
+                    <span className="font-mono text-lg font-semibold text-gradient">$12.4M</span>
+                  </div>
+                </div>
+                <div className="p-6 bg-muted/30 border-t border-border">
+                  <p className="font-body text-sm text-muted-foreground">
+                    <strong>Includes:</strong> Clinical suites, treatment rooms, DEXA ($55K), X-ray ($120K), 
+                    ultrasound ($49K), audio visual ($121K), furniture ($275K), IT/network ($110K), 
+                    architecture & engineering ($160K), and working capital.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Utah Center */}
+            <motion.div variants={scaleIn}>
+              <div className="bg-card border border-border rounded-2xl overflow-hidden h-full">
+                <div className="p-6 border-b border-border bg-gradient-to-r from-primary/10 to-accent/10">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Building2 className="w-6 h-6 text-primary" />
+                    <h3 className="font-display text-xl font-medium">Utah Flagship Center</h3>
+                  </div>
+                  <p className="font-mono text-sm text-muted-foreground">Utah (HQ) • Expansion 2026</p>
+                </div>
+                <div className="p-6 space-y-4">
+                  <div className="flex justify-between items-center py-3 border-b border-border/50">
+                    <span className="font-body text-muted-foreground">Construction & Buildout</span>
+                    <span className="font-mono text-accent">$4.6M</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-border/50">
+                    <div className="flex items-center gap-2">
+                      <Cpu className="w-4 h-4 text-primary" />
+                      <span className="font-body text-muted-foreground">MRI/CT Imaging Equipment</span>
+                    </div>
+                    <span className="font-mono text-accent">$3.3M</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-border/50">
+                    <div className="flex items-center gap-2">
+                      <Microscope className="w-4 h-4 text-primary" />
+                      <span className="font-body text-muted-foreground">Biologics Manufacturing</span>
+                    </div>
+                    <span className="font-mono text-accent">$2.0M</span>
+                  </div>
+                  <div className="flex justify-between items-center pt-3">
+                    <span className="font-body font-semibold">Total Investment</span>
+                    <span className="font-mono text-lg font-semibold text-gradient">$9.9M</span>
+                  </div>
+                </div>
+                <div className="p-6 bg-muted/30 border-t border-border">
+                  <p className="font-body text-sm text-muted-foreground">
+                    <strong>Includes:</strong> 5,124 sqft facility, construction ($2.5M), professional fees ($246K), 
+                    DEXA ($55K), X-ray ($120K), ultrasound ($49K), audio visual ($121K), furniture ($275K), 
+                    IT/network ($110K), security, signage, and working capital ($880K).
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Revenue Pillars */}
+      <section className="py-20">
         <div className="container">
           <motion.div 
             className="text-center mb-16"
@@ -176,9 +297,9 @@ export default function UseOfFunds() {
       </section>
 
       {/* Global Expansion */}
-      <section className="py-20 relative">
+      <section className="py-20 relative bg-card/30">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-20"
+          className="absolute inset-0 bg-cover bg-center opacity-10"
           style={{ backgroundImage: "url('/images/global-expansion.jpg')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
@@ -208,18 +329,18 @@ export default function UseOfFunds() {
                 {
                   region: "United States",
                   status: "Active",
-                  locations: "Utah (HQ), Florida (2025)",
-                  description: "Flagship clinics and manufacturing hub"
+                  locations: "Utah (HQ), Miami (2026)",
+                  description: "Flagship membership centers with integrated manufacturing"
                 },
                 {
                   region: "Middle East",
-                  status: "2025-2026",
+                  status: "2026-2027",
                   locations: "Bahrain Hub",
                   description: "Gateway to GCC and MENA markets"
                 },
                 {
                   region: "Asia Pacific",
-                  status: "2026+",
+                  status: "2027+",
                   locations: "Strategic Partnerships",
                   description: "Licensing and joint venture opportunities"
                 }
