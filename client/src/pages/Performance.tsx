@@ -1,7 +1,8 @@
 /*
  * DESIGN: "Cellular Renaissance" - Organic Futurism
- * Performance page - Single center performance and metrics
- * Placeholder sections for data to be filled in later
+ * Performance page - Single center proforma and financial metrics
+ * Data source: Fountain Life Center Development Proforma (adapted for Lumastem)
+ * Note: Partner calculations removed as Lumastem centers are company-owned
  */
 
 import { motion } from "framer-motion";
@@ -9,16 +10,16 @@ import {
   TrendingUp, 
   Users, 
   DollarSign, 
-  Activity, 
-  Heart, 
+  Building2,
+  Briefcase,
+  PieChart,
   BarChart3,
-  Calendar,
   Target,
-  Percent,
-  Clock
+  Wallet,
+  UserPlus
 } from "lucide-react";
 import Layout from "@/components/Layout";
-import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
+import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 export default function Performance() {
   return (
@@ -33,20 +34,20 @@ export default function Performance() {
             variants={staggerContainer}
           >
             <motion.span variants={fadeInUp} className="font-mono text-primary text-sm tracking-wider">
-              PROVEN RESULTS
+              SINGLE CENTER PROFORMA
             </motion.span>
             <motion.h1 variants={fadeInUp} className="font-display text-5xl md:text-7xl font-medium mt-4 mb-6">
-              Single Center Performance
+              Unit Economics
             </motion.h1>
             <motion.p variants={fadeInUp} className="font-body text-xl text-muted-foreground">
-              Validated unit economics and operational excellence from our flagship location, 
-              demonstrating the scalability of the Lumastem model.
+              Proven financial model demonstrating strong unit economics, 
+              predictable growth, and path to profitability per center.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
-      {/* Key Performance Indicators */}
+      {/* Key Financial Highlights */}
       <section className="py-20 bg-card/30">
         <div className="container">
           <motion.div 
@@ -58,56 +59,258 @@ export default function Performance() {
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
               <span className="font-mono text-primary text-sm tracking-wider">
-                KEY METRICS
+                5-YEAR OUTLOOK
               </span>
               <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
-                Performance at a Glance
+                Financial Highlights
               </h2>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              {[
+                { icon: DollarSign, value: "$34.3M", label: "Year 5 Revenue", subtext: "Per center" },
+                { icon: TrendingUp, value: "65%", label: "Gross Margin", subtext: "Consistent across years" },
+                { icon: Target, value: "46%", label: "EBITDA Margin", subtext: "Year 5 target" },
+                { icon: Users, value: "1,571", label: "Members", subtext: "Year 5 capacity" }
+              ].map((stat, i) => (
+                <div key={i} className="bg-card border border-border rounded-2xl p-6 text-center hover:border-primary/50 transition-colors">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-primary flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-7 h-7 text-background" />
+                  </div>
+                  <span className="font-display text-3xl font-bold text-gradient">{stat.value}</span>
+                  <p className="font-display font-medium mt-2">{stat.label}</p>
+                  <p className="font-body text-sm text-muted-foreground">{stat.subtext}</p>
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Revenue & Profitability Table */}
+      <section className="py-20">
+        <div className="container">
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                PROFIT & LOSS
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
+                Revenue & Profitability
+              </h2>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-border bg-card/50">
+                      <th className="text-left font-display font-medium p-4">Metric</th>
+                      <th className="text-right font-display font-medium p-4">Year 1</th>
+                      <th className="text-right font-display font-medium p-4">Year 2</th>
+                      <th className="text-right font-display font-medium p-4">Year 3</th>
+                      <th className="text-right font-display font-medium p-4">Year 4</th>
+                      <th className="text-right font-display font-medium p-4">Year 5</th>
+                    </tr>
+                  </thead>
+                  <tbody className="font-body">
+                    <tr className="border-b border-border/50">
+                      <td className="p-4 font-medium">Revenue</td>
+                      <td className="p-4 text-right">$16.7M</td>
+                      <td className="p-4 text-right">$26.2M</td>
+                      <td className="p-4 text-right">$30.9M</td>
+                      <td className="p-4 text-right">$33.2M</td>
+                      <td className="p-4 text-right text-primary font-medium">$34.3M</td>
+                    </tr>
+                    <tr className="border-b border-border/50">
+                      <td className="p-4 font-medium">Gross Profit</td>
+                      <td className="p-4 text-right">$10.8M</td>
+                      <td className="p-4 text-right">$17.0M</td>
+                      <td className="p-4 text-right">$20.1M</td>
+                      <td className="p-4 text-right">$21.6M</td>
+                      <td className="p-4 text-right text-primary font-medium">$22.3M</td>
+                    </tr>
+                    <tr className="border-b border-border/50 bg-accent/5">
+                      <td className="p-4 font-medium">Gross Margin</td>
+                      <td className="p-4 text-right">64.8%</td>
+                      <td className="p-4 text-right">65.0%</td>
+                      <td className="p-4 text-right">65.1%</td>
+                      <td className="p-4 text-right">65.1%</td>
+                      <td className="p-4 text-right text-primary font-medium">65.1%</td>
+                    </tr>
+                    <tr className="border-b border-border/50">
+                      <td className="p-4 font-medium">EBITDA</td>
+                      <td className="p-4 text-right">$5.7M</td>
+                      <td className="p-4 text-right">$11.6M</td>
+                      <td className="p-4 text-right">$13.8M</td>
+                      <td className="p-4 text-right">$15.2M</td>
+                      <td className="p-4 text-right text-primary font-medium">$15.9M</td>
+                    </tr>
+                    <tr className="border-b border-border/50 bg-accent/5">
+                      <td className="p-4 font-medium">EBITDA Margin</td>
+                      <td className="p-4 text-right">34.0%</td>
+                      <td className="p-4 text-right">44.4%</td>
+                      <td className="p-4 text-right">44.6%</td>
+                      <td className="p-4 text-right">45.7%</td>
+                      <td className="p-4 text-right text-primary font-medium">46.4%</td>
+                    </tr>
+                    <tr className="border-b border-border/50">
+                      <td className="p-4 font-medium">Net Profit</td>
+                      <td className="p-4 text-right">$3.3M</td>
+                      <td className="p-4 text-right">$7.2M</td>
+                      <td className="p-4 text-right">$8.5M</td>
+                      <td className="p-4 text-right">$9.4M</td>
+                      <td className="p-4 text-right text-primary font-medium">$9.9M</td>
+                    </tr>
+                    <tr className="bg-accent/5">
+                      <td className="p-4 font-medium">Net Margin</td>
+                      <td className="p-4 text-right">19.9%</td>
+                      <td className="p-4 text-right">27.3%</td>
+                      <td className="p-4 text-right">27.6%</td>
+                      <td className="p-4 text-right">28.4%</td>
+                      <td className="p-4 text-right text-primary font-medium">29.0%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Membership Model */}
+      <section className="py-20 bg-card/30">
+        <div className="container">
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                MEMBERSHIP TIERS
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
+                Tiered Membership Model
+              </h2>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-6 mb-12">
               {[
                 {
-                  icon: DollarSign,
-                  label: "Annual Revenue",
-                  value: "$X.XM",
-                  change: "+XX%",
-                  period: "YoY Growth"
+                  tier: "CORE",
+                  price: "$6,500",
+                  mix: "15%",
+                  renewal: "10%",
+                  description: "Entry-level comprehensive health assessment and baseline diagnostics"
                 },
                 {
-                  icon: Users,
-                  label: "Active Members",
-                  value: "XXX",
-                  change: "+XX%",
-                  period: "YoY Growth"
+                  tier: "SNAP",
+                  price: "$11,700",
+                  mix: "5%",
+                  renewal: "5%",
+                  description: "Enhanced diagnostics with advanced imaging and personalized protocols"
                 },
                 {
-                  icon: Activity,
-                  label: "Procedures/Month",
-                  value: "XXX",
-                  change: "+XX%",
-                  period: "YoY Growth"
-                },
-                {
-                  icon: Heart,
-                  label: "Patient Satisfaction",
-                  value: "XX%",
-                  change: "NPS XX",
-                  period: "Net Promoter Score"
+                  tier: "APEX",
+                  price: "$21,500",
+                  mix: "70%",
+                  renewal: "50%",
+                  description: "Premium tier with full biologic treatments, concierge care, and ongoing optimization",
+                  highlight: true
                 }
-              ].map((metric, i) => (
-                <div key={i} className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-primary flex items-center justify-center mb-4">
-                    <metric.icon className="w-6 h-6 text-background" />
-                  </div>
-                  <p className="font-body text-sm text-muted-foreground mb-1">{metric.label}</p>
-                  <p className="font-display text-3xl font-bold text-gradient mb-2">{metric.value}</p>
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-sm text-green-400">{metric.change}</span>
-                    <span className="font-body text-xs text-muted-foreground">{metric.period}</span>
+              ].map((tier, i) => (
+                <div 
+                  key={i} 
+                  className={`bg-card border rounded-2xl p-6 ${
+                    tier.highlight 
+                      ? 'border-primary shadow-lg shadow-primary/10' 
+                      : 'border-border'
+                  }`}
+                >
+                  {tier.highlight && (
+                    <span className="font-mono text-xs text-primary bg-primary/10 px-2 py-1 rounded mb-4 inline-block">
+                      PRIMARY TIER
+                    </span>
+                  )}
+                  <h3 className="font-display text-2xl font-bold mb-2">{tier.tier}</h3>
+                  <p className="font-display text-3xl font-bold text-gradient mb-4">{tier.price}</p>
+                  <p className="font-body text-sm text-muted-foreground mb-4">{tier.description}</p>
+                  <div className="space-y-2 pt-4 border-t border-border">
+                    <div className="flex justify-between">
+                      <span className="font-body text-sm text-muted-foreground">Member Mix</span>
+                      <span className="font-mono text-sm text-primary">{tier.mix}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="font-body text-sm text-muted-foreground">Renewal Rate</span>
+                      <span className="font-mono text-sm text-primary">{tier.renewal}</span>
+                    </div>
                   </div>
                 </div>
               ))}
+            </motion.div>
+
+            {/* Member Growth Table */}
+            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden">
+              <div className="p-6 border-b border-border">
+                <h3 className="font-display text-xl font-medium">Member Growth Trajectory</h3>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-border bg-card/50">
+                      <th className="text-left font-display font-medium p-4">Tier</th>
+                      <th className="text-right font-display font-medium p-4">Year 1</th>
+                      <th className="text-right font-display font-medium p-4">Year 2</th>
+                      <th className="text-right font-display font-medium p-4">Year 3</th>
+                      <th className="text-right font-display font-medium p-4">Year 4</th>
+                      <th className="text-right font-display font-medium p-4">Year 5</th>
+                    </tr>
+                  </thead>
+                  <tbody className="font-body">
+                    <tr className="border-b border-border/50">
+                      <td className="p-4 font-medium">CORE</td>
+                      <td className="p-4 text-right">135</td>
+                      <td className="p-4 text-right">164</td>
+                      <td className="p-4 text-right">166</td>
+                      <td className="p-4 text-right">167</td>
+                      <td className="p-4 text-right">167</td>
+                    </tr>
+                    <tr className="border-b border-border/50">
+                      <td className="p-4 font-medium">SNAP</td>
+                      <td className="p-4 text-right">45</td>
+                      <td className="p-4 text-right">52</td>
+                      <td className="p-4 text-right">53</td>
+                      <td className="p-4 text-right">53</td>
+                      <td className="p-4 text-right">53</td>
+                    </tr>
+                    <tr className="border-b border-border/50">
+                      <td className="p-4 font-medium">APEX</td>
+                      <td className="p-4 text-right">630</td>
+                      <td className="p-4 text-right">1,015</td>
+                      <td className="p-4 text-right">1,208</td>
+                      <td className="p-4 text-right">1,304</td>
+                      <td className="p-4 text-right">1,352</td>
+                    </tr>
+                    <tr className="bg-accent/5">
+                      <td className="p-4 font-medium">Total Members</td>
+                      <td className="p-4 text-right font-medium">810</td>
+                      <td className="p-4 text-right font-medium">1,231</td>
+                      <td className="p-4 text-right font-medium">1,426</td>
+                      <td className="p-4 text-right font-medium">1,523</td>
+                      <td className="p-4 text-right font-medium text-primary">1,571</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </motion.div>
           </motion.div>
         </div>
@@ -125,80 +328,99 @@ export default function Performance() {
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
               <span className="font-mono text-primary text-sm tracking-wider">
-                REVENUE ANALYSIS
+                REVENUE MIX
               </span>
               <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
-                Revenue Breakdown
+                Revenue Breakdown by Source
               </h2>
-              <p className="font-body text-xl text-muted-foreground max-w-2xl mx-auto">
-                Diversified revenue streams demonstrating the strength of our integrated model.
-              </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-8">
-              {/* Revenue by Category */}
-              <div className="bg-card border border-border rounded-2xl p-8">
-                <h3 className="font-display text-2xl font-medium mb-6">Revenue by Category</h3>
-                <div className="space-y-4">
-                  {[
-                    { category: "Membership Fees", percentage: "XX%", amount: "$X.XM" },
-                    { category: "Treatment Services", percentage: "XX%", amount: "$X.XM" },
-                    { category: "Biologic Products", percentage: "XX%", amount: "$X.XM" },
-                    { category: "At-Home Programs", percentage: "XX%", amount: "$X.XM" },
-                    { category: "Diagnostics & Imaging", percentage: "XX%", amount: "$X.XM" }
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center justify-between">
-                      <span className="font-body text-muted-foreground">{item.category}</span>
-                      <div className="flex items-center gap-4">
-                        <span className="font-mono text-sm text-primary">{item.percentage}</span>
-                        <span className="font-display font-medium w-20 text-right">{item.amount}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-6 pt-6 border-t border-border flex items-center justify-between">
-                  <span className="font-display font-medium">Total Revenue</span>
-                  <span className="font-display text-2xl font-bold text-gradient">$X.XM</span>
-                </div>
+            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-border bg-card/50">
+                      <th className="text-left font-display font-medium p-4">Revenue Source</th>
+                      <th className="text-right font-display font-medium p-4">Year 1</th>
+                      <th className="text-right font-display font-medium p-4">Year 2</th>
+                      <th className="text-right font-display font-medium p-4">Year 3</th>
+                      <th className="text-right font-display font-medium p-4">Year 4</th>
+                      <th className="text-right font-display font-medium p-4">Year 5</th>
+                    </tr>
+                  </thead>
+                  <tbody className="font-body">
+                    <tr className="border-b border-border/50">
+                      <td className="p-4 font-medium">CORE Memberships</td>
+                      <td className="p-4 text-right">$877K</td>
+                      <td className="p-4 text-right">$1.1M</td>
+                      <td className="p-4 text-right">$1.1M</td>
+                      <td className="p-4 text-right">$1.1M</td>
+                      <td className="p-4 text-right">$1.1M</td>
+                    </tr>
+                    <tr className="border-b border-border/50">
+                      <td className="p-4 font-medium">SNAP Memberships</td>
+                      <td className="p-4 text-right">$527K</td>
+                      <td className="p-4 text-right">$611K</td>
+                      <td className="p-4 text-right">$616K</td>
+                      <td className="p-4 text-right">$616K</td>
+                      <td className="p-4 text-right">$616K</td>
+                    </tr>
+                    <tr className="border-b border-border/50 bg-accent/5">
+                      <td className="p-4 font-medium">APEX Memberships</td>
+                      <td className="p-4 text-right">$13.5M</td>
+                      <td className="p-4 text-right">$21.8M</td>
+                      <td className="p-4 text-right">$26.0M</td>
+                      <td className="p-4 text-right">$28.0M</td>
+                      <td className="p-4 text-right text-primary font-medium">$29.1M</td>
+                    </tr>
+                    <tr className="border-b border-border/50">
+                      <td className="p-4 font-medium">Ancillary Services</td>
+                      <td className="p-4 text-right">$2.2M</td>
+                      <td className="p-4 text-right">$3.5M</td>
+                      <td className="p-4 text-right">$4.1M</td>
+                      <td className="p-4 text-right">$4.5M</td>
+                      <td className="p-4 text-right">$4.6M</td>
+                    </tr>
+                    <tr className="border-b border-border/50 text-muted-foreground">
+                      <td className="p-4 font-medium">Promotional Expense</td>
+                      <td className="p-4 text-right">($516K)</td>
+                      <td className="p-4 text-right">($811K)</td>
+                      <td className="p-4 text-right">($954K)</td>
+                      <td className="p-4 text-right">($1.0M)</td>
+                      <td className="p-4 text-right">($1.1M)</td>
+                    </tr>
+                    <tr className="bg-accent/10">
+                      <td className="p-4 font-medium">Total Revenue</td>
+                      <td className="p-4 text-right font-medium">$16.7M</td>
+                      <td className="p-4 text-right font-medium">$26.2M</td>
+                      <td className="p-4 text-right font-medium">$30.9M</td>
+                      <td className="p-4 text-right font-medium">$33.2M</td>
+                      <td className="p-4 text-right font-bold text-primary">$34.3M</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
+            </motion.div>
 
-              {/* Monthly Trend */}
-              <div className="bg-card border border-border rounded-2xl p-8">
-                <h3 className="font-display text-2xl font-medium mb-6">Monthly Revenue Trend</h3>
-                <div className="space-y-3">
-                  {[
-                    { month: "January", revenue: "$XXXk" },
-                    { month: "February", revenue: "$XXXk" },
-                    { month: "March", revenue: "$XXXk" },
-                    { month: "April", revenue: "$XXXk" },
-                    { month: "May", revenue: "$XXXk" },
-                    { month: "June", revenue: "$XXXk" },
-                    { month: "July", revenue: "$XXXk" },
-                    { month: "August", revenue: "$XXXk" },
-                    { month: "September", revenue: "$XXXk" },
-                    { month: "October", revenue: "$XXXk" },
-                    { month: "November", revenue: "$XXXk" },
-                    { month: "December", revenue: "$XXXk" }
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center justify-between">
-                      <span className="font-body text-sm text-muted-foreground">{item.month}</span>
-                      <div className="flex-1 mx-4 h-2 bg-background rounded-full overflow-hidden">
-                        <div 
-                          className="h-full bg-gradient-to-r from-accent to-primary rounded-full"
-                          style={{ width: `${60 + Math.random() * 40}%` }}
-                        />
-                      </div>
-                      <span className="font-mono text-sm w-16 text-right">{item.revenue}</span>
-                    </div>
-                  ))}
+            {/* Revenue Insight */}
+            <motion.div variants={fadeInUp} className="mt-8 grid md:grid-cols-3 gap-6">
+              {[
+                { label: "APEX Revenue Share", value: "85%", description: "of total membership revenue" },
+                { label: "Ancillary Revenue", value: "13%", description: "additional services per member" },
+                { label: "Revenue CAGR", value: "20%", description: "compound annual growth" }
+              ].map((item, i) => (
+                <div key={i} className="bg-card/50 border border-border rounded-xl p-6 text-center">
+                  <span className="font-display text-3xl font-bold text-gradient">{item.value}</span>
+                  <p className="font-display font-medium mt-2">{item.label}</p>
+                  <p className="font-body text-sm text-muted-foreground">{item.description}</p>
                 </div>
-              </div>
+              ))}
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Membership Metrics */}
+      {/* CAPEX & Investment */}
       <section className="py-20 bg-card/30">
         <div className="container">
           <motion.div 
@@ -210,90 +432,145 @@ export default function Performance() {
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
               <span className="font-mono text-primary text-sm tracking-wider">
-                MEMBERSHIP ANALYTICS
+                CAPITAL REQUIREMENTS
               </span>
               <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
-                Membership Performance
+                Center Investment
               </h2>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-6 mb-12">
-              {[
-                {
-                  icon: Users,
-                  label: "Total Members",
-                  value: "XXX",
-                  description: "Active membership base"
-                },
-                {
-                  icon: Percent,
-                  label: "Retention Rate",
-                  value: "XX%",
-                  description: "Annual member retention"
-                },
-                {
-                  icon: DollarSign,
-                  label: "ARPM",
-                  value: "$XX,XXX",
-                  description: "Avg. revenue per member"
-                }
-              ].map((metric, i) => (
-                <div key={i} className="bg-card border border-border rounded-2xl p-8 text-center hover:border-primary/50 transition-colors">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-primary flex items-center justify-center mx-auto mb-4">
-                    <metric.icon className="w-7 h-7 text-background" />
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-8">
+              {/* Professional Fees & Construction */}
+              <div className="bg-card border border-border rounded-2xl p-6">
+                <h3 className="font-display text-xl font-medium mb-6 flex items-center gap-2">
+                  <Building2 className="w-5 h-5 text-primary" />
+                  Construction & Professional Fees
+                </h3>
+                <div className="space-y-3">
+                  {[
+                    { item: "Construction Cost", amount: "$4,550,000" },
+                    { item: "Architect & Engineering", amount: "$295,750" },
+                    { item: "CM Services", amount: "$69,876" },
+                    { item: "FFE Management", amount: "$16,040" }
+                  ].map((row, i) => (
+                    <div key={i} className="flex justify-between items-center pb-3 border-b border-border/50 last:border-0">
+                      <span className="font-body text-muted-foreground">{row.item}</span>
+                      <span className="font-mono text-sm">{row.amount}</span>
+                    </div>
+                  ))}
+                  <div className="flex justify-between items-center pt-3 border-t border-border">
+                    <span className="font-display font-medium">Subtotal</span>
+                    <span className="font-mono text-primary font-medium">$4,931,666</span>
                   </div>
-                  <p className="font-display text-4xl font-bold text-gradient mb-2">{metric.value}</p>
-                  <p className="font-display font-medium mb-1">{metric.label}</p>
-                  <p className="font-body text-sm text-muted-foreground">{metric.description}</p>
                 </div>
-              ))}
+              </div>
+
+              {/* Other Project Costs */}
+              <div className="bg-card border border-border rounded-2xl p-6">
+                <h3 className="font-display text-xl font-medium mb-6 flex items-center gap-2">
+                  <Briefcase className="w-5 h-5 text-primary" />
+                  Other Project Costs
+                </h3>
+                <div className="space-y-3">
+                  {[
+                    { item: "Furniture", amount: "$300,000" },
+                    { item: "Medical Equipment", amount: "$223,784" },
+                    { item: "Audio Visual", amount: "$121,000" },
+                    { item: "IT / Network", amount: "$110,000" },
+                    { item: "Security", amount: "$22,000" },
+                    { item: "Synexis Air Purification", amount: "$21,863" },
+                    { item: "Signage", amount: "$17,700" },
+                    { item: "Ancillary Equipment", amount: "$16,500" },
+                    { item: "Shielding Report", amount: "$4,400" },
+                    { item: "Locksmith", amount: "$1,100" }
+                  ].map((row, i) => (
+                    <div key={i} className="flex justify-between items-center pb-2 border-b border-border/50 last:border-0">
+                      <span className="font-body text-sm text-muted-foreground">{row.item}</span>
+                      <span className="font-mono text-xs">{row.amount}</span>
+                    </div>
+                  ))}
+                  <div className="flex justify-between items-center pt-3 border-t border-border">
+                    <span className="font-display font-medium">Subtotal</span>
+                    <span className="font-mono text-primary font-medium">$838,347</span>
+                  </div>
+                </div>
+              </div>
             </motion.div>
 
-            {/* Membership Tiers */}
-            <motion.div variants={fadeInUp}>
-              <h3 className="font-display text-2xl font-medium text-center mb-8">Membership Tier Distribution</h3>
+            {/* Medical Equipment Detail */}
+            <motion.div variants={fadeInUp} className="mt-8 bg-card border border-border rounded-2xl p-6">
+              <h3 className="font-display text-xl font-medium mb-6 flex items-center gap-2">
+                <PieChart className="w-5 h-5 text-primary" />
+                Medical Equipment (CAPEX)
+              </h3>
+              <div className="grid md:grid-cols-4 gap-6">
+                {[
+                  { equipment: "X-ray", cost: "$119,784" },
+                  { equipment: "DEXA Scanner", cost: "$55,000" },
+                  { equipment: "Ultrasound", cost: "$49,000" },
+                  { equipment: "Total", cost: "$223,784", highlight: true }
+                ].map((item, i) => (
+                  <div 
+                    key={i} 
+                    className={`text-center p-4 rounded-xl ${
+                      item.highlight ? 'bg-primary/10 border border-primary/30' : 'bg-card/50'
+                    }`}
+                  >
+                    <p className="font-body text-sm text-muted-foreground mb-1">{item.equipment}</p>
+                    <p className={`font-mono ${item.highlight ? 'text-primary font-bold' : ''}`}>{item.cost}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Imaging Costs */}
+            <motion.div variants={fadeInUp} className="mt-8 bg-card border border-border rounded-2xl p-6">
+              <h3 className="font-display text-xl font-medium mb-6 flex items-center gap-2">
+                <BarChart3 className="w-5 h-5 text-primary" />
+                Imaging Equipment (Operating Lease)
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-border">
+                      <th className="text-left font-display font-medium p-3">Equipment</th>
+                      <th className="text-right font-display font-medium p-3">Year 1</th>
+                      <th className="text-right font-display font-medium p-3">Year 2+</th>
+                    </tr>
+                  </thead>
+                  <tbody className="font-body">
+                    <tr className="border-b border-border/50">
+                      <td className="p-3">CT Scanner</td>
+                      <td className="p-3 text-right font-mono text-sm">$186,210</td>
+                      <td className="p-3 text-right font-mono text-sm">$306,420</td>
+                    </tr>
+                    <tr className="border-b border-border/50">
+                      <td className="p-3">MRI</td>
+                      <td className="p-3 text-right font-mono text-sm">$174,468</td>
+                      <td className="p-3 text-right font-mono text-sm">$282,936</td>
+                    </tr>
+                    <tr className="bg-accent/5">
+                      <td className="p-3 font-medium">Total Annual</td>
+                      <td className="p-3 text-right font-mono text-primary font-medium">$360,678</td>
+                      <td className="p-3 text-right font-mono text-primary font-medium">$589,356</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </motion.div>
+
+            {/* Total Investment Summary */}
+            <motion.div variants={fadeInUp} className="mt-8 bg-gradient-to-br from-accent/10 to-primary/10 border border-primary/30 rounded-2xl p-8">
+              <h3 className="font-display text-2xl font-medium mb-6 text-center">Total Center Investment</h3>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  {
-                    tier: "Essential",
-                    price: "$X,XXX/yr",
-                    members: "XX%",
-                    count: "XXX members",
-                    features: ["Annual comprehensive assessment", "Quarterly check-ins", "At-home optimization program"]
-                  },
-                  {
-                    tier: "Premium",
-                    price: "$XX,XXX/yr",
-                    members: "XX%",
-                    count: "XXX members",
-                    features: ["Bi-annual assessments", "Monthly physician consultations", "Priority biologic access", "Concierge support"]
-                  },
-                  {
-                    tier: "Elite",
-                    price: "$XXX,XXX/yr",
-                    members: "XX%",
-                    count: "XXX members",
-                    features: ["Unlimited assessments", "24/7 physician access", "Custom biologic protocols", "Family coverage", "Global clinic access"]
-                  }
-                ].map((tier, i) => (
-                  <div key={i} className="bg-card border border-border rounded-2xl p-6 hover:border-accent/50 transition-colors">
-                    <div className="flex items-center justify-between mb-4">
-                      <h4 className="font-display text-xl font-medium">{tier.tier}</h4>
-                      <span className="font-mono text-sm text-primary">{tier.price}</span>
-                    </div>
-                    <div className="mb-4">
-                      <span className="font-display text-3xl font-bold text-gradient">{tier.members}</span>
-                      <span className="font-body text-sm text-muted-foreground ml-2">of members</span>
-                    </div>
-                    <p className="font-mono text-xs text-muted-foreground mb-4">{tier.count}</p>
-                    <ul className="space-y-2">
-                      {tier.features.map((feature, j) => (
-                        <li key={j} className="font-body text-sm text-muted-foreground flex items-start gap-2">
-                          <span className="text-primary mt-1">•</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                  { label: "Total CAPEX", value: "$5,770,012" },
+                  { label: "Working Capital", value: "$790,000" },
+                  { label: "Total Investment", value: "$6,560,012", highlight: true }
+                ].map((item, i) => (
+                  <div key={i} className={`text-center p-6 rounded-xl ${item.highlight ? 'bg-card border border-primary' : 'bg-card/50'}`}>
+                    <p className="font-body text-muted-foreground mb-2">{item.label}</p>
+                    <p className={`font-display text-2xl font-bold ${item.highlight ? 'text-gradient' : ''}`}>{item.value}</p>
                   </div>
                 ))}
               </div>
@@ -302,7 +579,7 @@ export default function Performance() {
         </div>
       </section>
 
-      {/* Procedure & Treatment Metrics */}
+      {/* Staffing Plan */}
       <section className="py-20">
         <div className="container">
           <motion.div 
@@ -314,204 +591,114 @@ export default function Performance() {
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
               <span className="font-mono text-primary text-sm tracking-wider">
-                CLINICAL OPERATIONS
+                OPERATIONS
               </span>
               <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
-                Procedure & Treatment Metrics
+                Staffing Plan
               </h2>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-8">
-              {/* Procedure Volume */}
-              <div className="bg-card border border-border rounded-2xl p-8">
-                <h3 className="font-display text-2xl font-medium mb-6">Procedure Volume by Type</h3>
-                <div className="space-y-4">
-                  {[
-                    { procedure: "Stem Cell Therapy", count: "XXX", percentage: "XX%" },
-                    { procedure: "Exosome Treatments", count: "XXX", percentage: "XX%" },
-                    { procedure: "MUSE Cell Therapy", count: "XXX", percentage: "XX%" },
-                    { procedure: "Peptide Protocols", count: "XXX", percentage: "XX%" },
-                    { procedure: "IV Infusions", count: "XXX", percentage: "XX%" },
-                    { procedure: "Diagnostic Imaging", count: "XXX", percentage: "XX%" }
-                  ].map((item, i) => (
-                    <div key={i}>
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="font-body text-muted-foreground">{item.procedure}</span>
-                        <span className="font-mono text-sm">{item.count} ({item.percentage})</span>
-                      </div>
-                      <div className="h-2 bg-background rounded-full overflow-hidden">
-                        <div 
-                          className="h-full bg-gradient-to-r from-accent to-primary rounded-full"
-                          style={{ width: item.percentage }}
-                        />
-                      </div>
-                    </div>
-                  ))}
+              {/* Headcount Table */}
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-6 border-b border-border">
+                  <h3 className="font-display text-xl font-medium flex items-center gap-2">
+                    <Users className="w-5 h-5 text-primary" />
+                    Headcount by Role
+                  </h3>
                 </div>
-                <div className="mt-6 pt-6 border-t border-border">
-                  <div className="flex items-center justify-between">
-                    <span className="font-display font-medium">Total Procedures (Annual)</span>
-                    <span className="font-display text-2xl font-bold text-gradient">X,XXX</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Treatment Outcomes */}
-              <div className="bg-card border border-border rounded-2xl p-8">
-                <h3 className="font-display text-2xl font-medium mb-6">Treatment Outcomes</h3>
-                <div className="space-y-6">
-                  {[
-                    { metric: "Patient Satisfaction", value: "XX%", icon: Heart },
-                    { metric: "Treatment Efficacy Rate", value: "XX%", icon: Target },
-                    { metric: "Complication Rate", value: "<X%", icon: Activity },
-                    { metric: "Follow-up Compliance", value: "XX%", icon: Calendar },
-                    { metric: "Referral Rate", value: "XX%", icon: Users }
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
-                        <item.icon className="w-5 h-5 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <p className="font-body text-muted-foreground">{item.metric}</p>
-                      </div>
-                      <span className="font-display text-2xl font-bold text-gradient">{item.value}</span>
-                    </div>
-                  ))}
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b border-border bg-card/50">
+                        <th className="text-left font-display font-medium p-3 text-sm">Role</th>
+                        <th className="text-right font-display font-medium p-3 text-sm">Y1</th>
+                        <th className="text-right font-display font-medium p-3 text-sm">Y2</th>
+                        <th className="text-right font-display font-medium p-3 text-sm">Y3+</th>
+                      </tr>
+                    </thead>
+                    <tbody className="font-body text-sm">
+                      {[
+                        { role: "Medical Director", y1: 1, y2: 1, y3: 1 },
+                        { role: "Physician", y1: 2, y2: 3, y3: 4 },
+                        { role: "Nurse Practitioner", y1: 3, y2: 4, y3: 5 },
+                        { role: "Center Director", y1: 1, y2: 1, y3: 1 },
+                        { role: "Radiology Tech", y1: 2, y2: 2, y3: 3 },
+                        { role: "Registered Nurse", y1: 3, y2: 3, y3: 3 },
+                        { role: "Healthcare Coordinator", y1: 3, y2: 4, y3: 5 },
+                        { role: "Medical Assistant", y1: 4, y2: 5, y3: 6 }
+                      ].map((row, i) => (
+                        <tr key={i} className="border-b border-border/50">
+                          <td className="p-3">{row.role}</td>
+                          <td className="p-3 text-right">{row.y1}</td>
+                          <td className="p-3 text-right">{row.y2}</td>
+                          <td className="p-3 text-right">{row.y3}</td>
+                        </tr>
+                      ))}
+                      <tr className="bg-accent/5">
+                        <td className="p-3 font-medium">Total</td>
+                        <td className="p-3 text-right font-medium">19</td>
+                        <td className="p-3 text-right font-medium">23</td>
+                        <td className="p-3 text-right font-medium text-primary">28</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* Unit Economics */}
-      <section className="py-20 bg-card/30">
-        <div className="container">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            <motion.div variants={fadeInUp} className="text-center mb-12">
-              <span className="font-mono text-primary text-sm tracking-wider">
-                FINANCIAL EFFICIENCY
-              </span>
-              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
-                Unit Economics
-              </h2>
-              <p className="font-body text-xl text-muted-foreground max-w-2xl mx-auto">
-                Strong unit economics demonstrating the profitability and scalability of each center.
-              </p>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              {[
-                {
-                  icon: DollarSign,
-                  label: "Customer Acquisition Cost",
-                  value: "$X,XXX",
-                  benchmark: "Industry avg: $X,XXX"
-                },
-                {
-                  icon: TrendingUp,
-                  label: "Lifetime Value",
-                  value: "$XXX,XXX",
-                  benchmark: "XX:1 LTV:CAC ratio"
-                },
-                {
-                  icon: BarChart3,
-                  label: "Gross Margin",
-                  value: "XX%",
-                  benchmark: "Target: 70%+"
-                },
-                {
-                  icon: Clock,
-                  label: "Payback Period",
-                  value: "XX months",
-                  benchmark: "Industry avg: XX months"
-                }
-              ].map((metric, i) => (
-                <div key={i} className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-primary flex items-center justify-center mb-4">
-                    <metric.icon className="w-6 h-6 text-background" />
-                  </div>
-                  <p className="font-body text-sm text-muted-foreground mb-1">{metric.label}</p>
-                  <p className="font-display text-3xl font-bold text-gradient mb-2">{metric.value}</p>
-                  <p className="font-mono text-xs text-muted-foreground">{metric.benchmark}</p>
+              {/* Salary Structure */}
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-6 border-b border-border">
+                  <h3 className="font-display text-xl font-medium flex items-center gap-2">
+                    <Wallet className="w-5 h-5 text-primary" />
+                    Salary Structure
+                  </h3>
                 </div>
-              ))}
-            </motion.div>
-
-            {/* P&L Summary */}
-            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl p-8">
-              <h3 className="font-display text-2xl font-medium mb-6 text-center">Single Center P&L Summary</h3>
-              <div className="max-w-2xl mx-auto">
-                <div className="space-y-3">
+                <div className="p-6 space-y-3">
                   {[
-                    { item: "Gross Revenue", value: "$X.XM", isTotal: false },
-                    { item: "Cost of Goods Sold", value: "($X.XM)", isTotal: false },
-                    { item: "Gross Profit", value: "$X.XM", isTotal: true },
-                    { item: "Operating Expenses", value: "($X.XM)", isTotal: false },
-                    { item: "EBITDA", value: "$X.XM", isTotal: true },
-                    { item: "EBITDA Margin", value: "XX%", isTotal: true }
+                    { role: "Medical Director", salary: "$350,000" },
+                    { role: "Physician", salary: "$250,000" },
+                    { role: "Center Director", salary: "$175,000" },
+                    { role: "Nurse Practitioner", salary: "$125,000" },
+                    { role: "Radiology Tech", salary: "$115,000" },
+                    { role: "Registered Nurse", salary: "$80,000" },
+                    { role: "Healthcare Coordinator", salary: "$60,000" },
+                    { role: "Medical Assistant", salary: "$55,000" }
                   ].map((row, i) => (
-                    <div 
-                      key={i} 
-                      className={`flex items-center justify-between py-2 ${row.isTotal ? 'border-t border-border pt-3' : ''}`}
-                    >
-                      <span className={`font-body ${row.isTotal ? 'font-medium' : 'text-muted-foreground'}`}>
-                        {row.item}
-                      </span>
-                      <span className={`font-mono ${row.isTotal ? 'text-xl font-bold text-gradient' : ''}`}>
-                        {row.value}
-                      </span>
+                    <div key={i} className="flex justify-between items-center pb-3 border-b border-border/50 last:border-0">
+                      <span className="font-body text-sm">{row.role}</span>
+                      <span className="font-mono text-sm text-primary">{row.salary}</span>
                     </div>
                   ))}
+                  <div className="pt-4 mt-4 border-t border-border">
+                    <p className="font-body text-sm text-muted-foreground">
+                      Benefits: <span className="text-primary font-medium">20%</span> of base salary
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* Operational Efficiency */}
-      <section className="py-20">
-        <div className="container">
-          <motion.div 
-            className="max-w-4xl mx-auto"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            <motion.div variants={fadeInUp} className="text-center mb-12">
-              <span className="font-mono text-primary text-sm tracking-wider">
-                OPERATIONAL EXCELLENCE
-              </span>
-              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
-                Operational Metrics
-              </h2>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6">
-              {[
-                { metric: "Capacity Utilization", value: "XX%", description: "Of available appointment slots filled" },
-                { metric: "Average Wait Time", value: "X days", description: "New patient appointment availability" },
-                { metric: "Staff-to-Patient Ratio", value: "1:XX", description: "Optimal care delivery efficiency" },
-                { metric: "Revenue per Sq Ft", value: "$X,XXX", description: "Annual revenue per square foot" },
-                { metric: "Member Churn Rate", value: "X%", description: "Monthly membership cancellation rate" },
-                { metric: "Referral Conversion", value: "XX%", description: "Referrals that become members" }
-              ].map((item, i) => (
-                <div key={i} className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-display font-medium">{item.metric}</span>
-                    <span className="font-display text-2xl font-bold text-gradient">{item.value}</span>
+            {/* Personnel Cost Summary */}
+            <motion.div variants={fadeInUp} className="mt-8 bg-card border border-border rounded-2xl p-6">
+              <h3 className="font-display text-xl font-medium mb-6 flex items-center gap-2">
+                <UserPlus className="w-5 h-5 text-primary" />
+                Total Personnel Costs (Including Benefits)
+              </h3>
+              <div className="grid grid-cols-5 gap-4">
+                {[
+                  { year: "Year 1", cost: "$2.72M" },
+                  { year: "Year 2", cost: "$3.31M" },
+                  { year: "Year 3", cost: "$4.04M" },
+                  { year: "Year 4", cost: "$4.04M" },
+                  { year: "Year 5", cost: "$4.04M" }
+                ].map((item, i) => (
+                  <div key={i} className="text-center p-4 bg-card/50 rounded-xl">
+                    <p className="font-body text-xs text-muted-foreground mb-1">{item.year}</p>
+                    <p className="font-mono text-primary font-medium">{item.cost}</p>
                   </div>
-                  <p className="font-body text-sm text-muted-foreground">{item.description}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </motion.div>
           </motion.div>
         </div>
@@ -536,23 +723,27 @@ export default function Performance() {
               </h2>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-6">
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  title: "Proven Model",
-                  description: "Single center demonstrates strong unit economics with XX% EBITDA margins and XX:1 LTV:CAC ratio."
+                  title: "Proven Unit Economics",
+                  description: "65% gross margin and 46% EBITDA margin by Year 5 demonstrates strong profitability at the center level."
                 },
                 {
-                  title: "Scalable Operations",
-                  description: "Standardized protocols and 90% at-home model enable rapid replication across new markets."
+                  title: "Predictable Growth",
+                  description: "Membership model with 50% APEX renewal rate creates recurring revenue and predictable cash flows."
                 },
                 {
-                  title: "Recurring Revenue",
-                  description: "XX% member retention and diversified revenue streams provide predictable, growing cash flows."
+                  title: "Scalable Model",
+                  description: "$6.6M total investment per center with clear path to $15.9M annual EBITDA within 5 years."
+                },
+                {
+                  title: "Premium Positioning",
+                  description: "APEX tier ($21,500) drives 85% of membership revenue, validating premium market positioning."
                 }
               ].map((item, i) => (
-                <div key={i} className="bg-card/50 backdrop-blur border border-border rounded-2xl p-6">
-                  <h3 className="font-display text-xl font-medium mb-3 text-gradient">{item.title}</h3>
+                <div key={i} className="bg-card/50 backdrop-blur border border-border rounded-2xl p-6 text-left">
+                  <h3 className="font-display text-xl font-medium mb-3">{item.title}</h3>
                   <p className="font-body text-muted-foreground">{item.description}</p>
                 </div>
               ))}
