@@ -289,14 +289,12 @@ export default function UseOfFunds() {
             </motion.div>
 
             <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img 
-                    src="/images/lumastem-reception-1.jpg" 
-                    alt="Reception Area - Entry View" 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
+<div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <ImageLightbox
+                  src="/images/lumastem-reception-1.jpg"
+                  alt="Reception Area - Entry"
+                  className="aspect-[4/3]"
+                />
                 <div className="p-4">
                   <h4 className="font-display font-medium text-sm">Entry & Check-In</h4>
                   <p className="font-body text-xs text-muted-foreground">Welcoming reception with concierge desk</p>
@@ -304,13 +302,11 @@ export default function UseOfFunds() {
               </div>
 
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img 
-                    src="/images/lumastem-reception-4.jpg" 
-                    alt="Reception Area - Concierge" 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
+                <ImageLightbox
+                  src="/images/lumastem-reception-4.jpg"
+                  alt="Reception Area - Concierge"
+                  className="aspect-[4/3]"
+                />
                 <div className="p-4">
                   <h4 className="font-display font-medium text-sm">Concierge Area</h4>
                   <p className="font-body text-xs text-muted-foreground">Private consultation and member services</p>
@@ -334,13 +330,11 @@ export default function UseOfFunds() {
 
             <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6">
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                <div className="aspect-[16/10] overflow-hidden">
-                  <img 
-                    src="/images/lumastem-suite-1.jpg" 
-                    alt="Treatment Suite - Main View" 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
+                <ImageLightbox
+                  src="/images/lumastem-suite-1.jpg"
+                  alt="Treatment Suite - Main View"
+                  className="aspect-[16/10]"
+                />
                 <div className="p-4">
                   <h4 className="font-display font-medium">VIP Treatment Suite</h4>
                   <p className="font-body text-sm text-muted-foreground">
@@ -350,13 +344,11 @@ export default function UseOfFunds() {
               </div>
 
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                <div className="aspect-[16/10] overflow-hidden">
-                  <img 
-                    src="/images/lumastem-suite-2.jpg" 
-                    alt="Treatment Suite - Seating Area" 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
+                <ImageLightbox
+                  src="/images/lumastem-suite-2.jpg"
+                  alt="Treatment Suite - Seating Area"
+                  className="aspect-[16/10]"
+                />
                 <div className="p-4">
                   <h4 className="font-display font-medium">Private Consultation Area</h4>
                   <p className="font-body text-sm text-muted-foreground">

@@ -45,10 +45,10 @@ export default function Projections() {
           >
             <motion.div variants={fadeInUp} className="grid md:grid-cols-4 gap-6">
               {[
-                { value: "$478M", label: "2029 Revenue", subtext: "15 centers at scale" },
-                { value: "$226M", label: "2029 EBITDA", subtext: "47% margin" },
-                { value: "17,500+", label: "Total Members", subtext: "Across all centers" },
-                { value: "10.8x", label: "Revenue Growth", subtext: "4-year trajectory" }
+                { value: "$408M", label: "2029 Revenue", subtext: "15 centers at scale" },
+                { value: "$204M", label: "2029 EBITDA", subtext: "50% margin" },
+                { value: "15,600+", label: "Total Members", subtext: "Across all centers" },
+                { value: "9.6x", label: "Revenue Growth", subtext: "4-year trajectory" }
               ].map((stat, i) => (
                 <div key={i} className="bg-card border border-border rounded-2xl p-6 text-center hover:border-primary/50 transition-colors">
                   <span className="font-display text-3xl font-bold text-gradient">{stat.value}</span>
@@ -90,11 +90,11 @@ export default function Projections() {
                   </thead>
                   <tbody>
                     {[
-                      { metric: "Revenue", y1: "$44M", y2: "$134M", y3: "$289M", y4: "$478M" },
-                      { metric: "EBITDA", y1: "$18M", y2: "$60M", y3: "$133M", y4: "$226M" },
-                      { metric: "EBITDA Margin", y1: "42%", y2: "45%", y3: "46%", y4: "47%" },
-                      { metric: "Members", y1: "1,620", y2: "4,892", y3: "10,595", y4: "17,529" },
-                      { metric: "Centers", y1: "2", y2: "5", y3: "10", y4: "15" },
+                      { metric: "Revenue", y1: "$42M", y2: "$99M", y3: "$211M", y4: "$408M" },
+                      { metric: "EBITDA", y1: "$21M", y2: "$50M", y3: "$106M", y4: "$204M" },
+                      { metric: "EBITDA Margin", y1: "50%", y2: "50%", y3: "50%", y4: "50%" },
+                      { metric: "Members", y1: "1,620", y2: "3,810", y3: "8,090", y4: "15,630" },
+                      { metric: "Centers", y1: "2", y2: "4", y3: "8", y4: "15" },
                       { metric: "Gross Margin", y1: "65%", y2: "65%", y3: "65%", y4: "65%" }
                     ].map((row, i) => (
                       <tr key={i} className="border-b border-border/50 hover:bg-muted/20 transition-colors">
@@ -111,8 +111,8 @@ export default function Projections() {
 
               <div className="p-6 bg-muted/20 border-t border-border">
                 <p className="font-body text-sm text-muted-foreground">
-                  <strong className="text-foreground">Assumptions:</strong> Based on single-center economics of $42.8M revenue and $21.4M EBITDA at Year 5 maturity. 
-                  Centers ramp over 5 years following proven trajectory. 80% Longevity Elite / 20% Essential membership mix.
+                  <strong className="text-foreground">Assumptions:</strong> Based on single-center economics of $44.7M revenue and $22.3M EBITDA at Year 5 maturity. 
+                  Centers ramp over 5 years following proven trajectory. 80% ELITE ($29,500) / 20% CHECK ($12,500) membership mix.
                 </p>
               </div>
             </motion.div>
@@ -155,18 +155,18 @@ export default function Projections() {
                     icon: ArrowDownRight,
                     color: "text-orange-400",
                     borderColor: "border-orange-400/30",
-                    assumptions: ["$25,075 Elite price (-15%)", "1,257 members (-20%)", "70% Elite mix"],
-                    revenue: "$27M",
-                    ebitda: "$11M",
-                    margin: "41%"
+                    assumptions: ["$25,075 ELITE price (-15%)", "1,335 members (-15%)", "75% ELITE mix"],
+                    revenue: "$35M",
+                    ebitda: "$16M",
+                    margin: "45%"
                   },
                   {
                     scenario: "Base Case",
                     icon: Target,
                     color: "text-primary",
                     borderColor: "border-primary/50",
-                    assumptions: ["$29,500 Elite price", "1,571 members", "80% Elite mix"],
-                    revenue: "$43M",
+                    assumptions: ["$29,500 ELITE / $12,500 CHECK", "1,571 members", "80% ELITE mix"],
+                    revenue: "$41M",
                     ebitda: "$21M",
                     margin: "50%",
                     highlight: true
@@ -176,10 +176,10 @@ export default function Projections() {
                     icon: ArrowUpRight,
                     color: "text-green-400",
                     borderColor: "border-green-400/30",
-                    assumptions: ["$32,450 Elite price (+10%)", "1,885 members (+20%)", "85% Elite mix"],
-                    revenue: "$59M",
-                    ebitda: "$32M",
-                    margin: "54%"
+                    assumptions: ["$32,450 ELITE price (+10%)", "1,806 members (+15%)", "85% ELITE mix"],
+                    revenue: "$47M",
+                    ebitda: "$26M",
+                    margin: "55%"
                   }
                 ].map((item, i) => (
                   <div 
@@ -242,9 +242,9 @@ export default function Projections() {
                             <span className="font-body font-medium">Bear Case</span>
                           </div>
                         </td>
-                        <td className="p-5 text-center font-mono text-muted-foreground">$403M</td>
-                        <td className="p-5 text-center font-mono text-muted-foreground">$166M</td>
-                        <td className="p-5 text-center font-mono text-muted-foreground">18,852</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">$392M</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">$176M</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">13,286</td>
                         <td className="p-5 text-center font-body text-sm text-muted-foreground">Lower pricing, slower adoption</td>
                       </tr>
                       <tr className="border-b border-border/50 bg-primary/5 hover:bg-primary/10 transition-colors">
@@ -254,9 +254,9 @@ export default function Projections() {
                             <span className="font-body font-medium text-primary">Base Case</span>
                           </div>
                         </td>
-                        <td className="p-5 text-center font-mono font-semibold text-primary">$643M</td>
-                        <td className="p-5 text-center font-mono font-semibold text-primary">$322M</td>
-                        <td className="p-5 text-center font-mono font-semibold text-primary">23,565</td>
+                        <td className="p-5 text-center font-mono font-semibold text-primary">$461M</td>
+                        <td className="p-5 text-center font-mono font-semibold text-primary">$231M</td>
+                        <td className="p-5 text-center font-mono font-semibold text-primary">15,630</td>
                         <td className="p-5 text-center font-body text-sm text-primary">Current assumptions</td>
                       </tr>
                       <tr className="hover:bg-muted/20 transition-colors">
@@ -266,9 +266,9 @@ export default function Projections() {
                             <span className="font-body font-medium">Bull Case</span>
                           </div>
                         </td>
-                        <td className="p-5 text-center font-mono text-muted-foreground">$885M</td>
-                        <td className="p-5 text-center font-mono text-muted-foreground">$479M</td>
-                        <td className="p-5 text-center font-mono text-muted-foreground">28,278</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">$530M</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">$292M</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">17,975</td>
                         <td className="p-5 text-center font-body text-sm text-muted-foreground">Premium pricing, faster growth</td>
                       </tr>
                     </tbody>
@@ -285,10 +285,10 @@ export default function Projections() {
                   <h4 className="font-display font-medium mb-2">Key Sensitivity Drivers</h4>
                   <div className="grid md:grid-cols-3 gap-4 font-body text-sm text-muted-foreground">
                     <div>
-                      <strong className="text-foreground">Pricing Power:</strong> Longevity Elite tier pricing has the largest impact on revenue. A 10% change in Elite pricing affects revenue by ~$60M at scale.
+                      <strong className="text-foreground">Pricing Power:</strong> ELITE tier pricing has the largest impact on revenue. A 10% change in ELITE pricing affects revenue by ~$50M at scale.
                     </div>
                     <div>
-                      <strong className="text-foreground">Member Mix:</strong> Higher Elite mix (85% vs 80%) adds ~$40M in annual revenue due to premium tier economics.
+                      <strong className="text-foreground">Member Mix:</strong> Higher ELITE mix (85% vs 80%) adds ~$35M in annual revenue due to premium tier economics.
                     </div>
                     <div>
                       <strong className="text-foreground">Capacity Utilization:</strong> Each 10% change in member capacity affects revenue by ~$65M across 15 centers.
@@ -323,10 +323,10 @@ export default function Projections() {
             <motion.div variants={fadeInUp} className="grid md:grid-cols-5 gap-6">
               {[
                 { year: "2025", milestones: ["Series A close", "Miami & Utah buildout", "MUSE Cell production setup"] },
-                { year: "2026", milestones: ["Revenue launch", "2 centers operational", "1,620 members", "$44M revenue"] },
-                { year: "2027", milestones: ["5 center network", "Bahrain hub opens", "$60M EBITDA"] },
-                { year: "2028", milestones: ["10 centers", "10,595 members", "$289M revenue"] },
-                { year: "2029", milestones: ["15 centers", "17,529 members", "$478M revenue", "Exit readiness"] }
+                { year: "2026", milestones: ["Revenue launch", "2 centers operational", "1,620 members", "$42M revenue"] },
+                { year: "2027", milestones: ["4 center network", "Bahrain hub opens", "$50M EBITDA"] },
+                { year: "2028", milestones: ["8 centers", "8,090 members", "$211M revenue"] },
+                { year: "2029", milestones: ["15 centers", "15,630 members", "$408M revenue", "Exit readiness"] }
               ].map((item, i) => (
                 <div key={i} className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors">
                   <span className="font-display text-3xl font-bold text-gradient">{item.year}</span>

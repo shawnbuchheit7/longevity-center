@@ -5,10 +5,11 @@ import { X, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
 interface ImageLightboxProps {
   src: string;
   alt: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  className?: string;
 }
 
-export default function ImageLightbox({ src, alt, children }: ImageLightboxProps) {
+export default function ImageLightbox({ src, alt, children, className }: ImageLightboxProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scale, setScale] = useState(1);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -94,8 +95,15 @@ export default function ImageLightbox({ src, alt, children }: ImageLightboxProps
 
   return (
     <>
-      <div onClick={handleOpen} className="cursor-zoom-in">
-        {children}
+      <div onClick={handleOpen} className={`cursor-zoom-in relative group ${className || ''}`}>
+        {children || (
+          <>
+            <img src={src} alt={alt} className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+              <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+            </div>
+          </>
+        )}
       </div>
 
       <AnimatePresence>
