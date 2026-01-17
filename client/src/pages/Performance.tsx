@@ -16,7 +16,10 @@ import {
   BarChart3,
   Target,
   Wallet,
-  UserPlus
+  UserPlus,
+  ArrowUpCircle,
+  Heart,
+  RefreshCw
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
@@ -306,6 +309,87 @@ export default function Performance() {
                     { label: "Annual In-Clinic Visits", value: "1 per member" },
                     { label: "At-Home Care Delivery", value: "90%" },
                     { label: "Center Square Footage", value: "12,000-15,000 SF" }
+                  ].map((item, i) => (
+                    <div key={i} className="flex justify-between items-center py-2 border-b border-border/50 last:border-0">
+                      <span className="font-body text-muted-foreground">{item.label}</span>
+                      <span className="font-mono text-primary font-medium">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Member Acquisition */}
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-6 border-b border-border bg-muted/30">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <UserPlus className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-display text-xl font-medium">Member Acquisition</h3>
+                  </div>
+                </div>
+                <div className="p-6 space-y-4">
+                  {[
+                    { label: "Year 1 New Members", value: "500" },
+                    { label: "Year 2 New Members", value: "456" },
+                    { label: "Year 3 New Members", value: "393" },
+                    { label: "Year 4 New Members", value: "376" },
+                    { label: "Year 5 New Members", value: "365" },
+                    { label: "Avg Monthly Acquisition (Y1)", value: "42/month" }
+                  ].map((item, i) => (
+                    <div key={i} className="flex justify-between items-center py-2 border-b border-border/50 last:border-0">
+                      <span className="font-body text-muted-foreground">{item.label}</span>
+                      <span className="font-mono text-primary font-medium">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Upgrade & Retention */}
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-6 border-b border-border bg-muted/30">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <ArrowUpCircle className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-display text-xl font-medium">Upgrade & Retention</h3>
+                  </div>
+                </div>
+                <div className="p-6 space-y-4">
+                  {[
+                    { label: "CHECK → ELITE Upgrade Rate", value: "25%" },
+                    { label: "ELITE Renewal Rate", value: "70%" },
+                    { label: "CHECK Renewal Rate", value: "10%" },
+                    { label: "Avg ELITE Tenure", value: "3.3 years" },
+                    { label: "Avg CHECK Tenure", value: "1.1 years" },
+                    { label: "Blended Retention Rate", value: "61%" }
+                  ].map((item, i) => (
+                    <div key={i} className="flex justify-between items-center py-2 border-b border-border/50 last:border-0">
+                      <span className="font-body text-muted-foreground">{item.label}</span>
+                      <span className="font-mono text-primary font-medium">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Member Lifetime Value */}
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-6 border-b border-border bg-muted/30">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <Heart className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-display text-xl font-medium">Member Lifetime Value</h3>
+                  </div>
+                </div>
+                <div className="p-6 space-y-4">
+                  {[
+                    { label: "ELITE LTV", value: "$97,350" },
+                    { label: "CHECK LTV", value: "$13,750" },
+                    { label: "Blended LTV", value: "$84,810" },
+                    { label: "ELITE LTV/CAC Ratio", value: "12:1" },
+                    { label: "Payback Period (ELITE)", value: "<1 year" },
+                    { label: "5-Year Revenue/Member", value: "$31,400" }
                   ].map((item, i) => (
                     <div key={i} className="flex justify-between items-center py-2 border-b border-border/50 last:border-0">
                       <span className="font-body text-muted-foreground">{item.label}</span>
