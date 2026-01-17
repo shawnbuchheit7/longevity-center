@@ -59,6 +59,7 @@ export default function Home() {
             <a href="#investors" className="text-muted-foreground hover:text-foreground transition-colors">Investors</a>
             <a href="#team" className="text-muted-foreground hover:text-foreground transition-colors">Team</a>
             <a href="#use-of-funds" className="text-muted-foreground hover:text-foreground transition-colors">Use of Funds</a>
+            <a href="#projections" className="text-muted-foreground hover:text-foreground transition-colors">Projections</a>
           </div>
           <Button 
             className="bg-accent hover:bg-accent/90 text-accent-foreground font-body font-medium"
@@ -501,6 +502,7 @@ export default function Home() {
                 name: "Dr. Pradeep Albert, MD",
                 role: "Chair, Physician Advisory Board",
                 highlight: "40,000+ Procedures",
+                image: "/images/dr-pradeep-albert.jpg",
                 credentials: [
                   "Most experienced regenerative medicine physician globally",
                   "Author: 'Exosomes, PRP, and Stem Cells in Musculoskeletal Medicine'",
@@ -512,6 +514,7 @@ export default function Home() {
                 name: "Dr. Gus Vickery, MD",
                 role: "Chair, Peptide & Precision Hormone Program",
                 highlight: "Board-Certified",
+                image: "/images/dr-gus-vickery.jpg",
                 credentials: [
                   "Nationally recognized leader in precision medicine",
                   "Founder of Vickery Family Medicine",
@@ -523,6 +526,7 @@ export default function Home() {
                 name: "Linda McIver, FNP",
                 role: "Director, Peptide Program",
                 highlight: "30 Years Experience",
+                image: "/images/linda-mciver.jpg",
                 credentials: [
                   "Board-certified family nurse practitioner",
                   "A4M Fellowship completed",
@@ -536,10 +540,12 @@ export default function Home() {
                 variants={scaleIn}
               >
                 <div className="bg-card border border-border rounded-2xl p-8 h-full hover:border-primary/50 transition-colors">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-6 mx-auto">
-                    <span className="font-display text-2xl font-semibold text-background">
-                      {leader.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
-                    </span>
+                  <div className="w-24 h-24 rounded-full overflow-hidden mb-6 mx-auto ring-2 ring-primary/30">
+                    <img 
+                      src={leader.image} 
+                      alt={leader.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 className="font-display text-xl font-medium text-center mb-1">{leader.name}</h3>
                   <p className="font-body text-sm text-muted-foreground text-center mb-2">{leader.role}</p>
@@ -800,6 +806,130 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Financial Projections */}
+      <section id="projections" className="py-32">
+        <div className="container">
+          <motion.div 
+            className="text-center mb-20"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.span variants={fadeInUp} className="font-mono text-primary text-sm tracking-wider">
+              FINANCIAL OUTLOOK
+            </motion.span>
+            <motion.h2 variants={fadeInUp} className="font-display text-4xl md:text-6xl font-medium mt-4 mb-6">
+              Path to Profitability
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="font-body text-xl text-muted-foreground max-w-3xl mx-auto">
+              Conservative projections based on proven unit economics and scalable infrastructure.
+            </motion.p>
+          </motion.div>
+
+          <motion.div 
+            className="max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            {/* Revenue Projections Table */}
+            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden mb-12">
+              <div className="p-6 border-b border-border bg-muted/30">
+                <h3 className="font-display text-2xl font-medium">Revenue Projections</h3>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-border">
+                      <th className="text-left p-4 font-body font-semibold text-muted-foreground">Metric</th>
+                      <th className="text-right p-4 font-mono text-muted-foreground">2025</th>
+                      <th className="text-right p-4 font-mono text-muted-foreground">2026</th>
+                      <th className="text-right p-4 font-mono text-muted-foreground">2027</th>
+                      <th className="text-right p-4 font-mono text-muted-foreground">2028</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { metric: "Revenue", y1: "$8M", y2: "$25M", y3: "$65M", y4: "$120M" },
+                      { metric: "Gross Margin", y1: "65%", y2: "68%", y3: "72%", y4: "75%" },
+                      { metric: "EBITDA", y1: "($2M)", y2: "$3M", y3: "$15M", y4: "$35M" },
+                      { metric: "Active Members", y1: "800", y2: "2,500", y3: "6,500", y4: "12,000" },
+                      { metric: "Clinic Locations", y1: "2", y2: "4", y3: "8", y4: "15" }
+                    ].map((row, i) => (
+                      <tr key={i} className="border-b border-border/50 hover:bg-muted/20 transition-colors">
+                        <td className="p-4 font-body font-medium">{row.metric}</td>
+                        <td className="p-4 text-right font-mono text-muted-foreground">{row.y1}</td>
+                        <td className="p-4 text-right font-mono text-muted-foreground">{row.y2}</td>
+                        <td className="p-4 text-right font-mono text-primary">{row.y3}</td>
+                        <td className="p-4 text-right font-mono text-accent font-semibold">{row.y4}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </motion.div>
+
+            {/* Key Milestones */}
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-4 gap-6">
+              {[
+                { 
+                  year: "2025", 
+                  title: "Foundation", 
+                  milestones: ["Utah flagship at scale", "Florida center groundbreaking", "MUSE Cell production begins"] 
+                },
+                { 
+                  year: "2026", 
+                  title: "Expansion", 
+                  milestones: ["Florida center operational", "2 additional U.S. clinics", "Bahrain hub launch"] 
+                },
+                { 
+                  year: "2027", 
+                  title: "Scale", 
+                  milestones: ["8 integrated clinics", "EBITDA positive", "International licensing deals"] 
+                },
+                { 
+                  year: "2028", 
+                  title: "Leadership", 
+                  milestones: ["15+ clinic network", "$35M+ EBITDA", "IPO readiness"] 
+                }
+              ].map((phase, i) => (
+                <div key={i} className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors">
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="font-mono text-2xl text-accent font-bold">{phase.year}</span>
+                    <span className="font-body text-sm text-muted-foreground">| {phase.title}</span>
+                  </div>
+                  <ul className="space-y-2">
+                    {phase.milestones.map((m, j) => (
+                      <li key={j} className="font-body text-sm text-muted-foreground flex gap-2">
+                        <span className="text-primary">•</span>
+                        {m}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Key Investment Highlights */}
+            <motion.div variants={fadeInUp} className="mt-12 grid md:grid-cols-3 gap-6">
+              {[
+                { value: "15x", label: "Revenue Growth", sublabel: "2025-2028" },
+                { value: "75%", label: "Target Gross Margin", sublabel: "At Scale" },
+                { value: "$35M+", label: "EBITDA Target", sublabel: "By 2028" }
+              ].map((stat, i) => (
+                <div key={i} className="bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/30 rounded-2xl p-8 text-center">
+                  <span className="font-display text-5xl font-bold text-gradient">{stat.value}</span>
+                  <p className="font-body font-semibold mt-2">{stat.label}</p>
+                  <p className="font-mono text-sm text-muted-foreground">{stat.sublabel}</p>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>
