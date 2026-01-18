@@ -47,61 +47,11 @@ export default function Memberships() {
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
-            {/* CHECK Membership */}
-            <motion.div variants={scaleIn} className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative bg-card border border-border rounded-3xl p-8 h-full hover:border-primary/50 transition-colors">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <Check className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-2xl font-medium">CHECK</h3>
-                    <p className="text-sm text-muted-foreground">Diagnostic Foundation</p>
-                  </div>
-                </div>
-                <div className="mb-6">
-                  <span className="font-display text-4xl font-medium">$12,500</span>
-                  <span className="text-muted-foreground">/year</span>
-                </div>
-                <p className="font-body text-muted-foreground mb-6">
-                  Comprehensive diagnostic assessment and personalized health roadmap 
-                  for those beginning their longevity journey.
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2 text-sm">
-                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
-                      <Check className="w-3 h-3 text-primary" />
-                    </div>
-                    <span>Annual comprehensive diagnostics</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
-                      <Check className="w-3 h-3 text-primary" />
-                    </div>
-                    <span>Personalized health assessment</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
-                      <Check className="w-3 h-3 text-primary" />
-                    </div>
-                    <span>Longevity roadmap development</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
-                      <Check className="w-3 h-3 text-primary" />
-                    </div>
-                    <span>Physician consultation</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* ELITE Membership */}
+            {/* ELITE Membership - Primary Tier (85% of members) */}
             <motion.div variants={scaleIn} className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/10 rounded-3xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent text-accent-foreground text-xs font-mono rounded-full">
-                MOST POPULAR
+                85% OF MEMBERS
               </div>
               <div className="relative bg-card border-2 border-accent rounded-3xl p-8 h-full">
                 <div className="flex items-center gap-3 mb-4">
@@ -155,101 +105,53 @@ export default function Memberships() {
                 </div>
               </div>
             </motion.div>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* CHECK Membership Details */}
-      <section className="py-20 bg-card/30">
-        <div className="container">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            <motion.div variants={fadeInUp} className="flex items-center gap-4 mb-12">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
-                <Check className="w-8 h-8 text-primary" />
-              </div>
-              <div>
-                <h2 className="font-display text-4xl font-medium">CHECK Membership</h2>
-                <p className="text-muted-foreground">$12,500/year • Diagnostic Foundation</p>
-              </div>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {[
-                {
-                  icon: Activity,
-                  title: "Comprehensive Diagnostics",
-                  items: [
-                    "Full-body MRI screening",
-                    "Advanced bloodwork panel (100+ biomarkers)",
-                    "Genetic testing & analysis",
-                    "Cardiovascular assessment",
-                    "Metabolic profiling"
-                  ]
-                },
-                {
-                  icon: Stethoscope,
-                  title: "Physician Consultation",
-                  items: [
-                    "2-hour initial consultation",
-                    "Results review session",
-                    "Personalized health report",
-                    "Risk factor identification",
-                    "Lifestyle recommendations"
-                  ]
-                },
-                {
-                  icon: Calendar,
-                  title: "Annual Program",
-                  items: [
-                    "One comprehensive visit per year",
-                    "Digital health dashboard access",
-                    "Year-over-year tracking",
-                    "Priority scheduling",
-                    "Upgrade path to ELITE"
-                  ]
-                }
-              ].map((category, i) => (
-                <div key={i} className="bg-card border border-border rounded-2xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <category.icon className="w-5 h-5 text-primary" />
-                    <h3 className="font-display text-lg font-medium">{category.title}</h3>
+            {/* CHECK Membership */}
+            <motion.div variants={scaleIn} className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative bg-card border border-border rounded-3xl p-8 h-full hover:border-primary/50 transition-colors">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Check className="w-6 h-6 text-primary" />
                   </div>
-                  <ul className="space-y-2">
-                    {category.items.map((item, j) => (
-                      <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div>
+                    <h3 className="font-display text-2xl font-medium">CHECK</h3>
+                    <p className="text-sm text-muted-foreground">Diagnostic Foundation</p>
+                  </div>
                 </div>
-              ))}
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="bg-muted/30 rounded-2xl p-6">
-              <h4 className="font-display font-medium mb-4">CHECK Membership Economics</h4>
-              <div className="grid md:grid-cols-4 gap-6 text-center">
-                <div>
-                  <span className="font-mono text-2xl text-primary">$12,500</span>
-                  <p className="text-xs text-muted-foreground mt-1">Annual Fee</p>
+                <div className="mb-6">
+                  <span className="font-display text-4xl font-medium">$12,500</span>
+                  <span className="text-muted-foreground">/year</span>
                 </div>
-                <div>
-                  <span className="font-mono text-2xl text-foreground">10%</span>
-                  <p className="text-xs text-muted-foreground mt-1">Renewal Rate</p>
-                </div>
-                <div>
-                  <span className="font-mono text-2xl text-foreground">15%</span>
-                  <p className="text-xs text-muted-foreground mt-1">Member Mix</p>
-                </div>
-                <div>
-                  <span className="font-mono text-2xl text-foreground">25%</span>
-                  <p className="text-xs text-muted-foreground mt-1">ELITE Upgrade Rate</p>
+                <p className="font-body text-muted-foreground mb-6">
+                  Comprehensive diagnostic assessment and personalized health roadmap 
+                  for those beginning their longevity journey.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
+                      <Check className="w-3 h-3 text-primary" />
+                    </div>
+                    <span>Annual comprehensive diagnostics</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
+                      <Check className="w-3 h-3 text-primary" />
+                    </div>
+                    <span>Personalized health assessment</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
+                      <Check className="w-3 h-3 text-primary" />
+                    </div>
+                    <span>Longevity roadmap development</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
+                      <Check className="w-3 h-3 text-primary" />
+                    </div>
+                    <span>Physician consultation</span>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -257,8 +159,8 @@ export default function Memberships() {
         </div>
       </section>
 
-      {/* ELITE Membership Details */}
-      <section className="py-20">
+      {/* ELITE Membership Details - Primary Tier (85% of business) */}
+      <section className="py-20 bg-card/30">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -385,6 +287,104 @@ export default function Memberships() {
                 <div>
                   <span className="font-mono text-2xl text-foreground">$97,350</span>
                   <p className="text-xs text-muted-foreground mt-1">Lifetime Value</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CHECK Membership Details */}
+      <section className="py-20">
+        <div className="container">
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="flex items-center gap-4 mb-12">
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+                <Check className="w-8 h-8 text-primary" />
+              </div>
+              <div>
+                <h2 className="font-display text-4xl font-medium">CHECK Membership</h2>
+                <p className="text-muted-foreground">$12,500/year • Diagnostic Foundation</p>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {[
+                {
+                  icon: Activity,
+                  title: "Comprehensive Diagnostics",
+                  items: [
+                    "Full-body MRI screening",
+                    "Advanced bloodwork panel (100+ biomarkers)",
+                    "Genetic testing & analysis",
+                    "Cardiovascular assessment",
+                    "Metabolic profiling"
+                  ]
+                },
+                {
+                  icon: Stethoscope,
+                  title: "Physician Consultation",
+                  items: [
+                    "2-hour initial consultation",
+                    "Results review session",
+                    "Personalized health report",
+                    "Risk factor identification",
+                    "Lifestyle recommendations"
+                  ]
+                },
+                {
+                  icon: Calendar,
+                  title: "Annual Program",
+                  items: [
+                    "One comprehensive visit per year",
+                    "Digital health dashboard access",
+                    "Year-over-year tracking",
+                    "Priority scheduling",
+                    "Upgrade path to ELITE"
+                  ]
+                }
+              ].map((category, i) => (
+                <div key={i} className="bg-card border border-border rounded-2xl p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <category.icon className="w-5 h-5 text-primary" />
+                    <h3 className="font-display text-lg font-medium">{category.title}</h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {category.items.map((item, j) => (
+                      <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="bg-muted/30 rounded-2xl p-6">
+              <h4 className="font-display font-medium mb-4">CHECK Membership Economics</h4>
+              <div className="grid md:grid-cols-4 gap-6 text-center">
+                <div>
+                  <span className="font-mono text-2xl text-primary">$12,500</span>
+                  <p className="text-xs text-muted-foreground mt-1">Annual Fee</p>
+                </div>
+                <div>
+                  <span className="font-mono text-2xl text-foreground">10%</span>
+                  <p className="text-xs text-muted-foreground mt-1">Renewal Rate</p>
+                </div>
+                <div>
+                  <span className="font-mono text-2xl text-foreground">15%</span>
+                  <p className="text-xs text-muted-foreground mt-1">Member Mix</p>
+                </div>
+                <div>
+                  <span className="font-mono text-2xl text-foreground">25%</span>
+                  <p className="text-xs text-muted-foreground mt-1">ELITE Upgrade Rate</p>
                 </div>
               </div>
             </motion.div>

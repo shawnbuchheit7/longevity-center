@@ -128,8 +128,8 @@ export default function Hiring() {
                   priority: "Critical",
                   timing: "Q1 2026",
                   compensation: "TBD",
-                  description: "Product leader who will initially own marketing and technology responsibilities until those roles are carved out.",
-                  initialScope: "Product strategy + Marketing + Technology (until Phase 2)",
+                  description: "Product leader who will initially own marketing and technology responsibilities until dedicated roles are added.",
+                  initialScope: "Product strategy + Marketing + Technology oversight",
                   requirements: [
                     "Healthcare product development",
                     "Digital marketing expertise",
@@ -189,7 +189,7 @@ export default function Hiring() {
         </div>
       </section>
 
-      {/* Phase 2 - Specialized Leadership */}
+      {/* Phase 2 - Additional Leadership */}
       <section className="py-20 bg-card/30">
         <div className="container">
           <motion.div 
@@ -204,11 +204,11 @@ export default function Hiring() {
                 PHASE 2
               </span>
               <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
-                Role Specialization
+                Additional Executive Roles
               </h2>
               <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto">
-                As Lumastem scales, these specialized roles will be carved out from Phase 1 
-                executives to enable deeper focus and expertise in critical functions.
+                As Lumastem scales, these additional executive roles will be added 
+                to enable deeper focus and expertise in critical functions.
               </p>
             </motion.div>
 
@@ -218,10 +218,8 @@ export default function Hiring() {
                   icon: Stethoscope,
                   title: "Chief Medical Officer",
                   priority: "Phase 2",
-                  timing: "Q3 2026",
                   compensation: "TBD",
                   description: "Board-certified physician to oversee clinical protocols, quality assurance, and regulatory compliance.",
-                  carvedFrom: "New role - clinical leadership",
                   requirements: [
                     "MD with regenerative medicine expertise",
                     "Clinical operations leadership",
@@ -232,10 +230,8 @@ export default function Hiring() {
                   icon: Megaphone,
                   title: "Chief Marketing Officer",
                   priority: "Phase 2",
-                  timing: "Q4 2026",
                   compensation: "TBD",
                   description: "Marketing leader to build brand awareness, member acquisition, and founder/celebrity partnerships.",
-                  carvedFrom: "Carved from CPO responsibilities",
                   requirements: [
                     "Luxury/wellness brand experience",
                     "Digital marketing expertise",
@@ -246,10 +242,8 @@ export default function Hiring() {
                   icon: Code,
                   title: "Chief Technology Officer",
                   priority: "Phase 2",
-                  timing: "Q4 2026",
                   compensation: "TBD",
                   description: "Technology leader to build member platform, data infrastructure, and clinical systems integration.",
-                  carvedFrom: "Carved from CPO responsibilities",
                   requirements: [
                     "Healthcare IT experience",
                     "HIPAA compliance expertise",
@@ -266,20 +260,13 @@ export default function Hiring() {
                     <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center">
                       <role.icon className="w-6 h-6 text-amber-500" />
                     </div>
-                    <div className="flex flex-col items-end gap-1">
-                      <span className="text-xs font-mono px-2 py-1 rounded bg-amber-500/10 text-amber-500">
-                        {role.priority}
-                      </span>
-                      <span className="text-xs font-mono text-muted-foreground">{role.timing}</span>
-                    </div>
+                    <span className="text-xs font-mono px-2 py-1 rounded bg-amber-500/10 text-amber-500">
+                      {role.priority}
+                    </span>
                   </div>
                   <h3 className="font-display text-lg font-medium mb-1">{role.title}</h3>
                   <p className="text-xs font-mono text-muted-foreground mb-2">Comp: {role.compensation}</p>
-                  <p className="font-body text-sm text-muted-foreground mb-3">{role.description}</p>
-                  <div className="bg-amber-500/5 border border-amber-500/20 rounded-lg p-3 mb-4">
-                    <span className="text-xs font-mono text-amber-500">Transition:</span>
-                    <p className="text-xs text-muted-foreground mt-1">{role.carvedFrom}</p>
-                  </div>
+                  <p className="font-body text-sm text-muted-foreground mb-4">{role.description}</p>
                   <div className="space-y-2">
                     {role.requirements.map((req, j) => (
                       <div key={j} className="flex items-center gap-2 text-xs text-muted-foreground">
@@ -488,13 +475,13 @@ export default function Hiring() {
 
             <motion.div variants={fadeInUp} className="space-y-4">
               {[
-                { phase: "Q1 2026", label: "Phase 1 Critical", count: "5 executives", color: "destructive", description: "CEO, CFO, COO, CPO, CLO" },
-                { phase: "Q1 2026", label: "Center Launch", count: "16 staff", color: "primary", description: "Flagship center clinical & operations team" },
-                { phase: "Q2-Q3 2026", label: "Corporate Build", count: "17 roles", color: "primary", description: "Finance, HR, Marketing, Technology, Clinical Ops, Legal" },
-                { phase: "Q3-Q4 2026", label: "Phase 2 Specialized", count: "3 executives", color: "amber-500", description: "CMO, CMO (Marketing), CTO carved from CPO" }
+                { phase: "Pre-Launch", label: "Phase 1 Critical", count: "5 executives", color: "destructive", description: "CEO, CFO, COO, CPO, CLO" },
+                { phase: "Center Opening", label: "Center Launch", count: "16 staff", color: "primary", description: "Clinical & operations team per center" },
+                { phase: "Post-Launch", label: "Corporate Build", count: "17 roles", color: "primary", description: "Finance, HR, Marketing, Technology, Clinical Ops, Legal" },
+                { phase: "As Needed", label: "Phase 2 Executives", count: "3 executives", color: "amber-500", description: "CMO (Medical), CMO (Marketing), CTO" }
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-6 p-4 bg-card border border-border rounded-xl">
-                  <div className="w-24 shrink-0">
+                  <div className="w-28 shrink-0">
                     <span className="font-mono text-sm text-muted-foreground">{item.phase}</span>
                   </div>
                   <div className={`w-3 h-3 rounded-full bg-${item.color}`} style={{ backgroundColor: item.color === 'destructive' ? 'hsl(var(--destructive))' : item.color === 'amber-500' ? '#f59e0b' : 'hsl(var(--primary))' }} />
@@ -509,14 +496,11 @@ export default function Hiring() {
               ))}
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="mt-8 text-center">
-              <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-6 py-3">
-                <Layers className="w-5 h-5 text-primary" />
-                <span className="font-body">
-                  <span className="font-medium text-foreground">41 total hires</span>
-                  <span className="text-muted-foreground"> by end of 2026</span>
-                </span>
-              </div>
+            <motion.div variants={fadeInUp} className="mt-8 bg-muted/30 rounded-xl p-4">
+              <p className="font-body text-sm text-muted-foreground text-center">
+                <span className="text-foreground font-medium">Note:</span> Hiring timelines are dependent on center opening schedules and operational needs. 
+                Specific dates will be determined based on funding milestones and real estate availability.
+              </p>
             </motion.div>
           </motion.div>
         </div>
@@ -589,7 +573,7 @@ export default function Hiring() {
               </div>
 
               <div className="bg-card border border-border rounded-2xl p-8">
-                <h3 className="font-display text-xl font-medium mb-6">Phase 2 & Reserve Pool</h3>
+<h3 className="font-display text-xl font-medium mb-6">Additional Executives & Reserve Pool</h3>
                 <div className="space-y-4">
                   {[
                     { category: "CMO (Medical)", allocation: "0.75%", description: "4-year vesting" },
@@ -608,7 +592,7 @@ export default function Hiring() {
                   ))}
                 </div>
                 <div className="mt-6 pt-4 border-t border-border flex justify-between items-center">
-                  <span className="font-display font-medium">Phase 2 & Reserve Total</span>
+<span className="font-display font-medium">Additional & Reserve Total</span>
                   <span className="font-mono text-lg text-primary">3.75%</span>
                 </div>
               </div>
@@ -671,7 +655,7 @@ export default function Hiring() {
                   <span className="w-16 text-right font-mono text-sm">1.00%</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <span className="w-24 text-sm text-muted-foreground">Phase 2</span>
+                  <span className="w-24 text-sm text-muted-foreground">Additional</span>
                   <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
                     <div className="h-full bg-primary/60 rounded-full" style={{ width: '16.7%' }} />
                   </div>
@@ -715,7 +699,7 @@ export default function Hiring() {
                   <table className="w-full min-w-[800px]">
                     <thead>
                       <tr className="border-b border-border bg-muted/30">
-                        <th className="text-left p-4 font-display font-medium">Quarter</th>
+                        <th className="text-left p-4 font-display font-medium">Phase</th>
                         <th className="text-left p-4 font-display font-medium">Hires</th>
                         <th className="text-center p-4 font-display font-medium">Headcount</th>
                         <th className="text-center p-4 font-display font-medium">Cumulative</th>
@@ -724,17 +708,17 @@ export default function Hiring() {
                     </thead>
                     <tbody className="font-body text-sm">
                       {[
-                        { quarter: "Q4 2025", hires: "Center Director, Ops Manager", count: 2, cumulative: 2, milestone: "Pre-launch preparation" },
-                        { quarter: "Q1 2026", hires: "CEO, CFO, COO, CPO, CLO + Center Staff", count: 19, cumulative: 21, milestone: "Flagship center launch" },
-                        { quarter: "Q2 2026", hires: "Finance, HR, Marketing teams", count: 8, cumulative: 29, milestone: "Corporate infrastructure" },
-                        { quarter: "Q3 2026", hires: "Technology, Clinical Ops, Legal", count: 9, cumulative: 38, milestone: "Operational scaling" },
-                        { quarter: "Q4 2026", hires: "CMO, CMO (Mktg), CTO", count: 3, cumulative: 41, milestone: "Phase 2 executive specialization" },
-                        { quarter: "Q1 2027", hires: "Center 2 staff", count: 14, cumulative: 55, milestone: "Second center launch" },
-                        { quarter: "Q3 2027", hires: "Center 3 staff + Corp expansion", count: 18, cumulative: 73, milestone: "Third center launch" },
-                        { quarter: "Q1 2028", hires: "Center 4 staff", count: 14, cumulative: 87, milestone: "Fourth center launch" }
+                        { phase: "Pre-Launch", hires: "Center Director, Ops Manager", count: 2, cumulative: 2, milestone: "Pre-launch preparation" },
+                        { phase: "Center 1 Launch", hires: "CEO, CFO, COO, CPO, CLO + Center Staff", count: 19, cumulative: 21, milestone: "Flagship center launch" },
+                        { phase: "Post-Launch", hires: "Finance, HR, Marketing teams", count: 8, cumulative: 29, milestone: "Corporate infrastructure" },
+                        { phase: "Scaling", hires: "Technology, Clinical Ops, Legal", count: 9, cumulative: 38, milestone: "Operational scaling" },
+                        { phase: "As Needed", hires: "CMO (Medical), CMO (Mktg), CTO", count: 3, cumulative: 41, milestone: "Phase 2 executives" },
+                        { phase: "Center 2 Launch", hires: "Center 2 staff", count: 14, cumulative: 55, milestone: "Second center launch" },
+                        { phase: "Center 3 Launch", hires: "Center 3 staff + Corp expansion", count: 18, cumulative: 73, milestone: "Third center launch" },
+                        { phase: "Center 4 Launch", hires: "Center 4 staff", count: 14, cumulative: 87, milestone: "Fourth center launch" }
                       ].map((item, i) => (
                         <tr key={i} className="border-b border-border/50 last:border-0">
-                          <td className="p-4 font-mono text-primary">{item.quarter}</td>
+                          <td className="p-4 font-mono text-primary">{item.phase}</td>
                           <td className="p-4 text-muted-foreground">{item.hires}</td>
                           <td className="p-4 text-center">
                             <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-mono text-sm">
