@@ -46,41 +46,41 @@ export default function Team() {
             {[
               {
                 name: "Dr. Pradeep Albert",
-                title: "Chief Medical Officer",
+                title: "Chair, Physician Advisory Board",
                 image: "/images/dr-pradeep-albert.png",
-                credentials: "MD, Board Certified",
+                credentials: "MD",
                 linkedin: "https://www.linkedin.com/in/pradeep-albert-md-8301ab9/",
-                bio: "Pioneer in regenerative medicine with 40,000+ procedures performed. Former Chief of Orthopedic Surgery with expertise spanning sports medicine, spine care, and biologics.",
+                bio: "One of the most experienced regenerative medicine physicians in the world, with over 40,000 stem cell and biologic procedures performed. Bestselling author of 'Exosomes, PRP, and Stem Cells in Musculoskeletal Medicine' and co-author of 'Lifespan Decoded'. Founder of Longerton University with contributions to stem cell policy across the Caribbean, Latin America, and Europe.",
                 highlights: [
-                  "40,000+ regenerative procedures",
-                  "Former Chief of Orthopedic Surgery",
-                  "Published researcher in stem cell therapy"
+                  "40,000+ stem cell procedures",
+                  "Global protocol design leader",
+                  "Bestselling medical author"
                 ]
               },
               {
                 name: "Dr. Gus Vickery",
-                title: "Peptide Program Chair",
+                title: "Chair, Peptide & Precision Hormone Program",
                 image: "/images/dr-gus-vickery.png",
-                credentials: "MD, Integrative Medicine",
+                credentials: "MD",
                 linkedin: "https://www.linkedin.com/in/gus-vickery-b5301b15a/",
-                bio: "Leading authority on peptide therapeutics and hormone optimization. Brings decades of experience in longevity medicine and personalized health protocols.",
+                bio: "Board-certified family physician and nationally recognized leader in precision medicine, hormone optimization, and peptide therapeutics. Founder of Vickery Family Medicine and The Clinic at Biltmore. At Lumastem, designs personalized longevity protocols using genomic data, advanced lab panels, and targeted hormone therapies. Leads integration of the GeneMetrics™ diagnostic platform.",
                 highlights: [
-                  "Peptide therapy pioneer",
-                  "Integrative medicine specialist",
-                  "National speaker on longevity"
+                  "Precision medicine pioneer",
+                  "GeneMetrics™ integration lead",
+                  "Author of 'Authentic Health'"
                 ]
               },
               {
                 name: "Linda McIver",
-                title: "Chief Executive Officer",
+                title: "Director, Peptide Program",
                 image: "/images/linda-mciver.png",
-                credentials: "MBA, Healthcare Executive",
+                credentials: "FNP-C, ABAAHP",
                 linkedin: "https://www.linkedin.com/in/linda-mciver-fnp-c-abaahp-882b4a38/",
-                bio: "Seasoned healthcare executive with track record of scaling physician-led practices. Expert in operational excellence and strategic growth.",
+                bio: "Board-certified family nurse practitioner with nearly 30 years of clinical experience in peptide therapy, hormone optimization, and functional medicine. Completed the A4M Fellowship and holds advanced certifications from the International Peptide Society. Leads clinical execution of the Peptide Program, managing protocol-driven delivery of hormone and peptide therapies under Dr. Gus Vickery's direction.",
                 highlights: [
-                  "20+ years healthcare leadership",
-                  "Multi-site practice scaling",
-                  "M&A and integration expertise"
+                  "30 years clinical experience",
+                  "A4M Fellowship graduate",
+                  "International Peptide Society certified"
                 ]
               }
             ].map((member, index) => (
