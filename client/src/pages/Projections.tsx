@@ -62,6 +62,147 @@ export default function Projections() {
         </div>
       </section>
 
+      {/* Consolidated Financial Summary - At a Glance */}
+      <section className="py-12 bg-gradient-to-br from-primary/5 to-accent/5">
+        <div className="container">
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-8">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                AT A GLANCE
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl font-medium mt-4 mb-4">
+                5-Year Financial Summary
+              </h2>
+              <p className="font-body text-muted-foreground max-w-2xl mx-auto">
+                Key metrics across the 5-year projection period for quick investor reference.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="bg-card border border-primary/30 rounded-2xl overflow-hidden shadow-lg">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="bg-gradient-to-r from-primary/10 to-accent/10">
+                      <th className="text-left p-4 font-display font-semibold text-foreground">Metric</th>
+                      <th className="text-center p-4 font-display font-semibold text-muted-foreground">2026</th>
+                      <th className="text-center p-4 font-display font-semibold text-muted-foreground">2027</th>
+                      <th className="text-center p-4 font-display font-semibold text-muted-foreground">2028</th>
+                      <th className="text-center p-4 font-display font-semibold text-muted-foreground">2029</th>
+                      <th className="text-center p-4 font-display font-semibold text-primary bg-primary/10">2030</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-border/50 bg-card">
+                      <td className="p-4 font-body">
+                        <div className="flex items-center gap-2">
+                          <DollarSign className="w-4 h-4 text-primary" />
+                          <span className="font-medium">Total Revenue</span>
+                        </div>
+                      </td>
+                      <td className="p-4 text-center font-mono">$20M</td>
+                      <td className="p-4 text-center font-mono">$40M</td>
+                      <td className="p-4 text-center font-mono">$100M</td>
+                      <td className="p-4 text-center font-mono">$200M</td>
+                      <td className="p-4 text-center font-mono text-primary font-bold bg-primary/5">$327M</td>
+                    </tr>
+                    <tr className="border-b border-border/50">
+                      <td className="p-4 font-body">
+                        <div className="flex items-center gap-2">
+                          <TrendingUp className="w-4 h-4 text-emerald-400" />
+                          <span className="font-medium">EBITDA</span>
+                        </div>
+                      </td>
+                      <td className="p-4 text-center font-mono">$7M</td>
+                      <td className="p-4 text-center font-mono">$14M</td>
+                      <td className="p-4 text-center font-mono">$35M</td>
+                      <td className="p-4 text-center font-mono">$69M</td>
+                      <td className="p-4 text-center font-mono text-emerald-400 font-bold bg-primary/5">$113M</td>
+                    </tr>
+                    <tr className="border-b border-border/50 bg-card">
+                      <td className="p-4 font-body">
+                        <div className="flex items-center gap-2">
+                          <Percent className="w-4 h-4 text-amber-500" />
+                          <span className="font-medium">EBITDA Margin</span>
+                        </div>
+                      </td>
+                      <td className="p-4 text-center font-mono">34%</td>
+                      <td className="p-4 text-center font-mono">34%</td>
+                      <td className="p-4 text-center font-mono">34%</td>
+                      <td className="p-4 text-center font-mono">34%</td>
+                      <td className="p-4 text-center font-mono text-amber-500 font-bold bg-primary/5">34%</td>
+                    </tr>
+                    <tr className="border-b border-border/50">
+                      <td className="p-4 font-body">
+                        <div className="flex items-center gap-2">
+                          <Users className="w-4 h-4 text-blue-400" />
+                          <span className="font-medium">Total Members</span>
+                        </div>
+                      </td>
+                      <td className="p-4 text-center font-mono">500</td>
+                      <td className="p-4 text-center font-mono">977</td>
+                      <td className="p-4 text-center font-mono">2,428</td>
+                      <td className="p-4 text-center font-mono">4,820</td>
+                      <td className="p-4 text-center font-mono text-blue-400 font-bold bg-primary/5">7,863</td>
+                    </tr>
+                    <tr className="border-b border-border/50 bg-card">
+                      <td className="p-4 font-body">
+                        <div className="flex items-center gap-2">
+                          <Building2 className="w-4 h-4 text-purple-400" />
+                          <span className="font-medium">Centers</span>
+                        </div>
+                      </td>
+                      <td className="p-4 text-center font-mono">1</td>
+                      <td className="p-4 text-center font-mono">2</td>
+                      <td className="p-4 text-center font-mono">4</td>
+                      <td className="p-4 text-center font-mono">7</td>
+                      <td className="p-4 text-center font-mono text-purple-400 font-bold bg-primary/5">10</td>
+                    </tr>
+                    <tr className="bg-card">
+                      <td className="p-4 font-body">
+                        <div className="flex items-center gap-2">
+                          <Users className="w-4 h-4 text-cyan-400" />
+                          <span className="font-medium">Total Staff</span>
+                        </div>
+                      </td>
+                      <td className="p-4 text-center font-mono">25</td>
+                      <td className="p-4 text-center font-mono">62</td>
+                      <td className="p-4 text-center font-mono">148</td>
+                      <td className="p-4 text-center font-mono">290</td>
+                      <td className="p-4 text-center font-mono text-cyan-400 font-bold bg-primary/5">580</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="p-4 bg-muted/30 border-t border-border flex items-center justify-between flex-wrap gap-4">
+                <p className="font-body text-xs text-muted-foreground">
+                  <strong className="text-foreground">Note:</strong> Domestic centers only. International expansion represents additional upside.
+                </p>
+                <div className="flex items-center gap-4 text-xs">
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-primary"></span>
+                    <span className="text-muted-foreground">Revenue</span>
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    <span className="text-muted-foreground">EBITDA</span>
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-blue-400"></span>
+                    <span className="text-muted-foreground">Members</span>
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Revenue Projections Table */}
       <section className="py-20">
         <div className="container">

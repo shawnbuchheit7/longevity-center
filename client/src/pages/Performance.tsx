@@ -1642,6 +1642,57 @@ export default function Performance() {
         </div>
       </section>
 
+      {/* Cross-Reference to Projections */}
+      <section className="py-12">
+        <div className="container">
+          <motion.div 
+            className="max-w-4xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp}>
+              <Link href="/projections">
+                <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 border border-primary/30 rounded-2xl p-8 hover:border-primary/50 transition-all cursor-pointer group">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                        <TrendingUp className="w-7 h-7 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-display text-xl font-medium mb-1">Multi-Center Growth Projections</h3>
+                        <p className="font-body text-muted-foreground">
+                          See how these single-center economics scale across 10 domestic centers by 2030, 
+                          projecting $327M revenue and $113M EBITDA.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="hidden md:flex items-center gap-2 text-primary group-hover:translate-x-1 transition-transform">
+                      <span className="font-mono text-sm">View Projections</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </div>
+                  </div>
+                  <div className="mt-6 pt-6 border-t border-border/50 grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {[
+                      { label: "2030 Revenue", value: "$327M" },
+                      { label: "2030 EBITDA", value: "$113M" },
+                      { label: "Total Members", value: "7,863" },
+                      { label: "Centers", value: "10" }
+                    ].map((stat, i) => (
+                      <div key={i} className="text-center">
+                        <span className="font-mono text-lg text-primary font-bold">{stat.value}</span>
+                        <p className="font-body text-xs text-muted-foreground">{stat.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Financial Disclaimers */}
       <section className="py-12 bg-muted/20">
         <div className="container">
