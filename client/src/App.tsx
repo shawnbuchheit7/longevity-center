@@ -16,6 +16,7 @@ import Projections from "./pages/Projections";
 import Performance from "./pages/Performance";
 import Contact from "./pages/Contact";
 import Difference from "./pages/Difference";
+import Hiring from "./pages/Hiring";
 
 function Router() {
   return (
@@ -30,6 +31,7 @@ function Router() {
       <Route path="/team" component={Team} />
       <Route path="/use-of-funds" component={UseOfFunds} />
       <Route path="/projections" component={Projections} />
+      <Route path="/hiring" component={Hiring} />
       <Route path="/contact" component={Contact} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}

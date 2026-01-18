@@ -21,7 +21,8 @@ const navLinks = [
   { href: "/performance", label: "Economics" },
   { href: "/investors", label: "Founders" },
   { href: "/team", label: "Advisors" },
-  { href: "/use-of-funds", label: "Use of Funds" },
+  { href: "/hiring", label: "Team" },
+  { href: "/use-of-funds", label: "Funds" },
   { href: "/projections", label: "Projections" },
 ];
 
@@ -43,15 +44,15 @@ export default function Layout({ children }: LayoutProps) {
           </Link>
           
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-4 font-body text-sm">
+          <div className="hidden lg:flex items-center gap-1 font-body text-xs">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`transition-colors ${
+                className={`px-2.5 py-1.5 rounded-md border transition-all ${
                   location === link.href
-                    ? "text-primary font-medium"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-primary font-medium border-primary/50 bg-primary/10"
+                    : "text-muted-foreground border-border/50 hover:text-foreground hover:border-border hover:bg-muted/30"
                 }`}
               >
                 {link.label}
