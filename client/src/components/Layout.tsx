@@ -62,7 +62,7 @@ export default function Layout({ children }: LayoutProps) {
           <div className="flex items-center gap-4">
             <Link href="/contact" className="hidden sm:block">
               <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-body font-medium">
-                Request Data Room
+                Data Room
               </Button>
             </Link>
             
@@ -143,7 +143,7 @@ export default function Layout({ children }: LayoutProps) {
                 <div className="p-6 border-t border-border">
                   <Link href="/contact" onClick={closeMobileMenu}>
                     <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-body font-medium">
-                      Request Data Room
+                      Data Room
                     </Button>
                   </Link>
                 </div>
