@@ -18,7 +18,7 @@ const navLinks = [
   { href: "/therapeutics", label: "Therapeutics" },
   { href: "/technology", label: "Technology" },
   { href: "/performance", label: "Unit Economics" },
-  { href: "/investors", label: "Investors" },
+  { href: "/investors", label: "Founders" },
   { href: "/team", label: "Advisory Board" },
   { href: "/use-of-funds", label: "Use of Funds" },
   { href: "/projections", label: "Growth Projections" },
