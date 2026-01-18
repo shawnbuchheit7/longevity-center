@@ -4,7 +4,7 @@
  */
 
 import { motion } from "framer-motion";
-import { Star, Film, Gamepad2, Clapperboard, PieChart, DollarSign, TrendingUp, Users } from "lucide-react";
+import { Star, Film, Gamepad2, Clapperboard, PieChart, DollarSign, TrendingUp, Users, FileText, Shield, Check, AlertTriangle } from "lucide-react";
 import Layout from "@/components/Layout";
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
 
@@ -325,6 +325,89 @@ export default function Investors() {
                 </div>
               </div>
             </motion.div>
+
+            {/* Term Sheet Summary */}
+            <motion.div variants={fadeInUp} className="mt-12">
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-6 border-b border-border bg-muted/30">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <FileText className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-xl font-medium">Series A Term Sheet Summary</h3>
+                      <p className="font-body text-sm text-muted-foreground">Key terms for the $50M Series A financing</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {/* Key Economic Terms */}
+                    <div>
+                      <h4 className="font-display font-medium mb-4 flex items-center gap-2">
+                        <DollarSign className="w-4 h-4 text-primary" />
+                        Economic Terms
+                      </h4>
+                      <div className="space-y-3">
+                        {[
+                          { term: "Round Size", value: "$50,000,000" },
+                          { term: "Pre-Money Valuation", value: "$150,000,000" },
+                          { term: "Post-Money Valuation", value: "$200,000,000" },
+                          { term: "Price Per Share", value: "$12.50" },
+                          { term: "Liquidation Preference", value: "1x Non-Participating" },
+                          { term: "Dividends", value: "Non-Cumulative, 8%" }
+                        ].map((item, i) => (
+                          <div key={i} className="flex justify-between items-center py-2 border-b border-border/30">
+                            <span className="font-body text-sm text-muted-foreground">{item.term}</span>
+                            <span className="font-mono text-sm font-medium">{item.value}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Governance & Rights */}
+                    <div>
+                      <h4 className="font-display font-medium mb-4 flex items-center gap-2">
+                        <Shield className="w-4 h-4 text-primary" />
+                        Governance & Rights
+                      </h4>
+                      <div className="space-y-3">
+                        {[
+                          { term: "Board Seats", value: "1 of 5 Directors" },
+                          { term: "Anti-Dilution", value: "Broad-Based Weighted Avg" },
+                          { term: "Pro-Rata Rights", value: "Yes, for future rounds" },
+                          { term: "Information Rights", value: "Quarterly financials" },
+                          { term: "Protective Provisions", value: "Standard" },
+                          { term: "Drag-Along", value: "Majority approval" }
+                        ].map((item, i) => (
+                          <div key={i} className="flex justify-between items-center py-2 border-b border-border/30">
+                            <span className="font-body text-sm text-muted-foreground">{item.term}</span>
+                            <span className="font-mono text-sm font-medium">{item.value}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Investor-Friendly Highlights */}
+                  <div className="mt-6 pt-6 border-t border-border">
+                    <h4 className="font-display font-medium mb-4">Investor-Friendly Terms</h4>
+                    <div className="grid md:grid-cols-3 gap-4">
+                      {[
+                        { icon: Check, text: "1x non-participating preference protects downside" },
+                        { icon: Check, text: "Pro-rata rights to maintain ownership in future rounds" },
+                        { icon: Check, text: "Board observer seat for investors $5M+" }
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-3">
+                          <item.icon className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
+                          <span className="font-body text-sm text-emerald-100">{item.text}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -348,6 +431,119 @@ export default function Investors() {
               <p className="font-body text-muted-foreground">
                 — Strategic Investor Group
               </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Risk Factors */}
+      <section className="py-20">
+        <div className="container">
+          <motion.div 
+            className="max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-amber-500 text-sm tracking-wider">
+                IMPORTANT DISCLOSURES
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
+                Risk Factors
+              </h2>
+              <p className="font-body text-xl text-muted-foreground">
+                Prospective investors should carefully consider the following risk factors before making an investment decision.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  category: "Regulatory Risk",
+                  risks: [
+                    "FDA and state medical board regulations may impact treatment offerings",
+                    "Changes in biologics manufacturing requirements could increase costs",
+                    "CPOM laws vary by state and may affect operational structure"
+                  ]
+                },
+                {
+                  category: "Competitive Risk",
+                  risks: [
+                    "Large healthcare systems may enter the regenerative medicine space",
+                    "New technologies could disrupt current treatment protocols",
+                    "Pricing pressure from alternative longevity providers"
+                  ]
+                },
+                {
+                  category: "Execution Risk",
+                  risks: [
+                    "Ability to recruit and retain qualified physicians and clinical staff",
+                    "Center buildout timelines may be delayed by permitting or construction",
+                    "Member acquisition costs may exceed projections in new markets"
+                  ]
+                },
+                {
+                  category: "Financial Risk",
+                  risks: [
+                    "Revenue projections are forward-looking and may not be achieved",
+                    "Additional capital may be required before profitability",
+                    "Economic downturn could reduce demand for premium healthcare services"
+                  ]
+                },
+                {
+                  category: "Operational Risk",
+                  risks: [
+                    "Biologics manufacturing quality control is critical to outcomes",
+                    "Medical malpractice and liability exposure inherent in healthcare",
+                    "Key person risk with founding team and medical leadership"
+                  ]
+                },
+                {
+                  category: "Market Risk",
+                  risks: [
+                    "Regenerative medicine market adoption may be slower than projected",
+                    "Insurance reimbursement landscape remains uncertain",
+                    "International expansion subject to foreign regulatory approval"
+                  ]
+                }
+              ].map((section, i) => (
+                <div key={i} className="bg-card border border-border rounded-2xl p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center">
+                      <AlertTriangle className="w-4 h-4 text-amber-500" />
+                    </div>
+                    <h3 className="font-display text-lg font-medium">{section.category}</h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {section.risks.map((risk, j) => (
+                      <li key={j} className="font-body text-sm text-muted-foreground flex items-start gap-2">
+                        <span className="text-amber-500 mt-1">•</span>
+                        {risk}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="mt-8">
+              <div className="bg-amber-500/5 border border-amber-500/20 rounded-2xl p-6">
+                <div className="flex items-start gap-4">
+                  <AlertTriangle className="w-6 h-6 text-amber-500 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-display font-medium mb-2">Forward-Looking Statements</h4>
+                    <p className="font-body text-sm text-muted-foreground">
+                      This presentation contains forward-looking statements regarding Lumastem's business strategy, financial projections, 
+                      and market opportunity. These statements involve known and unknown risks, uncertainties, and other factors that may 
+                      cause actual results to differ materially from those expressed or implied. Past performance is not indicative of 
+                      future results. Investors should conduct their own due diligence and consult with financial, legal, and tax advisors 
+                      before making any investment decision.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
