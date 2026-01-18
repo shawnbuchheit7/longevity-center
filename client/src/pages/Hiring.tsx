@@ -1263,10 +1263,10 @@ export default function Hiring() {
                   {/* Milestone Points */}
                   <div className="relative flex justify-between">
                     {[
-                      { members: "1-60", teams: 1, trigger: "Launch" },
-                      { members: "61-120", teams: 2, trigger: "+Team 2" },
-                      { members: "121-180", teams: 3, trigger: "+Team 3" },
-                      { members: "181-240", teams: 4, trigger: "+Team 4" }
+                      { members: "1-60", teams: 1, maxMembers: 60, months: 4, capacityPct: 3.4 },
+                      { members: "61-120", teams: 2, maxMembers: 120, months: 8, capacityPct: 6.9 },
+                      { members: "121-180", teams: 3, maxMembers: 180, months: 12, capacityPct: 10.3 },
+                      { members: "181-240", teams: 4, maxMembers: 240, months: 16, capacityPct: 13.7 }
                     ].map((item, i) => (
                       <div key={i} className="flex flex-col items-center" style={{ width: '25%' }}>
                         {/* Team Count Badge */}
@@ -1287,16 +1287,70 @@ export default function Hiring() {
                         <div className="mt-2 px-3 py-1 bg-primary/10 rounded-full">
                           <span className="font-mono text-xs text-primary">{item.teams * 4} staff</span>
                         </div>
+                        
+                        {/* Time to Scale */}
+                        <div className="mt-2 text-center">
+                          <span className="font-mono text-[10px] text-muted-foreground">~{item.months} mo</span>
+                        </div>
+                        
+                        {/* Capacity Utilization */}
+                        <div className="mt-1">
+                          <span className="font-mono text-[10px] text-emerald-400">{item.capacityPct}% capacity</span>
+                        </div>
                       </div>
                     ))}
                   </div>
                 </div>
                 
-                {/* Summary Note */}
-                <div className="mt-8 pt-6 border-t border-border/50 text-center">
-                  <p className="font-body text-sm text-muted-foreground">
+                {/* Time & Capacity Explanation */}
+                <div className="mt-8 pt-6 border-t border-border/50">
+                  <div className="grid md:grid-cols-2 gap-4 mb-4">
+                    <div className="bg-muted/20 rounded-lg p-4">
+                      <h5 className="font-display text-sm font-medium mb-2 flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-amber-500" />
+                        Time to Scale
+                      </h5>
+                      <p className="font-body text-xs text-muted-foreground">
+                        Based on <span className="text-foreground">15 new members/month</span> per physician onboarding limit. 
+                        Each team reaches 50% capacity (60 members) in ~4 months, triggering the next team hire.
+                      </p>
+                    </div>
+                    <div className="bg-muted/20 rounded-lg p-4">
+                      <h5 className="font-display text-sm font-medium mb-2 flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-emerald-400" />
+                        Capacity Utilization
+                      </h5>
+                      <p className="font-body text-xs text-muted-foreground">
+                        Percentage of max diagnostic capacity (<span className="text-foreground">1,750 members/year</span> at standard hours). 
+                        Extended hours increase capacity to 2,250-3,050 members.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <p className="font-body text-sm text-muted-foreground text-center">
                     Each center launches with <span className="text-amber-500 font-medium">3 ELITE teams (12 staff)</span> and scales based on 50% capacity triggers
                   </p>
+                </div>
+              </div>
+              
+              {/* Cross-Reference to Diagnostic Capacity */}
+              <div className="mt-6 bg-gradient-to-r from-primary/10 to-emerald-500/10 border border-primary/30 rounded-xl p-5">
+                <div className="flex items-center justify-between flex-wrap gap-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <Layers className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h5 className="font-display font-medium">Diagnostic Suite Capacity Alignment</h5>
+                      <p className="font-body text-sm text-muted-foreground mt-1">
+                        ELITE team scaling is aligned with diagnostic imaging throughput. Each center's 6-7 diagnostic suites 
+                        can process 1,750-3,050 members annually depending on operating hours.
+                      </p>
+                    </div>
+                  </div>
+                  <Link href="/performance" className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 hover:bg-primary/30 rounded-lg text-primary font-medium text-sm transition-colors whitespace-nowrap">
+                    View Capacity Analysis →
+                  </Link>
                 </div>
               </div>
             </motion.div>
