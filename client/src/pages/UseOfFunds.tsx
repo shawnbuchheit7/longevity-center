@@ -63,13 +63,13 @@ export default function UseOfFunds() {
               <div className="divide-y divide-border">
                 {[
                   { 
-                    category: "Flagship Center #1 (Q1 2026)", 
+                    category: "Flagship Center #1 (Q2 2027)", 
                     amount: "$12.5M",
                     percentage: "25%",
                     description: "Full-service membership center with integrated imaging and biologics manufacturing"
                   },
                   { 
-                    category: "Center #2 Development (Q3 2027)", 
+                    category: "Center #2 Development (Q4 2028)", 
                     amount: "$10M",
                     percentage: "20%",
                     description: "Second market entry with MRI/CT imaging and manufacturing capabilities"
@@ -730,9 +730,9 @@ export default function UseOfFunds() {
               {[
                 {
                   region: "United States",
-                  status: "2026-2030",
+                  status: "2027-2031",
                   locations: "10 Domestic Centers",
-                  description: "Disciplined rollout: 1 center Q1 2026, scaling to 10 centers by Q3 2030"
+                  description: "Disciplined rollout: 1 center Q2 2027, scaling to 10 centers by Q4 2031"
                 },
                 {
                   region: "Middle East",
@@ -897,7 +897,7 @@ export default function UseOfFunds() {
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <span className="font-mono text-3xl text-primary font-bold">Q2 2026</span>
+                  <span className="font-mono text-3xl text-primary font-bold">Q2 2027</span>
                   <p className="text-xs text-muted-foreground mt-1">Flagship Center Opening</p>
                 </div>
                 <div className="text-center">

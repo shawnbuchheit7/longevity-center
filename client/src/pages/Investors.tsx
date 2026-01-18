@@ -278,7 +278,7 @@ export default function Investors() {
                   icon: TrendingUp,
                   title: "Projected Returns",
                   highlight: "8-45x MOIC",
-                  description: "Based on 20x EBITDA exit multiple at 2028-2030 exit scenarios"
+                  description: "Based on 20x EBITDA exit multiple at 2029-2031 exit scenarios"
                 },
                 {
                   icon: Shield,
@@ -437,7 +437,7 @@ export default function Investors() {
                           <td className="p-3 text-center font-mono">10%</td>
                         </tr>
                         <tr>
-                          <td className="p-3 font-medium">Exit (2030)</td>
+                          <td className="p-3 font-medium">Exit (2031)</td>
                           <td className="p-3 text-center font-mono">40%</td>
                           <td className="p-3 text-center font-mono">18%</td>
                           <td className="p-3 text-center font-mono">18%</td>
@@ -452,7 +452,7 @@ export default function Investors() {
                       <TrendingUp className="w-5 h-5 text-primary mt-0.5" />
                       <div>
                         <p className="font-body text-sm">
-                          <strong className="text-foreground">Series A Value Creation:</strong> At 20x EBITDA exit in 2030, 
+                          <strong className="text-foreground">Series A Value Creation:</strong> At 20x EBITDA exit in 2031, 
                           Series A investors' 18% ownership represents <span className="text-primary font-medium">$414M value</span> on 
                           $50M invested — an <span className="text-emerald-400 font-medium">8.3x return</span> after dilution.
                         </p>

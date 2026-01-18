@@ -828,7 +828,7 @@ export default function Memberships() {
                   </div>
                   <h3 className="font-display text-xl font-medium mb-2">Growth Projections</h3>
                   <p className="font-body text-sm text-muted-foreground mb-4">
-                    See how membership growth drives revenue from a single center to a 10-center network by 2030.
+                    See how membership growth drives revenue from a single center to a 10-center network by 2031.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="text-xs font-mono px-2 py-1 rounded bg-muted text-muted-foreground">$57.5M Y5 Revenue</span>

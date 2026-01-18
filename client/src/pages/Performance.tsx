@@ -1663,7 +1663,7 @@ export default function Performance() {
                       <div>
                         <h3 className="font-display text-xl font-medium mb-1">Multi-Center Growth Projections</h3>
                         <p className="font-body text-muted-foreground">
-                          See how these single-center economics scale across 10 domestic centers by 2030, 
+                          See how these single-center economics scale across 10 domestic centers by 2031, 
                           projecting $327M revenue and $113M EBITDA.
                         </p>
                       </div>
@@ -1675,8 +1675,8 @@ export default function Performance() {
                   </div>
                   <div className="mt-6 pt-6 border-t border-border/50 grid grid-cols-2 md:grid-cols-4 gap-4">
                     {[
-                      { label: "2030 Revenue", value: "$327M" },
-                      { label: "2030 EBITDA", value: "$113M" },
+                      { label: "2031 Revenue", value: "$327M" },
+                      { label: "2031 EBITDA", value: "$113M" },
                       { label: "Total Members", value: "7,863" },
                       { label: "Centers", value: "10" }
                     ].map((stat, i) => (

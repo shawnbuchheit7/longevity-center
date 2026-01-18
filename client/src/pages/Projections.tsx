@@ -4,12 +4,31 @@
  * Updated with new center rollout timeline and international expansion strategy
  */
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { TrendingUp, Target, Shield, BarChart3, AlertTriangle, Rocket, ArrowUpRight, ArrowDownRight, Globe, Building2, Handshake, FileText, DollarSign, Percent, Users } from "lucide-react";
 import Layout from "@/components/Layout";
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
 
 export default function Projections() {
+  // Sensitivity Analysis State
+  const [membershipPrice, setMembershipPrice] = useState(29500);
+  const [renewalRate, setRenewalRate] = useState(70);
+  
+  // Calculate sensitivity metrics
+  const baseRevenue = 327; // $327M at $29,500 and 70% renewal
+  const baseMemberPrice = 29500;
+  const baseRenewal = 70;
+  
+  const priceMultiplier = membershipPrice / baseMemberPrice;
+  const renewalMultiplier = 1 + ((renewalRate - baseRenewal) / 100) * 0.5; // 50% impact from renewal changes
+  const adjustedRevenue = Math.round(baseRevenue * priceMultiplier * renewalMultiplier);
+  const adjustedEBITDA = Math.round(adjustedRevenue * 0.345); // 34.5% margin
+  const adjustedMembers = Math.round(7863 * renewalMultiplier);
+  
+  // Break-even calculation
+  const breakEvenMembers = Math.ceil(2500000 / (membershipPrice * 0.66)); // Fixed costs / (price * margin)
+  
   return (
     <Layout>
       {/* Page Header */}
@@ -46,8 +65,8 @@ export default function Projections() {
           >
             <motion.div variants={fadeInUp} className="grid md:grid-cols-4 gap-6">
               {[
-                { value: "$327M", label: "2030 Revenue", subtext: "10 domestic centers" },
-                { value: "$113M", label: "2030 EBITDA", subtext: "34% margin" },
+                { value: "$327M", label: "2031 Revenue", subtext: "10 domestic centers" },
+                { value: "$113M", label: "2031 EBITDA", subtext: "34% margin" },
                 { value: "7,860+", label: "Total Members", subtext: "Across all centers" },
                 { value: "16x", label: "Revenue Growth", subtext: "5-year trajectory" }
               ].map((stat, i) => (
@@ -90,11 +109,11 @@ export default function Projections() {
                   <thead>
                     <tr className="bg-gradient-to-r from-primary/10 to-accent/10">
                       <th className="text-left p-4 font-display font-semibold text-foreground">Metric</th>
-                      <th className="text-center p-4 font-display font-semibold text-muted-foreground">2026</th>
                       <th className="text-center p-4 font-display font-semibold text-muted-foreground">2027</th>
                       <th className="text-center p-4 font-display font-semibold text-muted-foreground">2028</th>
                       <th className="text-center p-4 font-display font-semibold text-muted-foreground">2029</th>
-                      <th className="text-center p-4 font-display font-semibold text-primary bg-primary/10">2030</th>
+                      <th className="text-center p-4 font-display font-semibold text-muted-foreground">2030</th>
+                      <th className="text-center p-4 font-display font-semibold text-primary bg-primary/10">2031</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -224,11 +243,11 @@ export default function Projections() {
                   <thead>
                     <tr className="border-b border-border">
                       <th className="text-left p-5 font-body font-semibold text-muted-foreground">Metric</th>
-                      <th className="text-center p-5 font-body font-semibold text-muted-foreground">2026</th>
                       <th className="text-center p-5 font-body font-semibold text-muted-foreground">2027</th>
                       <th className="text-center p-5 font-body font-semibold text-muted-foreground">2028</th>
                       <th className="text-center p-5 font-body font-semibold text-muted-foreground">2029</th>
-                      <th className="text-center p-5 font-body font-semibold text-gradient">2030</th>
+                      <th className="text-center p-5 font-body font-semibold text-muted-foreground">2030</th>
+                      <th className="text-center p-5 font-body font-semibold text-gradient">2031</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -264,6 +283,143 @@ export default function Projections() {
         </div>
       </section>
 
+      {/* Sensitivity Analysis Calculator */}
+      <section className="py-20">
+        <div className="container">
+          <motion.div 
+            className="max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                INTERACTIVE MODEL
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
+                Sensitivity Analysis
+              </h2>
+              <p className="font-body text-muted-foreground max-w-2xl mx-auto">
+                Explore how changes in membership pricing and renewal rates affect 5-year projections.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden">
+              {/* Controls */}
+              <div className="p-8 border-b border-border bg-muted/30">
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* Membership Price Slider */}
+                  <div>
+                    <div className="flex justify-between items-center mb-3">
+                      <label className="font-display font-medium">ELITE Membership Price</label>
+                      <span className="font-mono text-xl text-primary font-bold">${membershipPrice.toLocaleString()}</span>
+                    </div>
+                    <input
+                      type="range"
+                      min="20000"
+                      max="50000"
+                      step="1000"
+                      value={membershipPrice}
+                      onChange={(e) => setMembershipPrice(Number(e.target.value))}
+                      className="w-full h-2 bg-muted rounded-lg appearance-none cursor-pointer accent-primary"
+                    />
+                    <div className="flex justify-between text-xs text-muted-foreground mt-1">
+                      <span>$20,000</span>
+                      <span className="text-primary">Base: $29,500</span>
+                      <span>$50,000</span>
+                    </div>
+                  </div>
+
+                  {/* Renewal Rate Slider */}
+                  <div>
+                    <div className="flex justify-between items-center mb-3">
+                      <label className="font-display font-medium">ELITE Renewal Rate</label>
+                      <span className="font-mono text-xl text-primary font-bold">{renewalRate}%</span>
+                    </div>
+                    <input
+                      type="range"
+                      min="50"
+                      max="90"
+                      step="5"
+                      value={renewalRate}
+                      onChange={(e) => setRenewalRate(Number(e.target.value))}
+                      className="w-full h-2 bg-muted rounded-lg appearance-none cursor-pointer accent-primary"
+                    />
+                    <div className="flex justify-between text-xs text-muted-foreground mt-1">
+                      <span>50%</span>
+                      <span className="text-primary">Base: 70%</span>
+                      <span>90%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Results */}
+              <div className="p-8">
+                <div className="grid md:grid-cols-4 gap-6 mb-8">
+                  <div className="bg-muted/30 rounded-xl p-6 text-center">
+                    <span className="font-mono text-3xl font-bold text-gradient">${adjustedRevenue}M</span>
+                    <p className="font-body text-sm text-muted-foreground mt-2">2031 Revenue</p>
+                    <p className={`font-mono text-xs mt-1 ${adjustedRevenue >= baseRevenue ? 'text-emerald-400' : 'text-amber-400'}`}>
+                      {adjustedRevenue >= baseRevenue ? '+' : ''}{adjustedRevenue - baseRevenue}M vs base
+                    </p>
+                  </div>
+                  <div className="bg-muted/30 rounded-xl p-6 text-center">
+                    <span className="font-mono text-3xl font-bold text-gradient">${adjustedEBITDA}M</span>
+                    <p className="font-body text-sm text-muted-foreground mt-2">2031 EBITDA</p>
+                    <p className={`font-mono text-xs mt-1 ${adjustedEBITDA >= 113 ? 'text-emerald-400' : 'text-amber-400'}`}>
+                      {adjustedEBITDA >= 113 ? '+' : ''}{adjustedEBITDA - 113}M vs base
+                    </p>
+                  </div>
+                  <div className="bg-muted/30 rounded-xl p-6 text-center">
+                    <span className="font-mono text-3xl font-bold text-foreground">{adjustedMembers.toLocaleString()}</span>
+                    <p className="font-body text-sm text-muted-foreground mt-2">2031 Members</p>
+                    <p className={`font-mono text-xs mt-1 ${adjustedMembers >= 7863 ? 'text-emerald-400' : 'text-amber-400'}`}>
+                      {adjustedMembers >= 7863 ? '+' : ''}{adjustedMembers - 7863} vs base
+                    </p>
+                  </div>
+                  <div className="bg-muted/30 rounded-xl p-6 text-center">
+                    <span className="font-mono text-3xl font-bold text-foreground">{breakEvenMembers}</span>
+                    <p className="font-body text-sm text-muted-foreground mt-2">Break-Even Members</p>
+                    <p className="font-mono text-xs mt-1 text-muted-foreground">Per center/year</p>
+                  </div>
+                </div>
+
+                {/* Scenario Comparison */}
+                <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+                  <h4 className="font-display font-medium mb-4 flex items-center gap-2">
+                    <BarChart3 className="w-5 h-5 text-primary" />
+                    Exit Valuation Impact
+                  </h4>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div>
+                      <p className="font-body text-sm text-muted-foreground mb-1">Conservative (15x EBITDA)</p>
+                      <span className="font-mono text-2xl font-bold text-foreground">${(adjustedEBITDA * 15 / 1000).toFixed(1)}B</span>
+                    </div>
+                    <div>
+                      <p className="font-body text-sm text-muted-foreground mb-1">Base Case (20x EBITDA)</p>
+                      <span className="font-mono text-2xl font-bold text-primary">${(adjustedEBITDA * 20 / 1000).toFixed(1)}B</span>
+                    </div>
+                    <div>
+                      <p className="font-body text-sm text-muted-foreground mb-1">Optimistic (25x EBITDA)</p>
+                      <span className="font-mono text-2xl font-bold text-emerald-400">${(adjustedEBITDA * 25 / 1000).toFixed(1)}B</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Disclaimer */}
+              <div className="p-4 bg-muted/20 border-t border-border">
+                <p className="font-body text-xs text-muted-foreground text-center">
+                  Interactive model for illustrative purposes only. Actual results may vary based on market conditions, execution, and other factors.
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Center Rollout Timeline */}
       <section className="py-20 bg-card/30">
         <div className="container">
@@ -282,7 +438,7 @@ export default function Projections() {
                 Center Rollout Timeline
               </h2>
               <p className="font-body text-muted-foreground max-w-2xl mx-auto">
-                Disciplined domestic expansion with 10 centers by 2030, plus opportunistic international growth.
+                Disciplined domestic expansion with 10 centers by 2031, plus opportunistic international growth.
               </p>
             </motion.div>
 
@@ -300,14 +456,14 @@ export default function Projections() {
                   </thead>
                   <tbody>
                     {[
-                      { quarter: "Q1 2026", new: 1, total: 1, notes: "Flagship center launch" },
-                      { quarter: "Q3 2027", new: 1, total: 2, notes: "Second market entry" },
-                      { quarter: "Q1 2028", new: 1, total: 3, notes: "Expansion acceleration" },
-                      { quarter: "Q3 2028", new: 1, total: 4, notes: "Regional presence" },
-                      { quarter: "Q1 2029", new: 2, total: 6, notes: "Dual opening capacity" },
-                      { quarter: "Q3 2029", new: 1, total: 7, notes: "Continued growth" },
-                      { quarter: "Q1 2030", new: 2, total: 9, notes: "Scale operations" },
-                      { quarter: "Q3 2030", new: 1, total: 10, notes: "Domestic network complete" }
+                      { quarter: "Q2 2027", new: 1, total: 1, notes: "Flagship center launch" },
+                      { quarter: "Q4 2028", new: 1, total: 2, notes: "Second market entry" },
+                      { quarter: "Q2 2029", new: 1, total: 3, notes: "Expansion acceleration" },
+                      { quarter: "Q4 2029", new: 1, total: 4, notes: "Regional presence" },
+                      { quarter: "Q2 2030", new: 2, total: 6, notes: "Dual opening capacity" },
+                      { quarter: "Q4 2030", new: 1, total: 7, notes: "Continued growth" },
+                      { quarter: "Q2 2031", new: 2, total: 9, notes: "Scale operations" },
+                      { quarter: "Q4 2031", new: 1, total: 10, notes: "Domestic network complete" }
                     ].map((row, i) => (
                       <tr key={i} className="border-b border-border/50 hover:bg-muted/20 transition-colors">
                         <td className="p-5 font-mono font-medium">{row.quarter}</td>
@@ -360,7 +516,7 @@ export default function Projections() {
                         <Target className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                         <div>
                           <span className="font-body text-sm font-medium">Domestic Expansion</span>
-                          <p className="font-body text-xs text-muted-foreground">10 owned centers by 2030 in major U.S. metros</p>
+                          <p className="font-body text-xs text-muted-foreground">10 owned centers by 2031 in major U.S. metros</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
@@ -654,11 +810,11 @@ export default function Projections() {
                     <thead>
                       <tr className="border-b border-border bg-muted/30">
                         <th className="text-left p-4 font-display font-medium">Metric</th>
-                        <th className="text-right p-4 font-display font-medium">2026</th>
                         <th className="text-right p-4 font-display font-medium">2027</th>
                         <th className="text-right p-4 font-display font-medium">2028</th>
                         <th className="text-right p-4 font-display font-medium">2029</th>
                         <th className="text-right p-4 font-display font-medium">2030</th>
+                        <th className="text-right p-4 font-display font-medium">2031</th>
                       </tr>
                     </thead>
                     <tbody className="font-body">
@@ -724,7 +880,7 @@ export default function Projections() {
                   <div key={i} className="bg-card border border-border rounded-xl p-4">
                     <div className="text-2xl font-mono font-bold text-primary mb-1">{item.pct}</div>
                     <div className="font-display font-medium text-sm mb-1">{item.label}</div>
-                    <div className="font-mono text-xs text-muted-foreground mb-2">{item.amount} (2030)</div>
+                    <div className="font-mono text-xs text-muted-foreground mb-2">{item.amount} (2031)</div>
                     <div className="text-xs text-muted-foreground">{item.desc}</div>
                   </div>
                 ))}
@@ -973,11 +1129,11 @@ export default function Projections() {
 
             <motion.div variants={fadeInUp} className="grid md:grid-cols-5 gap-6">
               {[
-                { year: "2025", milestones: ["Series A close", "Flagship buildout", "MUSE Cell production setup", "Team expansion"] },
-                { year: "2026", milestones: ["Q1: First center opens", "500 members", "$20M revenue", "Prove unit economics"] },
-                { year: "2027", milestones: ["Q3: Second center", "977 members", "$40M revenue", "HoldCo breakeven"] },
-                { year: "2028", milestones: ["2 new centers (4 total)", "2,428 members", "$100M revenue", "Scale operations"] },
-                { year: "2029-30", milestones: ["6 new centers", "7,863 members", "$327M revenue", "10 center network"] }
+                { year: "2026", milestones: ["Series A close", "Flagship buildout", "MUSE Cell production setup", "Team expansion"] },
+                { year: "2027", milestones: ["Q2: First center opens", "500 members", "$20M revenue", "Prove unit economics"] },
+                { year: "2028", milestones: ["Q4: Second center", "977 members", "$40M revenue", "HoldCo breakeven"] },
+                { year: "2029", milestones: ["2 new centers (4 total)", "2,428 members", "$100M revenue", "Scale operations"] },
+                { year: "2030-31", milestones: ["6 new centers", "7,863 members", "$327M revenue", "10 center network"] }
               ].map((item, i) => (
                 <div key={i} className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors">
                   <span className="font-display text-3xl font-bold text-gradient">{item.year}</span>
@@ -1040,7 +1196,7 @@ export default function Projections() {
                   highlight: false
                 },
                 {
-                  year: "2030",
+                  year: "2031",
                   ebitda: "$113M",
                   valuation: "$2.3B",
                   moic: "45.0x",
@@ -1084,7 +1240,7 @@ export default function Projections() {
             <motion.div variants={fadeInUp} className="mb-12">
               <h3 className="font-display text-2xl font-medium mb-6 flex items-center gap-2">
                 <BarChart3 className="w-6 h-6 text-primary" />
-                Valuation Sensitivity (2030 Exit)
+                Valuation Sensitivity (2031 Exit)
               </h3>
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
                 <div className="overflow-x-auto">
@@ -1117,7 +1273,7 @@ export default function Projections() {
                 </div>
                 <div className="p-4 bg-muted/20 border-t border-border">
                   <p className="font-body text-xs text-muted-foreground">
-                    Based on 2030 Network EBITDA of $113M and $50M Series A investment. Healthcare services companies typically trade at 15-25x EBITDA.
+                    Based on 2031 Network EBITDA of $113M and $50M Series A investment. Healthcare services companies typically trade at 15-25x EBITDA.
                   </p>
                 </div>
               </div>
@@ -1127,7 +1283,7 @@ export default function Projections() {
             <motion.div variants={fadeInUp} className="grid md:grid-cols-4 gap-4">
               {[
                 { icon: DollarSign, value: "$50M", label: "Series A Investment", color: "text-foreground" },
-                { icon: TrendingUp, value: "$2.3B", label: "2030 Exit Value", color: "text-primary" },
+                { icon: TrendingUp, value: "$2.3B", label: "2031 Exit Value", color: "text-primary" },
                 { icon: Percent, value: "45x", label: "MOIC @ 20x", color: "text-emerald-400" },
                 { icon: Rocket, value: "114%", label: "5-Year IRR", color: "text-emerald-400" }
               ].map((item, i) => (
@@ -1220,7 +1376,7 @@ export default function Projections() {
                 {
                   icon: TrendingUp,
                   title: "16x Revenue Growth",
-                  description: "From $20M in 2026 to $327M in 2030, driven by proven unit economics and disciplined center rollout."
+                  description: "From $20M in 2027 to $327M in 2031, driven by proven unit economics and disciplined center rollout."
                 },
                 {
                   icon: Target,

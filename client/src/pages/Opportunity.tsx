@@ -49,7 +49,7 @@ export default function Opportunity() {
                 title: "Regenerative Medicine", 
                 value: "$125B", 
                 growth: "23.9% CAGR",
-                year: "by 2030",
+                year: "by 2031",
                 icon: FlaskConical,
                 description: "Stem cells, exosomes, and biologics driving the future of healing"
               },

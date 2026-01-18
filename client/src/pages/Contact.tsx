@@ -386,7 +386,7 @@ ${formData.message || 'No additional message provided.'}
                     {[
                       { label: "Round Size", value: "$50M Series A" },
                       { label: "Valuation", value: "$200M Post-Money" },
-                      { label: "2030 Target", value: "$327M Revenue" },
+                      { label: "2031 Target", value: "$327M Revenue" },
                       { label: "Exit Multiple", value: "20x EBITDA" }
                     ].map((item, i) => (
                       <div key={i} className="flex justify-between items-center">
