@@ -376,6 +376,27 @@ export default function Hiring() {
                 <div className="w-0.5 h-8 bg-border" />
               </div>
               
+{/* Department Heads - Corporate Support */}
+              <div className="bg-muted/30 border border-border rounded-xl p-6 mb-6">
+                <div className="text-center mb-4">
+                  <span className="font-mono text-xs text-muted-foreground">CORPORATE DEPARTMENT HEADS</span>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                  {[
+                    { title: "Finance Director", reports: "Reports to CFO" },
+                    { title: "HR Director", reports: "Reports to CFO" },
+                    { title: "Marketing Director", reports: "Reports to CPO" },
+                    { title: "Technology Director", reports: "Reports to CPO" },
+                    { title: "Clinical Ops Director", reports: "Reports to COO" }
+                  ].map((role, i) => (
+                    <div key={i} className="bg-card border border-border rounded-lg px-3 py-2 text-center">
+                      <h5 className="font-display text-sm font-medium">{role.title}</h5>
+                      <p className="text-[10px] text-muted-foreground">{role.reports}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
               {/* Center Operations */}
               <div className="bg-muted/30 border border-border rounded-xl p-6">
                 <div className="text-center mb-4">
@@ -566,8 +587,73 @@ Clinical and operations staff for the first Lumastem center
         </div>
       </section>
 
-      {/* Hiring Timeline Summary */}
+      {/* Key Hires Summary Card */}
       <section className="py-20">
+        <div className="container">
+          <motion.div 
+            className="max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                HEADCOUNT SUMMARY
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
+                Total Team Build
+              </h2>
+              <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                Complete staffing plan from launch through scale
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="bg-gradient-to-br from-card to-card/50 border border-border rounded-2xl p-8">
+              <div className="grid md:grid-cols-4 gap-6 mb-8">
+                {[
+                  { count: 5, label: "Phase 1 Executives", description: "CEO, CFO, COO, CPO, CLO", color: "destructive" },
+                  { count: 16, label: "Center Staff", description: "Per flagship center", color: "primary" },
+                  { count: 18, label: "Corporate Roles", description: "5 departments", color: "primary" },
+                  { count: 3, label: "Phase 2 Executives", description: "CMO, CMO, CTO", color: "amber-500" }
+                ].map((item, i) => (
+                  <div key={i} className="text-center p-4 bg-background/50 rounded-xl border border-border/50">
+                    <span 
+                      className="font-mono text-4xl font-bold"
+                      style={{ color: item.color === 'destructive' ? 'hsl(var(--destructive))' : item.color === 'amber-500' ? '#f59e0b' : 'hsl(var(--primary))' }}
+                    >
+                      {item.count}
+                    </span>
+                    <h4 className="font-display font-medium mt-2">{item.label}</h4>
+                    <p className="text-xs text-muted-foreground mt-1">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="border-t border-border pt-6">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
+                      <span className="font-mono text-2xl font-bold text-primary">42</span>
+                    </div>
+                    <div>
+                      <h3 className="font-display text-xl font-medium">Total Headcount</h3>
+                      <p className="text-sm text-muted-foreground">Full team at scale (single center)</p>
+                    </div>
+                  </div>
+                  <div className="text-center md:text-right">
+                    <p className="text-sm text-muted-foreground">Additional centers add</p>
+                    <span className="font-mono text-lg text-primary">+14-16 staff each</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Hiring Timeline Summary */}
+      <section className="py-20 bg-card/30">
         <div className="container">
           <motion.div 
             className="max-w-4xl mx-auto"
@@ -666,8 +752,8 @@ Clinical and operations staff for the first Lumastem center
                     { role: "CEO", allocation: "3.00%", vesting: "Immediate" },
                     { role: "CFO", allocation: "1.50%", vesting: "4-year" },
                     { role: "COO", allocation: "1.50%", vesting: "4-year" },
-                    { role: "CPO", allocation: "1.25%", vesting: "4-year" },
-                    { role: "CLO", allocation: "1.00%", vesting: "4-year" }
+                    { role: "CPO", allocation: "1.50%", vesting: "4-year" },
+                    { role: "CLO", allocation: "1.50%", vesting: "4-year" }
                   ].map((item, i) => (
                     <div key={i} className="flex items-center justify-between py-2 border-b border-border/50 last:border-0">
                       <span className="font-body text-foreground">{item.role}</span>
@@ -678,9 +764,9 @@ Clinical and operations staff for the first Lumastem center
                     </div>
                   ))}
                 </div>
-                <div className="mt-6 pt-4 border-t border-border flex justify-between items-center">
+<div className="mt-6 pt-4 border-t border-border flex justify-between items-center">
                   <span className="font-display font-medium">Phase 1 Total</span>
-                  <span className="font-mono text-lg text-primary">8.25%</span>
+                  <span className="font-mono text-lg text-primary">9.00%</span>
                 </div>
               </div>
 
@@ -691,7 +777,6 @@ Clinical and operations staff for the first Lumastem center
                     { category: "CMO (Medical)", allocation: "0.75%", description: "4-year vesting" },
                     { category: "CMO (Marketing)", allocation: "0.50%", description: "4-year vesting" },
                     { category: "CTO", allocation: "0.75%", description: "4-year vesting" },
-                    { category: "Center Directors", allocation: "0.75%", description: "Key center leadership" },
                     { category: "Future Hires Pool", allocation: "1.00%", description: "Reserved for growth" }
                   ].map((item, i) => (
                     <div key={i} className="py-3 border-b border-border/50 last:border-0">
@@ -705,7 +790,7 @@ Clinical and operations staff for the first Lumastem center
                 </div>
                 <div className="mt-6 pt-4 border-t border-border flex justify-between items-center">
 <span className="font-display font-medium">Additional & Reserve Total</span>
-                  <span className="font-mono text-lg text-primary">3.75%</span>
+                  <span className="font-mono text-lg text-primary">3.00%</span>
                 </div>
               </div>
             </motion.div>
@@ -752,33 +837,33 @@ Clinical and operations staff for the first Lumastem center
                   </div>
                   <span className="w-16 text-right font-mono text-sm">1.50%</span>
                 </div>
-                <div className="flex items-center gap-4">
+<div className="flex items-center gap-4">
                   <span className="w-24 text-sm text-muted-foreground">CPO</span>
                   <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
-                    <div className="h-full bg-primary rounded-full" style={{ width: '10.4%' }} />
+                    <div className="h-full bg-primary rounded-full" style={{ width: '12.5%' }} />
                   </div>
-                  <span className="w-16 text-right font-mono text-sm">1.25%</span>
+                  <span className="w-16 text-right font-mono text-sm">1.50%</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <span className="w-24 text-sm text-muted-foreground">CLO</span>
                   <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
-                    <div className="h-full bg-primary rounded-full" style={{ width: '8.3%' }} />
+                    <div className="h-full bg-primary rounded-full" style={{ width: '12.5%' }} />
                   </div>
-                  <span className="w-16 text-right font-mono text-sm">1.00%</span>
+                  <span className="w-16 text-right font-mono text-sm">1.50%</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <span className="w-24 text-sm text-muted-foreground">Additional</span>
+                  <span className="w-24 text-sm text-muted-foreground">Phase 2</span>
                   <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
-                    <div className="h-full bg-primary/60 rounded-full" style={{ width: '16.7%' }} />
+                    <div className="h-full bg-amber-500/70 rounded-full" style={{ width: '16.7%' }} />
                   </div>
                   <span className="w-16 text-right font-mono text-sm">2.00%</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <span className="w-24 text-sm text-muted-foreground">Reserve</span>
                   <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
-                    <div className="h-full bg-muted-foreground/50 rounded-full" style={{ width: '14.6%' }} />
+                    <div className="h-full bg-muted-foreground/50 rounded-full" style={{ width: '8.3%' }} />
                   </div>
-                  <span className="w-16 text-right font-mono text-sm">1.75%</span>
+                  <span className="w-16 text-right font-mono text-sm">1.00%</span>
                 </div>
               </div>
             </motion.div>
