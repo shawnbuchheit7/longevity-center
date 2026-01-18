@@ -23,7 +23,13 @@ import {
   Package,
   ArrowRight,
   Crown,
-  Check
+  Check,
+  Clock,
+  Calendar,
+  Scan,
+  Zap,
+  AlertTriangle,
+  Lightbulb
 } from "lucide-react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
@@ -1375,6 +1381,213 @@ export default function Performance() {
                     <p className="font-mono text-primary font-medium">{item.cost}</p>
                   </div>
                 ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Diagnostic Capacity Analysis */}
+      <section className="py-20">
+        <div className="container">
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                CAPACITY ANALYSIS
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
+                Diagnostic Suite Capacity
+              </h2>
+              <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto">
+                Each center features 6-7 diagnostic suites. Every membership requires an annual visit 
+                to complete comprehensive diagnostics, making imaging capacity the rate-limiting factor.
+              </p>
+            </motion.div>
+
+            {/* Key Constraint */}
+            <motion.div variants={fadeInUp} className="mb-12">
+              <div className="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center flex-shrink-0">
+                    <AlertTriangle className="w-6 h-6 text-amber-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl font-medium text-amber-500 mb-2">Rate-Limiting Factors</h3>
+                    <p className="font-body text-muted-foreground">
+                      Member capacity is constrained by two primary factors: <strong className="text-foreground">hours of operation</strong> and 
+                      <strong className="text-foreground"> scan time in MRI and CT machines</strong>. Each diagnostic visit takes approximately 
+                      <strong className="text-foreground"> 4 hours</strong> to complete the full imaging protocol.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Capacity Calculation Cards */}
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-6 mb-12">
+              {[
+                {
+                  scenario: "Standard Hours",
+                  hours: "7:00 AM - 5:30 PM",
+                  days: "Monday - Friday",
+                  calculation: "7 diagnostics/day × 5 days × 50 weeks",
+                  capacity: "1,750",
+                  highlight: false
+                },
+                {
+                  scenario: "Extended Hours",
+                  hours: "7:00 AM - 9:00 PM",
+                  days: "Monday - Friday",
+                  calculation: "9 diagnostics/day × 5 days × 50 weeks",
+                  capacity: "2,250",
+                  highlight: false
+                },
+                {
+                  scenario: "Full Weekend",
+                  hours: "+ Saturday (9) + Sunday (7)",
+                  days: "7 Days/Week",
+                  calculation: "61 diagnostics/week × 50 weeks",
+                  capacity: "3,050",
+                  highlight: true
+                }
+              ].map((item, i) => (
+                <div key={i} className={`rounded-2xl p-6 ${item.highlight ? 'bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-primary/50' : 'bg-card border border-border'}`}>
+                  <div className="flex items-center gap-2 mb-4">
+                    <Clock className={`w-5 h-5 ${item.highlight ? 'text-primary' : 'text-muted-foreground'}`} />
+                    <h3 className="font-display text-lg font-medium">{item.scenario}</h3>
+                  </div>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4 text-muted-foreground" />
+                      <span className="font-body text-sm text-muted-foreground">{item.days}</span>
+                    </div>
+                    <p className="font-mono text-xs text-muted-foreground">{item.hours}</p>
+                  </div>
+                  <div className="pt-4 border-t border-border/50">
+                    <p className="font-mono text-xs text-muted-foreground mb-2">{item.calculation}</p>
+                    <div className="flex items-baseline gap-2">
+                      <span className={`font-display text-4xl font-bold ${item.highlight ? 'text-primary' : 'text-foreground'}`}>{item.capacity}</span>
+                      <span className="font-body text-sm text-muted-foreground">members/year</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Detailed Math Breakdown */}
+            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden mb-12">
+              <div className="p-6 border-b border-border bg-muted/30">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Scan className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl font-medium">Capacity Calculation Breakdown</h3>
+                    <p className="text-sm text-muted-foreground">Based on 4-hour diagnostic protocol per member</p>
+                  </div>
+                </div>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-border">
+                      <th className="text-left p-5 font-body font-semibold text-muted-foreground">Operating Scenario</th>
+                      <th className="text-center p-5 font-body font-semibold text-muted-foreground">Daily Hours</th>
+                      <th className="text-center p-5 font-body font-semibold text-muted-foreground">Diagnostics/Day</th>
+                      <th className="text-center p-5 font-body font-semibold text-muted-foreground">Days/Week</th>
+                      <th className="text-center p-5 font-body font-semibold text-muted-foreground">Weekly Total</th>
+                      <th className="text-center p-5 font-body font-semibold text-muted-foreground">Annual Capacity</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { scenario: "Standard (M-F)", hours: "10.5 hrs", daily: "7", days: "5", weekly: "35", annual: "1,750" },
+                      { scenario: "Extended (M-F)", hours: "14 hrs", daily: "9", days: "5", weekly: "45", annual: "2,250" },
+                      { scenario: "+ Saturday", hours: "14 hrs", daily: "9", days: "6", weekly: "54", annual: "2,700" },
+                      { scenario: "+ Sunday (to 5:30)", hours: "10.5 hrs", daily: "7", days: "7", weekly: "61", annual: "3,050", highlight: true }
+                    ].map((row, i) => (
+                      <tr key={i} className={`border-b border-border/50 ${row.highlight ? 'bg-primary/5' : 'hover:bg-muted/20'} transition-colors`}>
+                        <td className={`p-5 font-body ${row.highlight ? 'font-medium text-primary' : ''}`}>{row.scenario}</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">{row.hours}</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">{row.daily}</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">{row.days}</td>
+                        <td className="p-5 text-center font-mono text-muted-foreground">{row.weekly}</td>
+                        <td className={`p-5 text-center font-mono font-medium ${row.highlight ? 'text-primary' : 'text-foreground'}`}>{row.annual}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="p-4 bg-muted/20 border-t border-border">
+                <p className="font-body text-sm text-muted-foreground text-center">
+                  <strong className="text-foreground">Note:</strong> 50 operating weeks per year (accounting for holidays and maintenance)
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Future Opportunities */}
+            <motion.div variants={fadeInUp}>
+              <div className="bg-gradient-to-br from-emerald-500/10 to-primary/10 border border-emerald-500/30 rounded-2xl p-8">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                    <Lightbulb className="w-6 h-6 text-emerald-400" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-2xl font-medium">Future Capacity Opportunities</h3>
+                    <p className="font-body text-muted-foreground mt-2">
+                      Strategic investments to increase member capacity and improve the member experience.
+                    </p>
+                  </div>
+                </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {[
+                    {
+                      title: "Equipment Procurement",
+                      description: "Procuring additional MRI and CT imaging equipment to run parallel diagnostic sessions",
+                      icon: Scan,
+                      impact: "Up to 2x capacity"
+                    },
+                    {
+                      title: "Compression Protocols",
+                      description: "Implementing new imaging compression protocols to reduce scan times without sacrificing quality",
+                      icon: Zap,
+                      impact: "20-30% faster"
+                    },
+                    {
+                      title: "AI-Assisted Imaging",
+                      description: "Deploying AI algorithms to accelerate image acquisition and reconstruction",
+                      icon: Lightbulb,
+                      impact: "30-50% faster"
+                    },
+                    {
+                      title: "Workflow Optimization",
+                      description: "Streamlined member flow and preparation protocols to minimize downtime between sessions",
+                      icon: Clock,
+                      impact: "15-20% efficiency"
+                    }
+                  ].map((item, i) => (
+                    <div key={i} className="bg-card/50 backdrop-blur border border-border rounded-xl p-5">
+                      <div className="flex items-start gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                          <item.icon className="w-5 h-5 text-emerald-400" />
+                        </div>
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            <h4 className="font-display font-medium">{item.title}</h4>
+                            <span className="font-mono text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">{item.impact}</span>
+                          </div>
+                          <p className="font-body text-sm text-muted-foreground">{item.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           </motion.div>
