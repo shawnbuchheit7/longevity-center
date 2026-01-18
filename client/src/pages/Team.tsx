@@ -91,11 +91,11 @@ export default function Team() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative bg-card border border-border rounded-2xl overflow-hidden h-full hover:border-primary/50 transition-colors">
-                  <div className="aspect-[3/4] max-h-64 overflow-hidden flex items-center justify-center bg-muted/20">
+                  <div className="h-56 overflow-hidden flex items-center justify-center bg-muted/20">
                     <img 
                       src={member.image} 
                       alt={member.name}
-                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      className="w-auto h-full object-contain object-center group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div className="p-8">

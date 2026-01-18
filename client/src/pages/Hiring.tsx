@@ -201,7 +201,7 @@ export default function Hiring() {
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
               <span className="font-mono text-amber-500 text-sm tracking-wider">
-                PHASE 2 - SPECIALIZED LEADERSHIP
+                PHASE 2
               </span>
               <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
                 Role Specialization
@@ -516,6 +516,159 @@ export default function Hiring() {
                   <span className="font-medium text-foreground">41 total hires</span>
                   <span className="text-muted-foreground"> by end of 2026</span>
                 </span>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Equity Allocation */}
+      <section className="py-20 bg-card/30">
+        <div className="container">
+          <motion.div 
+            className="max-w-4xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                EQUITY COMPENSATION
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
+                2% Option Pool Allocation
+              </h2>
+              <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                Strategic equity allocation to attract and retain top talent across executive and operational roles
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-8">
+              <div className="bg-card border border-border rounded-2xl p-8">
+                <h3 className="font-display text-xl font-medium mb-6">Executive Allocation</h3>
+                <div className="space-y-4">
+                  {[
+                    { role: "CEO", allocation: "0.40%", vesting: "4-year with 1-year cliff" },
+                    { role: "CFO", allocation: "0.25%", vesting: "4-year with 1-year cliff" },
+                    { role: "COO", allocation: "0.25%", vesting: "4-year with 1-year cliff" },
+                    { role: "CPO", allocation: "0.25%", vesting: "4-year with 1-year cliff" },
+                    { role: "CLO", allocation: "0.20%", vesting: "4-year with 1-year cliff" }
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center justify-between py-2 border-b border-border/50 last:border-0">
+                      <span className="font-body text-foreground">{item.role}</span>
+                      <div className="flex items-center gap-4">
+                        <span className="font-mono text-primary text-sm">{item.allocation}</span>
+                        <span className="text-xs text-muted-foreground">{item.vesting}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 pt-4 border-t border-border flex justify-between items-center">
+                  <span className="font-display font-medium">Executive Total</span>
+                  <span className="font-mono text-lg text-primary">1.35%</span>
+                </div>
+              </div>
+
+              <div className="bg-card border border-border rounded-2xl p-8">
+                <h3 className="font-display text-xl font-medium mb-6">Operational Reserve</h3>
+                <div className="space-y-4">
+                  {[
+                    { category: "Phase 2 Executives", allocation: "0.30%", description: "CMO, CMO (Mktg), CTO" },
+                    { category: "Center Directors", allocation: "0.15%", description: "Key center leadership" },
+                    { category: "Future Hires Pool", allocation: "0.20%", description: "Reserved for growth" }
+                  ].map((item, i) => (
+                    <div key={i} className="py-3 border-b border-border/50 last:border-0">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="font-body text-foreground">{item.category}</span>
+                        <span className="font-mono text-primary text-sm">{item.allocation}</span>
+                      </div>
+                      <span className="text-xs text-muted-foreground">{item.description}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 pt-4 border-t border-border flex justify-between items-center">
+                  <span className="font-display font-medium">Reserve Total</span>
+                  <span className="font-mono text-lg text-primary">0.65%</span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="mt-8 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-6 text-center">
+              <div className="flex items-center justify-center gap-8">
+                <div>
+                  <span className="font-mono text-3xl text-primary">2.00%</span>
+                  <p className="text-sm text-muted-foreground mt-1">Total Option Pool</p>
+                </div>
+                <div className="w-px h-12 bg-border" />
+                <div>
+                  <span className="font-mono text-3xl text-foreground">$4M</span>
+                  <p className="text-sm text-muted-foreground mt-1">Value at $200M Post-Money</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 2026-2027 Hiring Timeline */}
+      <section className="py-20">
+        <div className="container">
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                DETAILED TIMELINE
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
+                2026-2027 Hiring Plan
+              </h2>
+            </motion.div>
+
+            <motion.div variants={fadeInUp}>
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full min-w-[800px]">
+                    <thead>
+                      <tr className="border-b border-border bg-muted/30">
+                        <th className="text-left p-4 font-display font-medium">Quarter</th>
+                        <th className="text-left p-4 font-display font-medium">Hires</th>
+                        <th className="text-center p-4 font-display font-medium">Headcount</th>
+                        <th className="text-center p-4 font-display font-medium">Cumulative</th>
+                        <th className="text-left p-4 font-display font-medium">Key Milestone</th>
+                      </tr>
+                    </thead>
+                    <tbody className="font-body text-sm">
+                      {[
+                        { quarter: "Q4 2025", hires: "Center Director, Ops Manager", count: 2, cumulative: 2, milestone: "Pre-launch preparation" },
+                        { quarter: "Q1 2026", hires: "CEO, CFO, COO, CPO, CLO + Center Staff", count: 19, cumulative: 21, milestone: "Flagship center launch" },
+                        { quarter: "Q2 2026", hires: "Finance, HR, Marketing teams", count: 8, cumulative: 29, milestone: "Corporate infrastructure" },
+                        { quarter: "Q3 2026", hires: "Technology, Clinical Ops, Legal", count: 9, cumulative: 38, milestone: "Operational scaling" },
+                        { quarter: "Q4 2026", hires: "CMO, CMO (Mktg), CTO", count: 3, cumulative: 41, milestone: "Phase 2 executive specialization" },
+                        { quarter: "Q1 2027", hires: "Center 2 staff", count: 14, cumulative: 55, milestone: "Second center launch" },
+                        { quarter: "Q3 2027", hires: "Center 3 staff + Corp expansion", count: 18, cumulative: 73, milestone: "Third center launch" },
+                        { quarter: "Q1 2028", hires: "Center 4 staff", count: 14, cumulative: 87, milestone: "Fourth center launch" }
+                      ].map((item, i) => (
+                        <tr key={i} className="border-b border-border/50 last:border-0">
+                          <td className="p-4 font-mono text-primary">{item.quarter}</td>
+                          <td className="p-4 text-muted-foreground">{item.hires}</td>
+                          <td className="p-4 text-center">
+                            <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-mono text-sm">
+                              +{item.count}
+                            </span>
+                          </td>
+                          <td className="p-4 text-center font-mono font-medium">{item.cumulative}</td>
+                          <td className="p-4 text-muted-foreground">{item.milestone}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </motion.div>
           </motion.div>
