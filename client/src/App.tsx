@@ -17,12 +17,14 @@ import Performance from "./pages/Performance";
 import Contact from "./pages/Contact";
 import Difference from "./pages/Difference";
 import Hiring from "./pages/Hiring";
+import Memberships from "./pages/Memberships";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/opportunity" component={Opportunity} />
+      <Route path="/memberships" component={Memberships} />
       <Route path="/difference" component={Difference} />
       <Route path="/therapeutics" component={Therapeutics} />
       <Route path="/technology" component={Technology} />

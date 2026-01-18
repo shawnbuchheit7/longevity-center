@@ -526,7 +526,7 @@ export default function Hiring() {
       <section className="py-20 bg-card/30">
         <div className="container">
           <motion.div 
-            className="max-w-4xl mx-auto"
+            className="max-w-5xl mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -537,46 +537,66 @@ export default function Hiring() {
                 EQUITY COMPENSATION
               </span>
               <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
-                2% Option Pool Allocation
+                12% Total Equity Pool
               </h2>
               <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-                Strategic equity allocation to attract and retain top talent across executive and operational roles
+                Strategic equity allocation to attract and retain world-class talent. 
+                4-year vesting for all C-suite executives excluding CEO.
               </p>
+            </motion.div>
+
+            {/* Vesting Structure Callout */}
+            <motion.div variants={fadeInUp} className="mb-8 bg-accent/10 border border-accent/30 rounded-2xl p-6">
+              <h4 className="font-display font-medium mb-4 text-center">Vesting Structure</h4>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="text-center">
+                  <span className="font-mono text-2xl text-accent">CEO</span>
+                  <p className="text-sm text-muted-foreground mt-1">Immediate vesting upon hire</p>
+                  <p className="text-xs text-muted-foreground">(Founder-equivalent treatment)</p>
+                </div>
+                <div className="text-center">
+                  <span className="font-mono text-2xl text-primary">Other C-Suite</span>
+                  <p className="text-sm text-muted-foreground mt-1">4-year vesting with 1-year cliff</p>
+                  <p className="text-xs text-muted-foreground">(CFO, COO, CPO, CLO, CMO, CTO)</p>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-8">
               <div className="bg-card border border-border rounded-2xl p-8">
-                <h3 className="font-display text-xl font-medium mb-6">Executive Allocation</h3>
+                <h3 className="font-display text-xl font-medium mb-6">Phase 1 Executive Allocation</h3>
                 <div className="space-y-4">
                   {[
-                    { role: "CEO", allocation: "0.40%", vesting: "4-year with 1-year cliff" },
-                    { role: "CFO", allocation: "0.25%", vesting: "4-year with 1-year cliff" },
-                    { role: "COO", allocation: "0.25%", vesting: "4-year with 1-year cliff" },
-                    { role: "CPO", allocation: "0.25%", vesting: "4-year with 1-year cliff" },
-                    { role: "CLO", allocation: "0.20%", vesting: "4-year with 1-year cliff" }
+                    { role: "CEO", allocation: "3.00%", vesting: "Immediate" },
+                    { role: "CFO", allocation: "1.50%", vesting: "4-year" },
+                    { role: "COO", allocation: "1.50%", vesting: "4-year" },
+                    { role: "CPO", allocation: "1.25%", vesting: "4-year" },
+                    { role: "CLO", allocation: "1.00%", vesting: "4-year" }
                   ].map((item, i) => (
                     <div key={i} className="flex items-center justify-between py-2 border-b border-border/50 last:border-0">
                       <span className="font-body text-foreground">{item.role}</span>
                       <div className="flex items-center gap-4">
                         <span className="font-mono text-primary text-sm">{item.allocation}</span>
-                        <span className="text-xs text-muted-foreground">{item.vesting}</span>
+                        <span className={`text-xs px-2 py-0.5 rounded ${item.vesting === 'Immediate' ? 'bg-accent/20 text-accent' : 'bg-muted text-muted-foreground'}`}>{item.vesting}</span>
                       </div>
                     </div>
                   ))}
                 </div>
                 <div className="mt-6 pt-4 border-t border-border flex justify-between items-center">
-                  <span className="font-display font-medium">Executive Total</span>
-                  <span className="font-mono text-lg text-primary">1.35%</span>
+                  <span className="font-display font-medium">Phase 1 Total</span>
+                  <span className="font-mono text-lg text-primary">8.25%</span>
                 </div>
               </div>
 
               <div className="bg-card border border-border rounded-2xl p-8">
-                <h3 className="font-display text-xl font-medium mb-6">Operational Reserve</h3>
+                <h3 className="font-display text-xl font-medium mb-6">Phase 2 & Reserve Pool</h3>
                 <div className="space-y-4">
                   {[
-                    { category: "Phase 2 Executives", allocation: "0.30%", description: "CMO, CMO (Mktg), CTO" },
-                    { category: "Center Directors", allocation: "0.15%", description: "Key center leadership" },
-                    { category: "Future Hires Pool", allocation: "0.20%", description: "Reserved for growth" }
+                    { category: "CMO (Medical)", allocation: "0.75%", description: "4-year vesting" },
+                    { category: "CMO (Marketing)", allocation: "0.50%", description: "4-year vesting" },
+                    { category: "CTO", allocation: "0.75%", description: "4-year vesting" },
+                    { category: "Center Directors", allocation: "0.75%", description: "Key center leadership" },
+                    { category: "Future Hires Pool", allocation: "1.00%", description: "Reserved for growth" }
                   ].map((item, i) => (
                     <div key={i} className="py-3 border-b border-border/50 last:border-0">
                       <div className="flex items-center justify-between mb-1">
@@ -588,22 +608,81 @@ export default function Hiring() {
                   ))}
                 </div>
                 <div className="mt-6 pt-4 border-t border-border flex justify-between items-center">
-                  <span className="font-display font-medium">Reserve Total</span>
-                  <span className="font-mono text-lg text-primary">0.65%</span>
+                  <span className="font-display font-medium">Phase 2 & Reserve Total</span>
+                  <span className="font-mono text-lg text-primary">3.75%</span>
                 </div>
               </div>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="mt-8 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-6 text-center">
-              <div className="flex items-center justify-center gap-8">
+            <motion.div variants={fadeInUp} className="mt-8 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-6">
+              <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div>
-                  <span className="font-mono text-3xl text-primary">2.00%</span>
-                  <p className="text-sm text-muted-foreground mt-1">Total Option Pool</p>
+                  <span className="font-mono text-3xl text-primary">12.00%</span>
+                  <p className="text-sm text-muted-foreground mt-1">Total Equity Pool</p>
                 </div>
-                <div className="w-px h-12 bg-border" />
                 <div>
-                  <span className="font-mono text-3xl text-foreground">$4M</span>
+                  <span className="font-mono text-3xl text-foreground">$24M</span>
                   <p className="text-sm text-muted-foreground mt-1">Value at $200M Post-Money</p>
+                </div>
+                <div>
+                  <span className="font-mono text-3xl text-accent">4-Year</span>
+                  <p className="text-sm text-muted-foreground mt-1">Standard Vesting (excl. CEO)</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Equity Distribution Chart */}
+            <motion.div variants={fadeInUp} className="mt-8 bg-card border border-border rounded-2xl p-8">
+              <h4 className="font-display font-medium mb-6 text-center">Equity Distribution Overview</h4>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <span className="w-24 text-sm text-muted-foreground">CEO</span>
+                  <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
+                    <div className="h-full bg-accent rounded-full" style={{ width: '25%' }} />
+                  </div>
+                  <span className="w-16 text-right font-mono text-sm">3.00%</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <span className="w-24 text-sm text-muted-foreground">CFO</span>
+                  <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
+                    <div className="h-full bg-primary rounded-full" style={{ width: '12.5%' }} />
+                  </div>
+                  <span className="w-16 text-right font-mono text-sm">1.50%</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <span className="w-24 text-sm text-muted-foreground">COO</span>
+                  <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
+                    <div className="h-full bg-primary rounded-full" style={{ width: '12.5%' }} />
+                  </div>
+                  <span className="w-16 text-right font-mono text-sm">1.50%</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <span className="w-24 text-sm text-muted-foreground">CPO</span>
+                  <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
+                    <div className="h-full bg-primary rounded-full" style={{ width: '10.4%' }} />
+                  </div>
+                  <span className="w-16 text-right font-mono text-sm">1.25%</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <span className="w-24 text-sm text-muted-foreground">CLO</span>
+                  <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
+                    <div className="h-full bg-primary rounded-full" style={{ width: '8.3%' }} />
+                  </div>
+                  <span className="w-16 text-right font-mono text-sm">1.00%</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <span className="w-24 text-sm text-muted-foreground">Phase 2</span>
+                  <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
+                    <div className="h-full bg-primary/60 rounded-full" style={{ width: '16.7%' }} />
+                  </div>
+                  <span className="w-16 text-right font-mono text-sm">2.00%</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <span className="w-24 text-sm text-muted-foreground">Reserve</span>
+                  <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
+                    <div className="h-full bg-muted-foreground/50 rounded-full" style={{ width: '14.6%' }} />
+                  </div>
+                  <span className="w-16 text-right font-mono text-sm">1.75%</span>
                 </div>
               </div>
             </motion.div>
