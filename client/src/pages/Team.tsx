@@ -1,6 +1,6 @@
 /*
  * DESIGN: "Cellular Renaissance" - Organic Futurism
- * Team page - Leadership team profiles
+ * Advisory Board page - Clinical advisory board profiles
  */
 
 import { motion } from "framer-motion";
@@ -21,19 +21,19 @@ export default function Team() {
             variants={staggerContainer}
           >
             <motion.span variants={fadeInUp} className="font-mono text-primary text-sm tracking-wider">
-              LEADERSHIP
+              ADVISORY BOARD
             </motion.span>
             <motion.h1 variants={fadeInUp} className="font-display text-5xl md:text-7xl font-medium mt-4 mb-6">
               Physician-Led Excellence
             </motion.h1>
             <motion.p variants={fadeInUp} className="font-body text-xl text-muted-foreground">
-              A world-class team combining deep clinical expertise with proven business acumen.
+              World-class clinical advisors guiding Lumastem's protocols, research, and physician education.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
-      {/* Leadership Team */}
+      {/* Advisory Board Members */}
       <section className="py-20">
         <div className="container">
           <motion.div 
@@ -130,7 +130,7 @@ export default function Team() {
         </div>
       </section>
 
-      {/* Advisory Board Teaser */}
+      {/* Extended Advisory Network */}
       <section className="py-20 bg-card/30">
         <div className="container">
           <motion.div 
@@ -142,14 +142,14 @@ export default function Team() {
           >
             <motion.div variants={fadeInUp}>
               <span className="font-mono text-primary text-sm tracking-wider">
-                ADVISORY NETWORK
+                EXTENDED NETWORK
               </span>
               <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
-                World-Class Advisors
+                Advisory Expertise
               </h2>
               <p className="font-body text-xl text-muted-foreground mb-12">
-                Lumastem's advisory board includes leaders in regenerative medicine, healthcare 
-                operations, and strategic growth.
+                Beyond our core advisory board, Lumastem has access to a network of specialists 
+                across key domains.
               </p>
             </motion.div>
 
