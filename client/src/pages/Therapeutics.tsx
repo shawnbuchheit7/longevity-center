@@ -15,7 +15,7 @@ export default function Therapeutics() {
       <section className="py-20 relative">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: "url('/images/science-lab.jpg')" }}
+          style={{ backgroundImage: "url('/images/stem-cell-hero.png')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
         

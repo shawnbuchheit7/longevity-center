@@ -14,12 +14,12 @@ interface LayoutProps {
 }
 
 const navLinks = [
+  { href: "/investors", label: "Founders" },
   { href: "/opportunity", label: "Opportunity" },
   { href: "/difference", label: "Difference" },
   { href: "/therapeutics", label: "Therapeutics" },
   { href: "/technology", label: "Technology" },
   { href: "/performance", label: "Economics" },
-  { href: "/investors", label: "Founders" },
   { href: "/team", label: "Advisors" },
   { href: "/hiring", label: "Team" },
   { href: "/use-of-funds", label: "Funds" },
