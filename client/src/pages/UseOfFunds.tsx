@@ -106,6 +106,75 @@ export default function UseOfFunds() {
                 ))}
               </div>
             </motion.div>
+
+            {/* Use of Proceeds Waterfall */}
+            <motion.div variants={fadeInUp} className="mt-12">
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-6 border-b border-border bg-muted/30">
+                  <h3 className="font-display text-xl font-medium">Use of Proceeds Waterfall</h3>
+                  <p className="font-body text-sm text-muted-foreground">Visual deployment of $50M Series A capital</p>
+                </div>
+                <div className="p-6">
+                  {/* Waterfall Chart */}
+                  <div className="space-y-4">
+                    {[
+                      { label: "Series A Raise", amount: 50, cumulative: 50, type: "start", color: "bg-primary" },
+                      { label: "Flagship Center #1", amount: -12.5, cumulative: 37.5, type: "expense", color: "bg-amber-500" },
+                      { label: "Center #2 Development", amount: -10, cumulative: 27.5, type: "expense", color: "bg-amber-500" },
+                      { label: "Marketing & Growth", amount: -10, cumulative: 17.5, type: "expense", color: "bg-emerald-500" },
+                      { label: "Working Capital", amount: -10, cumulative: 7.5, type: "expense", color: "bg-blue-500" },
+                      { label: "International Reserve", amount: -7.5, cumulative: 0, type: "expense", color: "bg-purple-500" }
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center gap-4">
+                        <span className="font-body text-sm w-44 text-muted-foreground">{item.label}</span>
+                        <div className="flex-1 h-10 bg-muted/30 rounded-lg overflow-hidden relative">
+                          {item.type === "start" ? (
+                            <div 
+                              className={`h-full ${item.color} rounded-lg flex items-center justify-end pr-3`}
+                              style={{ width: `${(item.amount / 50) * 100}%` }}
+                            >
+                              <span className="font-mono text-xs text-background font-bold">$50M</span>
+                            </div>
+                          ) : (
+                            <>
+                              <div 
+                                className="h-full bg-muted/50 rounded-l-lg"
+                                style={{ width: `${(item.cumulative / 50) * 100}%` }}
+                              />
+                              <div 
+                                className={`absolute top-0 h-full ${item.color} flex items-center justify-center`}
+                                style={{ 
+                                  left: `${(item.cumulative / 50) * 100}%`,
+                                  width: `${(Math.abs(item.amount) / 50) * 100}%`
+                                }}
+                              >
+                                <span className="font-mono text-xs text-white font-bold">${Math.abs(item.amount)}M</span>
+                              </div>
+                            </>
+                          )}
+                        </div>
+                        <span className="font-mono text-sm w-16 text-right text-muted-foreground">${item.cumulative}M</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Legend */}
+                  <div className="mt-6 pt-6 border-t border-border flex flex-wrap gap-4 justify-center">
+                    {[
+                      { color: "bg-amber-500", label: "Center Development" },
+                      { color: "bg-emerald-500", label: "Marketing & Growth" },
+                      { color: "bg-blue-500", label: "Working Capital" },
+                      { color: "bg-purple-500", label: "International" }
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center gap-2">
+                        <div className={`w-3 h-3 rounded-full ${item.color}`} />
+                        <span className="font-body text-xs text-muted-foreground">{item.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

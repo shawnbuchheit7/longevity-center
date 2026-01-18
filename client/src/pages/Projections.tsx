@@ -759,6 +759,60 @@ export default function Projections() {
                 </div>
               ))}
             </motion.div>
+
+            {/* Comparable Company Analysis */}
+            <motion.div variants={fadeInUp} className="mt-12">
+              <h3 className="font-display text-2xl font-medium mb-6 flex items-center gap-2">
+                <BarChart3 className="w-6 h-6 text-primary" />
+                Comparable Company Analysis
+              </h3>
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b border-border bg-muted/30">
+                        <th className="text-left p-4 font-display font-medium">Company</th>
+                        <th className="text-center p-4 font-display font-medium">Sector</th>
+                        <th className="text-center p-4 font-display font-medium">EV/Revenue</th>
+                        <th className="text-center p-4 font-display font-medium">EV/EBITDA</th>
+                        <th className="text-center p-4 font-display font-medium">Revenue Growth</th>
+                      </tr>
+                    </thead>
+                    <tbody className="font-body">
+                      {[
+                        { company: "Hims & Hers (HIMS)", sector: "Telehealth/Wellness", evRev: "4.2x", evEbitda: "35x", growth: "77%" },
+                        { company: "Amedisys (AMED)", sector: "Home Health", evRev: "1.8x", evEbitda: "18x", growth: "8%" },
+                        { company: "LHC Group (LHCG)", sector: "Home Health", evRev: "1.5x", evEbitda: "15x", growth: "12%" },
+                        { company: "Addus HomeCare (ADUS)", sector: "Home Health", evRev: "1.2x", evEbitda: "14x", growth: "15%" },
+                        { company: "Option Care (OPCH)", sector: "Infusion Services", evRev: "1.1x", evEbitda: "16x", growth: "18%" },
+                        { company: "BioLife Solutions (BLFS)", sector: "Cell Therapy", evRev: "5.8x", evEbitda: "N/A", growth: "25%" }
+                      ].map((row, i) => (
+                        <tr key={i} className="border-b border-border/50">
+                          <td className="p-4 font-medium">{row.company}</td>
+                          <td className="p-4 text-center text-muted-foreground text-sm">{row.sector}</td>
+                          <td className="p-4 text-center font-mono">{row.evRev}</td>
+                          <td className="p-4 text-center font-mono">{row.evEbitda}</td>
+                          <td className="p-4 text-center font-mono text-emerald-400">{row.growth}</td>
+                        </tr>
+                      ))}
+                      <tr className="bg-primary/5 font-medium">
+                        <td className="p-4 text-primary">Lumastem (Implied)</td>
+                        <td className="p-4 text-center text-primary text-sm">Regenerative Medicine</td>
+                        <td className="p-4 text-center font-mono text-primary">7.0x</td>
+                        <td className="p-4 text-center font-mono text-primary">20x</td>
+                        <td className="p-4 text-center font-mono text-primary">30%+</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="p-4 bg-muted/20 border-t border-border">
+                  <p className="font-body text-xs text-muted-foreground">
+                    <strong className="text-foreground">Valuation Support:</strong> Lumastem's 20x EBITDA multiple is conservative relative to high-growth telehealth (HIMS at 35x) and premium to mature home health providers. 
+                    The regenerative medicine positioning and 30%+ growth rate support a premium multiple within the healthcare services range.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
