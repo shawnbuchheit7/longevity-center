@@ -20,8 +20,12 @@ import {
   ArrowUpCircle,
   Heart,
   RefreshCw,
-  Package
+  Package,
+  ArrowRight,
+  Crown,
+  Check
 } from "lucide-react";
+import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
@@ -741,6 +745,10 @@ export default function Performance() {
               <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
                 Tiered Membership Model
               </h2>
+              <Link href="/memberships" className="inline-flex items-center gap-2 text-primary hover:text-accent transition-colors group">
+                <span className="font-body text-sm">View detailed membership benefits</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">

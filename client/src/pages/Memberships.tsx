@@ -4,7 +4,8 @@
  */
 
 import { motion } from "framer-motion";
-import { Check, Crown, Sparkles, Heart, Activity, FlaskConical, Users, Calendar, Home, Stethoscope, Dna, Pill, Shield } from "lucide-react";
+import { Check, Crown, Sparkles, Heart, Activity, FlaskConical, Users, Calendar, Home, Stethoscope, Dna, Pill, Shield, ArrowRight, BarChart3 } from "lucide-react";
+import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
 
@@ -580,6 +581,217 @@ export default function Memberships() {
                 <div>
                   <span className="font-mono text-2xl text-foreground">$300K</span>
                   <p className="text-xs text-muted-foreground mt-1">Annual CAC Savings vs Direct</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Side-by-Side Comparison Table */}
+      <section className="py-20">
+        <div className="container">
+          <motion.div 
+            className="max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                QUICK COMPARISON
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
+                Feature Comparison
+              </h2>
+              <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                A comprehensive side-by-side comparison of CHECK and ELITE membership benefits
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-border bg-muted/30">
+                      <th className="text-left p-4 font-display font-medium">Feature</th>
+                      <th className="text-center p-4 font-display font-medium">
+                        <div className="flex items-center justify-center gap-2">
+                          <Check className="w-4 h-4 text-primary" />
+                          CHECK
+                        </div>
+                        <span className="text-xs font-mono text-muted-foreground font-normal">$12,500/yr</span>
+                      </th>
+                      <th className="text-center p-4 font-display font-medium">
+                        <div className="flex items-center justify-center gap-2">
+                          <Crown className="w-4 h-4 text-accent" />
+                          ELITE
+                        </div>
+                        <span className="text-xs font-mono text-muted-foreground font-normal">$29,500/yr</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="font-body text-sm">
+                    {[
+                      { feature: "Full-body MRI Screening", check: true, elite: true, category: "Diagnostics" },
+                      { feature: "Advanced Bloodwork (100+ biomarkers)", check: true, elite: true, category: "Diagnostics" },
+                      { feature: "Genetic Testing & Analysis", check: true, elite: true, category: "Diagnostics" },
+                      { feature: "Quarterly Biomarker Tracking", check: false, elite: true, category: "Diagnostics" },
+                      { feature: "Epigenetic Age Testing", check: false, elite: true, category: "Diagnostics" },
+                      { feature: "Continuous Glucose Monitoring", check: false, elite: true, category: "Diagnostics" },
+                      { feature: "divider", check: false, elite: false, category: "Treatments" },
+                      { feature: "MUSE Cell Therapy", check: false, elite: true, category: "Treatments" },
+                      { feature: "Exosome Treatments", check: false, elite: true, category: "Treatments" },
+                      { feature: "PRP/PRF Therapies", check: false, elite: true, category: "Treatments" },
+                      { feature: "Custom Peptide Protocols", check: false, elite: true, category: "Treatments" },
+                      { feature: "Hormone Optimization", check: false, elite: true, category: "Treatments" },
+                      { feature: "divider", check: false, elite: false, category: "Care Model" },
+                      { feature: "Physician Consultation", check: "1x/year", elite: "Unlimited", category: "Care Model" },
+                      { feature: "Dedicated Longevity Physician", check: false, elite: true, category: "Care Model" },
+                      { feature: "Concierge Nurse Visits", check: false, elite: true, category: "Care Model" },
+                      { feature: "90% At-Home Care Delivery", check: false, elite: true, category: "Care Model" },
+                      { feature: "24/7 Physician Access", check: false, elite: true, category: "Care Model" },
+                      { feature: "Telemedicine Consultations", check: false, elite: true, category: "Care Model" },
+                      { feature: "divider", check: false, elite: false, category: "Benefits" },
+                      { feature: "Digital Health Dashboard", check: true, elite: true, category: "Benefits" },
+                      { feature: "Priority Scheduling", check: true, elite: true, category: "Benefits" },
+                      { feature: "Family Member Discounts", check: false, elite: true, category: "Benefits" },
+                      { feature: "Partner Clinic Network Access", check: false, elite: true, category: "Benefits" },
+                      { feature: "Annual Wellness Retreat Invite", check: false, elite: true, category: "Benefits" },
+                    ].map((row, i) => (
+                      row.feature === "divider" ? (
+                        <tr key={i} className="bg-muted/20">
+                          <td colSpan={3} className="p-2 text-xs font-mono text-primary text-center">
+                            {row.category}
+                          </td>
+                        </tr>
+                      ) : (
+                        <tr key={i} className="border-b border-border/50 last:border-0 hover:bg-muted/10 transition-colors">
+                          <td className="p-4 text-muted-foreground">{row.feature}</td>
+                          <td className="p-4 text-center">
+                            {typeof row.check === "string" ? (
+                              <span className="font-mono text-xs text-primary">{row.check}</span>
+                            ) : row.check ? (
+                              <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mx-auto">
+                                <Check className="w-3 h-3 text-primary" />
+                              </div>
+                            ) : (
+                              <span className="text-muted-foreground/30">—</span>
+                            )}
+                          </td>
+                          <td className="p-4 text-center">
+                            {typeof row.elite === "string" ? (
+                              <span className="font-mono text-xs text-accent">{row.elite}</span>
+                            ) : row.elite ? (
+                              <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center mx-auto">
+                                <Check className="w-3 h-3 text-accent" />
+                              </div>
+                            ) : (
+                              <span className="text-muted-foreground/30">—</span>
+                            )}
+                          </td>
+                        </tr>
+                      )
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Cross-Reference to Unit Economics */}
+      <section className="py-20 bg-gradient-to-b from-card/30 to-background">
+        <div className="container">
+          <motion.div 
+            className="max-w-4xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-8">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                DIVE DEEPER
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
+                Explore the Economics
+              </h2>
+              <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                See how membership revenue translates into sustainable unit economics and long-term value creation
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6">
+              <Link href="/performance" className="group">
+                <div className="bg-card border border-border rounded-2xl p-8 h-full hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/5">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <BarChart3 className="w-6 h-6 text-primary" />
+                    </div>
+                    <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                  </div>
+                  <h3 className="font-display text-xl font-medium mb-2">Unit Economics</h3>
+                  <p className="font-body text-sm text-muted-foreground mb-4">
+                    Detailed breakdown of member lifetime value, customer acquisition costs, and contribution margins by tier.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs font-mono px-2 py-1 rounded bg-muted text-muted-foreground">$97K ELITE LTV</span>
+                    <span className="text-xs font-mono px-2 py-1 rounded bg-muted text-muted-foreground">$1,900 Blended CAC</span>
+                    <span className="text-xs font-mono px-2 py-1 rounded bg-muted text-muted-foreground">51x LTV:CAC</span>
+                  </div>
+                </div>
+              </Link>
+
+              <Link href="/projections" className="group">
+                <div className="bg-card border border-border rounded-2xl p-8 h-full hover:border-accent/50 transition-all hover:shadow-lg hover:shadow-accent/5">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                      <Activity className="w-6 h-6 text-accent" />
+                    </div>
+                    <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all" />
+                  </div>
+                  <h3 className="font-display text-xl font-medium mb-2">Growth Projections</h3>
+                  <p className="font-body text-sm text-muted-foreground mb-4">
+                    See how membership growth drives revenue from a single center to a 10-center network by 2030.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs font-mono px-2 py-1 rounded bg-muted text-muted-foreground">$57.5M Y5 Revenue</span>
+                    <span className="text-xs font-mono px-2 py-1 rounded bg-muted text-muted-foreground">1,365 Members</span>
+                    <span className="text-xs font-mono px-2 py-1 rounded bg-muted text-muted-foreground">10 Centers</span>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="mt-8 bg-muted/30 rounded-2xl p-6">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="text-center md:text-left">
+                  <h4 className="font-display font-medium mb-1">Key Membership Metrics</h4>
+                  <p className="text-sm text-muted-foreground">How membership economics flow into company financials</p>
+                </div>
+                <div className="flex flex-wrap justify-center gap-4">
+                  <div className="text-center">
+                    <span className="font-mono text-xl text-primary">85%</span>
+                    <p className="text-xs text-muted-foreground">ELITE Mix</p>
+                  </div>
+                  <div className="w-px h-10 bg-border hidden md:block" />
+                  <div className="text-center">
+                    <span className="font-mono text-xl text-foreground">70%</span>
+                    <p className="text-xs text-muted-foreground">ELITE Renewal</p>
+                  </div>
+                  <div className="w-px h-10 bg-border hidden md:block" />
+                  <div className="text-center">
+                    <span className="font-mono text-xl text-foreground">500</span>
+                    <p className="text-xs text-muted-foreground">New/Year</p>
+                  </div>
+                  <div className="w-px h-10 bg-border hidden md:block" />
+                  <div className="text-center">
+                    <span className="font-mono text-xl text-accent">40%</span>
+                    <p className="text-xs text-muted-foreground">From Referrals</p>
+                  </div>
                 </div>
               </div>
             </motion.div>
