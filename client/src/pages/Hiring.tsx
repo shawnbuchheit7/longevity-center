@@ -3,13 +3,39 @@
  * Team/Hiring page - Identifying key hires needed
  */
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Users, Briefcase, Stethoscope, Building2, TrendingUp, Megaphone, Code, Shield, Package, Scale, Layers } from "lucide-react";
+import { Users, Briefcase, Stethoscope, Building2, TrendingUp, Megaphone, Code, Shield, Package, Scale, Layers, Calculator, DollarSign, Clock } from "lucide-react";
 import Layout from "@/components/Layout";
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
 import { Link } from "wouter";
 
 export default function Hiring() {
+  const [selectedScenario, setSelectedScenario] = useState<'standard' | 'extended' | 'weekend'>('standard');
+  const [memberCount, setMemberCount] = useState(120);
+  
+  // Capacity scenarios
+  const scenarios = {
+    standard: { name: 'Standard Hours', capacity: 1750, hours: '7AM-5:30PM M-F' },
+    extended: { name: 'Extended Hours', capacity: 2250, hours: '7AM-9PM M-F' },
+    weekend: { name: 'Full Weekend', capacity: 3050, hours: '7 days/week' }
+  };
+  
+  // Calculate utilization based on scenario
+  const currentCapacity = scenarios[selectedScenario].capacity;
+  const utilizationPct = ((memberCount / currentCapacity) * 100).toFixed(1);
+  
+  // Team count based on members (each team handles 120 members max)
+  const teamsNeeded = Math.ceil(memberCount / 120);
+  const staffNeeded = teamsNeeded * 4;
+  
+  // Staffing costs (estimated annual)
+  const avgPhysicianCost = 350000; // $350K avg with MBO
+  const avgMACost = 55000; // $55K
+  const avgCoordinatorCost = 65000; // $65K
+  const teamCost = avgPhysicianCost + avgMACost + (2 * avgCoordinatorCost); // ~$535K per team
+  const totalStaffCost = teamsNeeded * teamCost;
+  
   return (
     <Layout>
       {/* Page Header */}
@@ -1350,6 +1376,260 @@ export default function Hiring() {
                   </div>
                   <Link href="/performance" className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 hover:bg-primary/30 rounded-lg text-primary font-medium text-sm transition-colors whitespace-nowrap">
                     View Capacity Analysis →
+                  </Link>
+                </div>
+              </div>
+              
+              {/* Visual Capacity Progress Bar */}
+              <div className="mt-6 bg-card border border-border rounded-xl p-6">
+                <h4 className="font-display font-medium mb-4 flex items-center gap-2">
+                  <Clock className="w-5 h-5 text-primary" />
+                  Capacity Progress Visualization
+                </h4>
+                <p className="font-body text-sm text-muted-foreground mb-6">
+                  Visual representation of member growth against diagnostic capacity with team trigger points.
+                </p>
+                
+                {/* Progress Bar with Markers */}
+                <div className="relative mb-8">
+                  {/* Background bar */}
+                  <div className="h-8 bg-muted/30 rounded-full overflow-hidden relative">
+                    {/* Filled portion based on member count */}
+                    <div 
+                      className="h-full bg-gradient-to-r from-primary to-emerald-500 transition-all duration-500 rounded-full"
+                      style={{ width: `${Math.min((memberCount / currentCapacity) * 100, 100)}%` }}
+                    />
+                    
+                    {/* Team trigger markers */}
+                    {[60, 120, 180, 240].map((trigger, i) => {
+                      const position = (trigger / currentCapacity) * 100;
+                      if (position > 100) return null;
+                      return (
+                        <div 
+                          key={i}
+                          className="absolute top-0 bottom-0 w-0.5 bg-amber-500"
+                          style={{ left: `${position}%` }}
+                        >
+                          <div className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                            <span className="text-[10px] font-mono text-amber-500">Team {i + 1}</span>
+                          </div>
+                          <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                            <span className="text-[10px] font-mono text-muted-foreground">{trigger}</span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  
+                  {/* Current position indicator */}
+                  <div 
+                    className="absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full border-2 border-primary shadow-lg transition-all duration-500"
+                    style={{ left: `calc(${Math.min((memberCount / currentCapacity) * 100, 100)}% - 8px)` }}
+                  />
+                </div>
+                
+                {/* Member Count Slider */}
+                <div className="mb-6">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-body text-sm text-muted-foreground">Adjust Member Count</span>
+                    <span className="font-mono text-lg text-primary font-bold">{memberCount} members</span>
+                  </div>
+                  <input 
+                    type="range" 
+                    min="0" 
+                    max="500" 
+                    value={memberCount}
+                    onChange={(e) => setMemberCount(parseInt(e.target.value))}
+                    className="w-full h-2 bg-muted/50 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:bg-primary [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer"
+                  />
+                  <div className="flex justify-between text-[10px] font-mono text-muted-foreground mt-1">
+                    <span>0</span>
+                    <span>{currentCapacity} (max)</span>
+                  </div>
+                </div>
+                
+                {/* Quick Stats */}
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="bg-muted/20 rounded-lg p-3 text-center">
+                    <span className="font-mono text-2xl text-primary font-bold">{utilizationPct}%</span>
+                    <p className="text-[10px] text-muted-foreground mt-1">Capacity Used</p>
+                  </div>
+                  <div className="bg-muted/20 rounded-lg p-3 text-center">
+                    <span className="font-mono text-2xl text-amber-500 font-bold">{teamsNeeded}</span>
+                    <p className="text-[10px] text-muted-foreground mt-1">Teams Needed</p>
+                  </div>
+                  <div className="bg-muted/20 rounded-lg p-3 text-center">
+                    <span className="font-mono text-2xl text-emerald-400 font-bold">{staffNeeded}</span>
+                    <p className="text-[10px] text-muted-foreground mt-1">Total Staff</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Scenario Calculator */}
+              <div className="mt-6 bg-card border border-border rounded-xl p-6">
+                <h4 className="font-display font-medium mb-4 flex items-center gap-2">
+                  <Calculator className="w-5 h-5 text-amber-500" />
+                  Operating Hours Scenario Calculator
+                </h4>
+                <p className="font-body text-sm text-muted-foreground mb-6">
+                  See how extended operating hours affect capacity utilization and team requirements.
+                </p>
+                
+                {/* Scenario Selector */}
+                <div className="grid md:grid-cols-3 gap-4 mb-6">
+                  {Object.entries(scenarios).map(([key, scenario]) => (
+                    <button
+                      key={key}
+                      onClick={() => setSelectedScenario(key as 'standard' | 'extended' | 'weekend')}
+                      className={`p-4 rounded-xl border-2 transition-all text-left ${
+                        selectedScenario === key 
+                          ? 'border-primary bg-primary/10' 
+                          : 'border-border hover:border-primary/50'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-display font-medium">{scenario.name}</span>
+                        {selectedScenario === key && (
+                          <div className="w-2 h-2 rounded-full bg-primary" />
+                        )}
+                      </div>
+                      <p className="text-xs text-muted-foreground mb-2">{scenario.hours}</p>
+                      <span className="font-mono text-lg text-primary">{scenario.capacity.toLocaleString()}</span>
+                      <span className="text-xs text-muted-foreground ml-1">members/year</span>
+                    </button>
+                  ))}
+                </div>
+                
+                {/* Comparison Table */}
+                <div className="bg-muted/20 rounded-xl p-4">
+                  <h5 className="font-display text-sm font-medium mb-4">Utilization Comparison at {memberCount} Members</h5>
+                  <div className="space-y-3">
+                    {Object.entries(scenarios).map(([key, scenario]) => {
+                      const util = ((memberCount / scenario.capacity) * 100).toFixed(1);
+                      const isSelected = selectedScenario === key;
+                      return (
+                        <div key={key} className={`flex items-center gap-4 p-2 rounded-lg ${isSelected ? 'bg-primary/10' : ''}`}>
+                          <div className="w-24 shrink-0">
+                            <span className={`text-sm ${isSelected ? 'text-primary font-medium' : 'text-muted-foreground'}`}>
+                              {scenario.name}
+                            </span>
+                          </div>
+                          <div className="flex-1">
+                            <div className="h-2 bg-muted/50 rounded-full overflow-hidden">
+                              <div 
+                                className={`h-full rounded-full transition-all ${isSelected ? 'bg-primary' : 'bg-muted-foreground/30'}`}
+                                style={{ width: `${Math.min(parseFloat(util), 100)}%` }}
+                              />
+                            </div>
+                          </div>
+                          <div className="w-16 text-right">
+                            <span className={`font-mono text-sm ${isSelected ? 'text-primary font-bold' : 'text-muted-foreground'}`}>
+                              {util}%
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+              
+              {/* Staffing Cost Projections */}
+              <div className="mt-6 bg-card border border-border rounded-xl p-6">
+                <h4 className="font-display font-medium mb-4 flex items-center gap-2">
+                  <DollarSign className="w-5 h-5 text-emerald-400" />
+                  Staffing Cost Projections
+                </h4>
+                <p className="font-body text-sm text-muted-foreground mb-6">
+                  Incremental labor costs at each team scaling tier, linked to the financial model.
+                </p>
+                
+                {/* Cost Breakdown */}
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <h5 className="font-display text-sm font-medium mb-3">Per-Team Cost Structure</h5>
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center p-2 bg-muted/20 rounded-lg">
+                        <span className="text-sm text-muted-foreground">ELITE Physician (1)</span>
+                        <span className="font-mono text-sm">$350,000</span>
+                      </div>
+                      <div className="flex justify-between items-center p-2 bg-muted/20 rounded-lg">
+                        <span className="text-sm text-muted-foreground">Medical Assistant (1)</span>
+                        <span className="font-mono text-sm">$55,000</span>
+                      </div>
+                      <div className="flex justify-between items-center p-2 bg-muted/20 rounded-lg">
+                        <span className="text-sm text-muted-foreground">Care Coordinators (2)</span>
+                        <span className="font-mono text-sm">$130,000</span>
+                      </div>
+                      <div className="flex justify-between items-center p-3 bg-primary/10 rounded-lg border border-primary/30">
+                        <span className="text-sm font-medium">Total per Team</span>
+                        <span className="font-mono text-sm text-primary font-bold">$535,000</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h5 className="font-display text-sm font-medium mb-3">Current Projection ({memberCount} members)</h5>
+                    <div className="bg-gradient-to-br from-primary/10 to-emerald-500/10 border border-primary/30 rounded-xl p-4">
+                      <div className="text-center mb-4">
+                        <span className="font-mono text-3xl text-primary font-bold">
+                          ${(totalStaffCost / 1000000).toFixed(2)}M
+                        </span>
+                        <p className="text-xs text-muted-foreground mt-1">Annual ELITE Team Labor Cost</p>
+                      </div>
+                      <div className="grid grid-cols-2 gap-3 text-center">
+                        <div className="bg-background/50 rounded-lg p-2">
+                          <span className="font-mono text-lg text-amber-500">{teamsNeeded}</span>
+                          <p className="text-[10px] text-muted-foreground">Teams</p>
+                        </div>
+                        <div className="bg-background/50 rounded-lg p-2">
+                          <span className="font-mono text-lg text-emerald-400">{staffNeeded}</span>
+                          <p className="text-[10px] text-muted-foreground">Staff</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Scaling Cost Table */}
+                <div className="bg-muted/20 rounded-xl overflow-hidden">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-border bg-muted/30">
+                        <th className="text-left p-3 font-display font-medium">Members</th>
+                        <th className="text-center p-3 font-display font-medium">Teams</th>
+                        <th className="text-center p-3 font-display font-medium">Staff</th>
+                        <th className="text-right p-3 font-display font-medium">Annual Cost</th>
+                        <th className="text-right p-3 font-display font-medium">Incremental</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { members: '1-120', teams: 1, staff: 4, cost: 535000, increment: 535000 },
+                        { members: '121-240', teams: 2, staff: 8, cost: 1070000, increment: 535000 },
+                        { members: '241-360', teams: 3, staff: 12, cost: 1605000, increment: 535000 },
+                        { members: '361-480', teams: 4, staff: 16, cost: 2140000, increment: 535000 },
+                        { members: '481-600', teams: 5, staff: 20, cost: 2675000, increment: 535000 }
+                      ].map((row, i) => (
+                        <tr key={i} className={`border-b border-border/50 ${teamsNeeded === row.teams ? 'bg-primary/10' : ''}`}>
+                          <td className="p-3 font-mono text-amber-500">{row.members}</td>
+                          <td className="p-3 text-center">{row.teams}</td>
+                          <td className="p-3 text-center">{row.staff}</td>
+                          <td className="p-3 text-right font-mono">${(row.cost / 1000).toFixed(0)}K</td>
+                          <td className="p-3 text-right font-mono text-emerald-400">+${(row.increment / 1000).toFixed(0)}K</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                
+                {/* Link to Financial Model */}
+                <div className="mt-4 flex items-center justify-between p-4 bg-muted/20 rounded-lg">
+                  <p className="font-body text-sm text-muted-foreground">
+                    These costs are incorporated into the single-center proforma and multi-center projections.
+                  </p>
+                  <Link href="/performance" className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 hover:bg-primary/30 rounded-lg text-primary font-medium text-sm transition-colors whitespace-nowrap">
+                    View Unit Economics →
                   </Link>
                 </div>
               </div>
