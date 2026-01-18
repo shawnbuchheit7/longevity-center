@@ -62,6 +62,14 @@ const faqData: FAQCategory[] = [
         question: "How do ancillary services contribute to revenue?",
         answer: "Ancillary services (IV therapy, injections, stem cell treatments) generate approximately 50% of membership value at 60% margins. These are delivered by the Center Operations Team, separate from the ELITE care teams, ensuring efficient utilization of clinical resources.",
         links: [{ text: "View Unit Economics", href: "/performance" }]
+      },
+      {
+        question: "Can members upgrade from CHECK to ELITE?",
+        answer: "Yes, CHECK members can upgrade to ELITE at any time by paying the difference in membership fees. We expect 20-30% of CHECK members to upgrade within the first year after experiencing our diagnostic capabilities. This creates a natural upsell pathway and demonstrates value before commitment to ongoing care."
+      },
+      {
+        question: "What's the member retention strategy?",
+        answer: "Our retention strategy centers on the physician-member relationship and proactive care coordination. Each ELITE member has a dedicated Care Coordinator who maintains regular contact. Quarterly physician consultations, personalized health optimization plans, and exclusive member events create multiple touchpoints. We target 85%+ annual retention for ELITE members."
       }
     ]
   },
@@ -110,6 +118,11 @@ const faqData: FAQCategory[] = [
         question: "What's your moat against new entrants?",
         answer: "Our competitive moat includes: (1) Proprietary GeneMetrics™ diagnostic platform, (2) Vertically integrated biologics manufacturing, (3) Hospitality-trained clinical staff, (4) First-mover advantage in luxury regenerative medicine, and (5) Network effects from member referrals and physician relationships.",
         links: [{ text: "View Technology", href: "/technology" }]
+      },
+      {
+        question: "How does Lumastem compare to Human Longevity Institute (HLI)?",
+        answer: "HLI focuses primarily on diagnostics and data analysis without the ongoing care component. Lumastem differentiates through our ELITE membership model with dedicated physician relationships, proprietary MUSE Cell technology, and vertically integrated biologics manufacturing. We offer both comprehensive diagnostics AND ongoing regenerative care, not just testing.",
+        links: [{ text: "View Competitive Analysis", href: "/opportunity" }]
       }
     ]
   },
@@ -124,6 +137,11 @@ const faqData: FAQCategory[] = [
         links: [{ text: "View Projections", href: "/projections" }]
       },
       {
+        question: "What are the two expansion pathways?",
+        answer: "We have two distinct growth strategies: (1) Center Development - owned centers, franchises, and joint ventures delivering the full Lumastem experience, and (2) Therapeutics Product Licensing - licensing our MUSE Cell technology and biologics to medical providers worldwide. The licensing pathway represents a massive additional opportunity with a comprehensive business plan in development.",
+        links: [{ text: "View Growth Strategy", href: "/projections" }]
+      },
+      {
         question: "How does the unit economics work?",
         answer: "ELITE membership generates $29,500 in revenue with ~$8,000 in direct costs (diagnostics, treatments, physician time), yielding ~73% gross margin. Ancillary services add approximately 50% of membership value at 60% margins. Blended contribution margin exceeds 65%.",
         links: [{ text: "View Unit Economics", href: "/performance" }]
@@ -133,8 +151,8 @@ const faqData: FAQCategory[] = [
         answer: "We project CAC of $2,500-$3,500 per member, primarily through physician referral networks, high-net-worth events, and targeted digital marketing. With LTV exceeding $75,000 (3+ year retention), our LTV:CAC ratio exceeds 20:1.",
       },
       {
-        question: "How is the $25M Series A being allocated?",
-        answer: "Approximately 45% for flagship center buildout and equipment, 30% for working capital and initial operations, 15% for technology and platform development, and 10% for marketing and member acquisition. This funds us through profitability at the first center.",
+        question: "How is the $50M Series A being allocated?",
+        answer: "Approximately 40% for flagship center buildout and equipment, 25% for working capital and initial operations (including staffing ramp), 15% for technology and GeneMetrics™ platform development, 10% for marketing and member acquisition, and 10% for corporate infrastructure and reserves. This funds us through profitability at the first center and initial expansion planning.",
         links: [{ text: "View Use of Funds", href: "/use-of-funds" }]
       }
     ]
@@ -150,8 +168,13 @@ const faqData: FAQCategory[] = [
       },
       {
         question: "How do you recruit physicians for the ELITE model?",
-        answer: "We partner with Witt/Kieffer, a leading healthcare executive search firm with 50+ years of experience. We target physicians seeking to escape insurance-driven medicine who want to practice relationship-based care. Our compensation includes competitive base salary plus equity participation.",
+        answer: "We partner with Witt/Kieffer, a leading healthcare executive search firm with 50+ years of experience. We target physicians seeking to escape insurance-driven medicine who want to practice relationship-based care. Our compensation includes competitive base salary ($345K for ELITE physicians, $460K for Medical Directors) plus 30% MBO bonus opportunity.",
         links: [{ text: "View Hiring Plan", href: "/hiring" }]
+      },
+      {
+        question: "What is the MBO compensation structure?",
+        answer: "Eligible team members (C-suite, management, and physicians) can earn up to 30% of base salary through Management by Objectives bonuses. Three metrics are defined annually combining individual and company goals, reviewed quarterly. For example, a physician earning $345K base could achieve total OTE of $448K with full MBO attainment.",
+        links: [{ text: "View Compensation Details", href: "/hiring" }]
       },
       {
         question: "What's the role of the Medical Director vs ELITE Physicians?",
@@ -170,12 +193,12 @@ const faqData: FAQCategory[] = [
     items: [
       {
         question: "What are the Series A terms?",
-        answer: "We're raising $25M at a $100M pre-money valuation. Investors receive preferred shares with 1x non-participating liquidation preference, pro-rata rights, and standard protective provisions. Board seats are allocated based on investment size.",
+        answer: "We're raising $50M at a $150M pre-money valuation (25% ownership). Investors receive preferred shares with 1x non-participating liquidation preference, pro-rata rights, and standard protective provisions. The lead investor receives 1 board seat, with the board capped at 5 members maximum. Minimum investment is $1M.",
         links: [{ text: "View Investment Details", href: "/investors" }]
       },
       {
         question: "What's the equity allocation for the team?",
-        answer: "12% total equity pool: 9% for Phase 1 executives (CEO 3%, CFO/COO/CPO/CLO 1.5% each), 2.75% for Phase 2 executives (CMO, CCO, CMO Marketing, CTO at 0.5-0.75% each), and 0.25% reserve. Non-CEO executives vest over 4 years with 1-year cliff.",
+        answer: "12% total equity pool reserved for executive team. Phase 1 executives (CEO, CFO, COO, CPO, CLO) receive the majority with 4-year vesting and 1-year cliff. Phase 2 executives (CMO Medical, CCO, CMO Marketing, CTO) receive allocations as they join. Specific individual allocations are determined at hiring based on experience and negotiation.",
         links: [{ text: "View Equity Structure", href: "/hiring" }]
       },
       {
@@ -183,9 +206,22 @@ const faqData: FAQCategory[] = [
         answer: "We anticipate raising Series B 18-24 months post-Series A close, after demonstrating unit economics at the flagship center and beginning expansion to centers 2-3. Series B will fund expansion to 5+ centers.",
       },
       {
-        question: "What are the key milestones for investors?",
-        answer: "Key milestones include: (1) Flagship center opening (Month 6-9), (2) 100 ELITE members (Month 12), (3) Cash flow positive at flagship (Month 18-24), (4) Second center opening (Month 24), (5) Series B raise (Month 24-30).",
+question: "What are the key milestones for investors?",
+        answer: "Key milestones include: (1) Flagship center opening and first 100 members, (2) Cash flow positive at single center, (3) Second center opening, (4) Series B raise, and (5) Path to 5+ centers. Each milestone de-risks the investment and validates our model.",
         links: [{ text: "View Projections", href: "/projections" }]
+      },
+      {
+        question: "What are the potential exit scenarios?",
+        answer: "Primary exit paths include: (1) Strategic acquisition by a healthcare system, private equity, or luxury wellness brand seeking regenerative medicine capabilities, (2) IPO once we reach scale with 10+ centers and proven unit economics, or (3) Merger with complementary longevity/wellness companies. We project 8-45x MOIC depending on exit timing and scenario."
+      },
+      {
+        question: "What are the key investment risks?",
+        answer: "Key risks include: (1) Regulatory changes affecting stem cell treatments, (2) Execution risk in scaling to multiple centers, (3) Physician recruitment in competitive markets, (4) Economic downturn affecting high-net-worth discretionary spending, and (5) Competitive response from well-funded entrants. We mitigate these through diversified revenue streams, strong governance, and first-mover advantage."
+      },
+      {
+        question: "Is there international expansion potential?",
+        answer: "Yes, we've identified significant international opportunities in UAE, Singapore, UK, and Switzerland where regulatory environments are favorable and high-net-worth populations seek premium healthcare. International expansion will follow domestic proof of concept, potentially through joint ventures or licensing arrangements to manage regulatory complexity.",
+        links: [{ text: "View Expansion Strategy", href: "/projections" }]
       }
     ]
   }
