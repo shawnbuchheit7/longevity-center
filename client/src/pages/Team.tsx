@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import { Linkedin, Users } from "lucide-react";
 import Layout from "@/components/Layout";
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
-import { Link } from "wouter";
 
 export default function Team() {
   return (
@@ -216,20 +215,6 @@ export default function Team() {
               ))}
             </motion.div>
 
-            {/* Link to Board Composition */}
-            <motion.div variants={fadeInUp} className="mt-12 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 text-center">
-              <h3 className="font-display text-xl font-medium mb-4">Board of Directors & Governance</h3>
-              <p className="font-body text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Learn about our planned board structure, investor rights, and governance framework. 
-                Advisory board members may transition to board roles as the company scales.
-              </p>
-              <Link href="/hiring">
-                <span className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors cursor-pointer">
-                  <Users className="w-4 h-4" />
-                  View Board Composition
-                </span>
-              </Link>
-            </motion.div>
           </motion.div>
         </div>
       </section>

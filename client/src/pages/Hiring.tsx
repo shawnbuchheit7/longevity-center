@@ -1215,15 +1215,15 @@ export default function Hiring() {
                     { members: "181-240", teams: "4 ELITE Teams", staff: "16 staff", trigger: "Continue scaling pattern" }
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-4 p-3 bg-muted/30 rounded-lg">
-                      <div className="w-24 shrink-0">
+                      <div className="w-24 shrink-0 text-center">
                         <span className="font-mono text-sm text-amber-500">{item.members}</span>
                         <p className="text-[10px] text-muted-foreground">ELITE members</p>
                       </div>
-                      <div className="flex-1 grid grid-cols-2 gap-4">
+                      <div className="flex-1 grid grid-cols-2 gap-4 text-center">
                         <span className="text-sm">{item.teams}</span>
                         <span className="text-sm text-muted-foreground">{item.staff}</span>
                       </div>
-                      <span className="text-xs text-muted-foreground hidden md:block">{item.trigger}</span>
+                      <span className="text-xs text-muted-foreground hidden md:block text-center">{item.trigger}</span>
                     </div>
                   ))}
                 </div>
