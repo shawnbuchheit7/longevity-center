@@ -336,9 +336,9 @@ export default function Performance() {
                 </div>
                 <div className="p-6 space-y-4">
                   {[
-                    { label: "Max Members at Maturity", value: "~1,200" },
-                    { label: "Physician FTEs (Year 5)", value: "4" },
-                    { label: "Members per Physician", value: "~290" },
+                    { label: "Max Members at Maturity", value: "~1,365" },
+                    { label: "ELITE Teams (Year 5)", value: "12" },
+                    { label: "Members per ELITE Team", value: "120 max" },
                     { label: "Annual In-Clinic Visits", value: "1 per member" },
                     { label: "At-Home Care Delivery", value: "90%" },
                     { label: "Center Square Footage", value: "12,000-15,000 SF" }

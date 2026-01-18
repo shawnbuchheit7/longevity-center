@@ -303,12 +303,12 @@ export default function UseOfFunds() {
                   <div className="mt-6 pt-6 border-t border-border">
                     <div className="grid md:grid-cols-3 gap-6">
                       <div className="text-center p-4 bg-muted/30 rounded-xl">
-                        <span className="font-mono text-2xl text-primary">$4.8M</span>
+                        <span className="font-mono text-2xl text-primary">$5.5M</span>
                         <p className="text-xs text-muted-foreground mt-1">Year 1 Payroll</p>
                         <p className="text-[10px] text-muted-foreground">5 execs + 26 center staff</p>
                       </div>
                       <div className="text-center p-4 bg-muted/30 rounded-xl">
-                        <span className="font-mono text-2xl text-amber-500">$7.5M</span>
+                        <span className="font-mono text-2xl text-amber-500">$8.6M</span>
                         <p className="text-xs text-muted-foreground mt-1">Year 2 Payroll</p>
                         <p className="text-[10px] text-muted-foreground">+ Corporate + ELITE teams</p>
                       </div>
