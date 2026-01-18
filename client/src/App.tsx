@@ -15,12 +15,14 @@ import UseOfFunds from "./pages/UseOfFunds";
 import Projections from "./pages/Projections";
 import Performance from "./pages/Performance";
 import Contact from "./pages/Contact";
+import Difference from "./pages/Difference";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/opportunity" component={Opportunity} />
+      <Route path="/difference" component={Difference} />
       <Route path="/therapeutics" component={Therapeutics} />
       <Route path="/technology" component={Technology} />
       <Route path="/performance" component={Performance} />

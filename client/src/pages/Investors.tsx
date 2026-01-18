@@ -44,12 +44,43 @@ export default function Investors() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
           >
-            <div className="relative rounded-2xl overflow-hidden border border-border">
+            <div className="relative rounded-2xl overflow-hidden border border-border group">
               <img 
                 src="/images/founders-group.png" 
                 alt="Lumastem Founders - Joe Russo, Chris Hemsworth, Josh Brolin, Donald Mustard"
                 className="w-full h-auto"
               />
+              {/* Hover overlay with founder names */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300">
+                {/* Joe Russo */}
+                <div className="absolute bottom-24 left-[8%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                  <div className="bg-black/80 backdrop-blur-sm rounded-lg px-3 py-2 border border-primary/30">
+                    <p className="font-display text-sm text-white font-medium">Joe Russo</p>
+                    <p className="font-mono text-xs text-primary">Director, Avengers: Endgame</p>
+                  </div>
+                </div>
+                {/* Chris Hemsworth */}
+                <div className="absolute bottom-32 left-[30%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-150">
+                  <div className="bg-black/80 backdrop-blur-sm rounded-lg px-3 py-2 border border-primary/30">
+                    <p className="font-display text-sm text-white font-medium">Chris Hemsworth</p>
+                    <p className="font-mono text-xs text-primary">Actor, Producer</p>
+                  </div>
+                </div>
+                {/* Josh Brolin */}
+                <div className="absolute bottom-32 left-[55%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
+                  <div className="bg-black/80 backdrop-blur-sm rounded-lg px-3 py-2 border border-primary/30">
+                    <p className="font-display text-sm text-white font-medium">Josh Brolin</p>
+                    <p className="font-mono text-xs text-primary">Actor, Producer</p>
+                  </div>
+                </div>
+                {/* Donald Mustard */}
+                <div className="absolute bottom-24 right-[8%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-250">
+                  <div className="bg-black/80 backdrop-blur-sm rounded-lg px-3 py-2 border border-primary/30">
+                    <p className="font-display text-sm text-white font-medium">Donald Mustard</p>
+                    <p className="font-mono text-xs text-primary">Creator of Fortnite</p>
+                  </div>
+                </div>
+              </div>
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
                 <p className="font-display text-lg text-white text-center">
                   Trusted by Leaders Shaping Global Culture
