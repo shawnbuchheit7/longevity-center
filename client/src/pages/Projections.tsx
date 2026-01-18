@@ -281,11 +281,56 @@ export default function Projections() {
                         </div>
                       </div>
                     </div>
-                    <div className="mt-6 p-3 bg-amber-500/10 border border-amber-500/20 rounded-lg">
-                      <p className="font-body text-xs text-amber-200">
-                        <strong className="text-amber-500">Business Plan Required:</strong> Comprehensive business plan for therapeutics licensing 
-                        will be developed as a separate strategic initiative.
-                      </p>
+                    {/* Business Plan Outline */}
+                    <div className="mt-6 pt-6 border-t border-amber-500/20">
+                      <h5 className="font-display text-sm font-medium mb-4 flex items-center gap-2">
+                        <FileText className="w-4 h-4 text-amber-500" />
+                        Business Plan Development Outline
+                      </h5>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div className="bg-muted/30 rounded-lg p-3">
+                          <h6 className="font-mono text-xs text-amber-500 mb-2">Market Analysis</h6>
+                          <ul className="text-xs text-muted-foreground space-y-1">
+                            <li>• Target market sizing (orthopedics, aesthetics, pain management)</li>
+                            <li>• Competitive landscape analysis</li>
+                            <li>• Geographic prioritization (U.S. vs international)</li>
+                            <li>• Regulatory pathway by region</li>
+                          </ul>
+                        </div>
+                        <div className="bg-muted/30 rounded-lg p-3">
+                          <h6 className="font-mono text-xs text-amber-500 mb-2">Pricing & Revenue Model</h6>
+                          <ul className="text-xs text-muted-foreground space-y-1">
+                            <li>• Upfront licensing fees structure</li>
+                            <li>• Per-treatment royalty rates</li>
+                            <li>• Biologics supply pricing (cost-plus model)</li>
+                            <li>• Training and certification fees</li>
+                          </ul>
+                        </div>
+                        <div className="bg-muted/30 rounded-lg p-3">
+                          <h6 className="font-mono text-xs text-amber-500 mb-2">Operations & Support</h6>
+                          <ul className="text-xs text-muted-foreground space-y-1">
+                            <li>• Licensee onboarding process</li>
+                            <li>• Training and certification requirements</li>
+                            <li>• Quality assurance and compliance monitoring</li>
+                            <li>• Ongoing technical support model</li>
+                          </ul>
+                        </div>
+                        <div className="bg-muted/30 rounded-lg p-3">
+                          <h6 className="font-mono text-xs text-amber-500 mb-2">Financial Projections</h6>
+                          <ul className="text-xs text-muted-foreground space-y-1">
+                            <li>• 5-year revenue projections by segment</li>
+                            <li>• Margin analysis (licensing vs supply)</li>
+                            <li>• Investment requirements</li>
+                            <li>• Break-even timeline</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="mt-4 p-3 bg-amber-500/10 border border-amber-500/20 rounded-lg">
+                        <p className="font-body text-xs text-amber-200">
+                          <strong className="text-amber-500">Status:</strong> Comprehensive business plan for therapeutics licensing 
+                          will be developed as a separate strategic initiative following Series A close.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>

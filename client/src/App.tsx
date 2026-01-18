@@ -15,7 +15,6 @@ import UseOfFunds from "./pages/UseOfFunds";
 import Projections from "./pages/Projections";
 import Performance from "./pages/Performance";
 import Contact from "./pages/Contact";
-import Difference from "./pages/Difference";
 import Hiring from "./pages/Hiring";
 import Memberships from "./pages/Memberships";
 import FAQ from "./pages/FAQ";
@@ -26,7 +25,6 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/opportunity" component={Opportunity} />
       <Route path="/memberships" component={Memberships} />
-      <Route path="/difference" component={Difference} />
       <Route path="/therapeutics" component={Therapeutics} />
       <Route path="/technology" component={Technology} />
       <Route path="/performance" component={Performance} />

@@ -282,6 +282,121 @@ export default function Opportunity() {
           </motion.div>
         </div>
       </section>
+
+      {/* Industry vs Lumastem Comparison */}
+      <section className="py-20 bg-card/30">
+        <div className="container">
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                THE LUMASTEM DIFFERENCE
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
+                Setting the New Standard
+              </h2>
+              <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto">
+                A physician-led, integrated approach to regenerative medicine that 
+                prioritizes safety, outcomes, and long-term trust.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Industry Norms */}
+              <motion.div variants={fadeInUp}>
+                <div className="bg-muted/30 border border-border rounded-2xl p-8 h-full">
+                  <div className="flex items-center gap-3 mb-8">
+                    <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center">
+                      <span className="text-muted-foreground text-xl">✕</span>
+                    </div>
+                    <div>
+                      <span className="font-mono text-xs text-muted-foreground tracking-wider">INDUSTRY NORMS</span>
+                      <h3 className="font-display text-2xl font-medium">Traditional Approach</h3>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    {[
+                      {
+                        title: "Fragmented Services",
+                        description: "No unified oversight across treatments. Patients navigate multiple providers with no coordination."
+                      },
+                      {
+                        title: "Spa-Like Clinics",
+                        description: "Transactional care focused on single treatments. No long-term relationship or comprehensive planning."
+                      },
+                      {
+                        title: "Inconsistent Biologics",
+                        description: "Biologics applied without standardized protocols. Variable quality and unpredictable outcomes."
+                      }
+                    ].map((item, i) => (
+                      <div key={i} className="flex gap-4">
+                        <div className="w-8 h-8 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-destructive text-sm">✕</span>
+                        </div>
+                        <div>
+                          <h4 className="font-display font-medium mb-1">{item.title}</h4>
+                          <p className="font-body text-sm text-muted-foreground">{item.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Lumastem Approach */}
+              <motion.div variants={fadeInUp}>
+                <div className="bg-primary/10 border border-primary/30 rounded-2xl p-8 h-full relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+                  <div className="relative">
+                    <div className="flex items-center gap-3 mb-8">
+                      <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
+                        <span className="text-primary text-xl">✓</span>
+                      </div>
+                      <div>
+                        <span className="font-mono text-xs text-primary tracking-wider">LUMASTEM</span>
+                        <h3 className="font-display text-2xl font-medium">Integrated Excellence</h3>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-6">
+                      {[
+                        {
+                          title: "Multi-Specialty Hub",
+                          description: "Integrated care under one roof. All specialties coordinated by your Longevity Physician."
+                        },
+                        {
+                          title: "Physician-Led Pathways",
+                          description: "Programmatic care designed by physicians. Long-term relationships built on trust and outcomes."
+                        },
+                        {
+                          title: "Proprietary Protocols",
+                          description: "Biologics applied systematically across all specialties with standardized, evidence-based protocols."
+                        }
+                      ].map((item, i) => (
+                        <div key={i} className="flex gap-4">
+                          <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                            <span className="text-primary text-sm">✓</span>
+                          </div>
+                          <div>
+                            <h4 className="font-display font-medium mb-1">{item.title}</h4>
+                            <p className="font-body text-sm text-muted-foreground">{item.description}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </Layout>
   );
 }

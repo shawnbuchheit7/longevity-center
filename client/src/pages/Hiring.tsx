@@ -476,12 +476,13 @@ export default function Hiring() {
                       <th className="text-center p-4 font-display font-medium">Headcount</th>
                       <th className="text-left p-4 font-display font-medium">Key Responsibilities</th>
                       <th className="text-center p-4 font-display font-medium">Timing</th>
+                      <th className="text-center p-4 font-display font-medium">Base Salary</th>
                     </tr>
                   </thead>
                   <tbody className="font-body text-sm">
                     {[
-                      { role: "Medical Director", count: 1, responsibilities: "Clinical oversight, protocol development, quality assurance", timing: "90 days pre-opening" },
-                      { role: "Physician", count: 1, responsibilities: "Diagnostics consultations, treatment protocols, ancillary services", timing: "60 days pre-opening" },
+                      { role: "Medical Director", count: 1, responsibilities: "Clinical oversight, protocol development, quality assurance", timing: "90 days pre-opening", salary: "$400K" },
+                      { role: "Physician", count: 1, responsibilities: "Diagnostics consultations, treatment protocols, ancillary services", timing: "60 days pre-opening", salary: "$300K" },
                       { role: "Center Director", count: 1, responsibilities: "P&L ownership, team leadership, operations management", timing: "90 days pre-opening" },
                       { role: "Nurse Practitioners", count: 3, responsibilities: "Treatment delivery, injections, IV therapy, stem cell procedures", timing: "60 days pre-opening" },
                       { role: "Rad Techs", count: 3, responsibilities: "MRI/CT imaging, DEXA scans, X-ray, diagnostic imaging support", timing: "60 days pre-opening" },
@@ -498,6 +499,7 @@ export default function Hiring() {
                         </td>
                         <td className="p-4 text-muted-foreground">{item.responsibilities}</td>
                         <td className="p-4 text-center font-mono text-xs text-muted-foreground">{item.timing}</td>
+                        <td className="p-4 text-center font-mono text-xs text-primary">{item.salary || '—'}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -537,11 +539,12 @@ export default function Hiring() {
                       <th className="text-center p-4 font-display font-medium">Per Team</th>
                       <th className="text-center p-4 font-display font-medium">At Launch (3 Teams)</th>
                       <th className="text-left p-4 font-display font-medium">Key Responsibilities</th>
+                      <th className="text-center p-4 font-display font-medium">Base Salary</th>
                     </tr>
                   </thead>
                   <tbody className="font-body text-sm">
                     {[
-                      { role: "Physician", perTeam: 1, atLaunch: 3, responsibilities: "Ongoing member care under Medical Director supervision, health optimization, treatment planning" },
+                      { role: "Physician", perTeam: 1, atLaunch: 3, responsibilities: "Ongoing member care under Medical Director supervision, health optimization, treatment planning", salary: "$300K" },
                       { role: "Medical Assistant", perTeam: 1, atLaunch: 3, responsibilities: "Physician support, care coordination, member follow-up" },
                       { role: "Care Coordinator", perTeam: 2, atLaunch: 6, responsibilities: "Member relationship management, scheduling, care navigation (60 members each)" }
                     ].map((item, i) => (
@@ -558,6 +561,7 @@ export default function Hiring() {
                           </span>
                         </td>
                         <td className="p-4 text-muted-foreground">{item.responsibilities}</td>
+                        <td className="p-4 text-center font-mono text-xs text-primary">{item.salary || '—'}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -600,6 +604,49 @@ export default function Hiring() {
                   <span className="font-mono text-3xl text-foreground">26+</span>
                   <p className="text-sm text-muted-foreground mt-1">Minimum Headcount</p>
                   <p className="text-xs text-muted-foreground">14 ops + 12 ELITE staff</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* MBO Opportunity */}
+            <motion.div variants={fadeInUp} className="mt-12 bg-card border border-primary/30 rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
+                  <span className="text-primary font-bold">%</span>
+                </div>
+                <div>
+                  <h4 className="font-display font-medium">Performance-Based Compensation</h4>
+                  <p className="text-sm text-muted-foreground">30% MBO Opportunity</p>
+                </div>
+              </div>
+              <p className="font-body text-sm text-muted-foreground mb-4">
+                In addition to base salary, eligible team members can earn up to <span className="text-primary font-medium">30% of their base compensation</span> through 
+                Management by Objectives (MBO) bonuses tied to annual performance metrics.
+              </p>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="bg-muted/30 rounded-xl p-4">
+                  <h5 className="font-display text-sm font-medium mb-2">Eligible Roles</h5>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• C-Suite Executives</li>
+                    <li>• Management Team</li>
+                    <li>• Physicians (MD, ELITE)</li>
+                  </ul>
+                </div>
+                <div className="bg-muted/30 rounded-xl p-4">
+                  <h5 className="font-display text-sm font-medium mb-2">Metrics Framework</h5>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• 3 metrics defined annually</li>
+                    <li>• Individual + company goals</li>
+                    <li>• Reviewed quarterly</li>
+                  </ul>
+                </div>
+                <div className="bg-muted/30 rounded-xl p-4">
+                  <h5 className="font-display text-sm font-medium mb-2">Example: Physician</h5>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Base: $300K</li>
+                    <li>• MBO (30%): +$90K</li>
+                    <li>• Total OTE: $390K</li>
+                  </ul>
                 </div>
               </div>
             </motion.div>
