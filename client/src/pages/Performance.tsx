@@ -1388,7 +1388,7 @@ export default function Performance() {
       </section>
 
       {/* Diagnostic Capacity Analysis */}
-      <section className="py-20">
+      <section id="diagnostic-capacity" className="py-20 scroll-mt-20">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"

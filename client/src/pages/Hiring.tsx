@@ -36,6 +36,31 @@ export default function Hiring() {
   const teamCost = avgPhysicianCost + avgMACost + (2 * avgCoordinatorCost); // ~$535K per team
   const totalStaffCost = teamsNeeded * teamCost;
   
+  // Break-even analysis
+  const annualMembershipRevenue = 60000; // $60K per member per year (ELITE membership)
+  const eliteRevenuePerMember = annualMembershipRevenue * 0.85; // 85% goes to ELITE team services
+  const breakEvenMembers = Math.ceil(teamCost / eliteRevenuePerMember); // Members needed to cover 1 team
+  const currentRevenue = memberCount * eliteRevenuePerMember;
+  const profitMargin = currentRevenue - totalStaffCost;
+  const marginPerMember = memberCount > 0 ? profitMargin / memberCount : 0;
+  
+  // Multi-center aggregation
+  const [centerCount, setCenterCount] = useState(3);
+  const eliteTeamsPerCenter = 3; // Minimum teams per center at launch
+  const centerOpsStaff = 14; // Fixed per center
+  const corporateStaff = centerCount <= 1 ? 10 : centerCount <= 3 ? 15 : centerCount <= 5 ? 20 : 30;
+  const phase1Execs = 5;
+  const phase2Execs = centerCount <= 1 ? 0 : centerCount <= 3 ? 2 : 4;
+  const totalEliteStaff = centerCount * eliteTeamsPerCenter * 4;
+  const totalCenterOps = centerCount * centerOpsStaff;
+  const totalHeadcount = phase1Execs + phase2Execs + corporateStaff + totalCenterOps + totalEliteStaff;
+  const totalEliteCost = centerCount * eliteTeamsPerCenter * teamCost;
+  const centerOpsCostPerCenter = 850000; // Estimated $850K for center ops team
+  const totalCenterOpsCost = centerCount * centerOpsCostPerCenter;
+  const corporateCost = corporateStaff * 100000; // Avg $100K per corporate role
+  const execCost = (phase1Execs + phase2Execs) * 400000; // Avg $400K per exec
+  const totalMultiCenterCost = totalEliteCost + totalCenterOpsCost + corporateCost + execCost;
+  
   return (
     <Layout>
       {/* Page Header */}
@@ -1374,7 +1399,7 @@ export default function Hiring() {
                       </p>
                     </div>
                   </div>
-                  <Link href="/performance" className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 hover:bg-primary/30 rounded-lg text-primary font-medium text-sm transition-colors whitespace-nowrap">
+                  <Link href="/performance#diagnostic-capacity" className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 hover:bg-primary/30 rounded-lg text-primary font-medium text-sm transition-colors whitespace-nowrap">
                     View Capacity Analysis →
                   </Link>
                 </div>
@@ -1631,6 +1656,200 @@ export default function Hiring() {
                   <Link href="/performance" className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 hover:bg-primary/30 rounded-lg text-primary font-medium text-sm transition-colors whitespace-nowrap">
                     View Unit Economics →
                   </Link>
+                </div>
+              </div>
+              
+              {/* Break-Even Analysis */}
+              <div className="mt-6 bg-card border border-border rounded-xl p-6">
+                <h4 className="font-display font-medium mb-4 flex items-center gap-2">
+                  <TrendingUp className="w-5 h-5 text-emerald-400" />
+                  Break-Even Analysis
+                </h4>
+                <p className="font-body text-sm text-muted-foreground mb-6">
+                  Calculate when ELITE team revenue covers staffing costs. Based on $60K annual membership with 85% allocated to ELITE services.
+                </p>
+                
+                {/* Break-Even Visualization */}
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div className="bg-muted/20 rounded-xl p-5">
+                    <h5 className="font-display text-sm font-medium mb-4">Per-Team Break-Even</h5>
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-muted-foreground">Team Cost</span>
+                        <span className="font-mono text-lg">$535,000</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-muted-foreground">Revenue per Member</span>
+                        <span className="font-mono text-lg">$51,000</span>
+                      </div>
+                      <div className="h-px bg-border" />
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-medium">Break-Even Members</span>
+                        <span className="font-mono text-xl text-amber-500 font-bold">{breakEvenMembers}</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground">
+                        Each team needs {breakEvenMembers} members to cover costs. Max capacity is 120 members/team.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-emerald-500/10 to-primary/10 border border-emerald-500/30 rounded-xl p-5">
+                    <h5 className="font-display text-sm font-medium mb-4">Current Projection ({memberCount} members)</h5>
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-muted-foreground">ELITE Revenue</span>
+                        <span className="font-mono text-lg text-emerald-400">${(currentRevenue / 1000000).toFixed(2)}M</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-muted-foreground">Staffing Cost</span>
+                        <span className="font-mono text-lg text-red-400">-${(totalStaffCost / 1000000).toFixed(2)}M</span>
+                      </div>
+                      <div className="h-px bg-border" />
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-medium">Net Margin</span>
+                        <span className={`font-mono text-xl font-bold ${profitMargin >= 0 ? 'text-emerald-400' : 'text-red-400'}`}>
+                          {profitMargin >= 0 ? '+' : ''}${(profitMargin / 1000000).toFixed(2)}M
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-muted-foreground">Margin per Member</span>
+                        <span className={`font-mono ${marginPerMember >= 0 ? 'text-emerald-400' : 'text-red-400'}`}>
+                          {marginPerMember >= 0 ? '+' : ''}${marginPerMember.toLocaleString('en-US', { maximumFractionDigits: 0 })}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Break-Even Progress Bar */}
+                <div className="bg-muted/20 rounded-xl p-4">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm font-medium">Progress to Full Profitability</span>
+                    <span className="font-mono text-sm text-muted-foreground">
+                      {memberCount} / {teamsNeeded * 120} members ({teamsNeeded} team{teamsNeeded > 1 ? 's' : ''} at capacity)
+                    </span>
+                  </div>
+                  <div className="h-4 bg-muted/50 rounded-full overflow-hidden relative">
+                    {/* Break-even threshold marker */}
+                    <div 
+                      className="absolute top-0 bottom-0 w-0.5 bg-amber-500 z-10"
+                      style={{ left: `${(breakEvenMembers * teamsNeeded / (teamsNeeded * 120)) * 100}%` }}
+                    />
+                    {/* Current progress */}
+                    <div 
+                      className={`h-full rounded-full transition-all duration-500 ${profitMargin >= 0 ? 'bg-gradient-to-r from-emerald-500 to-primary' : 'bg-gradient-to-r from-red-500 to-amber-500'}`}
+                      style={{ width: `${Math.min((memberCount / (teamsNeeded * 120)) * 100, 100)}%` }}
+                    />
+                  </div>
+                  <div className="flex justify-between text-[10px] font-mono text-muted-foreground mt-1">
+                    <span>0</span>
+                    <span className="text-amber-500">Break-even ({breakEvenMembers * teamsNeeded})</span>
+                    <span>Full capacity ({teamsNeeded * 120})</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Multi-Center Aggregation Calculator */}
+              <div className="mt-6 bg-card border border-border rounded-xl p-6">
+                <h4 className="font-display font-medium mb-4 flex items-center gap-2">
+                  <Building2 className="w-5 h-5 text-primary" />
+                  Multi-Center Staffing Aggregation
+                </h4>
+                <p className="font-body text-sm text-muted-foreground mb-6">
+                  Calculate total staffing costs across multiple centers. Each center launches with 3 ELITE teams.
+                </p>
+                
+                {/* Center Count Selector */}
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="font-body text-sm text-muted-foreground">Number of Centers:</span>
+                  <div className="flex gap-2">
+                    {[1, 3, 5, 10].map((count) => (
+                      <button
+                        key={count}
+                        onClick={() => setCenterCount(count)}
+                        className={`px-4 py-2 rounded-lg font-mono text-sm transition-all ${
+                          centerCount === count 
+                            ? 'bg-primary text-primary-foreground' 
+                            : 'bg-muted/30 hover:bg-muted/50'
+                        }`}
+                      >
+                        {count}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Aggregated Stats */}
+                <div className="grid md:grid-cols-4 gap-4 mb-6">
+                  <div className="bg-muted/20 rounded-xl p-4 text-center">
+                    <span className="font-mono text-3xl text-primary font-bold">{totalHeadcount}</span>
+                    <p className="text-xs text-muted-foreground mt-1">Total Headcount</p>
+                  </div>
+                  <div className="bg-muted/20 rounded-xl p-4 text-center">
+                    <span className="font-mono text-3xl text-amber-500 font-bold">{centerCount * eliteTeamsPerCenter}</span>
+                    <p className="text-xs text-muted-foreground mt-1">ELITE Teams</p>
+                  </div>
+                  <div className="bg-muted/20 rounded-xl p-4 text-center">
+                    <span className="font-mono text-3xl text-emerald-400 font-bold">{totalEliteStaff}</span>
+                    <p className="text-xs text-muted-foreground mt-1">ELITE Staff</p>
+                  </div>
+                  <div className="bg-muted/20 rounded-xl p-4 text-center">
+                    <span className="font-mono text-3xl text-primary font-bold">${(totalMultiCenterCost / 1000000).toFixed(1)}M</span>
+                    <p className="text-xs text-muted-foreground mt-1">Annual Labor Cost</p>
+                  </div>
+                </div>
+                
+                {/* Cost Breakdown Table */}
+                <div className="bg-muted/20 rounded-xl overflow-hidden">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-border bg-muted/30">
+                        <th className="text-left p-3 font-display font-medium">Category</th>
+                        <th className="text-center p-3 font-display font-medium">Headcount</th>
+                        <th className="text-right p-3 font-display font-medium">Annual Cost</th>
+                        <th className="text-right p-3 font-display font-medium">% of Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-border/50">
+                        <td className="p-3">Executive Team</td>
+                        <td className="p-3 text-center font-mono">{phase1Execs + phase2Execs}</td>
+                        <td className="p-3 text-right font-mono">${(execCost / 1000000).toFixed(2)}M</td>
+                        <td className="p-3 text-right font-mono text-muted-foreground">{((execCost / totalMultiCenterCost) * 100).toFixed(1)}%</td>
+                      </tr>
+                      <tr className="border-b border-border/50">
+                        <td className="p-3">Corporate Staff</td>
+                        <td className="p-3 text-center font-mono">{corporateStaff}</td>
+                        <td className="p-3 text-right font-mono">${(corporateCost / 1000000).toFixed(2)}M</td>
+                        <td className="p-3 text-right font-mono text-muted-foreground">{((corporateCost / totalMultiCenterCost) * 100).toFixed(1)}%</td>
+                      </tr>
+                      <tr className="border-b border-border/50">
+                        <td className="p-3">Center Operations ({centerCount} centers)</td>
+                        <td className="p-3 text-center font-mono">{totalCenterOps}</td>
+                        <td className="p-3 text-right font-mono">${(totalCenterOpsCost / 1000000).toFixed(2)}M</td>
+                        <td className="p-3 text-right font-mono text-muted-foreground">{((totalCenterOpsCost / totalMultiCenterCost) * 100).toFixed(1)}%</td>
+                      </tr>
+                      <tr className="border-b border-border/50 bg-amber-500/5">
+                        <td className="p-3 font-medium">ELITE Teams ({centerCount * eliteTeamsPerCenter} teams)</td>
+                        <td className="p-3 text-center font-mono text-amber-500">{totalEliteStaff}</td>
+                        <td className="p-3 text-right font-mono text-amber-500">${(totalEliteCost / 1000000).toFixed(2)}M</td>
+                        <td className="p-3 text-right font-mono text-amber-500">{((totalEliteCost / totalMultiCenterCost) * 100).toFixed(1)}%</td>
+                      </tr>
+                      <tr className="bg-primary/10">
+                        <td className="p-3 font-bold">Total</td>
+                        <td className="p-3 text-center font-mono font-bold">{totalHeadcount}</td>
+                        <td className="p-3 text-right font-mono font-bold text-primary">${(totalMultiCenterCost / 1000000).toFixed(2)}M</td>
+                        <td className="p-3 text-right font-mono font-bold">100%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+                {/* Member Capacity Note */}
+                <div className="mt-4 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
+                  <p className="font-body text-sm text-muted-foreground">
+                    <span className="text-emerald-400 font-medium">Member Capacity:</span> {centerCount} center{centerCount > 1 ? 's' : ''} with {centerCount * eliteTeamsPerCenter} ELITE teams can support up to <span className="font-mono text-emerald-400 font-bold">{(centerCount * eliteTeamsPerCenter * 120).toLocaleString()}</span> members at full capacity, generating <span className="font-mono text-emerald-400 font-bold">${((centerCount * eliteTeamsPerCenter * 120 * eliteRevenuePerMember) / 1000000).toFixed(1)}M</span> in annual ELITE revenue.
+                  </p>
                 </div>
               </div>
             </motion.div>
