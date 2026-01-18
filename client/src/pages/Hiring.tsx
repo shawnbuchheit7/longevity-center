@@ -521,11 +521,12 @@ export default function Hiring() {
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-3 h-3 rounded-full bg-amber-500" />
                   <h3 className="font-display text-xl font-medium">ELITE Membership Team</h3>
-                  <span className="ml-auto text-xs bg-amber-500/20 text-amber-500 px-2 py-1 rounded">3 Teams at Launch</span>
+                  <span className="ml-auto text-xs bg-amber-500/20 text-amber-500 px-2 py-1 rounded">Minimum 3 Teams per Center</span>
                 </div>
                 <p className="text-sm text-muted-foreground ml-6">
-                  Every center opens with <span className="text-foreground font-medium">3 physician-led ELITE teams</span> to ensure capacity for member growth. 
-                  ELITE Physicians are linked to the center where member testing was completed, working under the supervision of the center's Medical Director.
+                  Every new center opens with a <span className="text-foreground font-medium">minimum of 3 physician-led ELITE teams</span> to spread new members out consistently. 
+                  This number may increase based on pre-sales volume. ELITE Physicians are linked to the center where member testing was completed, 
+                  working under the supervision of the center's Medical Director.
                 </p>
               </div>
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
@@ -574,8 +575,8 @@ export default function Hiring() {
                 <div className="bg-primary/10 border border-primary/30 rounded-xl px-6 py-3 flex items-center gap-4">
                   <Users className="w-5 h-5 text-primary" />
                   <span className="font-body text-sm">
-                    <span className="font-medium text-foreground">12 ELITE staff at launch</span>
-                    <span className="text-muted-foreground"> (3 teams × 4 staff)</span>
+                    <span className="font-medium text-foreground">Minimum 12 ELITE staff</span>
+                    <span className="text-muted-foreground"> (3+ teams per center)</span>
                   </span>
                 </div>
               </div>
@@ -583,7 +584,7 @@ export default function Hiring() {
 
             {/* Combined Summary */}
             <motion.div variants={fadeInUp} className="mt-12 bg-gradient-to-r from-primary/10 to-amber-500/10 rounded-2xl p-6">
-              <h4 className="font-display font-medium text-center mb-6">Flagship Center Total Staffing</h4>
+              <h4 className="font-display font-medium text-center mb-6">Center Staffing (Per Location)</h4>
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div>
                   <span className="font-mono text-3xl text-primary">14</span>
@@ -591,13 +592,13 @@ export default function Hiring() {
                   <p className="text-xs text-muted-foreground">Fixed per center</p>
                 </div>
                 <div>
-                  <span className="font-mono text-3xl text-amber-500">12</span>
-                  <p className="text-sm text-muted-foreground mt-1">ELITE Teams (3 at launch)</p>
-                  <p className="text-xs text-muted-foreground">4 staff × 3 physicians</p>
+                  <span className="font-mono text-3xl text-amber-500">12+</span>
+                  <p className="text-sm text-muted-foreground mt-1">ELITE Teams (min. 3)</p>
+                  <p className="text-xs text-muted-foreground">May increase with pre-sales</p>
                 </div>
                 <div>
-                  <span className="font-mono text-3xl text-foreground">26</span>
-                  <p className="text-sm text-muted-foreground mt-1">Launch Headcount</p>
+                  <span className="font-mono text-3xl text-foreground">26+</span>
+                  <p className="text-sm text-muted-foreground mt-1">Minimum Headcount</p>
                   <p className="text-xs text-muted-foreground">14 ops + 12 ELITE staff</p>
                 </div>
               </div>
@@ -1033,7 +1034,7 @@ export default function Hiring() {
               </h2>
               <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
                 Strategic equity allocation to attract and retain world-class talent. 
-                4-year vesting for all C-suite executives excluding CEO.
+                Individual allocations to be determined based on candidate experience and market conditions.
               </p>
             </motion.div>
 
@@ -1049,59 +1050,43 @@ export default function Hiring() {
                 <div className="text-center">
                   <span className="font-mono text-2xl text-primary">Other C-Suite</span>
                   <p className="text-sm text-muted-foreground mt-1">4-year vesting with 1-year cliff</p>
-                  <p className="text-xs text-muted-foreground">(CFO, COO, CPO, CLO, CMO, CTO)</p>
+                  <p className="text-xs text-muted-foreground">(CFO, COO, CPO, CLO, CMO, CCO, CTO)</p>
                 </div>
               </div>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-8">
               <div className="bg-card border border-border rounded-2xl p-8">
-                <h3 className="font-display text-xl font-medium mb-6">Phase 1 Executive Allocation</h3>
-                <div className="space-y-4">
-                  {[
-                    { role: "CEO", allocation: "3.00%", vesting: "Immediate" },
-                    { role: "CFO", allocation: "1.50%", vesting: "4-year" },
-                    { role: "COO", allocation: "1.50%", vesting: "4-year" },
-                    { role: "CPO", allocation: "1.50%", vesting: "4-year" },
-                    { role: "CLO", allocation: "1.50%", vesting: "4-year" }
-                  ].map((item, i) => (
+                <h3 className="font-display text-xl font-medium mb-6">Phase 1 Executives</h3>
+                <p className="font-body text-sm text-muted-foreground mb-6">
+                  Equity allocations for Phase 1 executives (CEO, CFO, COO, CPO, CLO) will be determined through negotiation based on candidate qualifications and market benchmarks.
+                </p>
+                <div className="space-y-3">
+                  {["CEO", "CFO", "COO", "CPO", "CLO"].map((role, i) => (
                     <div key={i} className="flex items-center justify-between py-2 border-b border-border/50 last:border-0">
-                      <span className="font-body text-foreground">{item.role}</span>
-                      <div className="flex items-center gap-4">
-                        <span className="font-mono text-primary text-sm">{item.allocation}</span>
-                        <span className={`text-xs px-2 py-0.5 rounded ${item.vesting === 'Immediate' ? 'bg-accent/20 text-accent' : 'bg-muted text-muted-foreground'}`}>{item.vesting}</span>
-                      </div>
+                      <span className="font-body text-foreground">{role}</span>
+                      <span className="text-xs px-2 py-0.5 rounded bg-muted text-muted-foreground">
+                        {role === "CEO" ? "Immediate Vesting" : "4-Year Vesting"}
+                      </span>
                     </div>
                   ))}
-                </div>
-<div className="mt-6 pt-4 border-t border-border flex justify-between items-center">
-                  <span className="font-display font-medium">Phase 1 Total</span>
-                  <span className="font-mono text-lg text-primary">9.00%</span>
                 </div>
               </div>
 
               <div className="bg-card border border-border rounded-2xl p-8">
-<h3 className="font-display text-xl font-medium mb-6">Additional Executives & Reserve Pool</h3>
-                <div className="space-y-4">
-                  {[
-                    { category: "CMO (Medical)", allocation: "0.75%", description: "4-year vesting" },
-                    { category: "CCO", allocation: "0.75%", description: "4-year vesting" },
-                    { category: "CMO (Marketing)", allocation: "0.50%", description: "4-year vesting" },
-                    { category: "CTO", allocation: "0.75%", description: "4-year vesting" },
-                    { category: "Future Hires Pool", allocation: "0.25%", description: "Reserved for growth" }
-                  ].map((item, i) => (
-                    <div key={i} className="py-3 border-b border-border/50 last:border-0">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="font-body text-foreground">{item.category}</span>
-                        <span className="font-mono text-primary text-sm">{item.allocation}</span>
-                      </div>
-                      <span className="text-xs text-muted-foreground">{item.description}</span>
+                <h3 className="font-display text-xl font-medium mb-6">Phase 2 Executives</h3>
+                <p className="font-body text-sm text-muted-foreground mb-6">
+                  Additional executive equity will be allocated as Phase 2 roles are filled, with a reserve pool maintained for future hires.
+                </p>
+                <div className="space-y-3">
+                  {["CMO (Medical)", "CCO", "CMO (Marketing)", "CTO", "Future Hires Pool"].map((role, i) => (
+                    <div key={i} className="flex items-center justify-between py-2 border-b border-border/50 last:border-0">
+                      <span className="font-body text-foreground">{role}</span>
+                      <span className="text-xs px-2 py-0.5 rounded bg-muted text-muted-foreground">
+                        {role === "Future Hires Pool" ? "Reserved" : "4-Year Vesting"}
+                      </span>
                     </div>
                   ))}
-                </div>
-                <div className="mt-6 pt-4 border-t border-border flex justify-between items-center">
-<span className="font-display font-medium">Additional & Reserve Total</span>
-                  <span className="font-mono text-lg text-primary">3.00%</span>
                 </div>
               </div>
             </motion.div>
@@ -1120,141 +1105,6 @@ export default function Hiring() {
                   <span className="font-mono text-3xl text-accent">4-Year</span>
                   <p className="text-sm text-muted-foreground mt-1">Standard Vesting (excl. CEO)</p>
                 </div>
-              </div>
-            </motion.div>
-
-            {/* Equity Distribution Chart */}
-            <motion.div variants={fadeInUp} className="mt-8 bg-card border border-border rounded-2xl p-8">
-              <h4 className="font-display font-medium mb-6 text-center">Equity Distribution Overview</h4>
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <span className="w-24 text-sm text-muted-foreground">CEO</span>
-                  <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
-                    <div className="h-full bg-accent rounded-full" style={{ width: '25%' }} />
-                  </div>
-                  <span className="w-16 text-right font-mono text-sm">3.00%</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <span className="w-24 text-sm text-muted-foreground">CFO</span>
-                  <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
-                    <div className="h-full bg-primary rounded-full" style={{ width: '12.5%' }} />
-                  </div>
-                  <span className="w-16 text-right font-mono text-sm">1.50%</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <span className="w-24 text-sm text-muted-foreground">COO</span>
-                  <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
-                    <div className="h-full bg-primary rounded-full" style={{ width: '12.5%' }} />
-                  </div>
-                  <span className="w-16 text-right font-mono text-sm">1.50%</span>
-                </div>
-<div className="flex items-center gap-4">
-                  <span className="w-24 text-sm text-muted-foreground">CPO</span>
-                  <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
-                    <div className="h-full bg-primary rounded-full" style={{ width: '12.5%' }} />
-                  </div>
-                  <span className="w-16 text-right font-mono text-sm">1.50%</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <span className="w-24 text-sm text-muted-foreground">CLO</span>
-                  <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
-                    <div className="h-full bg-primary rounded-full" style={{ width: '12.5%' }} />
-                  </div>
-                  <span className="w-16 text-right font-mono text-sm">1.50%</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <span className="w-24 text-sm text-muted-foreground">Phase 2</span>
-                  <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
-                    <div className="h-full bg-amber-500/70 rounded-full" style={{ width: '22.9%' }} />
-                  </div>
-                  <span className="w-16 text-right font-mono text-sm">2.75%</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <span className="w-24 text-sm text-muted-foreground">Reserve</span>
-                  <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
-                    <div className="h-full bg-muted-foreground/50 rounded-full" style={{ width: '2.1%' }} />
-                  </div>
-                  <span className="w-16 text-right font-mono text-sm">0.25%</span>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Compensation Benchmarks */}
-      <section className="py-20">
-        <div className="container">
-          <motion.div 
-            className="max-w-5xl mx-auto"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            <motion.div variants={fadeInUp} className="text-center mb-12">
-              <span className="font-mono text-primary text-sm tracking-wider">
-                COMPENSATION STRATEGY
-              </span>
-              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
-                Salary Benchmarks
-              </h2>
-              <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-                Competitive compensation to attract top healthcare and luxury industry talent
-              </p>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b border-border bg-muted/30">
-                    <th className="text-left p-4 font-display font-medium">Role Category</th>
-                    <th className="text-center p-4 font-display font-medium">Base Salary Range</th>
-                    <th className="text-center p-4 font-display font-medium">Equity</th>
-                    <th className="text-left p-4 font-display font-medium">Notes</th>
-                  </tr>
-                </thead>
-                <tbody className="font-body text-sm">
-                  {[
-                    { category: "CEO", range: "$350K - $450K", equity: "3.00%", notes: "Performance bonus up to 50%" },
-                    { category: "C-Suite (CFO, COO, CPO, CLO)", range: "$275K - $375K", equity: "1.50%", notes: "Performance bonus up to 40%" },
-                    { category: "Phase 2 Executives", range: "$250K - $350K", equity: "0.50-0.75%", notes: "CMO, CCO, CMO, CTO" },
-                    { category: "Medical Director", range: "$300K - $400K", equity: "—", notes: "Clinical oversight, quality" },
-                    { category: "Center Director", range: "$175K - $225K", equity: "—", notes: "P&L bonus structure" },
-                    { category: "Physicians (Ops & ELITE)", range: "$250K - $350K", equity: "—", notes: "Productivity bonus" },
-                    { category: "Nurse Practitioners", range: "$125K - $165K", equity: "—", notes: "Center Ops Team" },
-                    { category: "Care Coordinators", range: "$65K - $85K", equity: "—", notes: "ELITE Team (60 members each)" },
-                    { category: "Hospitality Manager", range: "$75K - $95K", equity: "—", notes: "Member experience" },
-                    { category: "Medical Assistants", range: "$55K - $70K", equity: "—", notes: "Ops & ELITE teams" },
-                    { category: "Concierge", range: "$45K - $60K", equity: "—", notes: "Front desk operations" },
-                    { category: "Corporate Staff", range: "$75K - $125K", equity: "—", notes: "Varies by function" }
-                  ].map((item, i) => (
-                    <tr key={i} className="border-b border-border/50 last:border-0">
-                      <td className="p-4 font-medium">{item.category}</td>
-                      <td className="p-4 text-center font-mono text-primary">{item.range}</td>
-                      <td className="p-4 text-center font-mono text-sm">{item.equity}</td>
-                      <td className="p-4 text-muted-foreground text-xs">{item.notes}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="mt-8 grid md:grid-cols-3 gap-6">
-              <div className="bg-muted/30 rounded-xl p-6 text-center">
-                <span className="font-mono text-2xl text-primary">$4.8M</span>
-                <p className="text-sm text-muted-foreground mt-2">Est. Annual Payroll (Year 1)</p>
-                <p className="text-xs text-muted-foreground">5 executives + 26 center staff (14 ops + 12 ELITE)</p>
-              </div>
-              <div className="bg-muted/30 rounded-xl p-6 text-center">
-                <span className="font-mono text-2xl text-primary">$7.5M</span>
-                <p className="text-sm text-muted-foreground mt-2">Est. Annual Payroll (Year 2)</p>
-                <p className="text-xs text-muted-foreground">+ Corporate team + additional ELITE teams</p>
-              </div>
-              <div className="bg-muted/30 rounded-xl p-6 text-center">
-                <span className="font-mono text-2xl text-accent">15-20%</span>
-                <p className="text-sm text-muted-foreground mt-2">Benefits Load</p>
-                <p className="text-xs text-muted-foreground">Health, 401k, PTO</p>
               </div>
             </motion.div>
           </motion.div>
@@ -1432,7 +1282,7 @@ export default function Hiring() {
         </div>
       </section>
 
-      {/* Recruiting Timeline */}
+      {/* Executive Search Partner */}
       <section className="py-20">
         <div className="container">
           <motion.div 
@@ -1444,129 +1294,18 @@ export default function Hiring() {
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
               <span className="font-mono text-primary text-sm tracking-wider">
-                RECRUITING PROCESS
+                RECRUITING PARTNER
               </span>
               <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
-                Executive Hiring Timeline
+                Executive Search
               </h2>
               <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-                Structured process to identify, evaluate, and onboard Phase 1 leadership
+                Partnering with industry-leading healthcare executive search firm
               </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="relative">
-              {/* Timeline Line */}
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
-              
-              <div className="space-y-8">
-                {[
-                  {
-                    week: "Week 1-2",
-                    phase: "Search Launch",
-                    activities: [
-                      "Finalize job descriptions and compensation packages",
-                      "Engage executive search firm (healthcare specialty)",
-                      "Activate founder/advisor networks for referrals",
-                      "Post on healthcare executive job boards"
-                    ],
-                    color: "destructive"
-                  },
-                  {
-                    week: "Week 3-4",
-                    phase: "Candidate Pipeline",
-                    activities: [
-                      "Initial screening calls (15-20 candidates per role)",
-                      "Review backgrounds, references, and track records",
-                      "Narrow to 5-7 qualified candidates per position",
-                      "Schedule first-round interviews"
-                    ],
-                    color: "primary"
-                  },
-                  {
-                    week: "Week 5-6",
-                    phase: "Interview Process",
-                    activities: [
-                      "First-round: Founder/CEO interviews (vision alignment)",
-                      "Second-round: Board member interviews (governance fit)",
-                      "Case study/presentation (strategic thinking)",
-                      "Reference checks and background verification"
-                    ],
-                    color: "primary"
-                  },
-                  {
-                    week: "Week 7-8",
-                    phase: "Final Selection",
-                    activities: [
-                      "Final interviews with top 2-3 candidates",
-                      "Compensation negotiation and offer structuring",
-                      "Board approval for C-suite appointments",
-                      "Offer extension and acceptance"
-                    ],
-                    color: "primary"
-                  },
-                  {
-                    week: "Week 9-12",
-                    phase: "Onboarding",
-                    activities: [
-                      "Notice period (typically 2-4 weeks)",
-                      "Pre-start strategic briefings and document review",
-                      "Day 1: Full executive team alignment session",
-                      "30-60-90 day plan development and execution"
-                    ],
-                    color: "accent"
-                  }
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-6">
-                    <div className="hidden md:flex flex-col items-center">
-                      <div 
-                        className="w-16 h-16 rounded-full flex items-center justify-center border-2"
-                        style={{ 
-                          borderColor: item.color === 'destructive' ? 'hsl(var(--destructive))' : item.color === 'accent' ? 'hsl(var(--accent))' : 'hsl(var(--primary))',
-                          backgroundColor: item.color === 'destructive' ? 'hsl(var(--destructive) / 0.1)' : item.color === 'accent' ? 'hsl(var(--accent) / 0.1)' : 'hsl(var(--primary) / 0.1)'
-                        }}
-                      >
-                        <span className="font-mono text-xs font-medium">{item.week}</span>
-                      </div>
-                    </div>
-                    <div className="flex-1 bg-card border border-border rounded-2xl p-6">
-                      <div className="flex items-center gap-3 mb-4">
-                        <span className="md:hidden font-mono text-xs px-2 py-1 rounded bg-muted">{item.week}</span>
-                        <h3 className="font-display text-lg font-medium">{item.phase}</h3>
-                      </div>
-                      <div className="grid md:grid-cols-2 gap-3">
-                        {item.activities.map((activity, j) => (
-                          <div key={j} className="flex items-start gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mt-2 shrink-0" />
-                            <span className="text-sm text-muted-foreground">{activity}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="mt-12 grid md:grid-cols-3 gap-6">
-              <div className="bg-destructive/10 border border-destructive/30 rounded-xl p-6 text-center">
-                <span className="font-mono text-2xl text-destructive">60-90</span>
-                <p className="text-sm text-muted-foreground mt-2">Days to Full Team</p>
-                <p className="text-xs text-muted-foreground">From search launch to onboarding</p>
-              </div>
-              <div className="bg-primary/10 border border-primary/30 rounded-xl p-6 text-center">
-                <span className="font-mono text-2xl text-primary">5</span>
-                <p className="text-sm text-muted-foreground mt-2">Parallel Searches</p>
-                <p className="text-xs text-muted-foreground">All Phase 1 roles simultaneously</p>
-              </div>
-              <div className="bg-accent/10 border border-accent/30 rounded-xl p-6 text-center">
-                <span className="font-mono text-2xl text-accent">$150-200K</span>
-                <p className="text-sm text-muted-foreground mt-2">Search Firm Fees</p>
-                <p className="text-xs text-muted-foreground">25-30% of first-year comp</p>
-              </div>
-            </motion.div>
-
             {/* Search Partner */}
-            <motion.div variants={fadeInUp} className="mt-12 bg-card border border-border rounded-2xl p-8">
+            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl p-8">
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="flex-1">
                   <span className="font-mono text-xs text-primary tracking-wider">EXECUTIVE SEARCH PARTNER</span>
@@ -1635,7 +1374,8 @@ export default function Hiring() {
                 Board Composition
               </h2>
               <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-                Strategic governance structure designed to guide Lumastem through rapid growth
+                Strategic governance structure designed to guide Lumastem through rapid growth. 
+                <span className="text-foreground font-medium">The board will never exceed 5 members</span> to maintain agility and decisive leadership.
               </p>
             </motion.div>
 
@@ -1690,8 +1430,8 @@ export default function Hiring() {
                 </div>
                 <div className="mt-6 pt-4 border-t border-border">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Expanded Board Size</span>
-                    <span className="font-mono text-amber-500">5 seats</span>
+                    <span className="text-sm text-muted-foreground">Maximum Board Size</span>
+                    <span className="font-mono text-amber-500">5 seats (cap)</span>
                   </div>
                 </div>
               </div>

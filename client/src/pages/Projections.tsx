@@ -240,6 +240,91 @@ export default function Projections() {
                   Target markets include Middle East (Bahrain, UAE), Europe, and Asia-Pacific regions with favorable regulatory environments and high-net-worth populations.
                 </p>
               </div>
+
+              {/* Geographic Expansion Map */}
+              <div className="mt-12">
+                <h3 className="font-display text-2xl font-medium mb-6 flex items-center gap-2">
+                  <Target className="w-6 h-6 text-primary" />
+                  Target Markets
+                </h3>
+                <p className="font-body text-muted-foreground mb-8">
+                  Strategic market selection based on demographic density, wealth concentration, and healthcare infrastructure.
+                </p>
+                
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* Domestic Markets */}
+                  <div className="bg-card border border-border rounded-2xl p-6">
+                    <h4 className="font-display text-lg font-medium mb-4 flex items-center gap-2">
+                      <Building2 className="w-5 h-5 text-primary" />
+                      Domestic Markets (Centers 2-10)
+                    </h4>
+                    <div className="space-y-4">
+                      {[
+                        { market: "South Florida", metro: "Miami-Fort Lauderdale", hnw: "320K+", rationale: "High-net-worth density, medical tourism hub" },
+                        { market: "Texas Triangle", metro: "Houston / Dallas / Austin", hnw: "450K+", rationale: "Rapid wealth growth, business-friendly" },
+                        { market: "California", metro: "Los Angeles / San Francisco", hnw: "680K+", rationale: "Largest HNW population, wellness culture" },
+                        { market: "Northeast", metro: "NYC Metro / Boston", hnw: "520K+", rationale: "Dense affluent population, medical excellence" },
+                        { market: "Mountain West", metro: "Denver / Scottsdale", hnw: "180K+", rationale: "Active lifestyle, growing wealth" },
+                        { market: "Southeast", metro: "Atlanta / Charlotte", hnw: "210K+", rationale: "Emerging wealth centers, underserved" }
+                      ].map((item, i) => (
+                        <div key={i} className="p-4 bg-muted/30 rounded-xl">
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="font-display font-medium">{item.market}</span>
+                            <span className="font-mono text-xs text-primary">{item.hnw} HNW</span>
+                          </div>
+                          <p className="text-sm text-muted-foreground mb-1">{item.metro}</p>
+                          <p className="text-xs text-muted-foreground">{item.rationale}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* International Markets */}
+                  <div className="bg-card border border-amber-500/30 rounded-2xl p-6">
+                    <h4 className="font-display text-lg font-medium mb-4 flex items-center gap-2">
+                      <Globe className="w-5 h-5 text-amber-500" />
+                      International Opportunities
+                    </h4>
+                    <div className="space-y-4">
+                      {[
+                        { region: "Middle East", markets: "UAE, Bahrain, Saudi Arabia", model: "Franchise / JV", appeal: "Ultra-HNW concentration, medical tourism destination" },
+                        { region: "Europe", markets: "UK, Switzerland, Monaco", model: "Licensing", appeal: "Established luxury wellness market, regulatory clarity" },
+                        { region: "Asia-Pacific", markets: "Singapore, Hong Kong, Japan", model: "JV / Licensing", appeal: "Aging wealthy population, longevity focus" },
+                        { region: "Latin America", markets: "Mexico City, São Paulo", model: "Franchise", appeal: "Growing HNW population, medical tourism" }
+                      ].map((item, i) => (
+                        <div key={i} className="p-4 bg-muted/30 rounded-xl">
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="font-display font-medium">{item.region}</span>
+                            <span className="font-mono text-xs text-amber-500">{item.model}</span>
+                          </div>
+                          <p className="text-sm text-muted-foreground mb-1">{item.markets}</p>
+                          <p className="text-xs text-muted-foreground">{item.appeal}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-4 p-3 bg-amber-500/10 rounded-lg">
+                      <p className="text-xs text-muted-foreground">
+                        <strong className="text-amber-500">Opportunistic:</strong> International expansion not included in base projections. Represents additional upside.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Market Selection Criteria */}
+                <div className="mt-8 grid md:grid-cols-4 gap-4">
+                  {[
+                    { criteria: "HNW Density", description: "100K+ households with $1M+ investable assets" },
+                    { criteria: "Healthcare Infrastructure", description: "Access to medical professionals and facilities" },
+                    { criteria: "Regulatory Environment", description: "Favorable stem cell and regenerative medicine laws" },
+                    { criteria: "Competitive Landscape", description: "Limited existing premium longevity offerings" }
+                  ].map((item, i) => (
+                    <div key={i} className="bg-muted/30 rounded-xl p-4 text-center">
+                      <span className="font-mono text-sm text-primary">{item.criteria}</span>
+                      <p className="text-xs text-muted-foreground mt-2">{item.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
