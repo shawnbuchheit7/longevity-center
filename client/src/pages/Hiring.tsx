@@ -85,6 +85,7 @@ export default function Hiring() {
                   title: "Chief Executive Officer",
                   priority: "Critical",
                   timing: "Q1 2026",
+                  compensation: "TBD",
                   description: "Experienced healthcare executive to lead company strategy, fundraising, and stakeholder relations.",
                   initialScope: "Full executive leadership, board relations, capital strategy",
                   requirements: [
@@ -98,6 +99,7 @@ export default function Hiring() {
                   title: "Chief Financial Officer",
                   priority: "Critical",
                   timing: "Q1 2026",
+                  compensation: "TBD",
                   description: "Financial leader to manage capital allocation, reporting, investor relations, and initial HR/admin functions.",
                   initialScope: "Finance, accounting, HR, administration, investor reporting",
                   requirements: [
@@ -111,6 +113,7 @@ export default function Hiring() {
                   title: "Chief Operating Officer",
                   priority: "Critical",
                   timing: "Q1 2026",
+                  compensation: "TBD",
                   description: "Operations executive to build center operations, supply chain, real estate, and member experience.",
                   initialScope: "Operations, facilities, supply chain, vendor management",
                   requirements: [
@@ -124,6 +127,7 @@ export default function Hiring() {
                   title: "Chief Product Officer",
                   priority: "Critical",
                   timing: "Q1 2026",
+                  compensation: "TBD",
                   description: "Product leader who will initially own marketing and technology responsibilities until those roles are carved out.",
                   initialScope: "Product strategy + Marketing + Technology (until Phase 2)",
                   requirements: [
@@ -137,6 +141,7 @@ export default function Hiring() {
                   title: "Chief Legal Officer",
                   priority: "Critical",
                   timing: "Q1 2026",
+                  compensation: "TBD",
                   description: "Legal leader to manage regulatory compliance, contracts, corporate governance, and risk management.",
                   initialScope: "Legal, compliance, regulatory, corporate governance, IP",
                   requirements: [
@@ -162,7 +167,8 @@ export default function Hiring() {
                       <span className="text-xs font-mono text-muted-foreground">{role.timing}</span>
                     </div>
                   </div>
-                  <h3 className="font-display text-lg font-medium mb-2">{role.title}</h3>
+                  <h3 className="font-display text-lg font-medium mb-1">{role.title}</h3>
+                  <p className="text-xs font-mono text-muted-foreground mb-2">Comp: {role.compensation}</p>
                   <p className="font-body text-sm text-muted-foreground mb-3">{role.description}</p>
                   <div className="bg-muted/30 rounded-lg p-3 mb-4">
                     <span className="text-xs font-mono text-primary">Initial Scope:</span>
@@ -213,6 +219,7 @@ export default function Hiring() {
                   title: "Chief Medical Officer",
                   priority: "Phase 2",
                   timing: "Q3 2026",
+                  compensation: "TBD",
                   description: "Board-certified physician to oversee clinical protocols, quality assurance, and regulatory compliance.",
                   carvedFrom: "New role - clinical leadership",
                   requirements: [
@@ -226,6 +233,7 @@ export default function Hiring() {
                   title: "Chief Marketing Officer",
                   priority: "Phase 2",
                   timing: "Q4 2026",
+                  compensation: "TBD",
                   description: "Marketing leader to build brand awareness, member acquisition, and founder/celebrity partnerships.",
                   carvedFrom: "Carved from CPO responsibilities",
                   requirements: [
@@ -239,6 +247,7 @@ export default function Hiring() {
                   title: "Chief Technology Officer",
                   priority: "Phase 2",
                   timing: "Q4 2026",
+                  compensation: "TBD",
                   description: "Technology leader to build member platform, data infrastructure, and clinical systems integration.",
                   carvedFrom: "Carved from CPO responsibilities",
                   requirements: [
@@ -264,7 +273,8 @@ export default function Hiring() {
                       <span className="text-xs font-mono text-muted-foreground">{role.timing}</span>
                     </div>
                   </div>
-                  <h3 className="font-display text-lg font-medium mb-2">{role.title}</h3>
+                  <h3 className="font-display text-lg font-medium mb-1">{role.title}</h3>
+                  <p className="text-xs font-mono text-muted-foreground mb-2">Comp: {role.compensation}</p>
                   <p className="font-body text-sm text-muted-foreground mb-3">{role.description}</p>
                   <div className="bg-amber-500/5 border border-amber-500/20 rounded-lg p-3 mb-4">
                     <span className="text-xs font-mono text-amber-500">Transition:</span>

@@ -175,6 +175,116 @@ export default function UseOfFunds() {
                 </div>
               </div>
             </motion.div>
+
+            {/* Hiring Costs Breakdown */}
+            <motion.div variants={fadeInUp} className="mt-12">
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-6 border-b border-border bg-muted/30">
+                  <h3 className="font-display text-xl font-medium">Hiring Costs by Phase</h3>
+                  <p className="font-body text-sm text-muted-foreground">How Series A capital maps to team build</p>
+                </div>
+                <div className="p-6">
+                  <div className="space-y-6">
+                    {/* Phase 1 - Critical Executives */}
+                    <div className="p-4 bg-destructive/5 border border-destructive/20 rounded-xl">
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 rounded-full bg-destructive" />
+                          <span className="font-display font-medium">Phase 1: Critical Executives</span>
+                        </div>
+                        <span className="font-mono text-sm text-destructive">Q1 2026</span>
+                      </div>
+                      <div className="grid md:grid-cols-5 gap-3 text-sm">
+                        {["CEO", "CFO", "COO", "CPO", "CLO"].map((role, i) => (
+                          <div key={i} className="bg-card rounded-lg p-2 text-center">
+                            <span className="font-mono text-xs text-muted-foreground">{role}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-3 flex justify-between items-center pt-3 border-t border-destructive/20">
+                        <span className="text-sm text-muted-foreground">5 executives × TBD comp</span>
+                        <span className="font-mono text-sm">Included in Working Capital</span>
+                      </div>
+                    </div>
+
+                    {/* Center Launch Team */}
+                    <div className="p-4 bg-primary/5 border border-primary/20 rounded-xl">
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 rounded-full bg-primary" />
+                          <span className="font-display font-medium">Flagship Center Team</span>
+                        </div>
+                        <span className="font-mono text-sm text-primary">Q1 2026</span>
+                      </div>
+                      <div className="grid md:grid-cols-4 gap-2 text-sm">
+                        {[
+                          { role: "Center Director", count: 1 },
+                          { role: "Physicians", count: 2 },
+                          { role: "Nurse Practitioners", count: 3 },
+                          { role: "Medical Assistants", count: 4 },
+                          { role: "Concierge", count: 3 },
+                          { role: "Lab Technicians", count: 2 },
+                          { role: "Ops Manager", count: 1 }
+                        ].map((item, i) => (
+                          <div key={i} className="bg-card rounded-lg p-2 flex justify-between">
+                            <span className="text-xs text-muted-foreground">{item.role}</span>
+                            <span className="font-mono text-xs text-primary">{item.count}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-3 flex justify-between items-center pt-3 border-t border-primary/20">
+                        <span className="text-sm text-muted-foreground">16 staff total</span>
+                        <span className="font-mono text-sm">Included in Flagship Center #1</span>
+                      </div>
+                    </div>
+
+                    {/* Corporate Support */}
+                    <div className="p-4 bg-amber-500/5 border border-amber-500/20 rounded-xl">
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 rounded-full bg-amber-500" />
+                          <span className="font-display font-medium">Corporate Support & Phase 2</span>
+                        </div>
+                        <span className="font-mono text-sm text-amber-500">Q2-Q4 2026</span>
+                      </div>
+                      <div className="grid md:grid-cols-3 gap-2 text-sm">
+                        {[
+                          { dept: "Finance & Accounting", count: 3 },
+                          { dept: "Human Resources", count: 3 },
+                          { dept: "Marketing & Growth", count: 3 },
+                          { dept: "Technology", count: 3 },
+                          { dept: "Clinical Operations", count: 3 },
+                          { dept: "Legal & Compliance", count: 2 }
+                        ].map((item, i) => (
+                          <div key={i} className="bg-card rounded-lg p-2 flex justify-between">
+                            <span className="text-xs text-muted-foreground">{item.dept}</span>
+                            <span className="font-mono text-xs text-amber-500">{item.count}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-3 flex justify-between items-center pt-3 border-t border-amber-500/20">
+                        <span className="text-sm text-muted-foreground">17 corporate + 3 Phase 2 execs</span>
+                        <span className="font-mono text-sm">Included in Working Capital</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Summary */}
+                  <div className="mt-6 pt-6 border-t border-border">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <span className="font-display font-medium">Total Team by End of 2026</span>
+                        <p className="text-sm text-muted-foreground">Executives + Center + Corporate</p>
+                      </div>
+                      <div className="text-right">
+                        <span className="font-mono text-2xl text-primary">41</span>
+                        <p className="text-xs text-muted-foreground">team members</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
