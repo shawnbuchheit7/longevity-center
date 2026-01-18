@@ -212,7 +212,7 @@ export default function Hiring() {
               </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-6">
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
                   icon: Stethoscope,
@@ -224,6 +224,18 @@ export default function Hiring() {
                     "MD with regenerative medicine expertise",
                     "Clinical operations leadership",
                     "Research/publication background"
+                  ]
+                },
+                {
+                  icon: TrendingUp,
+                  title: "Chief Commercial Officer",
+                  priority: "Phase 2",
+                  compensation: "TBD",
+                  description: "Sales leader to drive membership growth, enterprise partnerships, and revenue optimization.",
+                  requirements: [
+                    "Healthcare/luxury sales leadership",
+                    "Enterprise B2B experience",
+                    "High-net-worth client relationships"
                   ]
                 },
                 {
@@ -357,9 +369,10 @@ export default function Hiring() {
               </div>
               
               {/* Phase 2 Executives */}
-              <div className="flex justify-center gap-4 mb-8">
+              <div className="flex flex-wrap justify-center gap-4 mb-8">
                 {[
                   { title: "CMO", subtitle: "(Medical)", scope: "Clinical Protocols" },
+                  { title: "CCO", subtitle: "", scope: "Sales & Revenue" },
                   { title: "CMO", subtitle: "(Marketing)", scope: "Brand & Growth" },
                   { title: "CTO", subtitle: "", scope: "Technology" }
                 ].map((exec, i) => (
@@ -546,6 +559,13 @@ Clinical and operations staff for the first Lumastem center
                   roles: ["VP of Operations", "Director Care Coordination", "Medical Assistant Manager", "Director of Operations"],
                   headcount: 4,
                   timing: "TBD"
+                },
+                {
+                  department: "Product & Operations",
+                  roles: ["VP of Project Management", "Procurement Manager"],
+                  headcount: 2,
+                  timing: "TBD",
+                  reportsTo: "CPO"
                 }
               ].map((dept, i) => (
                 <motion.div 
@@ -578,8 +598,8 @@ Clinical and operations staff for the first Lumastem center
               <div className="bg-muted/30 rounded-xl px-6 py-3 flex items-center gap-4">
                 <Building2 className="w-5 h-5 text-primary" />
                 <span className="font-body text-sm">
-<span className="font-medium text-foreground">18 corporate roles</span>
-                  <span className="text-muted-foreground"> across 5 departments</span>
+<span className="font-medium text-foreground">20 corporate roles</span>
+                  <span className="text-muted-foreground"> across 6 departments</span>
                 </span>
               </div>
             </motion.div>
@@ -614,8 +634,8 @@ Clinical and operations staff for the first Lumastem center
                 {[
                   { count: 5, label: "Phase 1 Executives", description: "CEO, CFO, COO, CPO, CLO", color: "destructive" },
                   { count: 16, label: "Center Staff", description: "Per flagship center", color: "primary" },
-                  { count: 18, label: "Corporate Roles", description: "5 departments", color: "primary" },
-                  { count: 3, label: "Phase 2 Executives", description: "CMO, CMO, CTO", color: "amber-500" }
+                  { count: 20, label: "Corporate Roles", description: "6 departments", color: "primary" },
+                  { count: 4, label: "Phase 2 Executives", description: "CMO, CCO, CMO, CTO", color: "amber-500" }
                 ].map((item, i) => (
                   <div key={i} className="text-center p-4 bg-background/50 rounded-xl border border-border/50">
                     <span 
@@ -634,7 +654,7 @@ Clinical and operations staff for the first Lumastem center
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
-                      <span className="font-mono text-2xl font-bold text-primary">42</span>
+                      <span className="font-mono text-2xl font-bold text-primary">45</span>
                     </div>
                     <div>
                       <h3 className="font-display text-xl font-medium">Total Headcount</h3>
@@ -675,8 +695,8 @@ Clinical and operations staff for the first Lumastem center
               {[
                 { phase: "Pre-Launch", label: "Phase 1 Critical", count: "5 executives", color: "destructive", description: "CEO, CFO, COO, CPO, CLO" },
                 { phase: "Center Opening", label: "Center Launch", count: "16 staff", color: "primary", description: "Clinical & operations team per center" },
-                { phase: "Post-Launch", label: "Corporate Build", count: "18 roles", color: "primary", description: "Finance, HR, Marketing, Technology, Clinical Ops" },
-                { phase: "As Needed", label: "Phase 2 Executives", count: "3 executives", color: "amber-500", description: "CMO (Medical), CMO (Marketing), CTO" }
+                { phase: "Post-Launch", label: "Corporate Build", count: "20 roles", color: "primary", description: "Finance, HR, Marketing, Technology, Clinical Ops, Product" },
+                { phase: "As Needed", label: "Phase 2 Executives", count: "4 executives", color: "amber-500", description: "CMO (Medical), CCO, CMO (Marketing), CTO" }
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-6 p-4 bg-card border border-border rounded-xl">
                   <div className="w-28 shrink-0">
@@ -865,6 +885,341 @@ Clinical and operations staff for the first Lumastem center
                   </div>
                   <span className="w-16 text-right font-mono text-sm">1.00%</span>
                 </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Compensation Benchmarks */}
+      <section className="py-20">
+        <div className="container">
+          <motion.div 
+            className="max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                COMPENSATION STRATEGY
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
+                Salary Benchmarks
+              </h2>
+              <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                Competitive compensation to attract top healthcare and luxury industry talent
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border bg-muted/30">
+                    <th className="text-left p-4 font-display font-medium">Role Category</th>
+                    <th className="text-center p-4 font-display font-medium">Base Salary Range</th>
+                    <th className="text-center p-4 font-display font-medium">Equity</th>
+                    <th className="text-left p-4 font-display font-medium">Notes</th>
+                  </tr>
+                </thead>
+                <tbody className="font-body text-sm">
+                  {[
+                    { category: "CEO", range: "$350K - $450K", equity: "3.00%", notes: "Performance bonus up to 50%" },
+                    { category: "C-Suite (CFO, COO, CPO, CLO)", range: "$275K - $375K", equity: "1.50%", notes: "Performance bonus up to 40%" },
+                    { category: "Phase 2 Executives", range: "$250K - $350K", equity: "0.50-0.75%", notes: "CMO, CCO, CMO, CTO" },
+                    { category: "Center Director", range: "$175K - $225K", equity: "—", notes: "P&L bonus structure" },
+                    { category: "Longevity Physicians", range: "$250K - $350K", equity: "—", notes: "Productivity bonus" },
+                    { category: "Nurse Practitioners", range: "$125K - $165K", equity: "—", notes: "Per center" },
+                    { category: "Department Directors", range: "$150K - $200K", equity: "—", notes: "Corporate roles" },
+                    { category: "Clinical Staff (MA, Lab)", range: "$55K - $85K", equity: "—", notes: "Per center" },
+                    { category: "Corporate Staff", range: "$75K - $125K", equity: "—", notes: "Varies by function" }
+                  ].map((item, i) => (
+                    <tr key={i} className="border-b border-border/50 last:border-0">
+                      <td className="p-4 font-medium">{item.category}</td>
+                      <td className="p-4 text-center font-mono text-primary">{item.range}</td>
+                      <td className="p-4 text-center font-mono text-sm">{item.equity}</td>
+                      <td className="p-4 text-muted-foreground text-xs">{item.notes}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="mt-8 grid md:grid-cols-3 gap-6">
+              <div className="bg-muted/30 rounded-xl p-6 text-center">
+                <span className="font-mono text-2xl text-primary">$4.2M</span>
+                <p className="text-sm text-muted-foreground mt-2">Est. Annual Payroll (Year 1)</p>
+                <p className="text-xs text-muted-foreground">5 executives + 16 center staff</p>
+              </div>
+              <div className="bg-muted/30 rounded-xl p-6 text-center">
+                <span className="font-mono text-2xl text-primary">$6.8M</span>
+                <p className="text-sm text-muted-foreground mt-2">Est. Annual Payroll (Year 2)</p>
+                <p className="text-xs text-muted-foreground">+ Corporate team + Phase 2</p>
+              </div>
+              <div className="bg-muted/30 rounded-xl p-6 text-center">
+                <span className="font-mono text-2xl text-accent">15-20%</span>
+                <p className="text-sm text-muted-foreground mt-2">Benefits Load</p>
+                <p className="text-xs text-muted-foreground">Health, 401k, PTO</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Multi-Center Scaling Model */}
+      <section className="py-20 bg-card/30">
+        <div className="container">
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                SCALING STRATEGY
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
+                Multi-Center Staffing Model
+              </h2>
+              <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                How the team scales as we expand from 1 to 10 centers
+              </p>
+            </motion.div>
+
+            {/* Physician Scaling Detail */}
+            <motion.div variants={fadeInUp} className="mb-12 bg-accent/10 border border-accent/30 rounded-2xl p-8">
+              <h3 className="font-display text-xl font-medium mb-6 text-center">Physician Team Scaling</h3>
+              <p className="font-body text-muted-foreground text-center mb-8 max-w-3xl mx-auto">
+                Our physician staffing model is designed to maintain high-touch, personalized care as membership grows. 
+                Each physician maintains a maximum panel size to ensure quality member relationships.
+              </p>
+              <div className="grid md:grid-cols-4 gap-6 mb-8">
+                {[
+                  { metric: "150", label: "Members per Physician", description: "Maximum panel size" },
+                  { metric: "2-3", label: "Physicians per Center", description: "Launch configuration" },
+                  { metric: "4-5", label: "Physicians at Scale", description: "Full capacity center" },
+                  { metric: "1:50", label: "NP to Member Ratio", description: "Treatment support" }
+                ].map((item, i) => (
+                  <div key={i} className="text-center p-4 bg-background/50 rounded-xl">
+                    <span className="font-mono text-3xl text-accent">{item.metric}</span>
+                    <h4 className="font-display font-medium mt-2 text-sm">{item.label}</h4>
+                    <p className="text-xs text-muted-foreground mt-1">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h4 className="font-display font-medium mb-4">Physician Scaling Triggers</h4>
+                <div className="space-y-3">
+                  {[
+                    { members: "0-300", physicians: "2 Longevity Physicians", nps: "3 NPs", trigger: "Launch configuration" },
+                    { members: "301-450", physicians: "3 Longevity Physicians", nps: "4 NPs", trigger: "Add physician when panels reach 150" },
+                    { members: "451-600", physicians: "4 Longevity Physicians", nps: "5 NPs", trigger: "Approaching center capacity" },
+                    { members: "601-750", physicians: "5 Longevity Physicians", nps: "6 NPs", trigger: "Maximum single-center capacity" }
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-4 p-3 bg-muted/30 rounded-lg">
+                      <div className="w-24 shrink-0">
+                        <span className="font-mono text-sm text-accent">{item.members}</span>
+                        <p className="text-[10px] text-muted-foreground">members</p>
+                      </div>
+                      <div className="flex-1 grid grid-cols-2 gap-4">
+                        <span className="text-sm">{item.physicians}</span>
+                        <span className="text-sm text-muted-foreground">{item.nps}</span>
+                      </div>
+                      <span className="text-xs text-muted-foreground hidden md:block">{item.trigger}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Multi-Center Headcount Table */}
+            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl overflow-hidden">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border bg-muted/30">
+                    <th className="text-left p-4 font-display font-medium">Team Category</th>
+                    <th className="text-center p-4 font-display font-medium">1 Center</th>
+                    <th className="text-center p-4 font-display font-medium">3 Centers</th>
+                    <th className="text-center p-4 font-display font-medium">5 Centers</th>
+                    <th className="text-center p-4 font-display font-medium">10 Centers</th>
+                  </tr>
+                </thead>
+                <tbody className="font-body text-sm">
+                  {[
+                    { category: "Phase 1 Executives", c1: 5, c3: 5, c5: 5, c10: 5, shared: true },
+                    { category: "Phase 2 Executives", c1: 0, c3: 2, c5: 4, c10: 4, shared: true },
+                    { category: "Corporate Staff", c1: 10, c3: 15, c5: 20, c10: 30, shared: true },
+                    { category: "Center Directors", c1: 1, c3: 3, c5: 5, c10: 10, shared: false },
+                    { category: "Longevity Physicians", c1: 2, c3: 6, c5: 10, c10: 20, shared: false },
+                    { category: "Nurse Practitioners", c1: 3, c3: 9, c5: 15, c10: 30, shared: false },
+                    { category: "Medical Assistants", c1: 4, c3: 12, c5: 20, c10: 40, shared: false },
+                    { category: "Other Center Staff", c1: 6, c3: 18, c5: 30, c10: 60, shared: false }
+                  ].map((item, i) => (
+                    <tr key={i} className="border-b border-border/50 last:border-0">
+                      <td className="p-4">
+                        <span className="font-medium">{item.category}</span>
+                        {item.shared && <span className="ml-2 text-[10px] px-1.5 py-0.5 rounded bg-primary/10 text-primary">Shared</span>}
+                      </td>
+                      <td className="p-4 text-center font-mono">{item.c1}</td>
+                      <td className="p-4 text-center font-mono">{item.c3}</td>
+                      <td className="p-4 text-center font-mono">{item.c5}</td>
+                      <td className="p-4 text-center font-mono">{item.c10}</td>
+                    </tr>
+                  ))}
+                  <tr className="bg-muted/30 font-medium">
+                    <td className="p-4">Total Headcount</td>
+                    <td className="p-4 text-center font-mono text-primary">31</td>
+                    <td className="p-4 text-center font-mono text-primary">70</td>
+                    <td className="p-4 text-center font-mono text-primary">109</td>
+                    <td className="p-4 text-center font-mono text-primary">199</td>
+                  </tr>
+                </tbody>
+              </table>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="mt-8 bg-muted/30 rounded-xl p-4">
+              <p className="font-body text-sm text-muted-foreground text-center">
+                <span className="text-foreground font-medium">Note:</span> "Shared" roles are centralized at corporate and support all centers. 
+                Per-center staff scales linearly with center count. Physician staffing adjusts based on member panel sizes.
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Recruiting Timeline */}
+      <section className="py-20">
+        <div className="container">
+          <motion.div 
+            className="max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                RECRUITING PROCESS
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
+                Executive Hiring Timeline
+              </h2>
+              <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                Structured process to identify, evaluate, and onboard Phase 1 leadership
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="relative">
+              {/* Timeline Line */}
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
+              
+              <div className="space-y-8">
+                {[
+                  {
+                    week: "Week 1-2",
+                    phase: "Search Launch",
+                    activities: [
+                      "Finalize job descriptions and compensation packages",
+                      "Engage executive search firm (healthcare specialty)",
+                      "Activate founder/advisor networks for referrals",
+                      "Post on healthcare executive job boards"
+                    ],
+                    color: "destructive"
+                  },
+                  {
+                    week: "Week 3-4",
+                    phase: "Candidate Pipeline",
+                    activities: [
+                      "Initial screening calls (15-20 candidates per role)",
+                      "Review backgrounds, references, and track records",
+                      "Narrow to 5-7 qualified candidates per position",
+                      "Schedule first-round interviews"
+                    ],
+                    color: "primary"
+                  },
+                  {
+                    week: "Week 5-6",
+                    phase: "Interview Process",
+                    activities: [
+                      "First-round: Founder/CEO interviews (vision alignment)",
+                      "Second-round: Board member interviews (governance fit)",
+                      "Case study/presentation (strategic thinking)",
+                      "Reference checks and background verification"
+                    ],
+                    color: "primary"
+                  },
+                  {
+                    week: "Week 7-8",
+                    phase: "Final Selection",
+                    activities: [
+                      "Final interviews with top 2-3 candidates",
+                      "Compensation negotiation and offer structuring",
+                      "Board approval for C-suite appointments",
+                      "Offer extension and acceptance"
+                    ],
+                    color: "primary"
+                  },
+                  {
+                    week: "Week 9-12",
+                    phase: "Onboarding",
+                    activities: [
+                      "Notice period (typically 2-4 weeks)",
+                      "Pre-start strategic briefings and document review",
+                      "Day 1: Full executive team alignment session",
+                      "30-60-90 day plan development and execution"
+                    ],
+                    color: "accent"
+                  }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-6">
+                    <div className="hidden md:flex flex-col items-center">
+                      <div 
+                        className="w-16 h-16 rounded-full flex items-center justify-center border-2"
+                        style={{ 
+                          borderColor: item.color === 'destructive' ? 'hsl(var(--destructive))' : item.color === 'accent' ? 'hsl(var(--accent))' : 'hsl(var(--primary))',
+                          backgroundColor: item.color === 'destructive' ? 'hsl(var(--destructive) / 0.1)' : item.color === 'accent' ? 'hsl(var(--accent) / 0.1)' : 'hsl(var(--primary) / 0.1)'
+                        }}
+                      >
+                        <span className="font-mono text-xs font-medium">{item.week}</span>
+                      </div>
+                    </div>
+                    <div className="flex-1 bg-card border border-border rounded-2xl p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="md:hidden font-mono text-xs px-2 py-1 rounded bg-muted">{item.week}</span>
+                        <h3 className="font-display text-lg font-medium">{item.phase}</h3>
+                      </div>
+                      <div className="grid md:grid-cols-2 gap-3">
+                        {item.activities.map((activity, j) => (
+                          <div key={j} className="flex items-start gap-2">
+                            <div className="w-1.5 h-1.5 rounded-full bg-primary/50 mt-2 shrink-0" />
+                            <span className="text-sm text-muted-foreground">{activity}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="mt-12 grid md:grid-cols-3 gap-6">
+              <div className="bg-destructive/10 border border-destructive/30 rounded-xl p-6 text-center">
+                <span className="font-mono text-2xl text-destructive">60-90</span>
+                <p className="text-sm text-muted-foreground mt-2">Days to Full Team</p>
+                <p className="text-xs text-muted-foreground">From search launch to onboarding</p>
+              </div>
+              <div className="bg-primary/10 border border-primary/30 rounded-xl p-6 text-center">
+                <span className="font-mono text-2xl text-primary">5</span>
+                <p className="text-sm text-muted-foreground mt-2">Parallel Searches</p>
+                <p className="text-xs text-muted-foreground">All Phase 1 roles simultaneously</p>
+              </div>
+              <div className="bg-accent/10 border border-accent/30 rounded-xl p-6 text-center">
+                <span className="font-mono text-2xl text-accent">$150-200K</span>
+                <p className="text-sm text-muted-foreground mt-2">Search Firm Fees</p>
+                <p className="text-xs text-muted-foreground">25-30% of first-year comp</p>
               </div>
             </motion.div>
           </motion.div>
