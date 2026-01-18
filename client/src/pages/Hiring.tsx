@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Users, Briefcase, Stethoscope, Building2, TrendingUp, Megaphone, Code, Shield, Package, Scale, Layers } from "lucide-react";
 import Layout from "@/components/Layout";
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
+import { Link } from "wouter";
 
 export default function Hiring() {
   return (
@@ -446,17 +447,27 @@ export default function Hiring() {
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
               <span className="font-mono text-primary text-sm tracking-wider">
-                CENTER OPERATIONS
+                CENTER STAFFING
               </span>
               <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
                 Flagship Center Team
               </h2>
               <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-Clinical and operations staff for the first Lumastem center
+                Two distinct teams: Center Operations for diagnostics and ancillary services, plus dedicated ELITE Membership care teams
               </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp}>
+            {/* Center Operations Team */}
+            <motion.div variants={fadeInUp} className="mb-12">
+              <div className="bg-card border border-border rounded-2xl p-6 mb-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-3 h-3 rounded-full bg-primary" />
+                  <h3 className="font-display text-xl font-medium">Center Operations Team</h3>
+                </div>
+                <p className="text-sm text-muted-foreground ml-6">
+                  Manages diagnostics testing and ongoing delivery of ancillary services (injections, stem cells, IVs, etc.)
+                </p>
+              </div>
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
                 <table className="w-full">
                   <thead>
@@ -469,13 +480,13 @@ Clinical and operations staff for the first Lumastem center
                   </thead>
                   <tbody className="font-body text-sm">
                     {[
-                      { role: "Center Director", count: 1, responsibilities: "P&L ownership, team leadership, member experience", timing: "90 days pre-opening" },
-                      { role: "Longevity Physicians", count: 2, responsibilities: "Member consultations, care coordination, protocol oversight", timing: "60 days pre-opening" },
-                      { role: "Nurse Practitioners", count: 3, responsibilities: "Treatment delivery, peptide/hormone protocols, follow-up care", timing: "60 days pre-opening" },
-                      { role: "Medical Assistants", count: 4, responsibilities: "Patient intake, vitals, procedure support, lab coordination", timing: "30 days pre-opening" },
-                      { role: "Concierge/Member Services", count: 3, responsibilities: "Scheduling, member communications, hospitality", timing: "30 days pre-opening" },
-                      { role: "Lab Technicians", count: 2, responsibilities: "Biologics processing, quality control, equipment maintenance", timing: "60 days pre-opening" },
-                      { role: "Operations Manager", count: 1, responsibilities: "Inventory, vendor management, facility operations", timing: "90 days pre-opening" }
+                      { role: "Medical Director", count: 1, responsibilities: "Clinical oversight, protocol development, quality assurance", timing: "90 days pre-opening" },
+                      { role: "Physician", count: 1, responsibilities: "Diagnostics consultations, treatment protocols, ancillary services", timing: "60 days pre-opening" },
+                      { role: "Center Director", count: 1, responsibilities: "P&L ownership, team leadership, operations management", timing: "90 days pre-opening" },
+                      { role: "Nurse Practitioners", count: 3, responsibilities: "Treatment delivery, injections, IV therapy, stem cell procedures", timing: "60 days pre-opening" },
+                      { role: "Medical Assistant", count: 1, responsibilities: "Patient intake, vitals, procedure support, lab coordination", timing: "30 days pre-opening" },
+                      { role: "Hospitality Manager", count: 1, responsibilities: "Member experience, facility presentation, service excellence", timing: "60 days pre-opening" },
+                      { role: "Concierge", count: 3, responsibilities: "Scheduling, member communications, front desk operations", timing: "30 days pre-opening" }
                     ].map((item, i) => (
                       <tr key={i} className="border-b border-border/50 last:border-0">
                         <td className="p-4 font-medium">{item.role}</td>
@@ -493,12 +504,88 @@ Clinical and operations staff for the first Lumastem center
               </div>
               
               <div className="mt-6 flex justify-center">
-                <div className="bg-muted/30 rounded-xl px-6 py-3 flex items-center gap-4">
+                <div className="bg-primary/10 border border-primary/30 rounded-xl px-6 py-3 flex items-center gap-4">
                   <Users className="w-5 h-5 text-primary" />
                   <span className="font-body text-sm">
-                    <span className="font-medium text-foreground">16 total headcount</span>
-                    <span className="text-muted-foreground"> for flagship center launch</span>
+                    <span className="font-medium text-foreground">11 staff</span>
+                    <span className="text-muted-foreground"> for Center Operations Team</span>
                   </span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* ELITE Membership Team */}
+            <motion.div variants={fadeInUp}>
+              <div className="bg-card border border-amber-500/30 rounded-2xl p-6 mb-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-3 h-3 rounded-full bg-amber-500" />
+                  <h3 className="font-display text-xl font-medium">ELITE Membership Team</h3>
+                  <span className="ml-auto text-xs bg-amber-500/20 text-amber-500 px-2 py-1 rounded">Per 120 Members</span>
+                </div>
+                <p className="text-sm text-muted-foreground ml-6">
+                  Dedicated care team for ongoing ELITE member management. Does not manage diagnostics or ancillary services.
+                </p>
+              </div>
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-border bg-muted/30">
+                      <th className="text-left p-4 font-display font-medium">Role</th>
+                      <th className="text-center p-4 font-display font-medium">Headcount</th>
+                      <th className="text-left p-4 font-display font-medium">Key Responsibilities</th>
+                      <th className="text-center p-4 font-display font-medium">Capacity</th>
+                    </tr>
+                  </thead>
+                  <tbody className="font-body text-sm">
+                    {[
+                      { role: "Physician", count: 1, responsibilities: "Ongoing member care, health optimization, treatment planning", capacity: "120 members" },
+                      { role: "Medical Assistant", count: 1, responsibilities: "Physician support, care coordination, member follow-up", capacity: "120 members" },
+                      { role: "Care Coordinator", count: 2, responsibilities: "Member relationship management, scheduling, care navigation", capacity: "60 members each" }
+                    ].map((item, i) => (
+                      <tr key={i} className="border-b border-border/50 last:border-0">
+                        <td className="p-4 font-medium">{item.role}</td>
+                        <td className="p-4 text-center">
+                          <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-amber-500/10 text-amber-500 font-mono text-sm">
+                            {item.count}
+                          </span>
+                        </td>
+                        <td className="p-4 text-muted-foreground">{item.responsibilities}</td>
+                        <td className="p-4 text-center font-mono text-xs text-muted-foreground">{item.capacity}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              
+              <div className="mt-6 flex justify-center">
+                <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl px-6 py-3 flex items-center gap-4">
+                  <Users className="w-5 h-5 text-amber-500" />
+                  <span className="font-body text-sm">
+                    <span className="font-medium text-foreground">4 staff per 120 ELITE members</span>
+                    <span className="text-muted-foreground"> (scales with membership)</span>
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Combined Summary */}
+            <motion.div variants={fadeInUp} className="mt-12 bg-gradient-to-r from-primary/10 to-amber-500/10 rounded-2xl p-6">
+              <h4 className="font-display font-medium text-center mb-6">Flagship Center Total Staffing</h4>
+              <div className="grid md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <span className="font-mono text-3xl text-primary">11</span>
+                  <p className="text-sm text-muted-foreground mt-1">Center Operations Team</p>
+                  <p className="text-xs text-muted-foreground">Fixed per center</p>
+                </div>
+                <div>
+                  <span className="font-mono text-3xl text-amber-500">4</span>
+                  <p className="text-sm text-muted-foreground mt-1">ELITE Team (per 120)</p>
+                  <p className="text-xs text-muted-foreground">Scales with membership</p>
+                </div>
+                <div>
+                  <span className="font-mono text-3xl text-foreground">15</span>
+                  <p className="text-sm text-muted-foreground mt-1">Launch Headcount</p>
+                  <p className="text-xs text-muted-foreground">11 ops + 4 ELITE team</p>
                 </div>
               </div>
             </motion.div>
@@ -630,21 +717,22 @@ Clinical and operations staff for the first Lumastem center
             </motion.div>
 
             <motion.div variants={fadeInUp} className="bg-gradient-to-br from-card to-card/50 border border-border rounded-2xl p-8">
-              <div className="grid md:grid-cols-4 gap-6 mb-8">
+              <div className="grid md:grid-cols-5 gap-4 mb-8">
                 {[
                   { count: 5, label: "Phase 1 Executives", description: "CEO, CFO, COO, CPO, CLO", color: "destructive" },
-                  { count: 16, label: "Center Staff", description: "Per flagship center", color: "primary" },
+                  { count: 11, label: "Center Ops Team", description: "Fixed per center", color: "primary" },
+                  { count: 4, label: "ELITE Team", description: "Per 120 members", color: "amber-500" },
                   { count: 20, label: "Corporate Roles", description: "6 departments", color: "primary" },
                   { count: 4, label: "Phase 2 Executives", description: "CMO, CCO, CMO, CTO", color: "amber-500" }
                 ].map((item, i) => (
                   <div key={i} className="text-center p-4 bg-background/50 rounded-xl border border-border/50">
                     <span 
-                      className="font-mono text-4xl font-bold"
+                      className="font-mono text-3xl font-bold"
                       style={{ color: item.color === 'destructive' ? 'hsl(var(--destructive))' : item.color === 'amber-500' ? '#f59e0b' : 'hsl(var(--primary))' }}
                     >
                       {item.count}
                     </span>
-                    <h4 className="font-display font-medium mt-2">{item.label}</h4>
+                    <h4 className="font-display font-medium text-sm mt-2">{item.label}</h4>
                     <p className="text-xs text-muted-foreground mt-1">{item.description}</p>
                   </div>
                 ))}
@@ -654,16 +742,16 @@ Clinical and operations staff for the first Lumastem center
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
-                      <span className="font-mono text-2xl font-bold text-primary">45</span>
+                      <span className="font-mono text-2xl font-bold text-primary">44</span>
                     </div>
                     <div>
                       <h3 className="font-display text-xl font-medium">Total Headcount</h3>
-                      <p className="text-sm text-muted-foreground">Full team at scale (single center)</p>
+                      <p className="text-sm text-muted-foreground">Full team at scale (single center, 120 ELITE members)</p>
                     </div>
                   </div>
                   <div className="text-center md:text-right">
-                    <p className="text-sm text-muted-foreground">Additional centers add</p>
-                    <span className="font-mono text-lg text-primary">+14-16 staff each</span>
+                    <p className="text-sm text-muted-foreground">Additional ELITE teams add</p>
+                    <span className="font-mono text-lg text-amber-500">+4 staff per 120 members</span>
                   </div>
                 </div>
               </div>
@@ -694,7 +782,8 @@ Clinical and operations staff for the first Lumastem center
             <motion.div variants={fadeInUp} className="space-y-4">
               {[
                 { phase: "Pre-Launch", label: "Phase 1 Critical", count: "5 executives", color: "destructive", description: "CEO, CFO, COO, CPO, CLO" },
-                { phase: "Center Opening", label: "Center Launch", count: "16 staff", color: "primary", description: "Clinical & operations team per center" },
+                { phase: "Center Opening", label: "Center Ops Team", count: "11 staff", color: "primary", description: "Medical Director, Physician, Center Director, NPs, MA, Hospitality, Concierge" },
+                { phase: "With Members", label: "ELITE Team", count: "4 per 120", color: "amber-500", description: "Physician, MA, 2 Care Coordinators (scales with membership)" },
                 { phase: "Post-Launch", label: "Corporate Build", count: "20 roles", color: "primary", description: "Finance, HR, Marketing, Technology, Clinical Ops, Product" },
                 { phase: "As Needed", label: "Phase 2 Executives", count: "4 executives", color: "amber-500", description: "CMO (Medical), CCO, CMO (Marketing), CTO" }
               ].map((item, i) => (
@@ -929,11 +1018,14 @@ Clinical and operations staff for the first Lumastem center
                     { category: "CEO", range: "$350K - $450K", equity: "3.00%", notes: "Performance bonus up to 50%" },
                     { category: "C-Suite (CFO, COO, CPO, CLO)", range: "$275K - $375K", equity: "1.50%", notes: "Performance bonus up to 40%" },
                     { category: "Phase 2 Executives", range: "$250K - $350K", equity: "0.50-0.75%", notes: "CMO, CCO, CMO, CTO" },
+                    { category: "Medical Director", range: "$300K - $400K", equity: "—", notes: "Clinical oversight, quality" },
                     { category: "Center Director", range: "$175K - $225K", equity: "—", notes: "P&L bonus structure" },
-                    { category: "Longevity Physicians", range: "$250K - $350K", equity: "—", notes: "Productivity bonus" },
-                    { category: "Nurse Practitioners", range: "$125K - $165K", equity: "—", notes: "Per center" },
-                    { category: "Department Directors", range: "$150K - $200K", equity: "—", notes: "Corporate roles" },
-                    { category: "Clinical Staff (MA, Lab)", range: "$55K - $85K", equity: "—", notes: "Per center" },
+                    { category: "Physicians (Ops & ELITE)", range: "$250K - $350K", equity: "—", notes: "Productivity bonus" },
+                    { category: "Nurse Practitioners", range: "$125K - $165K", equity: "—", notes: "Center Ops Team" },
+                    { category: "Care Coordinators", range: "$65K - $85K", equity: "—", notes: "ELITE Team (60 members each)" },
+                    { category: "Hospitality Manager", range: "$75K - $95K", equity: "—", notes: "Member experience" },
+                    { category: "Medical Assistants", range: "$55K - $70K", equity: "—", notes: "Ops & ELITE teams" },
+                    { category: "Concierge", range: "$45K - $60K", equity: "—", notes: "Front desk operations" },
                     { category: "Corporate Staff", range: "$75K - $125K", equity: "—", notes: "Varies by function" }
                   ].map((item, i) => (
                     <tr key={i} className="border-b border-border/50 last:border-0">
@@ -949,14 +1041,14 @@ Clinical and operations staff for the first Lumastem center
 
             <motion.div variants={fadeInUp} className="mt-8 grid md:grid-cols-3 gap-6">
               <div className="bg-muted/30 rounded-xl p-6 text-center">
-                <span className="font-mono text-2xl text-primary">$4.2M</span>
+                <span className="font-mono text-2xl text-primary">$3.8M</span>
                 <p className="text-sm text-muted-foreground mt-2">Est. Annual Payroll (Year 1)</p>
-                <p className="text-xs text-muted-foreground">5 executives + 16 center staff</p>
+                <p className="text-xs text-muted-foreground">5 executives + 15 center staff</p>
               </div>
               <div className="bg-muted/30 rounded-xl p-6 text-center">
-                <span className="font-mono text-2xl text-primary">$6.8M</span>
+                <span className="font-mono text-2xl text-primary">$6.2M</span>
                 <p className="text-sm text-muted-foreground mt-2">Est. Annual Payroll (Year 2)</p>
-                <p className="text-xs text-muted-foreground">+ Corporate team + Phase 2</p>
+                <p className="text-xs text-muted-foreground">+ Corporate team + additional ELITE teams</p>
               </div>
               <div className="bg-muted/30 rounded-xl p-6 text-center">
                 <span className="font-mono text-2xl text-accent">15-20%</span>
@@ -990,44 +1082,44 @@ Clinical and operations staff for the first Lumastem center
               </p>
             </motion.div>
 
-            {/* Physician Scaling Detail */}
-            <motion.div variants={fadeInUp} className="mb-12 bg-accent/10 border border-accent/30 rounded-2xl p-8">
-              <h3 className="font-display text-xl font-medium mb-6 text-center">Physician Team Scaling</h3>
+            {/* ELITE Team Scaling Detail */}
+            <motion.div variants={fadeInUp} className="mb-12 bg-amber-500/10 border border-amber-500/30 rounded-2xl p-8">
+              <h3 className="font-display text-xl font-medium mb-6 text-center">ELITE Membership Team Scaling</h3>
               <p className="font-body text-muted-foreground text-center mb-8 max-w-3xl mx-auto">
-                Our physician staffing model is designed to maintain high-touch, personalized care as membership grows. 
-                Each physician maintains a maximum panel size to ensure quality member relationships.
+                ELITE membership care teams scale independently from Center Operations. Each team manages up to 120 members 
+                with dedicated physician oversight and personalized care coordination.
               </p>
               <div className="grid md:grid-cols-4 gap-6 mb-8">
                 {[
-                  { metric: "150", label: "Members per Physician", description: "Maximum panel size" },
-                  { metric: "2-3", label: "Physicians per Center", description: "Launch configuration" },
-                  { metric: "4-5", label: "Physicians at Scale", description: "Full capacity center" },
-                  { metric: "1:50", label: "NP to Member Ratio", description: "Treatment support" }
+                  { metric: "120", label: "Members per ELITE Team", description: "Maximum capacity" },
+                  { metric: "1", label: "Physician per Team", description: "Ongoing member care" },
+                  { metric: "60", label: "Members per Coordinator", description: "2 coordinators per team" },
+                  { metric: "4", label: "Staff per Team", description: "Physician, MA, 2 Coordinators" }
                 ].map((item, i) => (
                   <div key={i} className="text-center p-4 bg-background/50 rounded-xl">
-                    <span className="font-mono text-3xl text-accent">{item.metric}</span>
+                    <span className="font-mono text-3xl text-amber-500">{item.metric}</span>
                     <h4 className="font-display font-medium mt-2 text-sm">{item.label}</h4>
                     <p className="text-xs text-muted-foreground mt-1">{item.description}</p>
                   </div>
                 ))}
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h4 className="font-display font-medium mb-4">Physician Scaling Triggers</h4>
+                <h4 className="font-display font-medium mb-4">ELITE Team Scaling Triggers</h4>
                 <div className="space-y-3">
                   {[
-                    { members: "0-300", physicians: "2 Longevity Physicians", nps: "3 NPs", trigger: "Launch configuration" },
-                    { members: "301-450", physicians: "3 Longevity Physicians", nps: "4 NPs", trigger: "Add physician when panels reach 150" },
-                    { members: "451-600", physicians: "4 Longevity Physicians", nps: "5 NPs", trigger: "Approaching center capacity" },
-                    { members: "601-750", physicians: "5 Longevity Physicians", nps: "6 NPs", trigger: "Maximum single-center capacity" }
+                    { members: "1-120", teams: "1 ELITE Team", staff: "4 staff", trigger: "Launch configuration" },
+                    { members: "121-240", teams: "2 ELITE Teams", staff: "8 staff", trigger: "Add team when first reaches 120" },
+                    { members: "241-360", teams: "3 ELITE Teams", staff: "12 staff", trigger: "Continue scaling" },
+                    { members: "361-480", teams: "4 ELITE Teams", staff: "16 staff", trigger: "Maximum single-center capacity" }
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-4 p-3 bg-muted/30 rounded-lg">
                       <div className="w-24 shrink-0">
-                        <span className="font-mono text-sm text-accent">{item.members}</span>
-                        <p className="text-[10px] text-muted-foreground">members</p>
+                        <span className="font-mono text-sm text-amber-500">{item.members}</span>
+                        <p className="text-[10px] text-muted-foreground">ELITE members</p>
                       </div>
                       <div className="flex-1 grid grid-cols-2 gap-4">
-                        <span className="text-sm">{item.physicians}</span>
-                        <span className="text-sm text-muted-foreground">{item.nps}</span>
+                        <span className="text-sm">{item.teams}</span>
+                        <span className="text-sm text-muted-foreground">{item.staff}</span>
                       </div>
                       <span className="text-xs text-muted-foreground hidden md:block">{item.trigger}</span>
                     </div>
@@ -1053,11 +1145,8 @@ Clinical and operations staff for the first Lumastem center
                     { category: "Phase 1 Executives", c1: 5, c3: 5, c5: 5, c10: 5, shared: true },
                     { category: "Phase 2 Executives", c1: 0, c3: 2, c5: 4, c10: 4, shared: true },
                     { category: "Corporate Staff", c1: 10, c3: 15, c5: 20, c10: 30, shared: true },
-                    { category: "Center Directors", c1: 1, c3: 3, c5: 5, c10: 10, shared: false },
-                    { category: "Longevity Physicians", c1: 2, c3: 6, c5: 10, c10: 20, shared: false },
-                    { category: "Nurse Practitioners", c1: 3, c3: 9, c5: 15, c10: 30, shared: false },
-                    { category: "Medical Assistants", c1: 4, c3: 12, c5: 20, c10: 40, shared: false },
-                    { category: "Other Center Staff", c1: 6, c3: 18, c5: 30, c10: 60, shared: false }
+                    { category: "Center Ops Team", c1: 11, c3: 33, c5: 55, c10: 110, shared: false },
+                    { category: "ELITE Teams (per 120 members)", c1: 4, c3: 12, c5: 20, c10: 40, shared: false }
                   ].map((item, i) => (
                     <tr key={i} className="border-b border-border/50 last:border-0">
                       <td className="p-4">
@@ -1072,10 +1161,10 @@ Clinical and operations staff for the first Lumastem center
                   ))}
                   <tr className="bg-muted/30 font-medium">
                     <td className="p-4">Total Headcount</td>
-                    <td className="p-4 text-center font-mono text-primary">31</td>
-                    <td className="p-4 text-center font-mono text-primary">70</td>
-                    <td className="p-4 text-center font-mono text-primary">109</td>
-                    <td className="p-4 text-center font-mono text-primary">199</td>
+                    <td className="p-4 text-center font-mono text-primary">30</td>
+                    <td className="p-4 text-center font-mono text-primary">67</td>
+                    <td className="p-4 text-center font-mono text-primary">104</td>
+                    <td className="p-4 text-center font-mono text-primary">189</td>
                   </tr>
                 </tbody>
               </table>
@@ -1084,7 +1173,7 @@ Clinical and operations staff for the first Lumastem center
             <motion.div variants={fadeInUp} className="mt-8 bg-muted/30 rounded-xl p-4">
               <p className="font-body text-sm text-muted-foreground text-center">
                 <span className="text-foreground font-medium">Note:</span> "Shared" roles are centralized at corporate and support all centers. 
-                Per-center staff scales linearly with center count. Physician staffing adjusts based on member panel sizes.
+                Center Ops Team (11 staff) is fixed per center. ELITE Teams (4 staff per 120 members) scale with membership growth.
               </p>
             </motion.div>
           </motion.div>
@@ -1427,6 +1516,78 @@ Clinical and operations staff for the first Lumastem center
                   ))}
                 </div>
               </div>
+            </motion.div>
+
+            {/* D&O Insurance */}
+            <motion.div variants={fadeInUp} className="mt-8 bg-card border border-border rounded-2xl p-8">
+              <h3 className="font-display text-xl font-medium mb-6 text-center">Directors & Officers Insurance</h3>
+              <div className="grid md:grid-cols-3 gap-6 mb-6">
+                {[
+                  { metric: "$5M", label: "Coverage Limit", description: "Primary D&O policy" },
+                  { metric: "$10M", label: "Excess Coverage", description: "Additional protection" },
+                  { metric: "A-Rated", label: "Carrier Rating", description: "Financially stable insurer" }
+                ].map((item, i) => (
+                  <div key={i} className="text-center p-4 bg-muted/30 rounded-xl">
+                    <span className="font-mono text-2xl text-primary">{item.metric}</span>
+                    <h4 className="font-display font-medium mt-2 text-sm">{item.label}</h4>
+                    <p className="text-xs text-muted-foreground mt-1">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="p-4 bg-muted/30 rounded-xl">
+                  <h4 className="font-display font-medium mb-3 text-sm">Coverage Includes</h4>
+                  <div className="space-y-2">
+                    {[
+                      "Defense costs for regulatory investigations",
+                      "Securities claims protection",
+                      "Employment practices liability",
+                      "Fiduciary liability coverage"
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                        <span className="text-xs text-muted-foreground">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="p-4 bg-muted/30 rounded-xl">
+                  <h4 className="font-display font-medium mb-3 text-sm">Policy Terms</h4>
+                  <div className="space-y-2">
+                    {[
+                      "Side A coverage for individual directors",
+                      "Side B corporate reimbursement",
+                      "Side C entity coverage",
+                      "Tail coverage for departing directors"
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                        <span className="text-xs text-muted-foreground">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6 pt-4 border-t border-border text-center">
+                <p className="text-sm text-muted-foreground">
+                  D&O insurance will be secured prior to Series A closing to protect all board members and officers
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Link to Advisors */}
+            <motion.div variants={fadeInUp} className="mt-12 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 text-center">
+              <h3 className="font-display text-xl font-medium mb-4">Advisory Board & Future Directors</h3>
+              <p className="font-body text-muted-foreground mb-6 max-w-2xl mx-auto">
+                Our advisory board includes industry experts who may transition to board roles or serve as board observers. 
+                These relationships provide strategic guidance and potential governance candidates.
+              </p>
+              <Link href="/advisors">
+                <span className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors cursor-pointer">
+                  <Users className="w-4 h-4" />
+                  View Advisory Board
+                </span>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
