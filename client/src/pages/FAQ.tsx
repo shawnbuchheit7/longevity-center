@@ -168,12 +168,12 @@ const faqData: FAQCategory[] = [
       },
       {
         question: "How do you recruit physicians for the ELITE model?",
-        answer: "We partner with Witt/Kieffer, a leading healthcare executive search firm with 50+ years of experience. We target physicians seeking to escape insurance-driven medicine who want to practice relationship-based care. Our compensation includes competitive base salary ($345K for ELITE physicians, $460K for Medical Directors) plus 30% MBO bonus opportunity.",
+        answer: "We partner with Witt/Kieffer, a leading healthcare executive search firm with 50+ years of experience. We target physicians seeking to escape insurance-driven medicine who want to practice relationship-based care. Our compensation includes competitive base salary ($300K for ELITE physicians, $400K for Medical Directors) plus 30% MBO bonus opportunity.",
         links: [{ text: "View Hiring Plan", href: "/hiring" }]
       },
       {
         question: "What is the MBO compensation structure?",
-        answer: "Eligible team members (C-suite, management, and physicians) can earn up to 30% of base salary through Management by Objectives bonuses. Three metrics are defined annually combining individual and company goals, reviewed quarterly. For example, a physician earning $345K base could achieve total OTE of $448K with full MBO attainment.",
+        answer: "Eligible team members (C-suite, management, and physicians) can earn up to 30% of base salary through Management by Objectives bonuses. Three metrics are defined annually combining individual and company goals, reviewed quarterly. For example, a physician earning $300K base could achieve total OTE of $390K with full MBO attainment.",
         links: [{ text: "View Compensation Details", href: "/hiring" }]
       },
       {

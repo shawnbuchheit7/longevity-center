@@ -481,8 +481,8 @@ export default function Hiring() {
                   </thead>
                   <tbody className="font-body text-sm">
                     {[
-                      { role: "Medical Director", count: 1, responsibilities: "Clinical oversight, protocol development, quality assurance", timing: "90 days pre-opening", salary: "$460K" },
-                      { role: "Physician", count: 1, responsibilities: "Diagnostics consultations, treatment protocols, ancillary services", timing: "60 days pre-opening", salary: "$345K" },
+                      { role: "Medical Director", count: 1, responsibilities: "Clinical oversight, protocol development, quality assurance", timing: "90 days pre-opening", salary: "$400K" },
+                      { role: "Physician", count: 1, responsibilities: "Diagnostics consultations, treatment protocols, ancillary services", timing: "60 days pre-opening", salary: "$300K" },
                       { role: "Center Director", count: 1, responsibilities: "P&L ownership, team leadership, operations management", timing: "90 days pre-opening" },
                       { role: "Nurse Practitioners", count: 3, responsibilities: "Treatment delivery, injections, IV therapy, stem cell procedures", timing: "60 days pre-opening" },
                       { role: "Rad Techs", count: 3, responsibilities: "MRI/CT imaging, DEXA scans, X-ray, diagnostic imaging support", timing: "60 days pre-opening" },
@@ -544,7 +544,7 @@ export default function Hiring() {
                   </thead>
                   <tbody className="font-body text-sm">
                     {[
-                      { role: "Physician", perTeam: 1, atLaunch: 3, responsibilities: "Ongoing member care under Medical Director supervision, health optimization, treatment planning", salary: "$345K" },
+                      { role: "Physician", perTeam: 1, atLaunch: 3, responsibilities: "Ongoing member care under Medical Director supervision, health optimization, treatment planning", salary: "$300K" },
                       { role: "Medical Assistant", perTeam: 1, atLaunch: 3, responsibilities: "Physician support, care coordination, member follow-up" },
                       { role: "Care Coordinator", perTeam: 2, atLaunch: 6, responsibilities: "Member relationship management, scheduling, care navigation (60 members each)" }
                     ].map((item, i) => (
@@ -643,9 +643,9 @@ export default function Hiring() {
                 <div className="bg-muted/30 rounded-xl p-4">
                   <h5 className="font-display text-sm font-medium mb-2">Example: Physician</h5>
                   <ul className="text-xs text-muted-foreground space-y-1">
-                    <li>• Base: $345K</li>
-                    <li>• MBO (30%): +$103K</li>
-                    <li>• Total OTE: $448K</li>
+                    <li>• Base: $300K</li>
+                    <li>• MBO (30%): +$90K</li>
+                    <li>• Total OTE: $390K</li>
                   </ul>
                 </div>
               </div>
