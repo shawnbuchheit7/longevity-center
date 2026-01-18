@@ -388,22 +388,22 @@ export default function Technology() {
             <motion.div variants={fadeInUp} className="space-y-6">
               {[
                 {
-                  phase: "2025",
+                  phase: "2026",
                   title: "Foundation",
                   items: ["Core platform deployment", "EHR integration", "Patient mobile app launch", "Basic AI analytics"]
                 },
                 {
-                  phase: "2026",
+                  phase: "2027",
                   title: "Enhancement",
                   items: ["Advanced AI treatment optimization", "Wearable device integration", "Expanded telehealth capabilities", "Multi-location data sync"]
                 },
                 {
-                  phase: "2027",
+                  phase: "2028",
                   title: "Scale",
                   items: ["Predictive health modeling", "Automated protocol generation", "International platform expansion", "Third-party API ecosystem"]
                 },
                 {
-                  phase: "2028+",
+                  phase: "2029+",
                   title: "Innovation",
                   items: ["Genomic data integration", "Digital twin technology", "Real-world evidence platform", "AI-driven drug discovery support"]
                 }

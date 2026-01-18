@@ -5,6 +5,7 @@
 
 import { motion } from "framer-motion";
 import { Star, Film, Gamepad2, Clapperboard, PieChart, DollarSign, TrendingUp, Users, FileText, Shield, Check, AlertTriangle, Download, FolderOpen, FileSpreadsheet, Presentation, FileCheck } from "lucide-react";
+import { toast } from "sonner";
 import Layout from "@/components/Layout";
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
 
@@ -651,7 +652,10 @@ export default function Investors() {
                       <doc.icon className="w-6 h-6 text-primary" />
                     </div>
                     {doc.available ? (
-                      <button className="flex items-center gap-1 text-sm text-primary hover:underline">
+                      <button 
+                        onClick={() => toast.info("Document Placeholder", { description: "This document will be available once uploaded. Contact invest@lumastem.com for access." })}
+                        className="flex items-center gap-1 text-sm text-primary hover:underline"
+                      >
                         <Download className="w-4 h-4" />
                         Download
                       </button>
