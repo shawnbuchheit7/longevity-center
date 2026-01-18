@@ -1251,32 +1251,52 @@ export default function Hiring() {
                 </div>
               </div>
 
-              {/* Scaling Table */}
+              {/* Scaling Visual - Horizontal Timeline */}
               <div className="bg-card border border-border rounded-xl p-6">
-                <h4 className="font-display font-medium mb-4">ELITE Team Scaling Triggers</h4>
-                <div className="space-y-3">
-                  {[
-                    { members: "1-60", teams: "1 ELITE Team", staff: "4 staff", trigger: "Launch configuration (triggers Team 2 hiring)" },
-                    { members: "61-120", teams: "2 ELITE Teams", staff: "8 staff", trigger: "Team 2 onboarding while Team 1 fills" },
-                    { members: "121-180", teams: "3 ELITE Teams", staff: "12 staff", trigger: "Team 3 added at Team 2's 50% capacity" },
-                    { members: "181-240", teams: "4 ELITE Teams", staff: "16 staff", trigger: "Continue scaling pattern" }
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-4 p-3 bg-muted/30 rounded-lg">
-                      <div className="w-24 shrink-0 text-center">
-                        <span className="font-mono text-sm text-amber-500">{item.members}</span>
-                        <p className="text-[10px] text-muted-foreground">ELITE members</p>
+                <h4 className="font-display font-medium mb-6 text-center">ELITE Team Scaling Triggers</h4>
+                
+                {/* Visual Timeline */}
+                <div className="relative">
+                  {/* Progress Bar Background */}
+                  <div className="absolute top-8 left-0 right-0 h-2 bg-muted/50 rounded-full" />
+                  
+                  {/* Milestone Points */}
+                  <div className="relative flex justify-between">
+                    {[
+                      { members: "1-60", teams: 1, trigger: "Launch" },
+                      { members: "61-120", teams: 2, trigger: "+Team 2" },
+                      { members: "121-180", teams: 3, trigger: "+Team 3" },
+                      { members: "181-240", teams: 4, trigger: "+Team 4" }
+                    ].map((item, i) => (
+                      <div key={i} className="flex flex-col items-center" style={{ width: '25%' }}>
+                        {/* Team Count Badge */}
+                        <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-2 ${i === 0 ? 'bg-amber-500 text-amber-950' : 'bg-card border-2 border-amber-500/50'}`}>
+                          <div className="text-center">
+                            <span className={`font-mono text-xl font-bold ${i === 0 ? '' : 'text-amber-500'}`}>{item.teams}</span>
+                            <p className={`text-[9px] ${i === 0 ? 'text-amber-950/70' : 'text-muted-foreground'}`}>team{item.teams > 1 ? 's' : ''}</p>
+                          </div>
+                        </div>
+                        
+                        {/* Member Range */}
+                        <div className="text-center mt-4">
+                          <span className="font-mono text-sm text-amber-500 font-medium">{item.members}</span>
+                          <p className="text-[10px] text-muted-foreground">members</p>
+                        </div>
+                        
+                        {/* Staff Count */}
+                        <div className="mt-2 px-3 py-1 bg-primary/10 rounded-full">
+                          <span className="font-mono text-xs text-primary">{item.teams * 4} staff</span>
+                        </div>
                       </div>
-                      <div className="w-28 shrink-0 text-center">
-                        <span className="text-sm">{item.teams}</span>
-                      </div>
-                      <div className="w-20 shrink-0 text-center">
-                        <span className="text-sm font-mono text-primary">{item.staff}</span>
-                      </div>
-                      <div className="flex-1 hidden md:block">
-                        <span className="text-xs text-muted-foreground">{item.trigger}</span>
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Summary Note */}
+                <div className="mt-8 pt-6 border-t border-border/50 text-center">
+                  <p className="font-body text-sm text-muted-foreground">
+                    Each center launches with <span className="text-amber-500 font-medium">3 ELITE teams (12 staff)</span> and scales based on 50% capacity triggers
+                  </p>
                 </div>
               </div>
             </motion.div>
