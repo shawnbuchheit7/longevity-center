@@ -795,9 +795,10 @@ Clinical and operations staff for the first Lumastem center
                 <div className="space-y-4">
                   {[
                     { category: "CMO (Medical)", allocation: "0.75%", description: "4-year vesting" },
+                    { category: "CCO", allocation: "0.75%", description: "4-year vesting" },
                     { category: "CMO (Marketing)", allocation: "0.50%", description: "4-year vesting" },
                     { category: "CTO", allocation: "0.75%", description: "4-year vesting" },
-                    { category: "Future Hires Pool", allocation: "1.00%", description: "Reserved for growth" }
+                    { category: "Future Hires Pool", allocation: "0.25%", description: "Reserved for growth" }
                   ].map((item, i) => (
                     <div key={i} className="py-3 border-b border-border/50 last:border-0">
                       <div className="flex items-center justify-between mb-1">
@@ -874,16 +875,16 @@ Clinical and operations staff for the first Lumastem center
                 <div className="flex items-center gap-4">
                   <span className="w-24 text-sm text-muted-foreground">Phase 2</span>
                   <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
-                    <div className="h-full bg-amber-500/70 rounded-full" style={{ width: '16.7%' }} />
+                    <div className="h-full bg-amber-500/70 rounded-full" style={{ width: '22.9%' }} />
                   </div>
-                  <span className="w-16 text-right font-mono text-sm">2.00%</span>
+                  <span className="w-16 text-right font-mono text-sm">2.75%</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <span className="w-24 text-sm text-muted-foreground">Reserve</span>
                   <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
-                    <div className="h-full bg-muted-foreground/50 rounded-full" style={{ width: '8.3%' }} />
+                    <div className="h-full bg-muted-foreground/50 rounded-full" style={{ width: '2.1%' }} />
                   </div>
-                  <span className="w-16 text-right font-mono text-sm">1.00%</span>
+                  <span className="w-16 text-right font-mono text-sm">0.25%</span>
                 </div>
               </div>
             </motion.div>
@@ -1220,6 +1221,211 @@ Clinical and operations staff for the first Lumastem center
                 <span className="font-mono text-2xl text-accent">$150-200K</span>
                 <p className="text-sm text-muted-foreground mt-2">Search Firm Fees</p>
                 <p className="text-xs text-muted-foreground">25-30% of first-year comp</p>
+              </div>
+            </motion.div>
+
+            {/* Search Partner */}
+            <motion.div variants={fadeInUp} className="mt-12 bg-card border border-border rounded-2xl p-8">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="flex-1">
+                  <span className="font-mono text-xs text-primary tracking-wider">EXECUTIVE SEARCH PARTNER</span>
+                  <h3 className="font-display text-2xl font-medium mt-2 mb-4">Witt/Kieffer</h3>
+                  <p className="font-body text-muted-foreground mb-4">
+                    Lumastem has selected Witt/Kieffer as our exclusive executive search partner for Phase 1 leadership recruitment. 
+                    With over 50 years of experience placing healthcare executives, Witt/Kieffer brings unparalleled expertise in 
+                    identifying transformational leaders for innovative healthcare organizations.
+                  </p>
+                  <div className="space-y-3">
+                    {[
+                      "Specialized healthcare executive search since 1969",
+                      "Deep network of C-suite candidates across health systems, life sciences, and digital health",
+                      "Proven track record with physician-led organizations and luxury wellness brands",
+                      "Comprehensive assessment methodology including leadership competency evaluation"
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                        <span className="text-sm text-muted-foreground">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <a 
+                    href="https://wittkieffer.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 mt-6 text-primary hover:text-primary/80 transition-colors"
+                  >
+                    <span className="font-mono text-sm">wittkieffer.com</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+                <div className="w-full md:w-64 shrink-0">
+                  <div className="bg-muted/30 rounded-xl p-6 text-center">
+                    <span className="font-mono text-4xl text-primary">50+</span>
+                    <p className="text-sm text-muted-foreground mt-2">Years of Healthcare Executive Search</p>
+                  </div>
+                  <div className="bg-muted/30 rounded-xl p-6 text-center mt-4">
+                    <span className="font-mono text-4xl text-accent">3,000+</span>
+                    <p className="text-sm text-muted-foreground mt-2">Healthcare Leaders Placed</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Board Composition */}
+      <section className="py-20 bg-card/30">
+        <div className="container">
+          <motion.div 
+            className="max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                GOVERNANCE
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
+                Board Composition
+              </h2>
+              <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                Strategic governance structure designed to guide Lumastem through rapid growth
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-8 mb-12">
+              {/* Current Board */}
+              <div className="bg-card border border-border rounded-2xl p-8">
+                <h3 className="font-display text-xl font-medium mb-6">Initial Board Structure</h3>
+                <div className="space-y-4">
+                  {[
+                    { seat: "Founder/CEO", holder: "Executive Chairman", description: "Strategic vision and operational leadership" },
+                    { seat: "Lead Investor", holder: "Series A Lead", description: "Capital strategy and growth oversight" },
+                    { seat: "Independent", holder: "Healthcare Industry Expert", description: "Clinical and regulatory guidance" }
+                  ].map((item, i) => (
+                    <div key={i} className="p-4 bg-muted/30 rounded-xl">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-mono text-xs text-primary">{item.seat}</span>
+                      </div>
+                      <h4 className="font-display font-medium">{item.holder}</h4>
+                      <p className="text-sm text-muted-foreground mt-1">{item.description}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 pt-4 border-t border-border">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Initial Board Size</span>
+                    <span className="font-mono text-primary">3 seats</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Expanded Board */}
+              <div className="bg-card border border-amber-500/30 rounded-2xl p-8">
+                <h3 className="font-display text-xl font-medium mb-6">Expanded Board (Post-Series A)</h3>
+                <div className="space-y-4">
+                  {[
+                    { seat: "Founder/CEO", holder: "Executive Chairman", status: "existing" },
+                    { seat: "Series A Lead", holder: "Investor Director", status: "existing" },
+                    { seat: "Series A Co-Lead", holder: "Investor Director", status: "new" },
+                    { seat: "Independent", holder: "Healthcare Industry Expert", status: "existing" },
+                    { seat: "Independent", holder: "Luxury/Hospitality Expert", status: "new" }
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center justify-between p-3 bg-muted/30 rounded-lg">
+                      <div>
+                        <span className="font-mono text-xs text-muted-foreground">{item.seat}</span>
+                        <h4 className="font-display font-medium text-sm">{item.holder}</h4>
+                      </div>
+                      <span className={`text-xs px-2 py-1 rounded ${item.status === 'new' ? 'bg-amber-500/20 text-amber-500' : 'bg-muted text-muted-foreground'}`}>
+                        {item.status === 'new' ? 'New' : 'Existing'}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 pt-4 border-t border-border">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Expanded Board Size</span>
+                    <span className="font-mono text-amber-500">5 seats</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Board Committees */}
+            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl p-8">
+              <h3 className="font-display text-xl font-medium mb-6 text-center">Board Committees</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                {[
+                  {
+                    name: "Audit Committee",
+                    chair: "Independent Director",
+                    responsibilities: ["Financial reporting oversight", "Internal controls", "External auditor relationship", "Risk management"]
+                  },
+                  {
+                    name: "Compensation Committee",
+                    chair: "Investor Director",
+                    responsibilities: ["Executive compensation", "Equity plan administration", "Performance metrics", "Succession planning"]
+                  },
+                  {
+                    name: "Governance Committee",
+                    chair: "Independent Director",
+                    responsibilities: ["Board composition", "Director nominations", "Corporate governance", "ESG oversight"]
+                  }
+                ].map((committee, i) => (
+                  <div key={i} className="p-6 bg-muted/30 rounded-xl">
+                    <h4 className="font-display font-medium mb-2">{committee.name}</h4>
+                    <p className="text-xs text-muted-foreground mb-4">Chair: {committee.chair}</p>
+                    <div className="space-y-2">
+                      {committee.responsibilities.map((resp, j) => (
+                        <div key={j} className="flex items-center gap-2">
+                          <div className="w-1 h-1 rounded-full bg-primary" />
+                          <span className="text-xs text-muted-foreground">{resp}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Investor Rights */}
+            <motion.div variants={fadeInUp} className="mt-8 grid md:grid-cols-2 gap-6">
+              <div className="bg-primary/10 border border-primary/30 rounded-xl p-6">
+                <h4 className="font-display font-medium mb-4">Investor Board Rights</h4>
+                <div className="space-y-3">
+                  {[
+                    "Series A lead receives 1 board seat",
+                    "Board observer rights for co-investors ($5M+)",
+                    "Information rights (monthly financials, quarterly board deck)",
+                    "Pro-rata participation rights in future rounds"
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                      <span className="text-sm text-muted-foreground">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-accent/10 border border-accent/30 rounded-xl p-6">
+                <h4 className="font-display font-medium mb-4">Protective Provisions</h4>
+                <div className="space-y-3">
+                  {[
+                    "Approval required for equity issuances above threshold",
+                    "Consent for material acquisitions or divestitures",
+                    "Approval for debt above agreed limits",
+                    "Consent for changes to charter or bylaws"
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
+                      <span className="text-sm text-muted-foreground">{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           </motion.div>
