@@ -223,6 +223,7 @@ export default function UseOfFunds() {
                           { role: "Physician", count: 1 },
                           { role: "Center Director", count: 1 },
                           { role: "Nurse Practitioners", count: 3 },
+                          { role: "Rad Techs", count: 3 },
                           { role: "Medical Assistant", count: 1 },
                           { role: "Hospitality Manager", count: 1 },
                           { role: "Concierge", count: 3 }
@@ -234,7 +235,7 @@ export default function UseOfFunds() {
                         ))}
                       </div>
                       <div className="mt-3 flex justify-between items-center pt-3 border-t border-primary/20">
-                        <span className="text-sm text-muted-foreground">11 staff (fixed per center)</span>
+                        <span className="text-sm text-muted-foreground">14 staff (fixed per center)</span>
                         <span className="font-mono text-sm">Included in Flagship Center #1</span>
                       </div>
                     </div>
@@ -244,16 +245,16 @@ export default function UseOfFunds() {
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2">
                           <div className="w-3 h-3 rounded-full bg-amber-500" />
-                          <span className="font-display font-medium">ELITE Membership Team</span>
+                          <span className="font-display font-medium">ELITE Membership Teams</span>
                         </div>
-                        <span className="font-mono text-sm text-amber-500">Per 120 Members</span>
+                        <span className="font-mono text-sm text-amber-500">3 Teams at Launch</span>
                       </div>
-                      <p className="text-xs text-muted-foreground mb-3">Dedicated care team for ongoing ELITE member management. Physicians work under Medical Director supervision.</p>
+                      <p className="text-xs text-muted-foreground mb-3">Every center opens with 3 physician-led ELITE teams. Physicians work under Medical Director supervision. New teams added at 50% capacity.</p>
                       <div className="grid md:grid-cols-4 gap-2 text-sm">
                         {[
-                          { role: "Physician", count: 1 },
-                          { role: "Medical Assistant", count: 1 },
-                          { role: "Care Coordinators", count: 2 }
+                          { role: "Physicians", count: 3 },
+                          { role: "Medical Assistants", count: 3 },
+                          { role: "Care Coordinators", count: 6 }
                         ].map((item, i) => (
                           <div key={i} className="bg-card rounded-lg p-2 flex justify-between">
                             <span className="text-xs text-muted-foreground">{item.role}</span>
@@ -262,7 +263,7 @@ export default function UseOfFunds() {
                         ))}
                       </div>
                       <div className="mt-3 flex justify-between items-center pt-3 border-t border-amber-500/20">
-                        <span className="text-sm text-muted-foreground">4 staff per 120 ELITE members (scales)</span>
+                        <span className="text-sm text-muted-foreground">12 staff at launch (3 teams × 4 staff)</span>
                         <span className="font-mono text-sm">Included in Working Capital</span>
                       </div>
                     </div>
@@ -302,19 +303,19 @@ export default function UseOfFunds() {
                   <div className="mt-6 pt-6 border-t border-border">
                     <div className="grid md:grid-cols-3 gap-6">
                       <div className="text-center p-4 bg-muted/30 rounded-xl">
-                        <span className="font-mono text-2xl text-primary">$3.8M</span>
+                        <span className="font-mono text-2xl text-primary">$4.8M</span>
                         <p className="text-xs text-muted-foreground mt-1">Year 1 Payroll</p>
-                        <p className="text-[10px] text-muted-foreground">5 execs + 15 center staff</p>
+                        <p className="text-[10px] text-muted-foreground">5 execs + 26 center staff</p>
                       </div>
                       <div className="text-center p-4 bg-muted/30 rounded-xl">
-                        <span className="font-mono text-2xl text-amber-500">$6.2M</span>
+                        <span className="font-mono text-2xl text-amber-500">$7.5M</span>
                         <p className="text-xs text-muted-foreground mt-1">Year 2 Payroll</p>
                         <p className="text-[10px] text-muted-foreground">+ Corporate + ELITE teams</p>
                       </div>
                       <div className="text-center p-4 bg-muted/30 rounded-xl">
-                        <span className="font-mono text-2xl text-foreground">44</span>
+                        <span className="font-mono text-2xl text-foreground">55</span>
                         <p className="text-xs text-muted-foreground mt-1">Total Headcount</p>
-                        <p className="text-[10px] text-muted-foreground">Single center, 120 ELITE</p>
+                        <p className="text-[10px] text-muted-foreground">Single center, 3 ELITE teams</p>
                       </div>
                     </div>
                   </div>

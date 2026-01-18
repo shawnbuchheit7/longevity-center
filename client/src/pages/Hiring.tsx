@@ -484,6 +484,7 @@ export default function Hiring() {
                       { role: "Physician", count: 1, responsibilities: "Diagnostics consultations, treatment protocols, ancillary services", timing: "60 days pre-opening" },
                       { role: "Center Director", count: 1, responsibilities: "P&L ownership, team leadership, operations management", timing: "90 days pre-opening" },
                       { role: "Nurse Practitioners", count: 3, responsibilities: "Treatment delivery, injections, IV therapy, stem cell procedures", timing: "60 days pre-opening" },
+                      { role: "Rad Techs", count: 3, responsibilities: "MRI/CT imaging, DEXA scans, X-ray, diagnostic imaging support", timing: "60 days pre-opening" },
                       { role: "Medical Assistant", count: 1, responsibilities: "Patient intake, vitals, procedure support, lab coordination", timing: "30 days pre-opening" },
                       { role: "Hospitality Manager", count: 1, responsibilities: "Member experience, facility presentation, service excellence", timing: "60 days pre-opening" },
                       { role: "Concierge", count: 3, responsibilities: "Scheduling, member communications, front desk operations", timing: "30 days pre-opening" }
@@ -507,7 +508,7 @@ export default function Hiring() {
                 <div className="bg-primary/10 border border-primary/30 rounded-xl px-6 py-3 flex items-center gap-4">
                   <Users className="w-5 h-5 text-primary" />
                   <span className="font-body text-sm">
-                    <span className="font-medium text-foreground">11 staff</span>
+                    <span className="font-medium text-foreground">14 staff</span>
                     <span className="text-muted-foreground"> for Center Operations Team</span>
                   </span>
                 </div>
@@ -520,11 +521,11 @@ export default function Hiring() {
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-3 h-3 rounded-full bg-amber-500" />
                   <h3 className="font-display text-xl font-medium">ELITE Membership Team</h3>
-                  <span className="ml-auto text-xs bg-amber-500/20 text-amber-500 px-2 py-1 rounded">Per 120 Members</span>
+                  <span className="ml-auto text-xs bg-amber-500/20 text-amber-500 px-2 py-1 rounded">3 Teams at Launch</span>
                 </div>
                 <p className="text-sm text-muted-foreground ml-6">
-                  Dedicated care team for ongoing ELITE member management. ELITE Physicians are linked to the center where member testing was completed, 
-                  working under the supervision of the center's Medical Director. Does not manage diagnostics or ancillary services.
+                  Every center opens with <span className="text-foreground font-medium">3 physician-led ELITE teams</span> to ensure capacity for member growth. 
+                  ELITE Physicians are linked to the center where member testing was completed, working under the supervision of the center's Medical Director.
                 </p>
               </div>
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
@@ -532,38 +533,49 @@ export default function Hiring() {
                   <thead>
                     <tr className="border-b border-border bg-muted/30">
                       <th className="text-left p-4 font-display font-medium">Role</th>
-                      <th className="text-center p-4 font-display font-medium">Headcount</th>
+                      <th className="text-center p-4 font-display font-medium">Per Team</th>
+                      <th className="text-center p-4 font-display font-medium">At Launch (3 Teams)</th>
                       <th className="text-left p-4 font-display font-medium">Key Responsibilities</th>
-                      <th className="text-center p-4 font-display font-medium">Capacity</th>
                     </tr>
                   </thead>
                   <tbody className="font-body text-sm">
                     {[
-                      { role: "Physician", count: 1, responsibilities: "Ongoing member care under Medical Director supervision, health optimization, treatment planning", capacity: "120 members" },
-                      { role: "Medical Assistant", count: 1, responsibilities: "Physician support, care coordination, member follow-up", capacity: "120 members" },
-                      { role: "Care Coordinator", count: 2, responsibilities: "Member relationship management, scheduling, care navigation", capacity: "60 members each" }
+                      { role: "Physician", perTeam: 1, atLaunch: 3, responsibilities: "Ongoing member care under Medical Director supervision, health optimization, treatment planning" },
+                      { role: "Medical Assistant", perTeam: 1, atLaunch: 3, responsibilities: "Physician support, care coordination, member follow-up" },
+                      { role: "Care Coordinator", perTeam: 2, atLaunch: 6, responsibilities: "Member relationship management, scheduling, care navigation (60 members each)" }
                     ].map((item, i) => (
                       <tr key={i} className="border-b border-border/50 last:border-0">
                         <td className="p-4 font-medium">{item.role}</td>
                         <td className="p-4 text-center">
                           <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-amber-500/10 text-amber-500 font-mono text-sm">
-                            {item.count}
+                            {item.perTeam}
+                          </span>
+                        </td>
+                        <td className="p-4 text-center">
+                          <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-mono text-sm">
+                            {item.atLaunch}
                           </span>
                         </td>
                         <td className="p-4 text-muted-foreground">{item.responsibilities}</td>
-                        <td className="p-4 text-center font-mono text-xs text-muted-foreground">{item.capacity}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
               
-              <div className="mt-6 flex justify-center">
+              <div className="mt-6 flex flex-col md:flex-row justify-center gap-4">
                 <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl px-6 py-3 flex items-center gap-4">
                   <Users className="w-5 h-5 text-amber-500" />
                   <span className="font-body text-sm">
-                    <span className="font-medium text-foreground">4 staff per 120 ELITE members</span>
-                    <span className="text-muted-foreground"> (scales with membership)</span>
+                    <span className="font-medium text-foreground">4 staff per ELITE team</span>
+                    <span className="text-muted-foreground"> (120 members max)</span>
+                  </span>
+                </div>
+                <div className="bg-primary/10 border border-primary/30 rounded-xl px-6 py-3 flex items-center gap-4">
+                  <Users className="w-5 h-5 text-primary" />
+                  <span className="font-body text-sm">
+                    <span className="font-medium text-foreground">12 ELITE staff at launch</span>
+                    <span className="text-muted-foreground"> (3 teams × 4 staff)</span>
                   </span>
                 </div>
               </div>
@@ -574,19 +586,19 @@ export default function Hiring() {
               <h4 className="font-display font-medium text-center mb-6">Flagship Center Total Staffing</h4>
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div>
-                  <span className="font-mono text-3xl text-primary">11</span>
+                  <span className="font-mono text-3xl text-primary">14</span>
                   <p className="text-sm text-muted-foreground mt-1">Center Operations Team</p>
                   <p className="text-xs text-muted-foreground">Fixed per center</p>
                 </div>
                 <div>
-                  <span className="font-mono text-3xl text-amber-500">4</span>
-                  <p className="text-sm text-muted-foreground mt-1">ELITE Team (per 120)</p>
-                  <p className="text-xs text-muted-foreground">Scales with membership</p>
+                  <span className="font-mono text-3xl text-amber-500">12</span>
+                  <p className="text-sm text-muted-foreground mt-1">ELITE Teams (3 at launch)</p>
+                  <p className="text-xs text-muted-foreground">4 staff × 3 physicians</p>
                 </div>
                 <div>
-                  <span className="font-mono text-3xl text-foreground">15</span>
+                  <span className="font-mono text-3xl text-foreground">26</span>
                   <p className="text-sm text-muted-foreground mt-1">Launch Headcount</p>
-                  <p className="text-xs text-muted-foreground">11 ops + 4 ELITE team</p>
+                  <p className="text-xs text-muted-foreground">14 ops + 12 ELITE staff</p>
                 </div>
               </div>
             </motion.div>
@@ -721,8 +733,8 @@ export default function Hiring() {
               <div className="grid md:grid-cols-5 gap-4 mb-8">
                 {[
                   { count: 5, label: "Phase 1 Executives", description: "CEO, CFO, COO, CPO, CLO", color: "destructive" },
-                  { count: 11, label: "Center Ops Team", description: "Fixed per center", color: "primary" },
-                  { count: 4, label: "ELITE Team", description: "Per 120 members", color: "amber-500" },
+                  { count: 14, label: "Center Ops Team", description: "Fixed per center", color: "primary" },
+                  { count: 12, label: "ELITE Teams", description: "3 teams at launch", color: "amber-500" },
                   { count: 20, label: "Corporate Roles", description: "6 departments", color: "primary" },
                   { count: 4, label: "Phase 2 Executives", description: "CMO, CCO, CMO, CTO", color: "amber-500" }
                 ].map((item, i) => (
@@ -743,11 +755,11 @@ export default function Hiring() {
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
-                      <span className="font-mono text-2xl font-bold text-primary">44</span>
+                      <span className="font-mono text-2xl font-bold text-primary">55</span>
                     </div>
                     <div>
                       <h3 className="font-display text-xl font-medium">Total Headcount</h3>
-                      <p className="text-sm text-muted-foreground">Full team at scale (single center, 120 ELITE members)</p>
+                      <p className="text-sm text-muted-foreground">Full team at launch (single center, 3 ELITE teams)</p>
                     </div>
                   </div>
                   <div className="text-center md:text-right">
@@ -783,8 +795,8 @@ export default function Hiring() {
             <motion.div variants={fadeInUp} className="space-y-4">
               {[
                 { phase: "Pre-Launch", label: "Phase 1 Critical", count: "5 executives", color: "destructive", description: "CEO, CFO, COO, CPO, CLO" },
-                { phase: "Center Opening", label: "Center Ops Team", count: "11 staff", color: "primary", description: "Medical Director, Physician, Center Director, NPs, MA, Hospitality, Concierge" },
-                { phase: "With Members", label: "ELITE Team", count: "4 per 120", color: "amber-500", description: "Physician, MA, 2 Care Coordinators (scales with membership)" },
+                { phase: "Center Opening", label: "Center Ops Team", count: "14 staff", color: "primary", description: "Medical Director, Physician, Center Director, NPs, Rad Techs, MA, Hospitality, Concierge" },
+                { phase: "Center Opening", label: "ELITE Teams", count: "12 staff (3 teams)", color: "amber-500", description: "3 Physicians, 3 MAs, 6 Care Coordinators (opens with capacity for 360 members)" },
                 { phase: "Post-Launch", label: "Corporate Build", count: "20 roles", color: "primary", description: "Finance, HR, Marketing, Technology, Clinical Ops, Product" },
                 { phase: "As Needed", label: "Phase 2 Executives", count: "4 executives", color: "amber-500", description: "CMO (Medical), CCO, CMO (Marketing), CTO" }
               ].map((item, i) => (
@@ -900,7 +912,7 @@ export default function Hiring() {
                   <div>
                     <h4 className="font-display text-sm font-medium mb-2 text-amber-500">Staffing</h4>
                     <ul className="space-y-2">
-                      {["Physician hired", "3 Nurse Practitioners hired", "Lab Technician hired", "ELITE Physician recruited"].map((item, i) => (
+                      {["Physician hired", "3 Nurse Practitioners hired", "3 Rad Techs hired", "3 ELITE Physicians recruited"].map((item, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                           <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0" />
                           <span>{item}</span>
@@ -948,7 +960,7 @@ export default function Hiring() {
                   <div>
                     <h4 className="font-display text-sm font-medium mb-2 text-primary">Staffing</h4>
                     <ul className="space-y-2">
-                      {["Medical Assistant hired", "Hospitality Manager hired", "3 Concierge staff hired", "ELITE Care Coordinators hired"].map((item, i) => (
+                      {["Medical Assistant hired", "Hospitality Manager hired", "3 Concierge staff hired", "3 ELITE MAs hired", "6 ELITE Care Coordinators hired"].map((item, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                           <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
                           <span>{item}</span>
@@ -989,11 +1001,11 @@ export default function Hiring() {
                   <p className="text-sm text-muted-foreground mt-1">Key Hires at 90 Days</p>
                 </div>
                 <div>
-                  <span className="font-mono text-2xl text-amber-500">5</span>
+                  <span className="font-mono text-2xl text-amber-500">11</span>
                   <p className="text-sm text-muted-foreground mt-1">Clinical Staff at 60 Days</p>
                 </div>
                 <div>
-                  <span className="font-mono text-2xl text-primary">7</span>
+                  <span className="font-mono text-2xl text-primary">14</span>
                   <p className="text-sm text-muted-foreground mt-1">Final Hires at 30 Days</p>
                 </div>
               </div>
@@ -1230,12 +1242,12 @@ export default function Hiring() {
 
             <motion.div variants={fadeInUp} className="mt-8 grid md:grid-cols-3 gap-6">
               <div className="bg-muted/30 rounded-xl p-6 text-center">
-                <span className="font-mono text-2xl text-primary">$3.8M</span>
+                <span className="font-mono text-2xl text-primary">$4.8M</span>
                 <p className="text-sm text-muted-foreground mt-2">Est. Annual Payroll (Year 1)</p>
-                <p className="text-xs text-muted-foreground">5 executives + 15 center staff</p>
+                <p className="text-xs text-muted-foreground">5 executives + 26 center staff (14 ops + 12 ELITE)</p>
               </div>
               <div className="bg-muted/30 rounded-xl p-6 text-center">
-                <span className="font-mono text-2xl text-primary">$6.2M</span>
+                <span className="font-mono text-2xl text-primary">$7.5M</span>
                 <p className="text-sm text-muted-foreground mt-2">Est. Annual Payroll (Year 2)</p>
                 <p className="text-xs text-muted-foreground">+ Corporate team + additional ELITE teams</p>
               </div>
@@ -1279,10 +1291,14 @@ export default function Hiring() {
                 with dedicated physician oversight and personalized care coordination. ELITE Physicians are linked to the center 
                 where member testing was completed, working under the supervision of the center's Medical Director.
               </p>
-              <div className="grid md:grid-cols-4 gap-6 mb-8">
+              
+              {/* Key Metrics */}
+              <div className="grid md:grid-cols-6 gap-4 mb-8">
                 {[
-                  { metric: "120", label: "Members per ELITE Team", description: "Maximum capacity" },
-                  { metric: "1", label: "Physician per Team", description: "Ongoing member care" },
+                  { metric: "3", label: "Teams at Launch", description: "Per center" },
+                  { metric: "120", label: "Members per Team", description: "Maximum capacity" },
+                  { metric: "15", label: "New Members/Month", description: "Per physician limit" },
+                  { metric: "50%", label: "Capacity Trigger", description: "Add new team" },
                   { metric: "60", label: "Members per Coordinator", description: "2 coordinators per team" },
                   { metric: "4", label: "Staff per Team", description: "Physician, MA, 2 Coordinators" }
                 ].map((item, i) => (
@@ -1293,14 +1309,60 @@ export default function Hiring() {
                   </div>
                 ))}
               </div>
+
+              {/* Onboarding & Scaling Rules */}
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div className="bg-card border border-border rounded-xl p-6">
+                  <h4 className="font-display font-medium mb-4 flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-amber-500" />
+                    Physician Onboarding Limits
+                  </h4>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0" />
+                      <span className="text-muted-foreground">Each physician limited to <span className="text-foreground font-medium">15 new members per month</span></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0" />
+                      <span className="text-muted-foreground">Ensures quality onboarding and relationship building</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0" />
+                      <span className="text-muted-foreground">~8 months to reach full panel capacity of 120</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="bg-card border border-border rounded-xl p-6">
+                  <h4 className="font-display font-medium mb-4 flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary" />
+                    New Team Trigger
+                  </h4>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                      <span className="text-muted-foreground">New ELITE team added when existing physician panel reaches <span className="text-foreground font-medium">50% capacity (60 members)</span></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                      <span className="text-muted-foreground">Ensures seamless capacity for new member growth</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                      <span className="text-muted-foreground">Proactive hiring prevents waitlists and delays</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Scaling Table */}
               <div className="bg-card border border-border rounded-xl p-6">
                 <h4 className="font-display font-medium mb-4">ELITE Team Scaling Triggers</h4>
                 <div className="space-y-3">
                   {[
-                    { members: "1-120", teams: "1 ELITE Team", staff: "4 staff", trigger: "Launch configuration" },
-                    { members: "121-240", teams: "2 ELITE Teams", staff: "8 staff", trigger: "Add team when first reaches 120" },
-                    { members: "241-360", teams: "3 ELITE Teams", staff: "12 staff", trigger: "Continue scaling" },
-                    { members: "361-480", teams: "4 ELITE Teams", staff: "16 staff", trigger: "Maximum single-center capacity" }
+                    { members: "1-60", teams: "1 ELITE Team", staff: "4 staff", trigger: "Launch configuration (triggers Team 2 hiring)" },
+                    { members: "61-120", teams: "2 ELITE Teams", staff: "8 staff", trigger: "Team 2 onboarding while Team 1 fills" },
+                    { members: "121-180", teams: "3 ELITE Teams", staff: "12 staff", trigger: "Team 3 added at Team 2's 50% capacity" },
+                    { members: "181-240", teams: "4 ELITE Teams", staff: "16 staff", trigger: "Continue scaling pattern" }
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-4 p-3 bg-muted/30 rounded-lg">
                       <div className="w-24 shrink-0">
@@ -1335,8 +1397,8 @@ export default function Hiring() {
                     { category: "Phase 1 Executives", c1: 5, c3: 5, c5: 5, c10: 5, shared: true },
                     { category: "Phase 2 Executives", c1: 0, c3: 2, c5: 4, c10: 4, shared: true },
                     { category: "Corporate Staff", c1: 10, c3: 15, c5: 20, c10: 30, shared: true },
-                    { category: "Center Ops Team", c1: 11, c3: 33, c5: 55, c10: 110, shared: false },
-                    { category: "ELITE Teams (per 120 members)", c1: 4, c3: 12, c5: 20, c10: 40, shared: false }
+                    { category: "Center Ops Team", c1: 14, c3: 42, c5: 70, c10: 140, shared: false },
+                    { category: "ELITE Teams (3 per center at launch)", c1: 12, c3: 36, c5: 60, c10: 120, shared: false }
                   ].map((item, i) => (
                     <tr key={i} className="border-b border-border/50 last:border-0">
                       <td className="p-4">
@@ -1351,10 +1413,10 @@ export default function Hiring() {
                   ))}
                   <tr className="bg-muted/30 font-medium">
                     <td className="p-4">Total Headcount</td>
-                    <td className="p-4 text-center font-mono text-primary">30</td>
-                    <td className="p-4 text-center font-mono text-primary">67</td>
-                    <td className="p-4 text-center font-mono text-primary">104</td>
-                    <td className="p-4 text-center font-mono text-primary">189</td>
+                    <td className="p-4 text-center font-mono text-primary">41</td>
+                    <td className="p-4 text-center font-mono text-primary">100</td>
+                    <td className="p-4 text-center font-mono text-primary">159</td>
+                    <td className="p-4 text-center font-mono text-primary">299</td>
                   </tr>
                 </tbody>
               </table>
@@ -1363,7 +1425,7 @@ export default function Hiring() {
             <motion.div variants={fadeInUp} className="mt-8 bg-muted/30 rounded-xl p-4">
               <p className="font-body text-sm text-muted-foreground text-center">
                 <span className="text-foreground font-medium">Note:</span> "Shared" roles are centralized at corporate and support all centers. 
-                Center Ops Team (11 staff) is fixed per center. ELITE Teams (4 staff per 120 members) scale with membership growth.
+                Center Ops Team (14 staff) is fixed per center. Each center opens with 3 ELITE teams (12 staff). Additional teams added at 50% capacity.
               </p>
             </motion.div>
           </motion.div>

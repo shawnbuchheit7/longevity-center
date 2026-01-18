@@ -25,6 +25,7 @@ const navLinks = [
   { href: "/hiring", label: "Team" },
   { href: "/use-of-funds", label: "Funds" },
   { href: "/projections", label: "Projections" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export default function Layout({ children }: LayoutProps) {

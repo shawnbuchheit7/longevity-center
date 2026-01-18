@@ -18,6 +18,7 @@ import Contact from "./pages/Contact";
 import Difference from "./pages/Difference";
 import Hiring from "./pages/Hiring";
 import Memberships from "./pages/Memberships";
+import FAQ from "./pages/FAQ";
 
 function Router() {
   return (
@@ -34,6 +35,7 @@ function Router() {
       <Route path="/use-of-funds" component={UseOfFunds} />
       <Route path="/projections" component={Projections} />
       <Route path="/hiring" component={Hiring} />
+      <Route path="/faq" component={FAQ} />
       <Route path="/contact" component={Contact} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}

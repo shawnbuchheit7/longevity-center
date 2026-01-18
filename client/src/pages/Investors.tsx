@@ -4,7 +4,7 @@
  */
 
 import { motion } from "framer-motion";
-import { Star, Film, Gamepad2, Clapperboard, PieChart, DollarSign, TrendingUp, Users, FileText, Shield, Check, AlertTriangle } from "lucide-react";
+import { Star, Film, Gamepad2, Clapperboard, PieChart, DollarSign, TrendingUp, Users, FileText, Shield, Check, AlertTriangle, Download, FolderOpen, FileSpreadsheet, Presentation, FileCheck } from "lucide-react";
 import Layout from "@/components/Layout";
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
 
@@ -516,8 +516,117 @@ export default function Investors() {
         </div>
       </section>
 
-      {/* Risk Factors */}
+      {/* Data Room */}
       <section className="py-20">
+        <div className="container">
+          <motion.div 
+            className="max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                INVESTOR RESOURCES
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
+                Data Room
+              </h2>
+              <p className="font-body text-xl text-muted-foreground">
+                Access key documents and financial models for due diligence.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: FileSpreadsheet,
+                  title: "Financial Model",
+                  description: "5-year projections with detailed assumptions, unit economics, and sensitivity analysis",
+                  format: "Excel",
+                  size: "2.4 MB",
+                  available: true
+                },
+                {
+                  icon: Presentation,
+                  title: "Investor Deck",
+                  description: "Comprehensive pitch deck with market analysis, competitive positioning, and growth strategy",
+                  format: "PDF",
+                  size: "8.1 MB",
+                  available: true
+                },
+                {
+                  icon: FileText,
+                  title: "Executive Summary",
+                  description: "2-page overview of the investment opportunity and key highlights",
+                  format: "PDF",
+                  size: "0.5 MB",
+                  available: true
+                },
+                {
+                  icon: FileCheck,
+                  title: "Term Sheet",
+                  description: "Series A term sheet with detailed investment terms and conditions",
+                  format: "PDF",
+                  size: "0.3 MB",
+                  available: true
+                },
+                {
+                  icon: FolderOpen,
+                  title: "Corporate Documents",
+                  description: "Certificate of incorporation, bylaws, and organizational documents",
+                  format: "ZIP",
+                  size: "1.2 MB",
+                  available: false
+                },
+                {
+                  icon: FileText,
+                  title: "Market Research",
+                  description: "Third-party market analysis and competitive landscape report",
+                  format: "PDF",
+                  size: "4.7 MB",
+                  available: false
+                }
+              ].map((doc, i) => (
+                <div key={i} className={`bg-card border rounded-2xl p-6 ${doc.available ? 'border-border hover:border-primary/50' : 'border-border/50 opacity-60'} transition-colors`}>
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <doc.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    {doc.available ? (
+                      <button className="flex items-center gap-1 text-sm text-primary hover:underline">
+                        <Download className="w-4 h-4" />
+                        Download
+                      </button>
+                    ) : (
+                      <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">Upon Request</span>
+                    )}
+                  </div>
+                  <h3 className="font-display text-lg font-medium mb-2">{doc.title}</h3>
+                  <p className="font-body text-sm text-muted-foreground mb-4">{doc.description}</p>
+                  <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                    <span className="bg-muted px-2 py-1 rounded">{doc.format}</span>
+                    <span>{doc.size}</span>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="mt-8 bg-muted/30 rounded-xl p-6 text-center">
+              <p className="font-body text-sm text-muted-foreground mb-4">
+                Additional documents available upon execution of NDA. Contact us to request access.
+              </p>
+              <a href="/contact" className="inline-flex items-center gap-2 text-primary hover:underline font-medium">
+                Request Data Room Access →
+              </a>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Risk Factors */}
+      <section className="py-20 bg-card/30">
         <div className="container">
           <motion.div 
             className="max-w-5xl mx-auto"
