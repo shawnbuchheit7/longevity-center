@@ -1,6 +1,6 @@
 /*
  * DESIGN: "Cellular Renaissance" - Organic Futurism
- * Investors page - Celebrity and strategic investors with photos
+ * Founders page - Founding team and strategic backers
  */
 
 import { motion } from "framer-motion";
@@ -21,20 +21,20 @@ export default function Investors() {
             variants={staggerContainer}
           >
             <motion.span variants={fadeInUp} className="font-mono text-primary text-sm tracking-wider">
-              STRATEGIC INVESTORS
+              FOUNDING TEAM
             </motion.span>
             <motion.h1 variants={fadeInUp} className="font-display text-5xl md:text-7xl font-medium mt-4 mb-6">
-              World-Class Backers
+              Visionary Founders
             </motion.h1>
             <motion.p variants={fadeInUp} className="font-body text-xl text-muted-foreground">
-              Lumastem is backed by visionary investors who understand the intersection of 
+              Lumastem is built by founders who understand the intersection of 
               health, wellness, and cultural influence.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
-      {/* Celebrity Investors */}
+      {/* Founders */}
       <section className="py-20">
         <div className="container">
           <motion.div 
@@ -118,7 +118,7 @@ export default function Investors() {
         </div>
       </section>
 
-      {/* Why Celebrity Investors Matter */}
+      {/* Why Our Founders Matter */}
       <section className="py-20 bg-card/30">
         <div className="container">
           <motion.div 
@@ -136,7 +136,7 @@ export default function Investors() {
                 More Than Capital
               </h2>
               <p className="font-body text-xl text-muted-foreground">
-                Our celebrity investors bring unique advantages that accelerate growth and 
+                Our founders bring unique advantages that accelerate growth and 
                 build unmatched brand credibility.
               </p>
             </motion.div>
@@ -166,6 +166,29 @@ export default function Investors() {
                 </div>
               ))}
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Investor Information Section Divider */}
+      <section className="py-12 bg-gradient-to-b from-transparent via-primary/5 to-transparent">
+        <div className="container">
+          <motion.div 
+            className="text-center max-w-3xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+          >
+            <span className="font-mono text-primary text-sm tracking-wider">
+              FOR INVESTORS
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl font-medium mt-4 mb-4">
+              Investment Details
+            </h2>
+            <p className="font-body text-muted-foreground">
+              Detailed information for prospective Series A investors.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -504,7 +527,7 @@ export default function Investors() {
                   category: "Market Risk",
                   risks: [
                     "Regenerative medicine market adoption may be slower than projected",
-                    "Insurance reimbursement landscape remains uncertain",
+                    "Economic downturn could impact discretionary healthcare spending",
                     "International expansion subject to foreign regulatory approval"
                   ]
                 }
