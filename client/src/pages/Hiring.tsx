@@ -282,8 +282,126 @@ export default function Hiring() {
         </div>
       </section>
 
-      {/* Center Operations Team */}
+      {/* Organizational Structure */}
       <section className="py-20">
+        <div className="container">
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                ORGANIZATIONAL STRUCTURE
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
+                Reporting Hierarchy
+              </h2>
+              <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                Clear lines of accountability from board to center operations
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="bg-card border border-border rounded-2xl p-8">
+              {/* Board Level */}
+              <div className="flex justify-center mb-8">
+                <div className="bg-accent/20 border border-accent/50 rounded-xl px-6 py-3 text-center">
+                  <span className="font-mono text-xs text-accent">GOVERNANCE</span>
+                  <h4 className="font-display font-medium">Board of Directors</h4>
+                </div>
+              </div>
+              
+              {/* Connector */}
+              <div className="flex justify-center mb-4">
+                <div className="w-0.5 h-8 bg-border" />
+              </div>
+              
+              {/* CEO Level */}
+              <div className="flex justify-center mb-8">
+                <div className="bg-destructive/10 border border-destructive/30 rounded-xl px-8 py-4 text-center">
+                  <span className="font-mono text-xs text-destructive">EXECUTIVE LEADERSHIP</span>
+                  <h4 className="font-display font-medium text-lg">Chief Executive Officer</h4>
+                  <p className="text-xs text-muted-foreground mt-1">Strategy, Board Relations, Capital</p>
+                </div>
+              </div>
+              
+              {/* Connector */}
+              <div className="flex justify-center mb-4">
+                <div className="w-0.5 h-8 bg-border" />
+              </div>
+              
+              {/* C-Suite Level */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                {[
+                  { title: "CFO", scope: "Finance, HR, Admin" },
+                  { title: "COO", scope: "Operations, Facilities" },
+                  { title: "CPO", scope: "Product, Marketing, Tech" },
+                  { title: "CLO", scope: "Legal, Compliance" }
+                ].map((exec, i) => (
+                  <div key={i} className="bg-primary/10 border border-primary/30 rounded-xl px-4 py-3 text-center">
+                    <h4 className="font-display font-medium">{exec.title}</h4>
+                    <p className="text-xs text-muted-foreground mt-1">{exec.scope}</p>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Connector */}
+              <div className="flex justify-center mb-4">
+                <div className="flex items-end gap-4">
+                  <div className="w-24 h-0.5 bg-border" />
+                  <div className="w-0.5 h-8 bg-border" />
+                  <div className="w-24 h-0.5 bg-border" />
+                </div>
+              </div>
+              
+              {/* Phase 2 Executives */}
+              <div className="flex justify-center gap-4 mb-8">
+                {[
+                  { title: "CMO", subtitle: "(Medical)", scope: "Clinical Protocols" },
+                  { title: "CMO", subtitle: "(Marketing)", scope: "Brand & Growth" },
+                  { title: "CTO", subtitle: "", scope: "Technology" }
+                ].map((exec, i) => (
+                  <div key={i} className="bg-amber-500/10 border border-amber-500/30 rounded-xl px-4 py-3 text-center">
+                    <span className="font-mono text-[10px] text-amber-500">PHASE 2</span>
+                    <h4 className="font-display font-medium text-sm">{exec.title} <span className="text-muted-foreground">{exec.subtitle}</span></h4>
+                    <p className="text-xs text-muted-foreground">{exec.scope}</p>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Connector to Operations */}
+              <div className="flex justify-center mb-4">
+                <div className="w-0.5 h-8 bg-border" />
+              </div>
+              
+              {/* Center Operations */}
+              <div className="bg-muted/30 border border-border rounded-xl p-6">
+                <div className="text-center mb-4">
+                  <span className="font-mono text-xs text-muted-foreground">CENTER OPERATIONS</span>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {[
+                    { title: "Center Director", reports: "Reports to COO" },
+                    { title: "VP of Operations", reports: "Reports to COO" },
+                    { title: "Dir. Care Coordination", reports: "Reports to CMO" },
+                    { title: "Dir. of Operations", reports: "Reports to COO" }
+                  ].map((role, i) => (
+                    <div key={i} className="bg-card border border-border rounded-lg px-3 py-2 text-center">
+                      <h5 className="font-display text-sm font-medium">{role.title}</h5>
+                      <p className="text-[10px] text-muted-foreground">{role.reports}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Center Operations Team */}
+      <section className="py-20 bg-card/30">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -317,13 +435,13 @@ Clinical and operations staff for the first Lumastem center
                   </thead>
                   <tbody className="font-body text-sm">
                     {[
-                      { role: "Center Director", count: 1, responsibilities: "P&L ownership, team leadership, member experience", timing: "TBD" },
-                      { role: "Longevity Physicians", count: 2, responsibilities: "Member consultations, care coordination, protocol oversight", timing: "TBD" },
-                      { role: "Nurse Practitioners", count: 3, responsibilities: "Treatment delivery, peptide/hormone protocols, follow-up care", timing: "TBD" },
-                      { role: "Medical Assistants", count: 4, responsibilities: "Patient intake, vitals, procedure support, lab coordination", timing: "TBD" },
-                      { role: "Concierge/Member Services", count: 3, responsibilities: "Scheduling, member communications, hospitality", timing: "TBD" },
-                      { role: "Lab Technicians", count: 2, responsibilities: "Biologics processing, quality control, equipment maintenance", timing: "TBD" },
-                      { role: "Operations Manager", count: 1, responsibilities: "Inventory, vendor management, facility operations", timing: "TBD" }
+                      { role: "Center Director", count: 1, responsibilities: "P&L ownership, team leadership, member experience", timing: "90 days pre-opening" },
+                      { role: "Longevity Physicians", count: 2, responsibilities: "Member consultations, care coordination, protocol oversight", timing: "60 days pre-opening" },
+                      { role: "Nurse Practitioners", count: 3, responsibilities: "Treatment delivery, peptide/hormone protocols, follow-up care", timing: "60 days pre-opening" },
+                      { role: "Medical Assistants", count: 4, responsibilities: "Patient intake, vitals, procedure support, lab coordination", timing: "30 days pre-opening" },
+                      { role: "Concierge/Member Services", count: 3, responsibilities: "Scheduling, member communications, hospitality", timing: "30 days pre-opening" },
+                      { role: "Lab Technicians", count: 2, responsibilities: "Biologics processing, quality control, equipment maintenance", timing: "60 days pre-opening" },
+                      { role: "Operations Manager", count: 1, responsibilities: "Inventory, vendor management, facility operations", timing: "90 days pre-opening" }
                     ].map((item, i) => (
                       <tr key={i} className="border-b border-border/50 last:border-0">
                         <td className="p-4 font-medium">{item.role}</td>
