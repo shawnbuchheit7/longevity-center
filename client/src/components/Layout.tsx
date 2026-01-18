@@ -20,10 +20,10 @@ const navLinks = [
   { href: "/memberships", label: "Memberships" },
   { href: "/therapeutics", label: "Therapeutics" },
   { href: "/technology", label: "Technology" },
-  { href: "/performance", label: "Economics" },
-  { href: "/hiring", label: "Team" },
   { href: "/use-of-funds", label: "Funds" },
+  { href: "/performance", label: "Economics" },
   { href: "/projections", label: "Projections" },
+  { href: "/hiring", label: "Team" },
   { href: "/faq", label: "FAQ" },
 ];
 

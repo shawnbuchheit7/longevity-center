@@ -1617,7 +1617,7 @@ export default function Performance() {
               {[
                 {
                   title: "Proven Unit Economics",
-                  description: "69% gross margin and 37% EBITDA margin by Year 5 demonstrates strong profitability at the center level."
+                  description: "66% gross margin and 34% EBITDA margin by Year 5 demonstrates strong profitability at the center level."
                 },
                 {
                   title: "Predictable Growth",
