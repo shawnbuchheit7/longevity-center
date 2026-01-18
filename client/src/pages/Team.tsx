@@ -47,9 +47,9 @@ export default function Team() {
               {
                 name: "Dr. Pradeep Albert",
                 title: "Chief Medical Officer",
-                image: "/images/dr-pradeep-albert.jpg",
+                image: "/images/dr-pradeep-albert.png",
                 credentials: "MD, Board Certified",
-                linkedin: "https://www.linkedin.com/in/pradeep-albert-md-2a5b8b1/",
+                linkedin: "https://www.linkedin.com/in/pradeep-albert-md-8301ab9/",
                 bio: "Pioneer in regenerative medicine with 40,000+ procedures performed. Former Chief of Orthopedic Surgery with expertise spanning sports medicine, spine care, and biologics.",
                 highlights: [
                   "40,000+ regenerative procedures",
@@ -60,9 +60,9 @@ export default function Team() {
               {
                 name: "Dr. Gus Vickery",
                 title: "Peptide Program Chair",
-                image: "/images/dr-gus-vickery.jpg",
+                image: "/images/dr-gus-vickery.png",
                 credentials: "MD, Integrative Medicine",
-                linkedin: "https://www.linkedin.com/in/gusvickerymd/",
+                linkedin: "https://www.linkedin.com/in/gus-vickery-b5301b15a/",
                 bio: "Leading authority on peptide therapeutics and hormone optimization. Brings decades of experience in longevity medicine and personalized health protocols.",
                 highlights: [
                   "Peptide therapy pioneer",
@@ -73,9 +73,9 @@ export default function Team() {
               {
                 name: "Linda McIver",
                 title: "Chief Executive Officer",
-                image: "/images/linda-mciver.jpg",
+                image: "/images/linda-mciver.png",
                 credentials: "MBA, Healthcare Executive",
-                linkedin: "https://www.linkedin.com/in/lindamciver/",
+                linkedin: "https://www.linkedin.com/in/linda-mciver-fnp-c-abaahp-882b4a38/",
                 bio: "Seasoned healthcare executive with track record of scaling physician-led practices. Expert in operational excellence and strategic growth.",
                 highlights: [
                   "20+ years healthcare leadership",
