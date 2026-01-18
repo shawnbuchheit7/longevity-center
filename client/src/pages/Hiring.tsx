@@ -300,7 +300,7 @@ export default function Hiring() {
                 Flagship Center Team
               </h2>
               <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-                Clinical and operations staff for the first Lumastem center (Q1 2026)
+Clinical and operations staff for the first Lumastem center
               </p>
             </motion.div>
 
@@ -317,13 +317,13 @@ export default function Hiring() {
                   </thead>
                   <tbody className="font-body text-sm">
                     {[
-                      { role: "Center Director", count: 1, responsibilities: "P&L ownership, team leadership, member experience", timing: "Q4 2025" },
-                      { role: "Longevity Physicians", count: 2, responsibilities: "Member consultations, care coordination, protocol oversight", timing: "Q1 2026" },
-                      { role: "Nurse Practitioners", count: 3, responsibilities: "Treatment delivery, peptide/hormone protocols, follow-up care", timing: "Q1 2026" },
-                      { role: "Medical Assistants", count: 4, responsibilities: "Patient intake, vitals, procedure support, lab coordination", timing: "Q1 2026" },
-                      { role: "Concierge/Member Services", count: 3, responsibilities: "Scheduling, member communications, hospitality", timing: "Q1 2026" },
-                      { role: "Lab Technicians", count: 2, responsibilities: "Biologics processing, quality control, equipment maintenance", timing: "Q1 2026" },
-                      { role: "Operations Manager", count: 1, responsibilities: "Inventory, vendor management, facility operations", timing: "Q4 2025" }
+                      { role: "Center Director", count: 1, responsibilities: "P&L ownership, team leadership, member experience", timing: "TBD" },
+                      { role: "Longevity Physicians", count: 2, responsibilities: "Member consultations, care coordination, protocol oversight", timing: "TBD" },
+                      { role: "Nurse Practitioners", count: 3, responsibilities: "Treatment delivery, peptide/hormone protocols, follow-up care", timing: "TBD" },
+                      { role: "Medical Assistants", count: 4, responsibilities: "Patient intake, vitals, procedure support, lab coordination", timing: "TBD" },
+                      { role: "Concierge/Member Services", count: 3, responsibilities: "Scheduling, member communications, hospitality", timing: "TBD" },
+                      { role: "Lab Technicians", count: 2, responsibilities: "Biologics processing, quality control, equipment maintenance", timing: "TBD" },
+                      { role: "Operations Manager", count: 1, responsibilities: "Inventory, vendor management, facility operations", timing: "TBD" }
                     ].map((item, i) => (
                       <tr key={i} className="border-b border-border/50 last:border-0">
                         <td className="p-4 font-medium">{item.role}</td>
@@ -382,37 +382,37 @@ export default function Hiring() {
                   department: "Finance & Accounting",
                   roles: ["Controller", "Staff Accountant", "AP/AR Specialist"],
                   headcount: 3,
-                  timing: "Q2 2026"
+                  timing: "TBD"
                 },
                 {
                   department: "Human Resources",
                   roles: ["HR Director", "Recruiter", "Benefits Administrator"],
                   headcount: 3,
-                  timing: "Q2 2026"
+                  timing: "TBD"
                 },
                 {
                   department: "Marketing & Growth",
                   roles: ["Digital Marketing Manager", "Content Creator", "Member Success"],
                   headcount: 3,
-                  timing: "Q2 2026"
+                  timing: "TBD"
                 },
                 {
                   department: "Technology",
                   roles: ["Platform Engineer", "Data Analyst", "IT Support"],
                   headcount: 3,
-                  timing: "Q3 2026"
+                  timing: "TBD"
                 },
                 {
                   department: "Clinical Operations",
                   roles: ["Clinical Trainer", "Quality Manager", "Compliance Officer"],
                   headcount: 3,
-                  timing: "Q3 2026"
+                  timing: "TBD"
                 },
                 {
                   department: "Legal & Compliance",
                   roles: ["Paralegal", "Contracts Manager"],
                   headcount: 2,
-                  timing: "Q3 2026"
+                  timing: "TBD"
                 }
               ].map((dept, i) => (
                 <motion.div 

@@ -81,7 +81,7 @@ export default function Therapeutics() {
             <motion.div variants={scaleIn} className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-3xl blur-3xl" />
               <img 
-                src="/images/treatment-room.jpg" 
+                src="/images/therapeutics-treatment.png" 
                 alt="Lumastem Treatment Room"
                 className="relative rounded-3xl border border-border shadow-2xl"
               />
