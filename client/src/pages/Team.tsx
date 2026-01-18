@@ -91,7 +91,7 @@ export default function Team() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative bg-card border border-border rounded-2xl overflow-hidden h-full hover:border-primary/50 transition-colors">
-                  <div className="aspect-[4/5] overflow-hidden">
+                  <div className="aspect-[3/4] max-h-64 overflow-hidden">
                     <img 
                       src={member.image} 
                       alt={member.name}

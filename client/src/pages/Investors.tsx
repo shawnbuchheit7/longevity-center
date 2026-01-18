@@ -34,6 +34,32 @@ export default function Investors() {
         </div>
       </section>
 
+      {/* Founders Group Photo */}
+      <section className="py-12">
+        <div className="container">
+          <motion.div 
+            className="max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+          >
+            <div className="relative rounded-2xl overflow-hidden border border-border">
+              <img 
+                src="/images/founders-group.png" 
+                alt="Lumastem Founders - Joe Russo, Chris Hemsworth, Josh Brolin, Donald Mustard"
+                className="w-full h-auto"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <p className="font-display text-lg text-white text-center">
+                  Trusted by Leaders Shaping Global Culture
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Founders */}
       <section className="py-20">
         <div className="container">
