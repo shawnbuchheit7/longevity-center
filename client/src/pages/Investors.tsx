@@ -227,25 +227,81 @@ export default function Investors() {
         </div>
       </section>
 
-      {/* Investor Information Section Divider */}
-      <section className="py-12 bg-gradient-to-b from-transparent via-primary/5 to-transparent">
+      {/* Series A Investment Summary */}
+      <section className="py-20 bg-gradient-to-b from-transparent via-primary/5 to-transparent">
         <div className="container">
           <motion.div 
-            className="text-center max-w-3xl mx-auto"
+            className="max-w-5xl mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUp}
+            variants={staggerContainer}
           >
-            <span className="font-mono text-primary text-sm tracking-wider">
-              FOR INVESTORS
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl font-medium mt-4 mb-4">
-              Investment Details
-            </h2>
-            <p className="font-body text-muted-foreground">
-              Detailed information for prospective Series A investors.
-            </p>
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                SERIES A INVESTMENT
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
+                Investment Opportunity
+              </h2>
+              <p className="font-body text-xl text-muted-foreground max-w-2xl mx-auto">
+                Join us in building the future of physician-led regenerative medicine.
+              </p>
+            </motion.div>
+
+            {/* Key Deal Terms */}
+            <motion.div variants={fadeInUp} className="bg-card border-2 border-primary/30 rounded-2xl overflow-hidden mb-8">
+              <div className="p-6 bg-primary/5 border-b border-primary/20">
+                <h3 className="font-display text-2xl font-medium text-center">Series A Term Summary</h3>
+              </div>
+              <div className="grid md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-border">
+                {[
+                  { label: "Raise Amount", value: "$50M", subtext: "Target close Q1 2025" },
+                  { label: "Pre-Money Valuation", value: "$150M", subtext: "Post-money: $200M" },
+                  { label: "Minimum Investment", value: "$1M", subtext: "Qualified investors" },
+                  { label: "Series A Ownership", value: "25%", subtext: "Fully diluted" }
+                ].map((item, i) => (
+                  <div key={i} className="p-6 text-center">
+                    <p className="font-body text-sm text-muted-foreground mb-2">{item.label}</p>
+                    <p className="font-display text-3xl font-bold text-primary">{item.value}</p>
+                    <p className="font-mono text-xs text-muted-foreground mt-1">{item.subtext}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Investment Highlights */}
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: TrendingUp,
+                  title: "Projected Returns",
+                  highlight: "8-45x MOIC",
+                  description: "Based on 20x EBITDA exit multiple at 2028-2030 exit scenarios"
+                },
+                {
+                  icon: Shield,
+                  title: "Investor Protections",
+                  highlight: "1x Non-Participating",
+                  description: "Standard liquidation preference with pro-rata rights and anti-dilution"
+                },
+                {
+                  icon: Users,
+                  title: "Board Representation",
+                  highlight: "1 Board Seat",
+                  description: "Lead investor receives board seat; 5-member board maximum"
+                }
+              ].map((item, i) => (
+                <div key={i} className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <item.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h4 className="font-display font-medium mb-1">{item.title}</h4>
+                  <p className="font-mono text-lg text-primary font-medium mb-2">{item.highlight}</p>
+                  <p className="font-body text-sm text-muted-foreground">{item.description}</p>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>
