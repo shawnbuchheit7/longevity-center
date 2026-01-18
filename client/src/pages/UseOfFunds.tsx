@@ -90,7 +90,7 @@ export default function UseOfFunds() {
                     category: "International Expansion Reserve", 
                     amount: "$7.5M",
                     percentage: "15%",
-                    description: "Opportunistic franchise, JV, and licensing deals in target markets"
+                    description: "Highly selective franchise, JV, and licensing deals with vetted partners in target markets. Partner selection is critical—we will not compromise on quality."
                   }
                 ].map((item, i) => (
                   <div key={i} className="p-6 hover:bg-muted/30 transition-colors">
@@ -192,7 +192,7 @@ export default function UseOfFunds() {
                           <div className="w-3 h-3 rounded-full bg-destructive" />
                           <span className="font-display font-medium">Phase 1: Critical Executives</span>
                         </div>
-                        <span className="font-mono text-sm text-destructive">60-90 Days Pre-Opening</span>
+                        <span className="font-mono text-sm text-destructive">Immediately Upon Funding</span>
                       </div>
                       <div className="grid md:grid-cols-5 gap-3 text-sm">
                         {["CEO", "CFO", "COO", "CPO", "CLO"].map((role, i) => (

@@ -2191,20 +2191,6 @@ export default function Hiring() {
               </div>
             </motion.div>
 
-            {/* Link to Advisors */}
-            <motion.div variants={fadeInUp} className="mt-12 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 text-center">
-              <h3 className="font-display text-xl font-medium mb-4">Advisory Board & Future Directors</h3>
-              <p className="font-body text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Our advisory board includes industry experts who may transition to board roles or serve as board observers. 
-                These relationships provide strategic guidance and potential governance candidates.
-              </p>
-              <Link href="/advisors">
-                <span className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors cursor-pointer">
-                  <Users className="w-4 h-4" />
-                  View Advisory Board
-                </span>
-              </Link>
-            </motion.div>
           </motion.div>
         </div>
       </section>
