@@ -4,6 +4,7 @@
  */
 
 import { motion } from "framer-motion";
+import { Linkedin } from "lucide-react";
 import Layout from "@/components/Layout";
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
 
@@ -48,6 +49,7 @@ export default function Team() {
                 title: "Chief Medical Officer",
                 image: "/images/dr-pradeep-albert.jpg",
                 credentials: "MD, Board Certified",
+                linkedin: "https://www.linkedin.com/in/pradeep-albert-md-2a5b8b1/",
                 bio: "Pioneer in regenerative medicine with 40,000+ procedures performed. Former Chief of Orthopedic Surgery with expertise spanning sports medicine, spine care, and biologics.",
                 highlights: [
                   "40,000+ regenerative procedures",
@@ -60,6 +62,7 @@ export default function Team() {
                 title: "Peptide Program Chair",
                 image: "/images/dr-gus-vickery.jpg",
                 credentials: "MD, Integrative Medicine",
+                linkedin: "https://www.linkedin.com/in/gusvickerymd/",
                 bio: "Leading authority on peptide therapeutics and hormone optimization. Brings decades of experience in longevity medicine and personalized health protocols.",
                 highlights: [
                   "Peptide therapy pioneer",
@@ -72,6 +75,7 @@ export default function Team() {
                 title: "Chief Executive Officer",
                 image: "/images/linda-mciver.jpg",
                 credentials: "MBA, Healthcare Executive",
+                linkedin: "https://www.linkedin.com/in/lindamciver/",
                 bio: "Seasoned healthcare executive with track record of scaling physician-led practices. Expert in operational excellence and strategic growth.",
                 highlights: [
                   "20+ years healthcare leadership",
@@ -95,7 +99,18 @@ export default function Team() {
                     />
                   </div>
                   <div className="p-8">
-                    <h3 className="font-display text-2xl font-medium mb-1">{member.name}</h3>
+                    <div className="flex items-start justify-between mb-1">
+                      <h3 className="font-display text-2xl font-medium">{member.name}</h3>
+                      <a 
+                        href={member.linkedin} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 rounded-lg bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20 flex items-center justify-center transition-colors group"
+                        aria-label={`${member.name}'s LinkedIn profile`}
+                      >
+                        <Linkedin className="w-4 h-4 text-[#0A66C2] group-hover:scale-110 transition-transform" />
+                      </a>
+                    </div>
                     <p className="font-body text-primary mb-1">{member.title}</p>
                     <p className="font-mono text-xs text-muted-foreground mb-4">{member.credentials}</p>
                     <p className="font-body text-muted-foreground mb-6">{member.bio}</p>
