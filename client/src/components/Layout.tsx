@@ -15,14 +15,14 @@ interface LayoutProps {
 
 const navLinks = [
   { href: "/opportunity", label: "Opportunity" },
-  { href: "/difference", label: "The Difference" },
+  { href: "/difference", label: "Difference" },
   { href: "/therapeutics", label: "Therapeutics" },
   { href: "/technology", label: "Technology" },
-  { href: "/performance", label: "Unit Economics" },
+  { href: "/performance", label: "Economics" },
   { href: "/investors", label: "Founders" },
-  { href: "/team", label: "Advisory Board" },
+  { href: "/team", label: "Advisors" },
   { href: "/use-of-funds", label: "Use of Funds" },
-  { href: "/projections", label: "Growth Projections" },
+  { href: "/projections", label: "Projections" },
 ];
 
 export default function Layout({ children }: LayoutProps) {
@@ -43,7 +43,7 @@ export default function Layout({ children }: LayoutProps) {
           </Link>
           
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6 font-body text-sm">
+          <div className="hidden lg:flex items-center gap-4 font-body text-sm">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
