@@ -19,7 +19,8 @@ import {
   UserPlus,
   ArrowUpCircle,
   Heart,
-  RefreshCw
+  RefreshCw,
+  Package
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
@@ -566,6 +567,94 @@ export default function Performance() {
               </div>
             </motion.div>
 
+            {/* Referral Velocity by Year */}
+            <motion.div variants={fadeInUp} className="mt-12">
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-6 border-b border-border bg-muted/30">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center">
+                      <TrendingUp className="w-5 h-5 text-emerald-400" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-xl font-medium">Referral Velocity by Year</h3>
+                      <p className="text-sm text-muted-foreground">How referral rate builds as member base matures</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="border-b border-border">
+                          <th className="text-left py-3 px-4 font-mono text-sm text-muted-foreground">Metric</th>
+                          <th className="text-center py-3 px-4 font-mono text-sm text-muted-foreground">Year 1</th>
+                          <th className="text-center py-3 px-4 font-mono text-sm text-muted-foreground">Year 2</th>
+                          <th className="text-center py-3 px-4 font-mono text-sm text-muted-foreground">Year 3</th>
+                          <th className="text-center py-3 px-4 font-mono text-sm text-muted-foreground">Year 4</th>
+                          <th className="text-center py-3 px-4 font-mono text-sm text-primary font-medium bg-primary/5">Year 5</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          { metric: "Starting Members", y1: "0", y2: "500", y3: "727", y4: "951", y5: "1,165" },
+                          { metric: "Referral Rate", y1: "0%", y2: "30%", y3: "38%", y4: "42%", y5: "45%" },
+                          { metric: "Referral Members", y1: "0", y2: "91", y3: "143", y4: "186", y5: "200" },
+                          { metric: "Direct Acquisition", y1: "500", y2: "386", y3: "367", y4: "400", y5: "400" },
+                          { metric: "Total New Members", y1: "500", y2: "477", y3: "510", y4: "586", y5: "600" },
+                          { metric: "Referral % of New", y1: "0%", y2: "19%", y3: "28%", y4: "32%", y5: "33%" }
+                        ].map((row, i) => (
+                          <tr key={i} className="border-b border-border/50 last:border-0">
+                            <td className="py-3 px-4 font-body text-foreground">{row.metric}</td>
+                            <td className="py-3 px-4 text-center font-mono text-muted-foreground">{row.y1}</td>
+                            <td className="py-3 px-4 text-center font-mono text-muted-foreground">{row.y2}</td>
+                            <td className="py-3 px-4 text-center font-mono text-muted-foreground">{row.y3}</td>
+                            <td className="py-3 px-4 text-center font-mono text-muted-foreground">{row.y4}</td>
+                            <td className="py-3 px-4 text-center font-mono text-primary font-medium bg-primary/5">{row.y5}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  {/* Visual Progress Bars */}
+                  <div className="mt-6 space-y-3">
+                    <p className="font-body text-sm text-muted-foreground mb-4">Referral Rate Progression</p>
+                    {[
+                      { year: "Year 1", rate: 0, color: "bg-muted" },
+                      { year: "Year 2", rate: 30, color: "bg-emerald-500/50" },
+                      { year: "Year 3", rate: 38, color: "bg-emerald-500/60" },
+                      { year: "Year 4", rate: 42, color: "bg-emerald-500/80" },
+                      { year: "Year 5", rate: 45, color: "bg-emerald-500" }
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center gap-4">
+                        <span className="font-mono text-xs text-muted-foreground w-16">{item.year}</span>
+                        <div className="flex-1 h-6 bg-muted/30 rounded-full overflow-hidden">
+                          <div 
+                            className={`h-full ${item.color} rounded-full transition-all duration-500`} 
+                            style={{ width: `${item.rate}%` }}
+                          />
+                        </div>
+                        <span className="font-mono text-sm font-medium w-12 text-right">{item.rate}%</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-6 bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4">
+                    <div className="flex items-start gap-3">
+                      <ArrowUpCircle className="w-5 h-5 text-emerald-400 mt-0.5" />
+                      <div>
+                        <p className="font-body text-sm">
+                          <strong className="text-foreground">Referral Flywheel:</strong> Year 1 has 0% referrals (new center, no existing members). 
+                          As the member base grows and experiences results, referral rate accelerates to <span className="text-emerald-400 font-medium">45% by Year 5</span>, 
+                          reducing blended CAC and improving unit economics over time.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
             {/* Sensitivity Analysis */}
             <motion.div variants={fadeInUp} className="mt-12">
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
@@ -937,9 +1026,9 @@ export default function Performance() {
             {/* Revenue Insight */}
             <motion.div variants={fadeInUp} className="mt-8 grid md:grid-cols-3 gap-6">
               {[
-                { label: "ELITE Share", value: "93%", description: "of total membership revenue" },
-                { label: "Ancillary Revenue", value: "13%", description: "additional services per member" },
-                { label: "Revenue CAGR", value: "28%", description: "compound annual growth" }
+                { label: "Membership Revenue", value: "67%", description: "ELITE + CHECK memberships" },
+                { label: "Ancillary Revenue", value: "33%", description: "50% of membership at 60% margin" },
+                { label: "Revenue CAGR", value: "30%", description: "compound annual growth" }
               ].map((item, i) => (
                 <div key={i} className="bg-card/50 border border-border rounded-xl p-6 text-center">
                   <span className="font-display text-3xl font-bold text-gradient">{item.value}</span>
@@ -947,6 +1036,53 @@ export default function Performance() {
                   <p className="font-body text-sm text-muted-foreground">{item.description}</p>
                 </div>
               ))}
+            </motion.div>
+
+            {/* Ancillary Revenue Breakdown */}
+            <motion.div variants={fadeInUp} className="mt-12">
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="p-6 border-b border-border bg-muted/30">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <Package className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-xl font-medium">Ancillary Revenue Breakdown</h3>
+                      <p className="text-sm text-muted-foreground">50% of membership revenue at 60% contribution margin</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                    {[
+                      { category: "Peptide Therapies", pct: "35%", amount: "$6.8M", items: "BPC-157, TB-500, GHK-Cu, Thymosin Alpha-1" },
+                      { category: "Nutraceuticals & Supplements", pct: "25%", amount: "$4.8M", items: "NAD+, NMN, Resveratrol, custom formulations" },
+                      { category: "Advanced Treatments", pct: "25%", amount: "$4.8M", items: "Exosome therapy, PRP, hyperbaric oxygen" },
+                      { category: "At-Home Services", pct: "15%", amount: "$2.9M", items: "IV therapy, mobile diagnostics, concierge care" }
+                    ].map((item, i) => (
+                      <div key={i} className="bg-accent/5 border border-border/50 rounded-xl p-4">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="font-mono text-2xl font-bold text-primary">{item.pct}</span>
+                          <span className="font-mono text-sm text-muted-foreground">{item.amount}</span>
+                        </div>
+                        <h4 className="font-display font-medium text-sm mb-1">{item.category}</h4>
+                        <p className="text-xs text-muted-foreground">{item.items}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="bg-primary/5 border border-primary/20 rounded-xl p-4">
+                    <div className="flex items-start gap-3">
+                      <Target className="w-5 h-5 text-primary mt-0.5" />
+                      <div>
+                        <p className="font-body text-sm">
+                          <strong className="text-foreground">Year 5 Ancillary Revenue:</strong> $19.3M at 60% contribution margin = <span className="text-primary font-medium">$11.6M gross profit</span>. 
+                          Ancillary services leverage existing member relationships with minimal incremental acquisition cost.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </div>

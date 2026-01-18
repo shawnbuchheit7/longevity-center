@@ -5,7 +5,7 @@
  */
 
 import { motion } from "framer-motion";
-import { TrendingUp, Target, Shield, BarChart3, AlertTriangle, Rocket, ArrowUpRight, ArrowDownRight, Globe, Building2, Handshake, FileText } from "lucide-react";
+import { TrendingUp, Target, Shield, BarChart3, AlertTriangle, Rocket, ArrowUpRight, ArrowDownRight, Globe, Building2, Handshake, FileText, DollarSign, Percent } from "lucide-react";
 import Layout from "@/components/Layout";
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
 
@@ -595,10 +595,10 @@ export default function Projections() {
             <motion.div variants={fadeInUp} className="grid md:grid-cols-5 gap-6">
               {[
                 { year: "2025", milestones: ["Series A close", "Flagship buildout", "MUSE Cell production setup", "Team expansion"] },
-                { year: "2026", milestones: ["Q1: First center opens", "500 members", "$15M revenue", "Prove unit economics"] },
-                { year: "2027", milestones: ["Q3: Second center", "979 members", "$30M revenue", "Refine playbook"] },
-                { year: "2028", milestones: ["2 new centers (4 total)", "2,285 members", "$69M revenue", "Scale operations"] },
-                { year: "2029-30", milestones: ["6 new centers", "7,227 members", "$220M revenue", "10 center network"] }
+                { year: "2026", milestones: ["Q1: First center opens", "500 members", "$20M revenue", "Prove unit economics"] },
+                { year: "2027", milestones: ["Q3: Second center", "977 members", "$40M revenue", "HoldCo breakeven"] },
+                { year: "2028", milestones: ["2 new centers (4 total)", "2,428 members", "$100M revenue", "Scale operations"] },
+                { year: "2029-30", milestones: ["6 new centers", "7,863 members", "$327M revenue", "10 center network"] }
               ].map((item, i) => (
                 <div key={i} className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors">
                   <span className="font-display text-3xl font-bold text-gradient">{item.year}</span>
@@ -617,8 +617,154 @@ export default function Projections() {
         </div>
       </section>
 
-      {/* Investment Highlights */}
+      {/* Exit Scenario Analysis */}
       <section className="py-20">
+        <div className="container">
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                INVESTOR RETURNS
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
+                Exit Scenario Analysis
+              </h2>
+              <p className="font-body text-muted-foreground max-w-2xl mx-auto">
+                Projected returns based on 20x EBITDA exit multiple and $50M Series A investment.
+              </p>
+            </motion.div>
+
+            {/* Exit Timeline Cards */}
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-6 mb-12">
+              {[
+                {
+                  year: "2028",
+                  ebitda: "$35M",
+                  valuation: "$690M",
+                  moic: "13.8x",
+                  irr: "140%",
+                  centers: "4 centers",
+                  highlight: false
+                },
+                {
+                  year: "2029",
+                  ebitda: "$69M",
+                  valuation: "$1.4B",
+                  moic: "27.4x",
+                  irr: "129%",
+                  centers: "7 centers",
+                  highlight: false
+                },
+                {
+                  year: "2030",
+                  ebitda: "$113M",
+                  valuation: "$2.3B",
+                  moic: "45.0x",
+                  irr: "114%",
+                  centers: "10 centers",
+                  highlight: true
+                }
+              ].map((item, i) => (
+                <div 
+                  key={i} 
+                  className={`bg-card border rounded-2xl p-6 ${item.highlight ? 'border-primary ring-1 ring-primary/20' : 'border-border'}`}
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-display text-3xl font-bold text-gradient">{item.year}</span>
+                    <span className="font-mono text-xs text-muted-foreground">{item.centers}</span>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center pb-3 border-b border-border/50">
+                      <span className="font-body text-muted-foreground">Network EBITDA</span>
+                      <span className="font-mono font-medium">{item.ebitda}</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-3 border-b border-border/50">
+                      <span className="font-body text-muted-foreground">Enterprise Value</span>
+                      <span className="font-mono font-bold text-primary">{item.valuation}</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-3 border-b border-border/50">
+                      <span className="font-body text-muted-foreground">MOIC</span>
+                      <span className="font-mono font-medium text-emerald-400">{item.moic}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="font-body text-muted-foreground">IRR</span>
+                      <span className="font-mono font-bold text-emerald-400">{item.irr}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Valuation Multiple Sensitivity */}
+            <motion.div variants={fadeInUp} className="mb-12">
+              <h3 className="font-display text-2xl font-medium mb-6 flex items-center gap-2">
+                <BarChart3 className="w-6 h-6 text-primary" />
+                Valuation Sensitivity (2030 Exit)
+              </h3>
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b border-border bg-muted/30">
+                        <th className="text-left p-4 font-display font-medium">EBITDA Multiple</th>
+                        <th className="text-center p-4 font-display font-medium">Enterprise Value</th>
+                        <th className="text-center p-4 font-display font-medium">MOIC</th>
+                        <th className="text-center p-4 font-display font-medium">IRR</th>
+                      </tr>
+                    </thead>
+                    <tbody className="font-body">
+                      {[
+                        { multiple: "15x", value: "$1.7B", moic: "33.8x", irr: "102%", highlight: false },
+                        { multiple: "18x", value: "$2.0B", moic: "40.5x", irr: "110%", highlight: false },
+                        { multiple: "20x (Base)", value: "$2.3B", moic: "45.0x", irr: "114%", highlight: true },
+                        { multiple: "22x", value: "$2.5B", moic: "49.5x", irr: "118%", highlight: false },
+                        { multiple: "25x", value: "$2.8B", moic: "56.2x", irr: "124%", highlight: false }
+                      ].map((row, i) => (
+                        <tr key={i} className={`border-b border-border/50 ${row.highlight ? 'bg-primary/5' : ''}`}>
+                          <td className={`p-4 font-medium ${row.highlight ? 'text-primary' : ''}`}>{row.multiple}</td>
+                          <td className="p-4 text-center font-mono">{row.value}</td>
+                          <td className="p-4 text-center font-mono text-emerald-400">{row.moic}</td>
+                          <td className="p-4 text-center font-mono font-bold text-emerald-400">{row.irr}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="p-4 bg-muted/20 border-t border-border">
+                  <p className="font-body text-xs text-muted-foreground">
+                    Based on 2030 Network EBITDA of $113M and $50M Series A investment. Healthcare services companies typically trade at 15-25x EBITDA.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Return Summary */}
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-4 gap-4">
+              {[
+                { icon: DollarSign, value: "$50M", label: "Series A Investment", color: "text-foreground" },
+                { icon: TrendingUp, value: "$2.3B", label: "2030 Exit Value", color: "text-primary" },
+                { icon: Percent, value: "45x", label: "MOIC @ 20x", color: "text-emerald-400" },
+                { icon: Rocket, value: "114%", label: "5-Year IRR", color: "text-emerald-400" }
+              ].map((item, i) => (
+                <div key={i} className="bg-card border border-border rounded-xl p-4 text-center">
+                  <item.icon className={`w-6 h-6 ${item.color} mx-auto mb-2`} />
+                  <span className={`font-mono text-2xl font-bold ${item.color}`}>{item.value}</span>
+                  <p className="font-body text-xs text-muted-foreground mt-1">{item.label}</p>
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Investment Highlights */}
+      <section className="py-20 bg-card/30">
         <div className="container">
           <motion.div 
             className="max-w-5xl mx-auto"
@@ -640,13 +786,13 @@ export default function Projections() {
               {[
                 {
                   icon: TrendingUp,
-                  title: "15x Revenue Growth",
-                  description: "From $15M in 2026 to $220M in 2030, driven by proven unit economics and disciplined center rollout."
+                  title: "16x Revenue Growth",
+                  description: "From $20M in 2026 to $327M in 2030, driven by proven unit economics and disciplined center rollout."
                 },
                 {
                   icon: Target,
-                  title: "37% Mature EBITDA Margin",
-                  description: "Single-center economics deliver $13.4M annual EBITDA on $36.6M revenue at Year 5 maturity."
+                  title: "34% Mature EBITDA Margin",
+                  description: "Single-center economics deliver $19.8M annual EBITDA on $57.5M revenue at Year 5 maturity."
                 },
                 {
                   icon: Shield,
