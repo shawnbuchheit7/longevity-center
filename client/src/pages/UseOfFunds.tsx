@@ -192,7 +192,7 @@ export default function UseOfFunds() {
                           <div className="w-3 h-3 rounded-full bg-destructive" />
                           <span className="font-display font-medium">Phase 1: Critical Executives</span>
                         </div>
-                        <span className="font-mono text-sm text-destructive">Immediately Upon Funding</span>
+                        <span className="font-mono text-sm text-destructive">Once Fundraise is Complete</span>
                       </div>
                       <div className="grid md:grid-cols-5 gap-3 text-sm">
                         {["CEO", "CFO", "COO", "CPO", "CLO"].map((role, i) => (
@@ -782,6 +782,131 @@ export default function UseOfFunds() {
                   <p className="font-body text-xs text-muted-foreground">
                     License protocols and technology to established medical groups in complex markets
                   </p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Now Section */}
+      <section className="py-20">
+        <div className="container">
+          <motion.div 
+            className="max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                MARKET TIMING
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-6">
+                Why Now?
+              </h2>
+              <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto">
+                The convergence of scientific breakthroughs, regulatory clarity, and market demand 
+                creates a unique window for Lumastem to establish category leadership.
+              </p>
+            </motion.div>
+
+            {/* Market Timing Factors */}
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-6 mb-8">
+              {[
+                {
+                  title: "Scientific Maturity",
+                  icon: FlaskConical,
+                  color: "text-primary",
+                  bgColor: "bg-primary/10",
+                  borderColor: "border-primary/30",
+                  points: [
+                    "20+ years of stem cell research reaching clinical application",
+                    "Exosome technology validated across multiple therapeutic areas",
+                    "AI/ML enabling precision diagnostics at scale",
+                    "Imaging advances allow non-invasive early disease detection"
+                  ]
+                },
+                {
+                  title: "Regulatory Clarity",
+                  icon: Building2,
+                  color: "text-emerald-400",
+                  bgColor: "bg-emerald-500/10",
+                  borderColor: "border-emerald-500/30",
+                  points: [
+                    "FDA 361 pathway established for autologous biologics",
+                    "Clear compliance framework for regenerative medicine",
+                    "State-level regulations increasingly supportive",
+                    "International markets opening to cell-based therapies"
+                  ]
+                },
+                {
+                  title: "Market Demand",
+                  icon: Users,
+                  color: "text-amber-500",
+                  bgColor: "bg-amber-500/10",
+                  borderColor: "border-amber-500/30",
+                  points: [
+                    "Aging population seeking healthspan extension",
+                    "$280B+ longevity market growing 25%+ annually",
+                    "High-net-worth individuals prioritizing preventive care",
+                    "Concierge medicine model proven and scalable"
+                  ]
+                },
+                {
+                  title: "Competitive Window",
+                  icon: Sparkles,
+                  color: "text-purple-400",
+                  bgColor: "bg-purple-500/10",
+                  borderColor: "border-purple-500/30",
+                  points: [
+                    "No vertically integrated competitor at scale",
+                    "First-mover advantage in physician-led model",
+                    "12-18 month head start on center buildout",
+                    "Proprietary protocols create defensible moat"
+                  ]
+                }
+              ].map((factor, i) => (
+                <div key={i} className={`${factor.bgColor} border ${factor.borderColor} rounded-2xl p-6`}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className={`w-10 h-10 rounded-xl ${factor.bgColor} flex items-center justify-center`}>
+                      <factor.icon className={`w-5 h-5 ${factor.color}`} />
+                    </div>
+                    <h3 className="font-display text-lg font-medium">{factor.title}</h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {factor.points.map((point, j) => (
+                      <li key={j} className="flex items-start gap-2 text-sm">
+                        <span className={`${factor.color} mt-1`}>•</span>
+                        <span className="text-muted-foreground">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Urgency Call-out */}
+            <motion.div variants={fadeInUp} className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 border border-primary/30 rounded-2xl p-8 text-center">
+              <h3 className="font-display text-2xl font-medium mb-4">The Window is Now</h3>
+              <p className="font-body text-muted-foreground max-w-3xl mx-auto mb-6">
+                Every month of delay allows competitors to capture market share, secure prime real estate, 
+                and establish physician relationships. The Series A enables Lumastem to move decisively 
+                while the market opportunity remains open.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <span className="font-mono text-3xl text-primary font-bold">Q2 2026</span>
+                  <p className="text-xs text-muted-foreground mt-1">Flagship Center Opening</p>
+                </div>
+                <div className="text-center">
+                  <span className="font-mono text-3xl text-amber-500 font-bold">12-18 mo</span>
+                  <p className="text-xs text-muted-foreground mt-1">First-Mover Advantage</p>
+                </div>
+                <div className="text-center">
+                  <span className="font-mono text-3xl text-emerald-400 font-bold">$50M</span>
+                  <p className="text-xs text-muted-foreground mt-1">Capital to Capture Opportunity</p>
                 </div>
               </div>
             </motion.div>
