@@ -84,7 +84,7 @@ export default function Hiring() {
                   icon: Briefcase,
                   title: "Chief Executive Officer",
                   priority: "Critical",
-                  timing: "Q1 2026",
+                  timing: "60-90 days before opening",
                   compensation: "TBD",
                   description: "Experienced healthcare executive to lead company strategy, fundraising, and stakeholder relations.",
                   initialScope: "Full executive leadership, board relations, capital strategy",
@@ -98,7 +98,7 @@ export default function Hiring() {
                   icon: TrendingUp,
                   title: "Chief Financial Officer",
                   priority: "Critical",
-                  timing: "Q1 2026",
+                  timing: "60-90 days before opening",
                   compensation: "TBD",
                   description: "Financial leader to manage capital allocation, reporting, investor relations, and initial HR/admin functions.",
                   initialScope: "Finance, accounting, HR, administration, investor reporting",
@@ -112,7 +112,7 @@ export default function Hiring() {
                   icon: Building2,
                   title: "Chief Operating Officer",
                   priority: "Critical",
-                  timing: "Q1 2026",
+                  timing: "60-90 days before opening",
                   compensation: "TBD",
                   description: "Operations executive to build center operations, supply chain, real estate, and member experience.",
                   initialScope: "Operations, facilities, supply chain, vendor management",
@@ -126,7 +126,7 @@ export default function Hiring() {
                   icon: Package,
                   title: "Chief Product Officer",
                   priority: "Critical",
-                  timing: "Q1 2026",
+                  timing: "60-90 days before opening",
                   compensation: "TBD",
                   description: "Product leader who will initially own marketing and technology responsibilities until dedicated roles are added.",
                   initialScope: "Product strategy + Marketing + Technology oversight",
@@ -140,7 +140,7 @@ export default function Hiring() {
                   icon: Scale,
                   title: "Chief Legal Officer",
                   priority: "Critical",
-                  timing: "Q1 2026",
+                  timing: "60-90 days before opening",
                   compensation: "TBD",
                   description: "Legal leader to manage regulatory compliance, contracts, corporate governance, and risk management.",
                   initialScope: "Legal, compliance, regulatory, corporate governance, IP",
@@ -392,26 +392,20 @@ Clinical and operations staff for the first Lumastem center
                 },
                 {
                   department: "Marketing & Growth",
-                  roles: ["Digital Marketing Manager", "Content Creator", "Member Success"],
+                  roles: ["Digital Marketing Manager", "Content Creator", "Event Support Manager"],
                   headcount: 3,
                   timing: "TBD"
                 },
                 {
                   department: "Technology",
-                  roles: ["Platform Engineer", "Data Analyst", "IT Support"],
-                  headcount: 3,
+                  roles: ["Platform Engineer", "Data Analyst", "IT Support", "Business Intelligence", "Member Platform Trainer"],
+                  headcount: 5,
                   timing: "TBD"
                 },
                 {
                   department: "Clinical Operations",
-                  roles: ["Clinical Trainer", "Quality Manager", "Compliance Officer"],
-                  headcount: 3,
-                  timing: "TBD"
-                },
-                {
-                  department: "Legal & Compliance",
-                  roles: ["Paralegal", "Contracts Manager"],
-                  headcount: 2,
+                  roles: ["VP of Operations", "Director Care Coordination", "Medical Assistant Manager", "Director of Operations"],
+                  headcount: 4,
                   timing: "TBD"
                 }
               ].map((dept, i) => (
@@ -445,8 +439,8 @@ Clinical and operations staff for the first Lumastem center
               <div className="bg-muted/30 rounded-xl px-6 py-3 flex items-center gap-4">
                 <Building2 className="w-5 h-5 text-primary" />
                 <span className="font-body text-sm">
-                  <span className="font-medium text-foreground">17 corporate roles</span>
-                  <span className="text-muted-foreground"> across 6 departments</span>
+<span className="font-medium text-foreground">18 corporate roles</span>
+                  <span className="text-muted-foreground"> across 5 departments</span>
                 </span>
               </div>
             </motion.div>
@@ -477,7 +471,7 @@ Clinical and operations staff for the first Lumastem center
               {[
                 { phase: "Pre-Launch", label: "Phase 1 Critical", count: "5 executives", color: "destructive", description: "CEO, CFO, COO, CPO, CLO" },
                 { phase: "Center Opening", label: "Center Launch", count: "16 staff", color: "primary", description: "Clinical & operations team per center" },
-                { phase: "Post-Launch", label: "Corporate Build", count: "17 roles", color: "primary", description: "Finance, HR, Marketing, Technology, Clinical Ops, Legal" },
+                { phase: "Post-Launch", label: "Corporate Build", count: "18 roles", color: "primary", description: "Finance, HR, Marketing, Technology, Clinical Ops" },
                 { phase: "As Needed", label: "Phase 2 Executives", count: "3 executives", color: "amber-500", description: "CMO (Medical), CMO (Marketing), CTO" }
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-6 p-4 bg-card border border-border rounded-xl">
@@ -674,69 +668,6 @@ Clinical and operations staff for the first Lumastem center
         </div>
       </section>
 
-      {/* 2026-2027 Hiring Timeline */}
-      <section className="py-20">
-        <div className="container">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            <motion.div variants={fadeInUp} className="text-center mb-12">
-              <span className="font-mono text-primary text-sm tracking-wider">
-                DETAILED TIMELINE
-              </span>
-              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
-                2026-2027 Hiring Plan
-              </h2>
-            </motion.div>
-
-            <motion.div variants={fadeInUp}>
-              <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                <div className="overflow-x-auto">
-                  <table className="w-full min-w-[800px]">
-                    <thead>
-                      <tr className="border-b border-border bg-muted/30">
-                        <th className="text-left p-4 font-display font-medium">Phase</th>
-                        <th className="text-left p-4 font-display font-medium">Hires</th>
-                        <th className="text-center p-4 font-display font-medium">Headcount</th>
-                        <th className="text-center p-4 font-display font-medium">Cumulative</th>
-                        <th className="text-left p-4 font-display font-medium">Key Milestone</th>
-                      </tr>
-                    </thead>
-                    <tbody className="font-body text-sm">
-                      {[
-                        { phase: "Pre-Launch", hires: "Center Director, Ops Manager", count: 2, cumulative: 2, milestone: "Pre-launch preparation" },
-                        { phase: "Center 1 Launch", hires: "CEO, CFO, COO, CPO, CLO + Center Staff", count: 19, cumulative: 21, milestone: "Flagship center launch" },
-                        { phase: "Post-Launch", hires: "Finance, HR, Marketing teams", count: 8, cumulative: 29, milestone: "Corporate infrastructure" },
-                        { phase: "Scaling", hires: "Technology, Clinical Ops, Legal", count: 9, cumulative: 38, milestone: "Operational scaling" },
-                        { phase: "As Needed", hires: "CMO (Medical), CMO (Mktg), CTO", count: 3, cumulative: 41, milestone: "Phase 2 executives" },
-                        { phase: "Center 2 Launch", hires: "Center 2 staff", count: 14, cumulative: 55, milestone: "Second center launch" },
-                        { phase: "Center 3 Launch", hires: "Center 3 staff + Corp expansion", count: 18, cumulative: 73, milestone: "Third center launch" },
-                        { phase: "Center 4 Launch", hires: "Center 4 staff", count: 14, cumulative: 87, milestone: "Fourth center launch" }
-                      ].map((item, i) => (
-                        <tr key={i} className="border-b border-border/50 last:border-0">
-                          <td className="p-4 font-mono text-primary">{item.phase}</td>
-                          <td className="p-4 text-muted-foreground">{item.hires}</td>
-                          <td className="p-4 text-center">
-                            <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-mono text-sm">
-                              +{item.count}
-                            </span>
-                          </td>
-                          <td className="p-4 text-center font-mono font-medium">{item.cumulative}</td>
-                          <td className="p-4 text-muted-foreground">{item.milestone}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
     </Layout>
   );
 }
