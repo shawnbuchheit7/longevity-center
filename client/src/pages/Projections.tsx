@@ -5,7 +5,7 @@
  */
 
 import { motion } from "framer-motion";
-import { TrendingUp, Target, Shield, BarChart3, AlertTriangle, Rocket, ArrowUpRight, ArrowDownRight, Globe, Building2, Handshake, FileText, DollarSign, Percent } from "lucide-react";
+import { TrendingUp, Target, Shield, BarChart3, AlertTriangle, Rocket, ArrowUpRight, ArrowDownRight, Globe, Building2, Handshake, FileText, DollarSign, Percent, Users } from "lucide-react";
 import Layout from "@/components/Layout";
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
 
@@ -185,34 +185,142 @@ export default function Projections() {
             </motion.div>
 
             {/* International Expansion Strategy */}
+            {/* Two Expansion Pathways */}
+            <motion.div variants={fadeInUp} className="mb-12">
+              <div className="text-center mb-8">
+                <h3 className="font-display text-2xl font-medium mb-4">Two Distinct Growth Pathways</h3>
+                <p className="font-body text-muted-foreground max-w-3xl mx-auto">
+                  Lumastem's expansion strategy encompasses two complementary pathways: center development for the full Lumastem experience, 
+                  and therapeutics product licensing for broader market reach.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Center Development Pathway */}
+                <div className="bg-card border-2 border-primary/30 rounded-2xl overflow-hidden">
+                  <div className="p-6 bg-primary/5 border-b border-primary/20">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
+                        <Building2 className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-display text-xl font-medium">Center Development</h4>
+                        <p className="font-mono text-xs text-primary">Full Lumastem Experience</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <p className="font-body text-muted-foreground text-sm mb-6">
+                      Physical Lumastem centers delivering the complete membership experience including diagnostics, 
+                      physician-led care, and regenerative treatments.
+                    </p>
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3">
+                        <Target className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                        <div>
+                          <span className="font-body text-sm font-medium">Domestic Expansion</span>
+                          <p className="font-body text-xs text-muted-foreground">10 owned centers by 2030 in major U.S. metros</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <Handshake className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                        <div>
+                          <span className="font-body text-sm font-medium">International Franchise</span>
+                          <p className="font-body text-xs text-muted-foreground">Partner-operated centers with brand, protocols, and biologics supply</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <Users className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                        <div>
+                          <span className="font-body text-sm font-medium">Joint Ventures</span>
+                          <p className="font-body text-xs text-muted-foreground">Shared ownership with regional healthcare groups</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Therapeutics Product Licensing Pathway */}
+                <div className="bg-card border-2 border-amber-500/30 rounded-2xl overflow-hidden">
+                  <div className="p-6 bg-amber-500/5 border-b border-amber-500/20">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center">
+                        <FileText className="w-6 h-6 text-amber-500" />
+                      </div>
+                      <div>
+                        <h4 className="font-display text-xl font-medium">Therapeutics Product Licensing</h4>
+                        <p className="font-mono text-xs text-amber-500">Massive Additional Opportunity</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <p className="font-body text-muted-foreground text-sm mb-6">
+                      License Lumastem's proprietary therapeutics—including MUSE Cell technology, biologics formulations, 
+                      and treatment protocols—to established medical providers worldwide.
+                    </p>
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3">
+                        <Target className="w-4 h-4 text-amber-500 mt-1 flex-shrink-0" />
+                        <div>
+                          <span className="font-body text-sm font-medium">Asset-Light Model</span>
+                          <p className="font-body text-xs text-muted-foreground">No capital investment in physical centers required</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <Globe className="w-4 h-4 text-amber-500 mt-1 flex-shrink-0" />
+                        <div>
+                          <span className="font-body text-sm font-medium">Global Reach</span>
+                          <p className="font-body text-xs text-muted-foreground">License to hospitals, clinics, and medical groups worldwide</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <DollarSign className="w-4 h-4 text-amber-500 mt-1 flex-shrink-0" />
+                        <div>
+                          <span className="font-body text-sm font-medium">Recurring Revenue</span>
+                          <p className="font-body text-xs text-muted-foreground">License fees, royalties, and biologics supply contracts</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-6 p-3 bg-amber-500/10 border border-amber-500/20 rounded-lg">
+                      <p className="font-body text-xs text-amber-200">
+                        <strong className="text-amber-500">Business Plan Required:</strong> Comprehensive business plan for therapeutics licensing 
+                        will be developed as a separate strategic initiative.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Center Development Models */}
             <motion.div variants={fadeInUp}>
               <h3 className="font-display text-2xl font-medium mb-6 flex items-center gap-2">
-                <Globe className="w-6 h-6 text-primary" />
-                International Expansion Strategy
+                <Building2 className="w-6 h-6 text-primary" />
+                Center Development Models
               </h3>
               <p className="font-body text-muted-foreground mb-8">
-                International expansion will be opportunistic, leveraging multiple partnership models to accelerate global reach while minimizing capital requirements and operational complexity.
+                Multiple partnership models for center development, balancing capital efficiency with operational control.
               </p>
               
               <div className="grid md:grid-cols-3 gap-6">
                 {[
                   {
+                    icon: Building2,
+                    title: "Owned Centers",
+                    description: "Fully owned and operated Lumastem centers in major U.S. markets. Maximum control over member experience and operations.",
+                    benefits: ["Full revenue capture", "Brand control", "Operational excellence", "Premium market positioning"]
+                  },
+                  {
                     icon: Handshake,
                     title: "Franchise Model",
-                    description: "Partner with established healthcare operators in target markets. Lumastem provides brand, protocols, training, and biologics supply. Franchisees invest in buildout and operations.",
+                    description: "Partner with established healthcare operators in target markets. Lumastem provides brand, protocols, training, and biologics supply.",
                     benefits: ["Lower capital requirements", "Local market expertise", "Faster market entry", "Recurring royalty revenue"]
                   },
                   {
-                    icon: Building2,
+                    icon: Users,
                     title: "Joint Ventures",
-                    description: "Strategic partnerships with regional healthcare groups or high-net-worth investors. Shared ownership, investment, and operational responsibilities.",
+                    description: "Strategic partnerships with regional healthcare groups or high-net-worth investors. Shared ownership and operational responsibilities.",
                     benefits: ["Shared risk and capital", "Access to local networks", "Regulatory navigation support", "Aligned incentives"]
-                  },
-                  {
-                    icon: FileText,
-                    title: "Licensing Model",
-                    description: "License Lumastem protocols, technology platform, and biologics to established medical groups. Ideal for markets with complex regulatory environments.",
-                    benefits: ["Asset-light expansion", "Technology monetization", "Broad geographic reach", "Recurring license fees"]
                   }
                 ].map((model, i) => (
                   <div key={i} className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors">
@@ -235,9 +343,9 @@ export default function Projections() {
 
               <div className="mt-8 bg-muted/30 border border-border rounded-2xl p-6">
                 <p className="font-body text-sm text-muted-foreground">
-                  <strong className="text-foreground">Note:</strong> International revenue is not included in the base projections above. 
-                  Opportunistic international deals represent additional upside beyond the domestic 10-center plan. 
-                  Target markets include Middle East (Bahrain, UAE), Europe, and Asia-Pacific regions with favorable regulatory environments and high-net-worth populations.
+                  <strong className="text-foreground">Note:</strong> Base projections include domestic owned centers only. 
+                  International franchise/JV deals and therapeutics product licensing represent additional upside opportunities. 
+                  Target markets for center development include Middle East (Bahrain, UAE), Europe, and Asia-Pacific regions.
                 </p>
               </div>
 

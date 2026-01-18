@@ -134,7 +134,7 @@ export default function Opportunity() {
                       <th className="text-center p-5 font-body font-semibold w-1/4">
                         <span className="text-gradient">Lumastem</span>
                       </th>
-                      <th className="text-center p-5 font-body font-semibold text-muted-foreground w-1/4">Fountain Life</th>
+                      <th className="text-center p-5 font-body font-semibold text-muted-foreground w-1/4">HLI</th>
                       <th className="text-center p-5 font-body font-semibold text-muted-foreground w-1/4">Concierge Clinics</th>
                     </tr>
                   </thead>
@@ -143,56 +143,56 @@ export default function Opportunity() {
                       { 
                         capability: "Vertically Integrated Biologics", 
                         lumastem: "yes", 
-                        fountain: "no", 
+                        hli: "no", 
                         concierge: "no",
                         note: "Own manufacturing"
                       },
                       { 
                         capability: "MUSE Cell Technology", 
                         lumastem: "yes", 
-                        fountain: "no", 
+                        hli: "no", 
                         concierge: "no",
                         note: "Exclusive U.S. rights"
                       },
                       { 
                         capability: "Physician-Led Care Model", 
                         lumastem: "yes", 
-                        fountain: "yes", 
+                        hli: "yes", 
                         concierge: "partial",
                         note: "AMA-aligned"
                       },
                       { 
                         capability: "90% At-Home Care", 
                         lumastem: "yes", 
-                        fountain: "no", 
+                        hli: "no", 
                         concierge: "no",
                         note: "Scalable delivery"
                       },
                       { 
                         capability: "Multi-Specialty Integration", 
                         lumastem: "yes", 
-                        fountain: "partial", 
+                        hli: "partial", 
                         concierge: "no",
                         note: "Ortho, spine, aesthetics"
                       },
                       { 
                         capability: "Celebrity Brand Alignment", 
                         lumastem: "yes", 
-                        fountain: "no", 
+                        hli: "no", 
                         concierge: "no",
                         note: "Hemsworth, Russo, Brolin"
                       },
                       { 
                         capability: "International Expansion Ready", 
                         lumastem: "yes", 
-                        fountain: "partial", 
+                        hli: "partial", 
                         concierge: "no",
                         note: "Bahrain hub planned"
                       },
                       { 
                         capability: "Membership + Procedure Revenue", 
                         lumastem: "yes", 
-                        fountain: "yes", 
+                        hli: "yes", 
                         concierge: "partial",
                         note: "Dual revenue streams"
                       }
@@ -218,11 +218,11 @@ export default function Opportunity() {
                           )}
                         </td>
                         <td className="p-5 text-center">
-                          {row.fountain === "yes" ? (
+                          {row.hli === "yes" ? (
                             <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-muted/50 text-muted-foreground">
                               ✓
                             </span>
-                          ) : row.fountain === "partial" ? (
+                          ) : row.hli === "partial" ? (
                             <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-muted/30 text-muted-foreground">
                               ~
                             </span>
