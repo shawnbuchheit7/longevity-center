@@ -180,7 +180,7 @@ export default function UseOfFunds() {
             <motion.div variants={fadeInUp} className="mt-12">
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
                 <div className="p-6 border-b border-border bg-muted/30">
-                  <h3 className="font-display text-xl font-medium">Hiring Costs by Phase</h3>
+                  <h3 className="font-display text-xl font-medium">Staffing & Payroll Allocation</h3>
                   <p className="font-body text-sm text-muted-foreground">How Series A capital maps to team build</p>
                 </div>
                 <div className="p-6">
@@ -192,7 +192,7 @@ export default function UseOfFunds() {
                           <div className="w-3 h-3 rounded-full bg-destructive" />
                           <span className="font-display font-medium">Phase 1: Critical Executives</span>
                         </div>
-                        <span className="font-mono text-sm text-destructive">Q1 2026</span>
+                        <span className="font-mono text-sm text-destructive">60-90 Days Pre-Opening</span>
                       </div>
                       <div className="grid md:grid-cols-5 gap-3 text-sm">
                         {["CEO", "CFO", "COO", "CPO", "CLO"].map((role, i) => (
@@ -202,29 +202,30 @@ export default function UseOfFunds() {
                         ))}
                       </div>
                       <div className="mt-3 flex justify-between items-center pt-3 border-t border-destructive/20">
-                        <span className="text-sm text-muted-foreground">5 executives × TBD comp</span>
+                        <span className="text-sm text-muted-foreground">5 executives</span>
                         <span className="font-mono text-sm">Included in Working Capital</span>
                       </div>
                     </div>
 
-                    {/* Center Launch Team */}
+                    {/* Center Operations Team */}
                     <div className="p-4 bg-primary/5 border border-primary/20 rounded-xl">
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2">
                           <div className="w-3 h-3 rounded-full bg-primary" />
-                          <span className="font-display font-medium">Flagship Center Team</span>
+                          <span className="font-display font-medium">Center Operations Team</span>
                         </div>
-                        <span className="font-mono text-sm text-primary">Q1 2026</span>
+                        <span className="font-mono text-sm text-primary">90/60/30 Days Pre-Opening</span>
                       </div>
+                      <p className="text-xs text-muted-foreground mb-3">Manages diagnostics testing and ancillary services (injections, stem cells, IVs)</p>
                       <div className="grid md:grid-cols-4 gap-2 text-sm">
                         {[
+                          { role: "Medical Director", count: 1 },
+                          { role: "Physician", count: 1 },
                           { role: "Center Director", count: 1 },
-                          { role: "Physicians", count: 2 },
                           { role: "Nurse Practitioners", count: 3 },
-                          { role: "Medical Assistants", count: 4 },
-                          { role: "Concierge", count: 3 },
-                          { role: "Lab Technicians", count: 2 },
-                          { role: "Ops Manager", count: 1 }
+                          { role: "Medical Assistant", count: 1 },
+                          { role: "Hospitality Manager", count: 1 },
+                          { role: "Concierge", count: 3 }
                         ].map((item, i) => (
                           <div key={i} className="bg-card rounded-lg p-2 flex justify-between">
                             <span className="text-xs text-muted-foreground">{item.role}</span>
@@ -233,52 +234,87 @@ export default function UseOfFunds() {
                         ))}
                       </div>
                       <div className="mt-3 flex justify-between items-center pt-3 border-t border-primary/20">
-                        <span className="text-sm text-muted-foreground">16 staff total</span>
+                        <span className="text-sm text-muted-foreground">11 staff (fixed per center)</span>
                         <span className="font-mono text-sm">Included in Flagship Center #1</span>
                       </div>
                     </div>
 
-                    {/* Corporate Support */}
+                    {/* ELITE Membership Team */}
                     <div className="p-4 bg-amber-500/5 border border-amber-500/20 rounded-xl">
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2">
                           <div className="w-3 h-3 rounded-full bg-amber-500" />
-                          <span className="font-display font-medium">Corporate Support & Phase 2</span>
+                          <span className="font-display font-medium">ELITE Membership Team</span>
                         </div>
-                        <span className="font-mono text-sm text-amber-500">Q2-Q4 2026</span>
+                        <span className="font-mono text-sm text-amber-500">Per 120 Members</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground mb-3">Dedicated care team for ongoing ELITE member management. Physicians work under Medical Director supervision.</p>
+                      <div className="grid md:grid-cols-4 gap-2 text-sm">
+                        {[
+                          { role: "Physician", count: 1 },
+                          { role: "Medical Assistant", count: 1 },
+                          { role: "Care Coordinators", count: 2 }
+                        ].map((item, i) => (
+                          <div key={i} className="bg-card rounded-lg p-2 flex justify-between">
+                            <span className="text-xs text-muted-foreground">{item.role}</span>
+                            <span className="font-mono text-xs text-amber-500">{item.count}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-3 flex justify-between items-center pt-3 border-t border-amber-500/20">
+                        <span className="text-sm text-muted-foreground">4 staff per 120 ELITE members (scales)</span>
+                        <span className="font-mono text-sm">Included in Working Capital</span>
+                      </div>
+                    </div>
+
+                    {/* Corporate Support */}
+                    <div className="p-4 bg-accent/5 border border-accent/20 rounded-xl">
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 rounded-full bg-accent" />
+                          <span className="font-display font-medium">Corporate Support Team</span>
+                        </div>
+                        <span className="font-mono text-sm text-accent">Post-Launch</span>
                       </div>
                       <div className="grid md:grid-cols-3 gap-2 text-sm">
                         {[
                           { dept: "Finance & Accounting", count: 3 },
                           { dept: "Human Resources", count: 3 },
                           { dept: "Marketing & Growth", count: 3 },
-                          { dept: "Technology", count: 3 },
-                          { dept: "Clinical Operations", count: 3 },
-                          { dept: "Legal & Compliance", count: 2 }
+                          { dept: "Technology", count: 5 },
+                          { dept: "Clinical Operations", count: 4 },
+                          { dept: "Product & Operations", count: 2 }
                         ].map((item, i) => (
                           <div key={i} className="bg-card rounded-lg p-2 flex justify-between">
                             <span className="text-xs text-muted-foreground">{item.dept}</span>
-                            <span className="font-mono text-xs text-amber-500">{item.count}</span>
+                            <span className="font-mono text-xs text-accent">{item.count}</span>
                           </div>
                         ))}
                       </div>
-                      <div className="mt-3 flex justify-between items-center pt-3 border-t border-amber-500/20">
-                        <span className="text-sm text-muted-foreground">17 corporate + 3 Phase 2 execs</span>
+                      <div className="mt-3 flex justify-between items-center pt-3 border-t border-accent/20">
+                        <span className="text-sm text-muted-foreground">20 corporate roles across 6 departments</span>
                         <span className="font-mono text-sm">Included in Working Capital</span>
                       </div>
                     </div>
                   </div>
 
-                  {/* Summary */}
+                  {/* Payroll Summary */}
                   <div className="mt-6 pt-6 border-t border-border">
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <span className="font-display font-medium">Total Team by End of 2026</span>
-                        <p className="text-sm text-muted-foreground">Executives + Center + Corporate</p>
+                    <div className="grid md:grid-cols-3 gap-6">
+                      <div className="text-center p-4 bg-muted/30 rounded-xl">
+                        <span className="font-mono text-2xl text-primary">$3.8M</span>
+                        <p className="text-xs text-muted-foreground mt-1">Year 1 Payroll</p>
+                        <p className="text-[10px] text-muted-foreground">5 execs + 15 center staff</p>
                       </div>
-                      <div className="text-right">
-                        <span className="font-mono text-2xl text-primary">41</span>
-                        <p className="text-xs text-muted-foreground">team members</p>
+                      <div className="text-center p-4 bg-muted/30 rounded-xl">
+                        <span className="font-mono text-2xl text-amber-500">$6.2M</span>
+                        <p className="text-xs text-muted-foreground mt-1">Year 2 Payroll</p>
+                        <p className="text-[10px] text-muted-foreground">+ Corporate + ELITE teams</p>
+                      </div>
+                      <div className="text-center p-4 bg-muted/30 rounded-xl">
+                        <span className="font-mono text-2xl text-foreground">44</span>
+                        <p className="text-xs text-muted-foreground mt-1">Total Headcount</p>
+                        <p className="text-[10px] text-muted-foreground">Single center, 120 ELITE</p>
                       </div>
                     </div>
                   </div>

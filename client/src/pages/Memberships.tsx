@@ -290,6 +290,79 @@ export default function Memberships() {
                 </div>
               </div>
             </motion.div>
+
+            {/* ELITE Member Journey Timeline */}
+            <motion.div variants={fadeInUp} className="mt-12">
+              <h3 className="font-display text-2xl font-medium text-center mb-8">ELITE Member Journey</h3>
+              <p className="font-body text-muted-foreground text-center mb-8 max-w-3xl mx-auto">
+                From onboarding through ongoing care, every ELITE member receives personalized attention from their dedicated care team. 
+                ELITE Physicians work under the supervision of the center's Medical Director where testing was completed.
+              </p>
+              
+              <div className="relative">
+                {/* Timeline line */}
+                <div className="absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-accent via-primary to-accent hidden md:block" />
+                
+                <div className="grid md:grid-cols-5 gap-6">
+                  {[
+                    {
+                      phase: "Week 1",
+                      title: "Onboarding",
+                      team: "Care Coordinator",
+                      activities: ["Welcome call & intake", "Medical history review", "Schedule diagnostics", "Portal setup"]
+                    },
+                    {
+                      phase: "Week 2-3",
+                      title: "Diagnostics",
+                      team: "Center Ops Team",
+                      activities: ["Full-body MRI", "Advanced bloodwork", "Genetic testing", "Specialist consults"]
+                    },
+                    {
+                      phase: "Week 4",
+                      title: "Results Review",
+                      team: "ELITE Physician",
+                      activities: ["2-hour consultation", "Protocol development", "Treatment planning", "Goal setting"]
+                    },
+                    {
+                      phase: "Ongoing",
+                      title: "Active Care",
+                      team: "Full ELITE Team",
+                      activities: ["Monthly check-ins", "At-home treatments", "Protocol adjustments", "24/7 access"]
+                    },
+                    {
+                      phase: "Quarterly",
+                      title: "Optimization",
+                      team: "ELITE Physician",
+                      activities: ["Biomarker tracking", "Progress review", "Protocol refinement", "Renewal planning"]
+                    }
+                  ].map((step, i) => (
+                    <div key={i} className="relative">
+                      <div className="w-4 h-4 rounded-full bg-accent mx-auto mb-4 relative z-10 hidden md:block" />
+                      <div className="bg-card border border-border rounded-xl p-4 hover:border-accent/50 transition-colors">
+                        <span className="font-mono text-xs text-accent">{step.phase}</span>
+                        <h4 className="font-display font-medium mt-1">{step.title}</h4>
+                        <p className="text-xs text-muted-foreground mt-1 mb-3">Primary: {step.team}</p>
+                        <ul className="space-y-1">
+                          {step.activities.map((activity, j) => (
+                            <li key={j} className="flex items-start gap-2 text-xs text-muted-foreground">
+                              <div className="w-1 h-1 rounded-full bg-accent mt-1.5 shrink-0" />
+                              <span>{activity}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-8 bg-muted/30 rounded-xl p-4 text-center">
+                <p className="text-sm text-muted-foreground">
+                  <span className="font-medium text-foreground">Care Team Structure:</span> Each ELITE member is assigned a dedicated team of 1 Physician, 1 Medical Assistant, 
+                  and 1 Care Coordinator (shared among 60 members). The ELITE Physician works under the supervision of the center's Medical Director.
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

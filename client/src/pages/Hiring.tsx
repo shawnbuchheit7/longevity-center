@@ -523,7 +523,8 @@ export default function Hiring() {
                   <span className="ml-auto text-xs bg-amber-500/20 text-amber-500 px-2 py-1 rounded">Per 120 Members</span>
                 </div>
                 <p className="text-sm text-muted-foreground ml-6">
-                  Dedicated care team for ongoing ELITE member management. Does not manage diagnostics or ancillary services.
+                  Dedicated care team for ongoing ELITE member management. ELITE Physicians are linked to the center where member testing was completed, 
+                  working under the supervision of the center's Medical Director. Does not manage diagnostics or ancillary services.
                 </p>
               </div>
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
@@ -538,7 +539,7 @@ export default function Hiring() {
                   </thead>
                   <tbody className="font-body text-sm">
                     {[
-                      { role: "Physician", count: 1, responsibilities: "Ongoing member care, health optimization, treatment planning", capacity: "120 members" },
+                      { role: "Physician", count: 1, responsibilities: "Ongoing member care under Medical Director supervision, health optimization, treatment planning", capacity: "120 members" },
                       { role: "Medical Assistant", count: 1, responsibilities: "Physician support, care coordination, member follow-up", capacity: "120 members" },
                       { role: "Care Coordinator", count: 2, responsibilities: "Member relationship management, scheduling, care navigation", capacity: "60 members each" }
                     ].map((item, i) => (
@@ -808,6 +809,194 @@ export default function Hiring() {
                 <span className="text-foreground font-medium">Note:</span> Hiring timelines are dependent on center opening schedules and operational needs. 
                 Specific dates will be determined based on funding milestones and real estate availability.
               </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Center Opening Checklist */}
+      <section className="py-20">
+        <div className="container">
+          <motion.div 
+            className="max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <span className="font-mono text-primary text-sm tracking-wider">
+                LAUNCH PREPARATION
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-medium mt-4 mb-4">
+                Center Opening Checklist
+              </h2>
+              <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                90/60/30-day pre-opening milestones and staffing triggers for each new center
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-8">
+              {/* 90 Days */}
+              <div className="bg-card border border-destructive/30 rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-destructive/20 flex items-center justify-center">
+                    <span className="font-mono text-lg font-bold text-destructive">90</span>
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-medium">Days Before Opening</h3>
+                    <p className="text-xs text-muted-foreground">Critical Foundation</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-display text-sm font-medium mb-2 text-destructive">Staffing</h4>
+                    <ul className="space-y-2">
+                      {["Medical Director hired", "Center Director hired", "Operations Manager onboarded"].map((item, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <div className="w-1.5 h-1.5 rounded-full bg-destructive mt-2 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-display text-sm font-medium mb-2 text-destructive">Operations</h4>
+                    <ul className="space-y-2">
+                      {["Facility buildout 75% complete", "Equipment orders finalized", "Vendor contracts signed", "IT infrastructure installed"].map((item, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <div className="w-1.5 h-1.5 rounded-full bg-destructive mt-2 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-display text-sm font-medium mb-2 text-destructive">Compliance</h4>
+                    <ul className="space-y-2">
+                      {["State licenses submitted", "HIPAA policies finalized", "Insurance credentialing started"].map((item, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <div className="w-1.5 h-1.5 rounded-full bg-destructive mt-2 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* 60 Days */}
+              <div className="bg-card border border-amber-500/30 rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center">
+                    <span className="font-mono text-lg font-bold text-amber-500">60</span>
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-medium">Days Before Opening</h3>
+                    <p className="text-xs text-muted-foreground">Clinical Readiness</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-display text-sm font-medium mb-2 text-amber-500">Staffing</h4>
+                    <ul className="space-y-2">
+                      {["Physician hired", "3 Nurse Practitioners hired", "Lab Technician hired", "ELITE Physician recruited"].map((item, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-display text-sm font-medium mb-2 text-amber-500">Operations</h4>
+                    <ul className="space-y-2">
+                      {["Facility buildout complete", "Equipment installed & tested", "EMR system configured", "Protocols documented"].map((item, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-display text-sm font-medium mb-2 text-amber-500">Training</h4>
+                    <ul className="space-y-2">
+                      {["Clinical training program started", "Service excellence training", "GeneMetrics™ certification"].map((item, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* 30 Days */}
+              <div className="bg-card border border-primary/30 rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                    <span className="font-mono text-lg font-bold text-primary">30</span>
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-medium">Days Before Opening</h3>
+                    <p className="text-xs text-muted-foreground">Final Preparation</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-display text-sm font-medium mb-2 text-primary">Staffing</h4>
+                    <ul className="space-y-2">
+                      {["Medical Assistant hired", "Hospitality Manager hired", "3 Concierge staff hired", "ELITE Care Coordinators hired"].map((item, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-display text-sm font-medium mb-2 text-primary">Operations</h4>
+                    <ul className="space-y-2">
+                      {["Soft opening & testing", "Member portal live", "Scheduling system active", "Supply chain verified"].map((item, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-display text-sm font-medium mb-2 text-primary">Launch</h4>
+                    <ul className="space-y-2">
+                      {["Marketing campaign active", "First members scheduled", "VIP preview events", "Grand opening planned"].map((item, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="mt-8 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl p-6">
+              <div className="grid md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <span className="font-mono text-2xl text-destructive">3</span>
+                  <p className="text-sm text-muted-foreground mt-1">Key Hires at 90 Days</p>
+                </div>
+                <div>
+                  <span className="font-mono text-2xl text-amber-500">5</span>
+                  <p className="text-sm text-muted-foreground mt-1">Clinical Staff at 60 Days</p>
+                </div>
+                <div>
+                  <span className="font-mono text-2xl text-primary">7</span>
+                  <p className="text-sm text-muted-foreground mt-1">Final Hires at 30 Days</p>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
@@ -1087,7 +1276,8 @@ export default function Hiring() {
               <h3 className="font-display text-xl font-medium mb-6 text-center">ELITE Membership Team Scaling</h3>
               <p className="font-body text-muted-foreground text-center mb-8 max-w-3xl mx-auto">
                 ELITE membership care teams scale independently from Center Operations. Each team manages up to 120 members 
-                with dedicated physician oversight and personalized care coordination.
+                with dedicated physician oversight and personalized care coordination. ELITE Physicians are linked to the center 
+                where member testing was completed, working under the supervision of the center's Medical Director.
               </p>
               <div className="grid md:grid-cols-4 gap-6 mb-8">
                 {[
