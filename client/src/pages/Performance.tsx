@@ -33,6 +33,7 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
+import { PresentationMode } from "@/components/PresentationMode";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 export default function Performance() {
@@ -1714,6 +1715,133 @@ export default function Performance() {
           </div>
         </div>
       </section>
+
+      {/* Presentation Mode */}
+      <PresentationMode 
+        pageName="Unit Economics"
+        slides={[
+          {
+            id: "overview",
+            title: "Single-Center Economics",
+            content: (
+              <div className="space-y-6">
+                <h2 className="font-display text-4xl font-medium text-center mb-8">Single-Center Unit Economics</h2>
+                <div className="grid md:grid-cols-4 gap-6">
+                  {[
+                    { value: "$57.5M", label: "Annual Revenue", sub: "Membership + Ancillary" },
+                    { value: "$19.8M", label: "EBITDA", sub: "34% margin" },
+                    { value: "1,365", label: "Members", sub: "At capacity" },
+                    { value: "66%", label: "Gross Margin", sub: "After COGS" }
+                  ].map((item, i) => (
+                    <div key={i} className="bg-card border border-border rounded-2xl p-6 text-center">
+                      <span className="font-mono text-4xl font-bold text-gradient">{item.value}</span>
+                      <p className="font-display font-medium mt-2">{item.label}</p>
+                      <p className="font-body text-sm text-muted-foreground">{item.sub}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )
+          },
+          {
+            id: "revenue",
+            title: "Revenue Composition",
+            content: (
+              <div className="space-y-6">
+                <h2 className="font-display text-3xl font-medium text-center">Revenue Composition</h2>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="bg-card border border-border rounded-2xl p-8">
+                    <h3 className="font-display text-xl font-medium mb-4 text-primary">Membership (50%)</h3>
+                    <div className="space-y-3">
+                      <div className="flex justify-between p-3 bg-muted/30 rounded-lg"><span>ELITE (85%)</span><span className="font-mono">$29,500/yr</span></div>
+                      <div className="flex justify-between p-3 bg-muted/30 rounded-lg"><span>CHECK (15%)</span><span className="font-mono">$12,500/yr</span></div>
+                      <div className="flex justify-between p-3 bg-primary/10 rounded-lg border border-primary/20"><span className="font-medium">Blended ARPM</span><span className="font-mono font-bold text-primary">$26,950</span></div>
+                    </div>
+                  </div>
+                  <div className="bg-card border border-border rounded-2xl p-8">
+                    <h3 className="font-display text-xl font-medium mb-4 text-accent">Ancillary (50%)</h3>
+                    <div className="space-y-3">
+                      <div className="flex justify-between p-3 bg-muted/30 rounded-lg"><span>Therapeutics</span><span className="font-mono">60% margin</span></div>
+                      <div className="flex justify-between p-3 bg-muted/30 rounded-lg"><span>Peptides & Biologics</span><span className="font-mono">60% margin</span></div>
+                      <div className="flex justify-between p-3 bg-accent/10 rounded-lg border border-accent/20"><span className="font-medium">Ancillary Margin</span><span className="font-mono font-bold text-accent">60%</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )
+          },
+          {
+            id: "costs",
+            title: "Cost Structure",
+            content: (
+              <div className="space-y-6">
+                <h2 className="font-display text-3xl font-medium text-center">Cost Structure</h2>
+                <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                  <table className="w-full">
+                    <thead><tr className="border-b border-border bg-muted/30"><th className="text-left p-5">Category</th><th className="text-right p-5">Amount</th><th className="text-right p-5">% Rev</th></tr></thead>
+                    <tbody>
+                      {[
+                        { cat: "Cost of Goods Sold", amt: "$19.6M", pct: "34%" },
+                        { cat: "Staffing & Payroll", amt: "$8.5M", pct: "15%" },
+                        { cat: "Facility & Operations", amt: "$4.6M", pct: "8%" },
+                        { cat: "Marketing & Sales", amt: "$2.9M", pct: "5%" },
+                        { cat: "Technology & Admin", amt: "$2.1M", pct: "4%" }
+                      ].map((r, i) => (<tr key={i} className="border-b border-border/50"><td className="p-5">{r.cat}</td><td className="p-5 text-right font-mono">{r.amt}</td><td className="p-5 text-right font-mono text-muted-foreground">{r.pct}</td></tr>))}
+                      <tr className="bg-primary/10"><td className="p-5 font-bold">EBITDA</td><td className="p-5 text-right font-mono font-bold text-primary">$19.8M</td><td className="p-5 text-right font-mono font-bold text-primary">34%</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )
+          },
+          {
+            id: "capacity",
+            title: "Diagnostic Capacity",
+            content: (
+              <div className="space-y-6">
+                <h2 className="font-display text-3xl font-medium text-center">Diagnostic Suite Capacity</h2>
+                <p className="text-muted-foreground text-center">6-7 suites per center • 4-hour diagnostic protocol</p>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {[
+                    { scenario: "Standard Hours", hours: "7AM-5:30PM M-F", capacity: "1,750" },
+                    { scenario: "Extended Hours", hours: "+Evening M-F", capacity: "2,250" },
+                    { scenario: "Full Weekend", hours: "+Sat/Sun", capacity: "3,050" }
+                  ].map((item, i) => (
+                    <div key={i} className="bg-card border border-border rounded-2xl p-6 text-center">
+                      <h3 className="font-display text-lg font-medium mb-2">{item.scenario}</h3>
+                      <p className="font-body text-sm text-muted-foreground mb-4">{item.hours}</p>
+                      <div className="font-mono text-4xl font-bold text-primary">{item.capacity}</div>
+                      <p className="font-body text-sm text-muted-foreground mt-2">members/year</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )
+          },
+          {
+            id: "takeaways",
+            title: "Key Takeaways",
+            content: (
+              <div className="space-y-6">
+                <h2 className="font-display text-3xl font-medium text-center">Key Takeaways</h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {[
+                    { title: "High-Margin Model", desc: "66% gross margin with 34% EBITDA at maturity" },
+                    { title: "Diversified Revenue", desc: "50/50 split between memberships and ancillary" },
+                    { title: "Scalable Operations", desc: "Fixed cost base leveraged across growing membership" },
+                    { title: "Capacity Headroom", desc: "Multiple levers to expand diagnostic throughput" }
+                  ].map((item, i) => (
+                    <div key={i} className="bg-card border border-border rounded-2xl p-6">
+                      <h3 className="font-display text-xl font-medium mb-2 text-primary">{item.title}</h3>
+                      <p className="font-body text-muted-foreground">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )
+          }
+        ]}
+      />
     </Layout>
   );
 }

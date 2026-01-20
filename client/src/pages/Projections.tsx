@@ -8,6 +8,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { TrendingUp, Target, Shield, BarChart3, AlertTriangle, Rocket, ArrowUpRight, ArrowDownRight, Globe, Building2, Handshake, FileText, DollarSign, Percent, Users } from "lucide-react";
 import Layout from "@/components/Layout";
+import { PresentationMode } from "@/components/PresentationMode";
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
 
 export default function Projections() {
@@ -1427,6 +1428,152 @@ export default function Projections() {
           </div>
         </div>
       </section>
+      {/* Presentation Mode */}
+      <PresentationMode 
+        pageName="Projections"
+        slides={[
+          {
+            id: "overview",
+            title: "5-Year Financial Overview",
+            content: (
+              <div className="space-y-6">
+                <h2 className="font-display text-4xl font-medium text-center mb-8">Growth Projections Overview</h2>
+                <div className="grid md:grid-cols-4 gap-6">
+                  {[
+                    { value: "$327M", label: "2031 Revenue", subtext: "10 domestic centers" },
+                    { value: "$113M", label: "2031 EBITDA", subtext: "34% margin" },
+                    { value: "7,863", label: "Total Members", subtext: "Across network" },
+                    { value: "45x", label: "Target MOIC", subtext: "@ 20x EBITDA" }
+                  ].map((item, i) => (
+                    <div key={i} className="bg-card border border-border rounded-2xl p-6 text-center">
+                      <span className="font-mono text-4xl font-bold text-gradient">{item.value}</span>
+                      <p className="font-display font-medium mt-2">{item.label}</p>
+                      <p className="font-body text-sm text-muted-foreground">{item.subtext}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )
+          },
+          {
+            id: "revenue-table",
+            title: "Revenue Projections",
+            content: (
+              <div className="space-y-6">
+                <h2 className="font-display text-3xl font-medium">Domestic Revenue Projections</h2>
+                <p className="text-muted-foreground">5-Year Financial Roadmap Based on Disciplined Center Rollout</p>
+                <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b border-border bg-muted/30">
+                        <th className="text-left p-5 font-body font-semibold">Metric</th>
+                        <th className="text-center p-5 font-body font-semibold">2027</th>
+                        <th className="text-center p-5 font-body font-semibold">2028</th>
+                        <th className="text-center p-5 font-body font-semibold">2029</th>
+                        <th className="text-center p-5 font-body font-semibold">2030</th>
+                        <th className="text-center p-5 font-body font-semibold text-primary">2031</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { metric: "Revenue", y1: "$20M", y2: "$40M", y3: "$100M", y4: "$200M", y5: "$327M" },
+                        { metric: "EBITDA", y1: "$7M", y2: "$14M", y3: "$35M", y4: "$69M", y5: "$113M" },
+                        { metric: "Members", y1: "500", y2: "977", y3: "2,428", y4: "4,820", y5: "7,863" },
+                        { metric: "Centers", y1: "1", y2: "2", y3: "4", y4: "7", y5: "10" }
+                      ].map((row, i) => (
+                        <tr key={i} className="border-b border-border/50">
+                          <td className="p-5 font-body font-medium">{row.metric}</td>
+                          <td className="p-5 text-center font-mono">{row.y1}</td>
+                          <td className="p-5 text-center font-mono">{row.y2}</td>
+                          <td className="p-5 text-center font-mono">{row.y3}</td>
+                          <td className="p-5 text-center font-mono">{row.y4}</td>
+                          <td className="p-5 text-center font-mono text-primary font-bold">{row.y5}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )
+          },
+          {
+            id: "center-rollout",
+            title: "Center Rollout Timeline",
+            content: (
+              <div className="space-y-6">
+                <h2 className="font-display text-3xl font-medium text-center">Center Rollout Timeline</h2>
+                <p className="text-muted-foreground text-center">Disciplined expansion from flagship to 10-center domestic network</p>
+                <div className="bg-card border border-border rounded-2xl p-8">
+                  <div className="grid grid-cols-4 gap-4">
+                    {[
+                      { year: "2027", centers: "1", label: "Flagship Launch" },
+                      { year: "2028", centers: "2", label: "Second Market" },
+                      { year: "2029", centers: "4", label: "Regional Expansion" },
+                      { year: "2030-31", centers: "10", label: "Network Complete" }
+                    ].map((item, i) => (
+                      <div key={i} className="text-center p-6 bg-muted/30 rounded-xl">
+                        <span className="font-mono text-sm text-primary">{item.year}</span>
+                        <div className="font-display text-5xl font-bold my-2">{item.centers}</div>
+                        <p className="font-body text-sm text-muted-foreground">{item.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )
+          },
+          {
+            id: "investor-returns",
+            title: "Investor Returns",
+            content: (
+              <div className="space-y-6">
+                <h2 className="font-display text-3xl font-medium text-center">Investor Return Analysis</h2>
+                <p className="text-muted-foreground text-center">Based on $50M Series A investment at 20x EBITDA exit multiple</p>
+                <div className="grid md:grid-cols-4 gap-6">
+                  {[
+                    { value: "$50M", label: "Series A Investment", color: "text-foreground" },
+                    { value: "$2.3B", label: "2031 Exit Value", color: "text-primary" },
+                    { value: "45x", label: "MOIC @ 20x", color: "text-emerald-400" },
+                    { value: "114%", label: "5-Year IRR", color: "text-emerald-400" }
+                  ].map((item, i) => (
+                    <div key={i} className="bg-card border border-border rounded-2xl p-6 text-center">
+                      <span className={`font-mono text-4xl font-bold ${item.color}`}>{item.value}</span>
+                      <p className="font-body mt-2 text-muted-foreground">{item.label}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 mt-6">
+                  <p className="font-body text-center text-muted-foreground">
+                    Healthcare services companies typically trade at 15-25x EBITDA. Conservative 20x multiple applied to $113M network EBITDA.
+                  </p>
+                </div>
+              </div>
+            )
+          },
+          {
+            id: "key-highlights",
+            title: "Investment Highlights",
+            content: (
+              <div className="space-y-6">
+                <h2 className="font-display text-3xl font-medium text-center">Investment Highlights</h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {[
+                    { title: "Proven Unit Economics", desc: "$57.5M revenue per mature center with 34% EBITDA margin" },
+                    { title: "Disciplined Rollout", desc: "10 domestic centers by 2031 with clear expansion criteria" },
+                    { title: "Multiple Revenue Streams", desc: "Memberships, therapeutics, licensing, and ancillary services" },
+                    { title: "International Upside", desc: "Franchise and JV opportunities beyond domestic projections" }
+                  ].map((item, i) => (
+                    <div key={i} className="bg-card border border-border rounded-2xl p-6">
+                      <h3 className="font-display text-xl font-medium mb-2 text-primary">{item.title}</h3>
+                      <p className="font-body text-muted-foreground">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )
+          }
+        ]}
+      />
     </Layout>
   );
 }
