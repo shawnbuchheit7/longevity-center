@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, Router as WouterRouter } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import ScrollToTop from "./components/ScrollToTop";
@@ -19,7 +19,7 @@ import Hiring from "./pages/Hiring";
 import Memberships from "./pages/Memberships";
 import FAQ from "./pages/FAQ";
 
-function Router() {
+function Routes() {
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -43,13 +43,18 @@ function Router() {
 }
 
 function App() {
+  // Use base path for GitHub Pages deployment
+  const base = import.meta.env.BASE_URL || "/";
+  
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
-          <ScrollToTop />
-          <Router />
+          <WouterRouter base={base.endsWith('/') ? base.slice(0, -1) : base}>
+            <ScrollToTop />
+            <Routes />
+          </WouterRouter>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
